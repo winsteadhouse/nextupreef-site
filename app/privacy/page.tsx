@@ -57,39 +57,47 @@ export default function PrivacyPage() {
             <li>Respond to support requests</li>
           </ul>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>4. Sharing</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>4. Advertising</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            We do not sell your personal information. We may share information with service providers that help operate the Service
-            (hosting, authentication, analytics), subject to appropriate safeguards.
+            The Service may display a small banner advertisement provided by third-party advertising partners. These partners may
+            collect limited information (such as device identifiers, approximate location, and ad interaction data) to deliver ads,
+            measure performance, and prevent fraud. We do not sell your personal information.
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>5. Data Retention</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>5. Sharing</h2>
+          <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
+            We do not sell your personal information. We may share information with service providers that help operate the Service
+            (such as hosting, authentication, analytics, and advertising), subject to appropriate safeguards and only as needed to
+            provide these services.
+          </p>
+
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>6. Data Retention</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             We retain your data while your account is active or as needed to provide the Service. You may request deletion by contacting us.
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>6. Your Choices</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>7. Your Choices</h2>
           <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc" }}>
             <li>Access/update account info in the app Settings</li>
             <li>Request deletion by emailing {CONTACT_EMAIL}</li>
           </ul>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>7. Security</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>8. Security</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             We use reasonable safeguards to protect your information. No method of transmission or storage is 100% secure.
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>8. Children</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>9. Children</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             The Service is not intended for children under 13 (or the minimum age required where you live).
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>9. Changes</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>10. Changes</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             We may update this policy. We will update the effective date above.
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>10. Contact</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>11. Contact</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             Privacy questions or deletion requests:{" "}
             <span style={{ color: "var(--reef)", fontWeight: "900" }}>{CONTACT_EMAIL}</span>
