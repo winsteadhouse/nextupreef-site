@@ -78,13 +78,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FEATURES — THE 4 TABS */}
+      {/* FEATURES — THE 5 TABS */}
       <section className="features-section">
         <div className="container">
           <div className="section-label">The Solution</div>
-          <h2>Four tabs. Total control.</h2>
+          <h2>Five tabs. Total control.</h2>
           <p className="section-sub">
-            Everything you need to manage your reef — organized in four simple screens.
+            Everything you need to manage your reef — organized in five simple screens.
           </p>
 
           <div className="feature-cards">
@@ -96,7 +96,7 @@ export default function HomePage() {
                 </div>
               </div>
               <h3>Dashboard</h3>
-              <p>Your at-a-glance command center. <strong>Reef Score</strong>, <strong>Stability Score</strong>, peer comparison, earned badges, and personalized recommendations.</p>
+              <p>Your at-a-glance command center. <strong>Reef Score</strong>, <strong>Stability Score</strong>, peer comparison, earned badges, upcoming reminders, and personalized recommendations.</p>
               <div className="feature-tags">
                 <span>Reef Score</span>
                 <span>Peer Comparison</span>
@@ -108,27 +108,11 @@ export default function HomePage() {
               <div className="feature-card-header">
                 <div className="feature-number">02</div>
                 <div className="feature-icon-wrap">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                </div>
-              </div>
-              <h3>Log</h3>
-              <p><strong>+/− buttons</strong> start from your last reading. Cards turn green, yellow, or red in real time. Log one param or all nine — your call.</p>
-              <div className="feature-tags">
-                <span>Real-time color</span>
-                <span>Custom targets</span>
-                <span>Water changes</span>
-              </div>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-card-header">
-                <div className="feature-number">03</div>
-                <div className="feature-icon-wrap">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
               </div>
               <h3>Tank</h3>
-              <p>Your tank&apos;s complete profile. Track <strong>equipment</strong>, <strong>livestock</strong>, <strong>corals</strong>, <strong>dosing</strong>, and water change schedule. Multi-tank ready.</p>
+              <p>Your tank&apos;s complete profile. Track <strong>equipment</strong>, <strong>livestock</strong>, <strong>corals</strong>, and <strong>dosing</strong>. Multi-tank ready with tank age tracking.</p>
               <div className="feature-tags">
                 <span>Equipment</span>
                 <span>Livestock</span>
@@ -138,7 +122,39 @@ export default function HomePage() {
 
             <div className="feature-card">
               <div className="feature-card-header">
+                <div className="feature-number">03</div>
+                <div className="feature-icon-wrap">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+              </div>
+              <h3>Log</h3>
+              <p><strong>+/− buttons</strong> start from your last reading. Cards turn green, yellow, or red in real time. Log one param or all ten — your call.</p>
+              <div className="feature-tags">
+                <span>Real-time color</span>
+                <span>Custom targets</span>
+                <span>Backdate logs</span>
+              </div>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-card-header">
                 <div className="feature-number">04</div>
+                <div className="feature-icon-wrap">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </div>
+              </div>
+              <h3>Reminders</h3>
+              <p>Never miss a water change or maintenance task. <strong>Water change scheduling</strong>, filter socks, carbon, RO/DI — with <strong>push notifications</strong> when things are due.</p>
+              <div className="feature-tags">
+                <span>Water changes</span>
+                <span>Maintenance tasks</span>
+                <span>Push alerts</span>
+              </div>
+            </div>
+
+            <div className="feature-card" style={{ gridColumn: "1 / -1", maxWidth: "520px", margin: "0 auto" }}>
+              <div className="feature-card-header">
+                <div className="feature-number">05</div>
                 <div className="feature-icon-wrap">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 </div>
@@ -161,43 +177,53 @@ export default function HomePage() {
           <div className="section-label">See It In Action</div>
           <h2>Designed for reef keepers</h2>
 
-          <div className="screenshot-grid">
+          <div className="screenshot-grid screenshot-grid-5">
             <div className="screenshot-phone">
               <Image
-                src="/screenshots/screenshot-dashboard.png"
+                src="/screenshots/screenshot-dashboard-v2.png"
                 alt="NextUpReef Dashboard showing Reef Score, Stability Score, and peer comparison"
                 width={300}
-                height={650}
+                height={618}
                 className="screenshot-img"
               />
               <span className="screenshot-label">Dashboard</span>
             </div>
             <div className="screenshot-phone">
               <Image
-                src="/screenshots/screenshot-log.png"
-                alt="NextUpReef Log screen with parameter inputs and water change tracking"
-                width={300}
-                height={650}
-                className="screenshot-img"
-              />
-              <span className="screenshot-label">Log</span>
-            </div>
-            <div className="screenshot-phone">
-              <Image
-                src="/screenshots/screenshot-tank.png"
+                src="/screenshots/screenshot-tank-v2.png"
                 alt="NextUpReef Tank profile with equipment, dosing, and livestock"
                 width={300}
-                height={650}
+                height={618}
                 className="screenshot-img"
               />
               <span className="screenshot-label">Tank</span>
             </div>
             <div className="screenshot-phone">
               <Image
-                src="/screenshots/screenshot-analytics.png"
+                src="/screenshots/screenshot-log-v2.png"
+                alt="NextUpReef Log screen with parameter inputs and real-time color feedback"
+                width={300}
+                height={618}
+                className="screenshot-img"
+              />
+              <span className="screenshot-label">Log</span>
+            </div>
+            <div className="screenshot-phone">
+              <Image
+                src="/screenshots/screenshot-reminders-v2.png"
+                alt="NextUpReef Reminders tab with water changes and maintenance tasks"
+                width={300}
+                height={618}
+                className="screenshot-img"
+              />
+              <span className="screenshot-label">Reminders</span>
+            </div>
+            <div className="screenshot-phone">
+              <Image
+                src="/screenshots/screenshot-analytics-v2.png"
                 alt="NextUpReef Analytics with trend charts and stability grades"
                 width={300}
-                height={650}
+                height={618}
                 className="screenshot-img"
               />
               <span className="screenshot-label">Analytics</span>
@@ -232,7 +258,7 @@ export default function HomePage() {
             <div className="step-card">
               <div className="step-number">3</div>
               <h4>Watch your reef thrive</h4>
-              <p>Scores, trends, and recommendations update with every log. Consistency is the secret.</p>
+              <p>Scores, trends, and reminders update with every log. Consistency is the secret.</p>
             </div>
           </div>
         </div>
@@ -248,7 +274,7 @@ export default function HomePage() {
               Download NextUpReef
             </a>
             <div className="cta-sub">
-              Available on iOS &middot; Android coming soon
+              Available on Android &middot; iOS coming soon
             </div>
           </div>
         </div>

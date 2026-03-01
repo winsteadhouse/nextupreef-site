@@ -3,17 +3,17 @@ const faqs = [
   {
     category: "Getting Started",
     q: "How do I get started with NextUpReef?",
-    a: "When you create an account, a quick 2-step onboarding walks you through naming your first tank, choosing your reef type (Mixed, SPS, LPS, Softies, Nano, or ULNS), entering your display and sump gallons, and selecting which parameters you test. It takes about 30 seconds — then you're ready to start logging.",
+    a: "When you create an account, a quick 2-step onboarding walks you through naming your first tank, choosing your reef type (Mixed, SPS, LPS, Softies, Nano, ULNS, or Fish Only), entering your display and sump gallons, and selecting which parameters you test. It takes about 30 seconds — then you're ready to start logging.",
   },
   {
     category: "Getting Started",
     q: "How do I add a second tank?",
-    a: "Go to the Tank tab, tap 'Edit Tank' or the settings gear, and you'll find the option to add a new tank. Each tank tracks its own parameters, logs, scores, and water changes independently. You can switch between tanks using the dropdown in the top header bar.",
+    a: "Go to the Tank tab, tap 'Edit Tank' or the settings gear, and you'll find the option to add a new tank. Each tank tracks its own parameters, logs, scores, water changes, and reminders independently. You can switch between tanks using the dropdown in the top header bar.",
   },
   {
     category: "Getting Started",
-    q: "What do the four tabs do?",
-    a: "Dashboard — your at-a-glance view with Reef Score, Stability Score, latest parameter values, badges, and personalized recommendations. Tank — manage your tank details, equipment, livestock, dosing products, and water change schedule. Log — enter your test results. Each parameter card shows your target range, last value, and gives real-time color feedback as you type. Analytics — deep dive into trends with interactive charts, time-in-range stats, stability grades, and NO3:PO4 ratio tracking.",
+    q: "What do the five tabs do?",
+    a: "Dashboard — your at-a-glance view with Reef Score, Stability Score, latest parameter values, upcoming reminders, badges, and personalized recommendations. Tank — manage your tank details, equipment, livestock, and dosing products. Log — enter your test results with real-time color feedback. Reminders — set up water change schedules and maintenance tasks with push notification alerts. Analytics — deep dive into trends with interactive charts, time-in-range stats, stability grades, and NO3:PO4 ratio tracking.",
   },
 
   // Logging
@@ -29,6 +29,11 @@ const faqs = [
   },
   {
     category: "Logging Parameters",
+    q: "Can I backdate or edit a log entry?",
+    a: "Yes. When logging, you can change the date to backdate an entry — useful if you forgot to log yesterday's test. You can also edit or delete previous log entries from the log history.",
+  },
+  {
+    category: "Logging Parameters",
     q: "What does 'Last:' mean on each parameter card?",
     a: "It shows the most recent value you logged for that specific parameter, along with how long ago it was logged (e.g. '3h ago', 'yesterday'). This is pulled from your last 20 logs, so even if you log params individually across multiple sessions, each one remembers its own last value.",
   },
@@ -36,6 +41,11 @@ const faqs = [
     category: "Logging Parameters",
     q: "What do the colors mean when I'm typing a value?",
     a: "Green means your value is within your target range. Yellow means you're close to the boundary — not quite in range but not far off. Red means you're clearly outside your target. The card border, input field, and indicator all change in real time as you type.",
+  },
+  {
+    category: "Logging Parameters",
+    q: "What parameters can I track?",
+    a: "NextUpReef supports 10 parameters: Alkalinity (dKH), Calcium (ppm), Magnesium (ppm), Nitrate (ppm), Nitrite (ppm), Phosphate (ppm), Salinity, pH, Temperature (°F), and Ammonia (ppm). You choose which ones to display based on what you test.",
   },
   {
     category: "Logging Parameters",
@@ -52,12 +62,39 @@ const faqs = [
   {
     category: "Custom Targets & Ranges",
     q: "What are the default ranges based on?",
-    a: "Default ranges are set based on your tank type. For example, SPS tanks have tighter alkalinity and calcium ranges than soft coral tanks, and ULNS systems have lower nutrient targets. You can always override them with custom values.",
+    a: "Default ranges are set based on your tank type. For example, SPS tanks have tighter alkalinity and calcium ranges than soft coral tanks, ULNS systems have lower nutrient targets, and Fish Only tanks have more relaxed ranges across the board. You can always override them with custom values.",
   },
   {
     category: "Custom Targets & Ranges",
     q: "How do I add or remove parameters I track?",
-    a: "On the Log screen, tap 'Edit' to open the parameter editor. Toggle parameters on or off — recommended ones are marked with 'REC'. The 6 core parameters (Alkalinity, Calcium, Magnesium, Nitrate, Phosphate, Salinity) are recommended for all reef types. pH, Temperature, and Ammonia are optional.",
+    a: "On the Log screen, tap 'Edit' to open the parameter editor. Toggle parameters on or off — recommended ones are marked with 'REC'. The 6 core parameters (Alkalinity, Calcium, Magnesium, Nitrate, Phosphate, Salinity) are recommended for all reef types. pH, Temperature, Nitrite, and Ammonia are optional.",
+  },
+
+  // Reminders & Notifications
+  {
+    category: "Reminders & Notifications",
+    q: "How do I set up water change reminders?",
+    a: "Go to the Reminders tab and tap 'Set Up Water Changes'. Choose your frequency (Weekly, Biweekly, or Monthly), select which day of the week, and enter your water change percentage. The app tracks when you last did a water change and shows status cards — overdue, due today, or upcoming.",
+  },
+  {
+    category: "Reminders & Notifications",
+    q: "What are maintenance reminders?",
+    a: "Maintenance reminders track recurring tasks like changing filter socks, replacing carbon, swapping RO/DI filters, cleaning equipment, and more. Choose from 7 quick-add presets or create your own custom reminders with any name, icon, and frequency. When adding a reminder, you can pick 'Just did it' to start the timer from now, or 'It's due on...' to set a specific next-due date.",
+  },
+  {
+    category: "Reminders & Notifications",
+    q: "How do push notifications work?",
+    a: "NextUpReef sends three types of push notifications: Testing reminders (if you haven't logged in X days — you choose the interval), Water change alerts (day before, day of, and overdue), and Maintenance alerts (day before, day of, and overdue). You can toggle each type on or off in Settings under Notifications.",
+  },
+  {
+    category: "Reminders & Notifications",
+    q: "How do I mark a reminder as done?",
+    a: "On the Reminders tab, tap the green 'Done' button on any reminder card. It logs the completion, awards relevant badges, and automatically calculates the next due date based on your frequency. You can also tap '+1 Day' to snooze a reminder.",
+  },
+  {
+    category: "Reminders & Notifications",
+    q: "Do reminders show on the Dashboard?",
+    a: "Yes. Any reminders that are overdue, due today, or coming up this week appear as a callout on your Dashboard between the suggestions and parameter cards. Tap it to jump straight to the Reminders tab.",
   },
 
   // Dashboard & Scores
@@ -73,13 +110,13 @@ const faqs = [
   },
   {
     category: "Dashboard & Scores",
-    q: "What does the 'Latest Parameters' section show?",
-    a: "It shows the most recent value for each parameter you've logged, pulled across all your recent entries. So if you logged alkalinity yesterday and calcium today, both appear. Each value shows a green/yellow/red dot based on your target range and a timestamp showing when it was last logged. You'll also see counts of how many logs you made today and in the last 7 days.",
+    q: "How does peer comparison work?",
+    a: "Your scores are compared against other tanks of the same type (Mixed, SPS, LPS, etc.). With fewer than 20 tanks in your pool, you'll see a rank like '#1 of 5'. As more reefers join, it switches to percentile rankings like 'Top 10%'. Peer averages and your position are shown on distribution bars.",
   },
   {
     category: "Dashboard & Scores",
     q: "What are Badges?",
-    a: "Badges are achievements you earn based on your reefkeeping activity — like logging your first test, maintaining a streak, tracking water changes, or reaching certain scores. Badges are tied to your account (not a specific tank), so they carry across all your tanks.",
+    a: "Badges are achievements you earn based on your reefkeeping activity — like logging your first test, maintaining a streak, completing water changes, hitting score milestones, or rescuing a troubled tank. There are 63 badges across 11 categories. Badges are tied to your account (not a specific tank), so they carry across all your tanks.",
   },
 
   // Analytics
@@ -98,22 +135,17 @@ const faqs = [
     q: "What is the NO3:PO4 ratio?",
     a: "The ratio between your nitrate and phosphate levels, which is important for coral coloration and algae control. The ideal range is roughly 100:1 for most reef tanks. The Analytics page tracks this ratio over time and shows whether it's balanced, NO3-dominant, or PO4-dominant.",
   },
-  {
-    category: "Analytics",
-    q: "Why is my chart hard to read sometimes?",
-    a: "With only a few data points or very flat readings, trends can look subtle. After a few weeks of consistent logging, charts become much more useful. The target range is shown as a green shaded zone on each chart for reference.",
-  },
 
   // Tank Management
   {
     category: "Tank Management",
     q: "What can I track on the Tank page?",
-    a: "The Tank tab is your tank's profile. You can manage your equipment list (skimmers, lights, pumps, reactors), livestock inventory (fish, corals, invertebrates), dosing products, and water change schedule. Tank age is calculated from your setup date and displayed at the top.",
+    a: "The Tank tab is your tank's profile. You can manage your equipment list (skimmers, lights, pumps, reactors), livestock inventory (fish, corals, invertebrates), and dosing products. Tank age is calculated from your setup date and displayed at the top.",
   },
   {
     category: "Tank Management",
-    q: "How do water change reminders work?",
-    a: "On the Tank page, you can set your water change schedule (frequency and percentage). The app tracks when you last did a water change and shows a status indicator — green if you're on schedule, yellow if it's coming due, red if overdue. Logging water changes also factors into your Reef Score.",
+    q: "What tank types are supported?",
+    a: "NextUpReef supports 7 tank types: Mixed Reef, SPS, LPS, Softies, Nano, ULNS, and Fish Only. Each type has tailored default parameter ranges and scoring targets. You can change your tank type at any time in Edit Tank.",
   },
   {
     category: "Tank Management",
@@ -130,12 +162,17 @@ const faqs = [
   {
     category: "Account & Privacy",
     q: "Can I delete my account?",
-    a: "Yes. Go to Settings (gear icon in the header) and scroll to the bottom. 'Delete Account' will permanently remove all your tanks, logs, equipment, livestock, and badge data. This cannot be undone.",
+    a: "Yes. Go to Settings (gear icon in the header) and scroll to the bottom. 'Delete Account' will permanently remove all your tanks, logs, equipment, livestock, reminders, and badge data. This cannot be undone.",
   },
   {
     category: "Account & Privacy",
     q: "How do I change my password or display name?",
     a: "In Settings, tap 'Change Password' to receive a reset link via email. Your display name can be edited directly at the top of the Settings page — tap 'Edit' next to your name.",
+  },
+  {
+    category: "Account & Privacy",
+    q: "Is NextUpReef really free?",
+    a: "Yes. NextUpReef is completely free with no subscription, no ads, and no paywalls. All features are available to every user.",
   },
 ];
 
