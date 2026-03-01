@@ -31,9 +31,9 @@ export default function HomePage() {
             </p>
 
             <div className="hero-buttons">
-              <a href={site.storeLinks.appStore} className="btn primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Free
+              <a href="mailto:info@nextupreef.com?subject=Beta%20Access%20Request" className="btn primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Join the Beta
               </a>
               <Link href="/faq" className="btn secondary">
                 How it works
@@ -269,12 +269,12 @@ export default function HomePage() {
         <div className="container-narrow">
           <div className="cta-card">
             <h2>Stop guessing.<br />Start tracking.</h2>
-            <p>Free to download. No subscription. No ads. Just better reef keeping.</p>
-            <a href={site.storeLinks.appStore} className="btn primary large">
-              Download NextUpReef
+            <p>Free to use. No subscription. No ads. Just better reef keeping.</p>
+            <a href="mailto:info@nextupreef.com?subject=Beta%20Access%20Request" className="btn primary large">
+              Request Beta Access
             </a>
             <div className="cta-sub">
-              Available on Android &middot; iOS coming soon
+              Currently in beta on Android &middot; Email info@nextupreef.com to join
             </div>
           </div>
         </div>
