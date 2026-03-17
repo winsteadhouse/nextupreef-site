@@ -43,7 +43,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROBLEM — CONDENSED SINGLE CARD */}
+      {/* PROBLEM */}
       <section className="problem-section">
         <div className="container-narrow">
           <div className="section-label">The Problem</div>
@@ -112,10 +112,11 @@ export default function HomePage() {
                 </div>
               </div>
               <h3>Tank</h3>
-              <p>Your tank&apos;s complete profile. Track <strong>equipment</strong>, <strong>livestock</strong>, <strong>corals</strong>, and <strong>dosing</strong>. Multi-tank ready with tank age tracking.</p>
+              <p>Your tank&apos;s complete profile. Track <strong>equipment</strong>, <strong>livestock</strong>, <strong>corals</strong>, and <strong>dosing</strong>. Upload monthly photos to build a growth timeline. Multi-tank ready.</p>
               <div className="feature-tags">
                 <span>Equipment</span>
                 <span>Livestock</span>
+                <span>Monthly Photos</span>
                 <span>Dosing</span>
               </div>
             </div>
@@ -171,6 +172,66 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* COMMUNITY SECTION */}
+      <section className="problem-section">
+        <div className="container-narrow">
+          <div className="section-label">Reef Community</div>
+          <h2>See how your reef stacks up.</h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "18px", lineHeight: "1.7", maxWidth: "640px", margin: "0 auto 48px", fontWeight: "600" }}>
+            NextUpReef isn&apos;t just a personal tracker — it&apos;s a community of reefers sharing data, photos, and progress in real time.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px", textAlign: "left" }}>
+            {[
+              {
+                icon: "🏆",
+                title: "Live Leaderboard",
+                desc: "Tanks ranked by combined Reef + Stability score. See where you stand against other reefers running the same tank type.",
+              },
+              {
+                icon: "📊",
+                title: "Real Parameter Data",
+                desc: "Browse other tanks' actual alk, calcium, mag, nitrate, and pH readings — color coded against target ranges so you can compare apples to apples.",
+              },
+              {
+                icon: "📸",
+                title: "Monthly Growth Timeline",
+                desc: "Upload one photo per month to document your reef's progress. View any tank's full growth history and watch coral develop over time.",
+              },
+              {
+                icon: "🧪",
+                title: "Dosing Transparency",
+                desc: "See exactly what salt mix and dosing regimen top-ranked reefers use — from two-part to kalkwasser to auto-dosers.",
+              },
+              {
+                icon: "💧",
+                title: "Water Change Habits",
+                desc: "Water change frequency and percentage are visible on community profiles, giving context to each tank's parameter stability.",
+              },
+              {
+                icon: "🔒",
+                title: "Your Control",
+                desc: "Community sharing is on by default but you can opt out per-tank at any time from your Tank tab or Settings. Your data, your choice.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  background: "var(--bg-card)",
+                  border: "1px solid var(--border)",
+                  borderRadius: "var(--radius)",
+                  padding: "28px 24px",
+                }}
+              >
+                <div style={{ fontSize: "28px", marginBottom: "12px" }}>{item.icon}</div>
+                <h4 style={{ fontSize: "17px", fontWeight: "900", margin: "0 0 8px 0", color: "var(--text-light)" }}>{item.title}</h4>
+                <p style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: "1.65", margin: 0, fontWeight: "600" }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SCREENSHOTS */}
       <section className="screenshots">
         <div className="container">
@@ -180,7 +241,7 @@ export default function HomePage() {
           <div className="screenshot-grid screenshot-grid-5">
             <div className="screenshot-phone">
               <Image
-                src="/screenshots/screenshot-dashboard-v2.png"
+                src="/screenshots/screenshot-dashboard-v3.png"
                 alt="NextUpReef Dashboard showing Reef Score, Stability Score, and peer comparison"
                 width={300}
                 height={618}
@@ -190,8 +251,8 @@ export default function HomePage() {
             </div>
             <div className="screenshot-phone">
               <Image
-                src="/screenshots/screenshot-tank-v2.png"
-                alt="NextUpReef Tank profile with equipment, dosing, and livestock"
+                src="/screenshots/screenshot-tank-v3.png"
+                alt="NextUpReef Tank profile with equipment, salt mix, dosing, and monthly photos"
                 width={300}
                 height={618}
                 className="screenshot-img"
@@ -227,6 +288,20 @@ export default function HomePage() {
                 className="screenshot-img"
               />
               <span className="screenshot-label">Analytics</span>
+            </div>
+          </div>
+
+          {/* Community screenshot */}
+          <div style={{ marginTop: "48px", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
+            <div className="screenshot-phone" style={{ maxWidth: "280px" }}>
+              <Image
+                src="/screenshots/screenshot-community-v1.png"
+                alt="NextUpReef Community feed showing leaderboard with tank scores, parameters, and photos"
+                width={300}
+                height={618}
+                className="screenshot-img"
+              />
+              <span className="screenshot-label">Reef Community</span>
             </div>
           </div>
         </div>
