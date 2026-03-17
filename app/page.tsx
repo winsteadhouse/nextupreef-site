@@ -238,7 +238,7 @@ export default function HomePage() {
           <div className="section-label">See It In Action</div>
           <h2>Designed for reef keepers</h2>
 
-          <div className="screenshot-grid screenshot-grid-5">
+          <div className="screenshot-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)", maxWidth: "900px" }}>
             <div className="screenshot-phone">
               <Image
                 src="/screenshots/screenshot-dashboard-v3.png"
@@ -258,6 +258,16 @@ export default function HomePage() {
                 className="screenshot-img"
               />
               <span className="screenshot-label">Tank</span>
+            </div>
+            <div className="screenshot-phone">
+              <Image
+                src="/screenshots/screenshot-community-v1.png"
+                alt="NextUpReef Community feed showing leaderboard with tank scores, parameters, and photos"
+                width={300}
+                height={618}
+                className="screenshot-img"
+              />
+              <span className="screenshot-label">Reef Community</span>
             </div>
             <div className="screenshot-phone">
               <Image
@@ -288,20 +298,6 @@ export default function HomePage() {
                 className="screenshot-img"
               />
               <span className="screenshot-label">Analytics</span>
-            </div>
-          </div>
-
-          {/* Community screenshot */}
-          <div style={{ marginTop: "48px", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
-            <div className="screenshot-phone" style={{ maxWidth: "280px" }}>
-              <Image
-                src="/screenshots/screenshot-community-v1.png"
-                alt="NextUpReef Community feed showing leaderboard with tank scores, parameters, and photos"
-                width={300}
-                height={618}
-                className="screenshot-img"
-              />
-              <span className="screenshot-label">Reef Community</span>
             </div>
           </div>
         </div>
