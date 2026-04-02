@@ -630,6 +630,33 @@ h1, h2, h3, h4 {
   color: var(--reef-soft);
 }
 
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--reef-glow);
+  border-color: var(--border-hover);
+  color: var(--reef);
+  transform: translateY(-2px);
+}
+
 /* ================= FAQ STYLING ================= */
 
 .faq-item {
