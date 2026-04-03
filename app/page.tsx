@@ -99,9 +99,9 @@ export default function HomePage() {
           alignItems: "flex-end",
         }}>
           {[
-            { src: "/screenshots/screenshot-store-log-v3.png", label: "Log", alt: "Log parameters in seconds with real-time color feedback" },
-            { src: "/screenshots/screenshot-store-dashboard-v4.png", label: "Dashboard", alt: "Reef Score and Stability Score dashboard", featured: true },
-            { src: "/screenshots/screenshot-store-analytics-v3.png", label: "Analytics", alt: "Parameter trend charts and history" },
+            { src: "/screenshots/screenshot-store-log-v4.png", label: "Log", alt: "Log parameters in seconds with real-time color feedback" },
+            { src: "/screenshots/screenshot-store-dashboard-v5.png", label: "Dashboard", alt: "Reef Score and Stability Score dashboard", featured: true },
+            { src: "/screenshots/screenshot-store-analytics-v4.png", label: "Analytics", alt: "Parameter trend charts and history" },
           ].map(s => (
             <div key={s.label} style={{
               display: "flex",
@@ -142,9 +142,9 @@ export default function HomePage() {
           marginTop: "16px",
         }}>
           {[
-            { src: "/screenshots/screenshot-store-reminders-v3.png", label: "Reminders", alt: "Smart maintenance reminders" },
-            { src: "/screenshots/screenshot-store-tank-v4.png", label: "Tank", alt: "Full tank profile with equipment and livestock" },
-            { src: "/screenshots/screenshot-store-achievements-v1.png", label: "Achievements", alt: "62 badges and achievements" },
+            { src: "/screenshots/screenshot-store-reminders-v4.png", label: "Reminders", alt: "Smart maintenance reminders" },
+            { src: "/screenshots/screenshot-store-tank-v5.png", label: "Tank", alt: "Full tank profile with equipment and livestock" },
+            { src: "/screenshots/screenshot-store-community-v4.png", label: "Community", alt: "Reef community leaderboard" },
           ].map(s => (
             <div key={s.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
               <Image
