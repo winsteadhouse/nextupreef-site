@@ -84,23 +84,6 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* Stats strip */}
-        <div style={{
-          display: "flex", gap: "28px", justifyContent: "center",
-          padding: "4px 0",
-        }}>
-          {[
-            { num: "10+", label: "Parameters" },
-            { num: "2", label: "Health Scores" },
-            { num: "62", label: "Badges" },
-            { num: "Free", label: "To Download" },
-          ].map(s => (
-            <div key={s.label} style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "22px", fontWeight: 900, color: "var(--reef)", letterSpacing: "-0.03em", lineHeight: 1 }}>{s.num}</div>
-              <div style={{ fontSize: "11px", fontWeight: 600, color: "var(--text-muted)", marginTop: "3px", textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
       </section>
 
       {/* ── SCREENSHOTS — right below hero ── */}
@@ -237,7 +220,7 @@ export default function HomePage() {
             },
             {
               icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>,
-              title: "62 Badges",
+              title: "Badges",
               desc: "Earn achievements for consistent testing, steady alk, water changes, and more.",
               tags: ["Habits", "Milestones"],
             },
