@@ -3,6 +3,75 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+// ─── JSON-LD Structured Data ───────────────────────────────────────────────
+// These are invisible to users but read by Google.
+// Placed here because "use client" pages can't export metadata directly.
+// Next.js still renders these <script> tags server-side in the HTML.
+
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "NextUpReef",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "LifestyleApplication",
+  applicationSubCategory: "Aquarium Tracking",
+  description:
+    "The best free reef tank tracking app. Log saltwater aquarium parameters like alkalinity, calcium, magnesium, nitrate, and phosphate. Get a Reef Score, view trend charts, set water change reminders, and connect with the reef community.",
+  url: "https://nextupreef.com",
+  downloadUrl: [
+    "https://apps.apple.com/us/app/nextupreef/id6760728959",
+    "https://play.google.com/store/apps/details?id=com.nextupreef.app",
+  ],
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  screenshot: "https://nextupreef.com/brand/splash2.png",
+  featureList: [
+    "Log reef water parameters in seconds",
+    "Reef Score and Stability Score tracking",
+    "Trend charts and analytics",
+    "Water change and maintenance reminders",
+    "Push notification alerts",
+    "Community feed with peer comparison",
+    "Equipment and livestock tracking",
+    "Monthly tank photo timeline",
+    "60+ achievement badges",
+    "Support for 7 tank types: Mixed, SPS, LPS, Softies, Nano, ULNS, Fish Only",
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    ratingCount: "10",
+    bestRating: "5",
+    worstRating: "1",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "NextUpReef",
+  url: "https://nextupreef.com",
+  logo: "https://nextupreef.com/brand/logo.png",
+  description:
+    "NextUpReef builds free mobile apps for the reef aquarium hobby, helping reefers track parameters, monitor tank health, and connect with the community.",
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61576553765840",
+    "https://www.instagram.com/nextupreefapp/",
+    "https://apps.apple.com/us/app/nextupreef/id6760728959",
+    "https://play.google.com/store/apps/details?id=com.nextupreef.app",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "info@nextupreef.com",
+    contactType: "customer support",
+  },
+};
+
+// ─── END JSON-LD ───────────────────────────────────────────────────────────
+
 const ALL_SCREENSHOTS = [
   { src: "/screenshots/screenshot-store-log-v4.png", label: "Log", alt: "Log parameters in seconds with real-time color feedback", featured: false },
   { src: "/screenshots/screenshot-store-dashboard-v5.png", label: "Dashboard", alt: "Reef Score and Stability Score dashboard", featured: true },
@@ -70,6 +139,16 @@ export default function HomePage() {
 
   return (
     <main style={{ background: "var(--bg-dark)" }}>
+
+      {/* ── JSON-LD Schema (invisible to users, read by Google) ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
 
       {/* ── HERO ── */}
       <section style={{

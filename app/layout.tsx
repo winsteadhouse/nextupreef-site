@@ -5,37 +5,61 @@ import SiteFooter from "@/components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nextupreef.com'),
+  metadataBase: new URL("https://nextupreef.com"),
   title: {
-    default: 'NextUpReef - Reef Aquarium Parameter Tracking App',
-    template: '%s | NextUpReef'
+    default: "NextUpReef — Free Reef Tank Tracking App for iOS & Android",
+    template: "%s | NextUpReef",
   },
-  description: 'Track your reef aquarium parameters with ease. Fast logging, smart analytics, reef scoring, and achievement badges. Available on iOS and Android.',
-  keywords: ['reef aquarium', 'reef tank', 'aquarium tracking', 'parameter logging', 'reef keeper', 'saltwater aquarium', 'coral reef', 'aquarium app'],
-  authors: [{ name: 'NextUpReef' }],
-  creator: 'NextUpReef',
-  publisher: 'NextUpReef',
+  description:
+    "The best free app to track and monitor your saltwater reef aquarium. Log alkalinity, calcium, magnesium, nitrate & more. Get a Reef Score, trend charts, water change reminders, and community features. Free on iOS and Android.",
+  keywords: [
+    "reef tank tracking app",
+    "best reef aquarium app",
+    "saltwater tank parameter tracker",
+    "reef water parameter log",
+    "free reef tank app",
+    "reef aquarium monitor",
+    "saltwater aquarium app",
+    "reef parameter logging",
+    "coral reef tank app",
+    "SPS reef tracking",
+    "LPS reef app",
+    "alkalinity tracker",
+    "reef score",
+    "reef stability tracker",
+    "water change reminder app",
+    "reef keeper app",
+    "aquarium parameter app iOS Android",
+  ],
+  authors: [{ name: "NextUpReef" }],
+  creator: "NextUpReef",
+  publisher: "NextUpReef",
+  alternates: {
+    canonical: "https://nextupreef.com",
+  },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://nextupreef.com',
-    siteName: 'NextUpReef',
-    title: 'NextUpReef - Reef Aquarium Parameter Tracking',
-    description: 'Track your reef aquarium parameters with ease. Fast logging, smart analytics, and achievement badges.',
+    type: "website",
+    locale: "en_US",
+    url: "https://nextupreef.com",
+    siteName: "NextUpReef",
+    title: "NextUpReef — Free Reef Tank Tracking App for iOS & Android",
+    description:
+      "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. The best free reef tank app for iOS and Android.",
     images: [
       {
-        url: '/brand/splash2.png',
+        url: "/brand/splash2.png",
         width: 1200,
         height: 630,
-        alt: 'NextUpReef - Reef Aquarium Tracking',
+        alt: "NextUpReef — Free Reef Tank Tracking App for iOS and Android",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'NextUpReef - Reef Aquarium Parameter Tracking',
-    description: 'Track your reef aquarium parameters with ease. Fast logging, smart analytics, and achievement badges.',
-    images: ['/brand/splash2.png'],
+    card: "summary_large_image",
+    title: "NextUpReef — Free Reef Tank Tracking App",
+    description:
+      "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. Free on iOS and Android.",
+    images: ["/brand/splash2.png"],
   },
   robots: {
     index: true,
@@ -43,15 +67,13 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    // Add these when you have them:
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
+    // google: 'your-google-verification-code',  ← paste from Google Search Console
   },
 };
 
