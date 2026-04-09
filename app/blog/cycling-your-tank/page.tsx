@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How to Cycle a Reef Tank: The Complete Beginner's Guide — NextUpReef",
@@ -181,11 +182,14 @@ export default function CyclingPost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef log screen showing NH3, NO2, NO3 fields with readings entered]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_CYCLING_01.png"
+            alt="NextUpReef log screen showing Nitrate at 6.0 ppm in range and Nitrite at 0.25 ppm high during tank cycle"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
             <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> automatically adds ammonia, nitrite, and nitrate to your log screen during Phase 2 of the New Tank Guide — so you never forget what to test during the cycle.
           </p>
@@ -267,11 +271,14 @@ export default function CyclingPost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", margin: "48px 0", textAlign: "center",
+          borderRadius: "16px", padding: "24px", margin: "48px 0", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef New Tank Guide Phase 2 checklist showing ammonia spike confirmed, nitrite spike confirmed, and ammonia back to 0 checked green]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_CYCLING_02.png"
+            alt="NextUpReef Phase 2 checklist showing all 5 cycle steps completed including ammonia spike, nitrite spike, both back to zero, and nitrate detected"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             Track your cycle progress automatically
           </p>

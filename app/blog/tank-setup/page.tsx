@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How to Set Up a Reef Tank: A Beginner's Complete Guide — NextUpReef",
@@ -102,13 +103,16 @@ export default function TankSetupPost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef equipment tab showing equipment list with heater, pump, and light added]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_TANK_SETUP_01.png"
+            alt="NextUpReef app showing lighting schedule and equipment list including wave makers and return pump"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> lets you log all your equipment in one place — brand, model, wattage, and when you added it. Never forget what's running in your tank.
+            <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> lets you log all your equipment and lighting schedules in one place — brand, model, schedule, and when you added it. Never forget what's running in your tank.
           </p>
         </div>
 
@@ -198,11 +202,14 @@ export default function TankSetupPost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef log screen showing salinity reading of 1.025 logged with green "in range" indicator]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_TANK_SETUP_02.png"
+            alt="NextUpReef log screen showing salinity reading of 1.025 with green in range indicator"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
             Log your first salinity reading in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> and instantly see if you're in range. The app tracks your target of 1.024–1.026 and flags anything outside it.
           </p>
@@ -255,11 +262,14 @@ export default function TankSetupPost() {
         {/* App CTA */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef New Tank Guide dashboard card showing Phase 1 checklist with Tank Setup steps]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_TANK_SETUP_03.png"
+            alt="NextUpReef New Tank Guide showing Phase 1 Tank Setup with 6-phase journey timeline and What's happening section"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             Track every step with the New Tank Guide
           </p>

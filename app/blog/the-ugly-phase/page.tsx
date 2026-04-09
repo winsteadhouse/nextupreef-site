@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "The Ugly Phase: Why Your Reef Tank Looks Terrible (And Why That's Normal) — NextUpReef",
@@ -215,11 +216,14 @@ export default function UglyPhasePost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef reminders tab showing water change schedule set up with weekly frequency]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_UGLY_01.png"
+            alt="NextUpReef reminders tab showing water change schedule set up with 20% every 2 weeks frequency"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
             Set up a water change reminder in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> and the app will track your schedule, remind you when it's due, and log each change automatically so you never lose track of your maintenance history.
           </p>
@@ -253,11 +257,14 @@ export default function UglyPhasePost() {
         {/* App screenshot placeholder */}
         <div style={{
           background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
-          borderRadius: "16px", padding: "32px", marginBottom: "48px", textAlign: "center",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
-          <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", marginBottom: "8px", letterSpacing: "0.05em" }}>
-            [SCREENSHOT: NextUpReef Phase 3 checklist showing cleanup crew added, water change schedule set up, and 3 parameter logs complete]
-          </p>
+          <Image
+            src="/images/blog/SCREENSHOT_UGLY_02.png"
+            alt="NextUpReef Phase 3 checklist showing light schedule, water change, cleanup crew, and parameter logs all completed with Advance to First Livestock button"
+            width={320} height={580}
+            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+          />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             The New Tank Guide keeps you on track through the ugly phase
           </p>
