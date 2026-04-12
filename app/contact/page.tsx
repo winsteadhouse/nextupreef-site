@@ -4,19 +4,19 @@ import FAQList from "@/components/FAQList";
 export const metadata: Metadata = {
   title: "FAQ & Help — Reef Tank Tracking App | NextUpReef",
   description:
-    "Answers to common questions about NextUpReef — the free reef tank tracking app. Learn how to log parameters, understand Reef Score, set up reminders, and more.",
+    "Answers to common questions about NextUpReef — the free reef tank tracking app. Learn how to log parameters, understand Reef Score, use the New Tank Guide, set up reminders, and more.",
   alternates: {
     canonical: "https://nextupreef.com/contact",
   },
   openGraph: {
     title: "FAQ & Help — NextUpReef Reef Tank App",
     description:
-      "Common questions about logging reef parameters, Reef Score, water change reminders, and more in the NextUpReef app.",
+      "Common questions about logging reef parameters, Reef Score, the New Tank Guide, water change reminders, and more in the NextUpReef app.",
     url: "https://nextupreef.com/contact",
   },
 };
 
-// FAQPage schema — this gets Google to show accordion answers directly in search results
+// FAQPage schema — enables Google to show accordion answers directly in search results
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -26,7 +26,7 @@ const faqSchema = {
       name: "What is NextUpReef?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "NextUpReef is a free reef tank tracking app for iOS and Android. It lets you log saltwater aquarium parameters like alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, and temperature. It calculates a Reef Score and Stability Score, shows trend charts, sends water change and maintenance reminders, and lets you connect with other reefers in the community feed.",
+        text: "NextUpReef is a free reef tank tracking app for iOS and Android. It lets you log saltwater aquarium parameters like alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, and temperature. It calculates a Reef Score and Stability Score, shows trend charts, sends water change and maintenance reminders, includes a 6-phase New Tank Guide for new reefers, and lets you connect with other reefers in the community feed.",
       },
     },
     {
@@ -34,7 +34,23 @@ const faqSchema = {
       name: "Is NextUpReef free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. NextUpReef is completely free with no subscription, no in-app purchases, and no paywalls. All features including the Community feed are available to every user.",
+        text: "Yes. NextUpReef is completely free with no subscription, no in-app purchases, and no paywalls. All features including the Community feed and New Tank Guide are available to every user.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the New Tank Guide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The New Tank Guide is a built-in 6-phase journey that walks new reefers through their first year — from tank setup and cycling through the ugly phase, first fish, first corals, and an established reef. Each phase has a checklist, biological explanation, and links to detailed guides. It lives on your Dashboard and advances as you complete each phase.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the 6 phases of the New Tank Guide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Phase 1: Tank Setup. Phase 2: The Nitrogen Cycle. Phase 3: The Ugly Phase (algae blooms). Phase 4: First Livestock (first fish). Phase 5: Coral Ready (first corals). Phase 6: Established Reef. Each phase has a dedicated checklist and a full blog guide on nextupreef.com.",
       },
     },
     {

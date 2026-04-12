@@ -1,4 +1,46 @@
 const faqs = [
+  // ── New Tank Guide ───────────────────────────────────────────
+  {
+    category: "New Tank Guide",
+    q: "What is the New Tank Guide?",
+    a: "The New Tank Guide is a built-in 6-phase journey that walks you through your first year of reef keeping — from setting up your tank on day one all the way to an established reef with corals. It lives on your Dashboard and gives you a phase-by-phase checklist, explains what's happening in your tank biologically, and links to detailed blog guides for each phase. It's designed specifically for new reefers who want a structured, step-by-step path.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "What are the 6 phases?",
+    a: "Phase 1: Tank Setup — get your equipment running, fill with saltwater, add rock and sand. Phase 2: The Cycle — grow beneficial bacteria that convert ammonia to nitrite to nitrate. Phase 3: The Ugly Phase — survive the normal algae blooms (diatoms, hair algae, cyano) while your tank matures. Phase 4: First Livestock — add your first hardy fish, one at a time. Phase 5: Coral Ready — add your first corals starting with forgiving softies and zoas. Phase 6: Established Reef — your reef is maturing with stable parameters and growing corals.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "How do I start the New Tank Guide?",
+    a: "When you create a new tank, you'll be prompted to start the New Tank Guide. If you skip it during setup, you can enable it from the Dashboard — look for the 'Start New Tank Guide' card. If your tank is already several months old, the guide will suggest which phase you're most likely in based on your setup date so you can jump in at the right point.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "What is rock type and why does it matter in Phase 1?",
+    a: "During Phase 1, the guide asks whether you're using dry rock, live rock, or a mix. This changes your Phase 2 checklist significantly. Dry rock has no existing bacteria, so you'll need to dose ammonia and add bottled bacteria to start the nitrogen cycle. Live rock already has beneficial bacteria from the ocean and will produce its own ammonia spike from die-off during shipping — no dosing needed. The guide adjusts your checklist automatically based on your answer.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "Can I skip phases or move ahead early?",
+    a: "Yes. Each phase has a checklist of required steps — the guide won't advance automatically until those are complete, but you can always tap 'Skip ahead anyway' to move forward. This is useful if your tank was already partially set up before you started using NextUpReef. Required steps are marked REQ in the checklist. Optional steps are recommended but won't block you from advancing.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "What happens when I complete all 6 phases?",
+    a: "When you advance past Phase 6, you earn the 'Reef Established' badge and a celebration screen appears. The Journey card on your Dashboard transitions to show your established reef status. You keep all the badges you earned along the way — one per phase completed. The New Tank Guide is finished, and you're in full NextUpReef mode: tracking parameters, building your coral collection, and appearing in the community feed.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "Can I leave the guide and come back?",
+    a: "Yes. Go to Settings and find the New Tank Guide section. You can leave the guide at any time — this removes the Journey card from your Dashboard but keeps all your progress and badges. You can resume from Settings by tapping 'Resume New Tank Guide', which lets you pick up at the phase you were on. Leaving the guide never deletes any tank data, logs, or badges.",
+  },
+  {
+    category: "New Tank Guide",
+    q: "Do I need to use the New Tank Guide?",
+    a: "No — it's completely optional. If you already have an established tank or prefer to track without the guided structure, you can skip or exit the guide entirely and use NextUpReef normally. All the core features — logging, scores, reminders, community, analytics — work the same whether you're using the guide or not.",
+  },
+
   // ── Getting Started ──────────────────────────────────────────
   {
     category: "Getting Started",
