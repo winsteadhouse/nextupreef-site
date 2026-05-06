@@ -179,7 +179,7 @@ export default function HomePage() {
         </h1>
 
         <p style={{ fontSize: "18px", lineHeight: 1.65, color: "var(--text-muted)", margin: 0, maxWidth: "520px", fontWeight: 400 }}>
-          Log parameters in seconds, get AI-powered reef insights, and see how your tank compares to other reefers worldwide.
+          Log parameters in seconds, get AI-powered reef insights, and see exactly how your tank stacks up against other reefers.
         </p>
 
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
@@ -308,7 +308,8 @@ export default function HomePage() {
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, title: "Trend Analytics", desc: "Charts for every parameter with target ranges and water change markers.", tags: ["7D to 1Y", "WC markers"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>, title: "Smart Reminders", desc: "Never miss a water change, filter sock, or skimmer clean.", tags: ["Push alerts", "Auto-schedule"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>, title: "Reef Community", desc: "See inside top-ranked tanks — their params, salt, dosing, and equipment.", tags: ["Leaderboard", "Full analytics"] },
-            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, title: "Badges", desc: "Earn achievements for consistent testing, steady alk, water changes, and more.", tags: ["Habits", "Milestones"] },
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>, title: "Neptune Apex Integration", desc: "Connect your Apex and log temp, pH, salinity, ORP, and Trident readings (alk, ca, mg) directly from your controller into NextUpReef with one tap.", tags: ["Pro", "One-tap logging"] },
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>, title: "Badges & Milestones", desc: "Earn achievements for consistent testing, steady alk, water changes, and more.", tags: ["Habits", "Milestones"] },
           ].map(f => (
             <div key={f.title} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "var(--radius-lg)", padding: "28px 24px", display: "flex", flexDirection: "column", gap: "12px", transition: "all 0.2s ease" }} className="feature-card">
               <div style={{ width: 44, height: 44, borderRadius: 12, background: "var(--reef-glow)", border: "1px solid rgba(44,196,214,0.15)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--reef)" }}>{f.icon}</div>
