@@ -842,3 +842,24 @@ h1, h2, h3, h4 {
     gap: 6px;
   }
 }
+/* ?? Home page responsive grids ?? */
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.home-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: flex-end;
+}
+@media (max-width: 700px) {
+  .home-feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+}

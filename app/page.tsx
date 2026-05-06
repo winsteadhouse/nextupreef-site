@@ -212,7 +212,7 @@ export default function HomePage() {
         </p>
 
         {/* Row 1 */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", alignItems: "flex-end" }}>
+        <div className="home-screenshot-grid" style={{  }}>
           {ALL_SCREENSHOTS.slice(0, 3).map(s => (
             <div
               key={s.label}
@@ -242,7 +242,7 @@ export default function HomePage() {
         </div>
 
         {/* Row 2 */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginTop: "16px" }}>
+        <div className="home-screenshot-grid" style={{ marginTop: "16px" }}>
           {ALL_SCREENSHOTS.slice(3).map(s => (
             <div
               key={s.label}
@@ -277,7 +277,7 @@ export default function HomePage() {
           </h2>
           <p style={{ fontSize: "16px", color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto", lineHeight: 1.65 }}>New accounts get a free 30-day Pro trial. No credit card required.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "80px" }}>
+        <div className="home-feature-grid" style={{ marginBottom: "80px" }}>
           {[
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>, title: "Reef AI Advisor", desc: "Get a full AI analysis of your tank whenever you want. Covers parameters, equipment, livestock, dosing, and what to do next. Updates every 24 hours.", tags: ["Pro", "Personalized"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, title: "Ask Reef AI", desc: "Chat directly with AI that knows your tank. Ask why your alk is dropping, what corals suit your setup, or how to lower phosphate. 10 messages per day.", tags: ["Pro", "10 msgs/day"] },
@@ -302,7 +302,7 @@ export default function HomePage() {
             Built for serious reef keepers
           </h2>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
+        <div className="home-feature-grid" style={{ }>
           {[
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>, title: "Reef & Stability Score", desc: "Two live scores calculated from your real data — not guesswork.", tags: ["Live", "Weighted"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>, title: "Parameter Logging", desc: "Log Alk, Ca, Mg, NO3, PO4, and more in seconds. Last values pre-filled.", tags: ["10+ params", "Custom targets"] },

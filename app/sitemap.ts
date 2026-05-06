@@ -1,12 +1,10 @@
 import type { MetadataRoute } from "next";
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nextupreef.com";
   const now = new Date();
-
   return [
     {
-      url: baseUrl,
+      url: `${baseUrl}`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
@@ -37,12 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-    {
       url: `${baseUrl}/blog/ai-reef-tank-advisor`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.95,
     },
+    {
       url: `${baseUrl}/blog/best-reef-tank-tracking-app`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -59,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/blog/tank-setup`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/blog/cycling-your-tank`,
@@ -86,12 +90,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/established-reef`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog/tank-setup`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
