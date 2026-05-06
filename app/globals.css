@@ -854,12 +854,22 @@ h1, h2, h3, h4 {
   gap: 16px;
   align-items: flex-end;
 }
-@media (max-width: 700px) {
-  .home-feature-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 900px) {
+  .home-feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .home-feature-grid { grid-template-columns: 1fr; }
   .home-screenshot-grid {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
+    display: flex !important;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 12px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .home-screenshot-grid > div {
+    flex: 0 0 42vw;
+    scroll-snap-align: start;
   }
 }
