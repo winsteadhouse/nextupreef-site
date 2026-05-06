@@ -179,7 +179,7 @@ export default function HomePage() {
         </h1>
 
         <p style={{ fontSize: "18px", lineHeight: 1.65, color: "var(--text-muted)", margin: 0, maxWidth: "520px", fontWeight: 400 }}>
-          Log parameters in seconds, get a real Reef Score, and see how your tank compares to other reefers worldwide.
+          Log parameters in seconds, get AI-powered reef insights, and see how your tank compares to other reefers worldwide.
         </p>
 
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
@@ -271,7 +271,32 @@ export default function HomePage() {
       {/* ── FEATURES ── */}
       <section style={{ maxWidth: "960px", margin: "0 auto", padding: "100px 24px" }}>
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <div className="section-label">Everything you need</div>
+          <div className="section-label">AI-Powered Pro Features</div>
+          <h2 style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 900, margin: "12px 0 12px", letterSpacing: "-0.03em" }}>
+            Your reef. Powered by AI.
+          </h2>
+          <p style={{ fontSize: "16px", color: "var(--text-muted)", maxWidth: "520px", margin: "0 auto", lineHeight: 1.65 }}>New accounts get a free 30-day Pro trial. No credit card required.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "80px" }}>
+          {[
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>, title: "Reef AI Advisor", desc: "Get a full AI analysis of your tank whenever you want. Covers parameters, equipment, livestock, dosing, and what to do next. Updates every 24 hours.", tags: ["Pro", "Personalized"] },
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, title: "Ask Reef AI", desc: "Chat directly with AI that knows your tank. Ask why your alk is dropping, what corals suit your setup, or how to lower phosphate. 10 messages per day.", tags: ["Pro", "10 msgs/day"] },
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>, title: "AI Photo Logging", desc: "Point your camera at any test kit and AI reads the values for you. Works with Hanna, API, Red Sea, Salifert, Milwaukee, and more.", tags: ["Pro", "Any test kit"] },
+          ].map(f => (
+            <div key={f.title} style={{ background: "linear-gradient(135deg, rgba(44,196,214,0.06) 0%, rgba(44,196,214,0.02) 100%)", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "var(--radius-lg)", padding: "28px 24px", display: "flex", flexDirection: "column", gap: "12px" }} className="feature-card">
+              <div style={{ width: 44, height: 44, borderRadius: 12, background: "var(--reef-glow)", border: "1px solid rgba(44,196,214,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--reef)" }}>{f.icon}</div>
+              <div>
+                <h3 style={{ fontSize: "17px", fontWeight: 900, margin: "0 0 6px", color: "var(--text-light)" }}>{f.title}</h3>
+                <p style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0, fontWeight: 500 }}>{f.desc}</p>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "auto" }}>
+                {f.tags.map(t => <span key={t} style={{ fontSize: "11px", fontWeight: 700, padding: "4px 10px", borderRadius: "999px", background: "rgba(44,196,214,0.07)", border: "1px solid rgba(44,196,214,0.15)", color: "var(--reef)" }}>{t}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <div className="section-label">Free Features</div>
           <h2 style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 900, margin: "12px 0 0", letterSpacing: "-0.03em" }}>
             Built for serious reef keepers
           </h2>
@@ -304,7 +329,7 @@ export default function HomePage() {
         <div className="container-narrow">
           <div className="cta-card">
             <h2>Stop guessing.<br />Start tracking.</h2>
-            <p>Free to use. No subscription. No ads. Just better reef keeping.</p>
+            <p>Free to download. 30-day Pro trial included. No credit card required.</p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
               <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className="btn primary large">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>

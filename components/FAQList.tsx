@@ -280,11 +280,26 @@ const faqs = [
     q: "Will my email be used for marketing?",
     a: "By agreeing to our Terms of Service when creating your account, you acknowledge that your email may be used to send product updates, reef tips, and occasional announcements from NextUpReef. You can unsubscribe from any marketing email at any time. We never sell your email to third parties.",
   },
-  {
-    category: "Account & Privacy",
-    q: "Is NextUpReef really free?",
-    a: "Yes. NextUpReef is completely free with no subscription, no in-app purchases, and no paywalls. All features including the Community feed are available to every user.",
+  
+{    category: 'Account & Privacy',
+    q: 'Is NextUpReef really free?',
+    a: 'NextUpReef is free to download with a generous free plan. New accounts get a free 30-day Pro trial with no credit card required. After the trial, the free plan includes parameter logging, Reef & Stability Scores, charts up to 90 days, up to 3 reminders, and community access. Pro adds AI tools, advanced analytics, tank journal, Apex integration, and unlimited reminders at $4.99/month or $39.99/year.',
   },
+  // ?? Pro & Subscription ??????????????????????????????????????
+  {    category: 'Pro & Subscription', q: 'What is the 30-day Pro trial?', a: 'Every new account gets full Pro access free for 30 days with no credit card required. At the end of the trial you can subscribe to keep Pro, or continue on the free plan. No charges happen automatically.' },
+  {    category: 'Pro & Subscription', q: 'What does Pro include?', a: 'Pro includes: Reef AI Advisor & Chat, AI Photo Parameter Logging, Tank Journal with photos, full historical analytics (6M, 1Y, All), Neptune Apex integration, unlimited reminders, and multiple tanks.' },
+  {    category: 'Pro & Subscription', q: 'How much does Pro cost?', a: 'Pro is $4.99/month or $39.99/year (save 33%, just $3.33/month). New accounts get a 30-day free trial. Cancel anytime from your App Store or Google Play settings.' },
+  {    category: 'Pro & Subscription', q: 'What happens when my trial ends?', a: 'After 30 days your account moves to the free plan. All your data stays intact. You lose access to Pro-only features until you subscribe, but nothing is deleted. The app shows a banner with the option to upgrade.' },
+  {    category: 'Pro & Subscription', q: 'How do I restore a previous purchase?', a: 'Go to Settings > NextUpReef Pro > Restore Purchases. This restores any active subscription linked to your Apple ID or Google account.' },
+  // ?? AI Features ?????????????????????????????????????????????
+  {    category: 'AI Features', q: 'What is Reef AI Advisor?', a: 'Reef AI Advisor generates a full analysis of your tank based on your actual data -- parameters, trends, equipment, livestock, dosing, and water change history. It tells you what is going well, what needs attention, and specific actions to take. Refreshes every 24 hours. Pro feature.' },
+  {    category: 'AI Features', q: 'What can I ask Reef AI Chat?', a: 'Anything reef-related -- why is my alkalinity dropping, what corals suit my tank type, is my nitrate too high for SPS, how do I reduce phosphate, and more. The AI knows your specific tank setup. You get 10 messages per day on Pro.' },
+  {    category: 'AI Features', q: 'How does AI Photo Parameter Logging work?', a: 'Tap AI Scan on the Log tab, take a photo of your test kit, and AI reads the values and fills in the log form for you. Works with Hanna checkers, API, Red Sea, Salifert, Milwaukee, and more. You review values before saving. Pro feature.' },
+  {    category: 'AI Features', q: 'Does the AI know about my specific tank?', a: 'Yes. The AI has full context about your tank -- type, size, parameters, equipment, livestock, dosing, and water change schedule. Answers are specific to your setup, not generic reef advice.' },
+  {    category: 'AI Features', q: 'How often can I run the Reef AI Analysis?', a: 'Once every 24 hours. Your last analysis is always visible. A countdown in the app shows exactly when your next refresh is available.' },
+  // ?? Neptune Apex ?????????????????????????????????????????????
+  {    category: 'Neptune Apex Integration', q: 'How does Neptune Apex integration work?', a: 'Connect your Apex in Settings > My Tank > Neptune Apex. Enter your Apex local IP address, username, and password. NextUpReef pulls temperature, pH, salinity, ORP, and Trident readings (alk, ca, mg) directly from your controller. Must be on same WiFi as Apex. Pro feature.' },
+  {    category: 'Neptune Apex Integration', q: 'What data does NextUpReef pull from my Apex?', a: 'Temperature, pH, salinity, ORP, and if you have a Trident: alkalinity, calcium, and magnesium. These map directly to NextUpReef parameter fields.' },
 ];
 
 const categories = [...new Set(faqs.map(f => f.category))];

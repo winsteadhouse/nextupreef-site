@@ -34,7 +34,7 @@ const faqSchema = {
       name: "Is NextUpReef free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. NextUpReef is completely free with no subscription, no in-app purchases, and no paywalls. All features including the Community feed and New Tank Guide are available to every user.",
+        text: "NextUpReef is free to download. New accounts get a free 30-day Pro trial with no credit card required. The free plan includes parameter logging, Reef and Stability Scores, charts, reminders, and community access. Pro adds Reef AI Advisor and Chat, AI Photo Parameter Logging, Tank Journal, advanced analytics, Neptune Apex integration, and unlimited reminders at $4.99/month or $39.99/year.",
       },
     },
     {
