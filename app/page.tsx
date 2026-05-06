@@ -212,7 +212,7 @@ export default function HomePage() {
         </p>
 
         {/* Row 1 */}
-        <div className="home-screenshot-grid" style={{  }}>
+        <div className="home-screenshot-grid">
           {ALL_SCREENSHOTS.slice(0, 3).map(s => (
             <div
               key={s.label}
@@ -282,7 +282,7 @@ export default function HomePage() {
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>, title: "Reef AI Advisor", desc: "Get a full AI analysis of your tank whenever you want. Covers parameters, equipment, livestock, dosing, and what to do next. Updates every 24 hours.", tags: ["Pro", "Personalized"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>, title: "Ask Reef AI", desc: "Chat directly with AI that knows your tank. Ask why your alk is dropping, what corals suit your setup, or how to lower phosphate. 10 messages per day.", tags: ["Pro", "10 msgs/day"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>, title: "AI Photo Logging", desc: "Point your camera at any test kit and AI reads the values for you. Works with Hanna, API, Red Sea, Salifert, Milwaukee, and more.", tags: ["Pro", "Any test kit"] },
-            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>, title: "Neptune Apex Integration", desc: "Connect your Apex and log temp, pH, salinity, ORP, and Trident readings (alk, ca, mg) directly into NextUpReef with one tap. No manual entry needed.", tags: ["Pro", "One-tap logging"] },
+            { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>, title: "Neptune Apex Integration", desc: "Connect your Apex and log temp, pH, salinity, ORP, and Trident readings (alk, ca, mg) directly from your controller into NextUpReef with one tap.", tags: ["Pro", "One-tap logging"] },
           ].map(f => (
             <div key={f.title} style={{ background: "linear-gradient(135deg, rgba(44,196,214,0.06) 0%, rgba(44,196,214,0.02) 100%)", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "var(--radius-lg)", padding: "28px 24px", display: "flex", flexDirection: "column", gap: "12px" }} className="feature-card">
               <div style={{ width: 44, height: 44, borderRadius: 12, background: "var(--reef-glow)", border: "1px solid rgba(44,196,214,0.2)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--reef)" }}>{f.icon}</div>
@@ -302,7 +302,7 @@ export default function HomePage() {
             Built for serious reef keepers
           </h2>
         </div>
-        <div className="home-feature-grid" style={{ }>
+        <div className="home-feature-grid">
           {[
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>, title: "Reef & Stability Score", desc: "Two live scores calculated from your real data — not guesswork.", tags: ["Live", "Weighted"] },
             { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>, title: "Parameter Logging", desc: "Log Alk, Ca, Mg, NO3, PO4, and more in seconds. Last values pre-filled.", tags: ["10+ params", "Custom targets"] },
