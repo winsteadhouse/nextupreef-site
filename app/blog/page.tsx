@@ -78,6 +78,16 @@ const posts = [
     series: "New Tank Journey · Phase 6",
   },
   {
+    slug: "ai-reef-tank-advisor",
+    title: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef",
+    description:
+      "How NextUpReef uses AI to analyze your reef tank parameters, equipment, and livestock giving you personalized advice, answering reef questions, and reading test kits from a photo.",
+    date: "May 2026",
+    readTime: "7 min read",
+    tags: ["AI Features", "Pro"],
+    series: null,
+  },
+  {
     slug: "best-reef-tank-tracking-app",
     title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
     description:

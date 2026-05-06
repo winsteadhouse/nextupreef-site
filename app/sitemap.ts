@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+    {
+      url: `${baseUrl}/blog/ai-reef-tank-advisor`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
       url: `${baseUrl}/blog/best-reef-tank-tracking-app`,
       lastModified: now,
       changeFrequency: "monthly",
