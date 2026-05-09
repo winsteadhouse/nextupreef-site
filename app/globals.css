@@ -976,3 +976,23 @@ h1, h2, h3, h4 {
   width: auto !important;
   max-width: 100% !important;
 }
+
+/* Spotlight phone size fix */
+.feature-spotlight-phone img {
+  max-height: 60vh !important;
+  width: auto !important;
+  max-width: 300px !important;
+}
+
+/* Hero, AI and Community phone size fix */
+.home-hero-phone img {
+  max-height: 55vh !important;
+  width: auto !important;
+  max-width: 260px !important;
+}
+
+.feature-spotlight-phone img {
+  max-height: 55vh !important;
+  width: auto !important;
+  max-width: 260px !important;
+}
