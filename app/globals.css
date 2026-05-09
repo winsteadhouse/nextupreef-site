@@ -996,3 +996,11 @@ h1, h2, h3, h4 {
   width: auto !important;
   max-width: 260px !important;
 }
+
+/* Tighten section spacing */
+.feature-spotlight {
+  padding: 60px 24px !important;
+}
+.phone-trio-section {
+  padding: 60px 24px !important;
+}
