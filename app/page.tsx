@@ -72,7 +72,7 @@ const PlayIcon = () => (
 );
 
 const DownloadButtons = ({ large }: { large?: boolean }) => (
-  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "flex-start" }}>
     <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className={large ? "btn primary large" : "btn primary"}>
       <AppleIcon /> App Store
     </a>
@@ -119,9 +119,7 @@ export default function HomePage() {
 
           <DownloadButtons />
 
-          <p style={{ fontSize: "13px", color: "var(--text-muted)", margin: 0, fontWeight: 500 }}>
-            Free to download &middot; 30-day Pro trial included
-          </p>
+
         </div>
 
         <div className="home-hero-phone">
@@ -190,7 +188,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ width: "100%", maxWidth: "480px", height: "auto" }} />
+            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ width: "100%", maxWidth: "380px", height: "auto" }} />
           </div>
         </div>
       </section>
@@ -199,7 +197,7 @@ export default function HomePage() {
       <section style={{ padding: "60px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ width: "100%", maxWidth: "480px", height: "auto" }} />
+            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ width: "100%", maxWidth: "380px", height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Your Reef. Your Community.</div>
