@@ -142,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* WHAT IT DOES */}
-      <section style={{ padding: "80px 24px", maxWidth: "960px", margin: "0 auto" }}>
+      <section style={{ padding: "80px 48px", maxWidth: "1400px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <h2 style={{ fontSize: "clamp(26px, 4vw, 40px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em" }}>
             Everything your reef needs

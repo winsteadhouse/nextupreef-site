@@ -942,3 +942,16 @@ h1, h2, h3, h4 {
 /* Phone size fix */
 .phone-trio { max-width: 1200px; margin-left: auto; margin-right: auto; gap: 48px; }
 .phone-trio img { max-width: 100% !important; }
+
+/* Force phones bigger */
+.phone-trio {
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  gap: 48px !important;
+}
+.phone-trio > div > img {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 280px;
+}
