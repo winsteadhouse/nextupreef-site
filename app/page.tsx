@@ -72,7 +72,7 @@ const PlayIcon = () => (
 );
 
 const DownloadButtons = ({ large }: { large?: boolean }) => (
-  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
     <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className={large ? "btn primary large" : "btn primary"}>
       <AppleIcon /> App Store
     </a>
@@ -132,9 +132,9 @@ export default function HomePage() {
             pointerEvents: "none",
           }} />
           <Image
-            src="/screenshots/phone-home-v2.png"
+            src="/screenshots/phone-home-hero.png"
             alt="NextUpReef dashboard showing AI advice, Reef Score, and water parameters"
-            width={446} height={988}
+            width={1363} height={1076}
             priority
             style={{ width: "100%", maxWidth: "380px", height: "auto", position: "relative", zIndex: 1 }}
           />
@@ -155,7 +155,7 @@ export default function HomePage() {
             { img: "/screenshots/phone-reminders-v2.png", alt: "Mantenance reminders", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
           ].map((item) => (
             <div key={item.title} className="phone-trio-item">
-              <Image src={item.img} alt={item.alt} width={446} height={988} style={{ width: "100%", height: "auto" }} />
+              <Image src={item.img} alt={item.alt} width={1363} height={1076} style={{ width: "100%", height: "auto" }} />
               <div style={{ textAlign: "center", maxWidth: "260px" }}>
                 <h3 style={{ fontSize: "18px", fontWeight: 900, margin: "0 0 8px", color: "var(--text-light)" }}>{item.title}</h3>
                 <p style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
@@ -190,7 +190,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={446} height={988} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
+            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={1363} height={1076} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
           </div>
         </div>
       </section>
@@ -199,7 +199,7 @@ export default function HomePage() {
       <section style={{ padding: "100px 24px", maxWidth: "960px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={446} height={988} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
+            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={1363} height={1076} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Your Reef. Your Community.</div>
