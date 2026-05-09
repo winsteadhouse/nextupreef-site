@@ -969,3 +969,10 @@ h1, h2, h3, h4 {
     max-width: 280px;
   }
 }
+
+/* Trio size fix - constrain phone height to viewport */
+.phone-trio-item img {
+  max-height: 65vh;
+  width: auto !important;
+  max-width: 100% !important;
+}
