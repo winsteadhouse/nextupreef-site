@@ -188,7 +188,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ width: "100%", maxWidth: "380px", height: "auto" }} />
+            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ height: "auto" }} />
           </div>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function HomePage() {
       <section style={{ padding: "60px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ width: "100%", maxWidth: "380px", height: "auto" }} />
+            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Your Reef. Your Community.</div>
@@ -251,7 +251,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-journey-v2.png" alt="Tank Journey guide showing new reefer setup phases and checklists" width={1017} height={1168} style={{ width: "100%", height: "auto" }} />
+            <Image src="/screenshots/phone-journey-v2.png" alt="Tank Journey guide showing new reefer setup phases and checklists" width={574} height={1146} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

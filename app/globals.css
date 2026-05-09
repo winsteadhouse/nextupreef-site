@@ -1066,3 +1066,10 @@ h1, h2, h3, h4 {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* DEFINITIVE spotlight phone size - constrain by height */
+.feature-spotlight-phone img {
+  max-height: 520px !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
