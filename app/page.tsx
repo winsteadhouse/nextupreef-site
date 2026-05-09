@@ -72,7 +72,7 @@ const PlayIcon = () => (
 );
 
 const DownloadButtons = ({ large }: { large?: boolean }) => (
-  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "flex-start" }}>
+  <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: large ? "center" : "flex-start" }}>
     <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className={large ? "btn primary large" : "btn primary"}>
       <AppleIcon /> App Store
     </a>

@@ -1035,3 +1035,34 @@ h1, h2, h3, h4 {
   max-width: 380px !important;
   max-height: none !important;
 }
+
+/* Hero phone glow */
+.home-hero-phone {
+  position: relative;
+}
+.home-hero-phone::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(44,196,214,0.25) 0%, rgba(139,92,246,0.15) 40%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+.home-hero-phone img {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 20px 60px rgba(44,196,214,0.2)) drop-shadow(0 0 30px rgba(139,92,246,0.15));
+}
+
+/* CTA buttons centered */
+.cta-card .btn-wrap {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
