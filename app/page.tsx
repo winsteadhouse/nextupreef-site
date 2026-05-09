@@ -136,7 +136,7 @@ export default function HomePage() {
             alt="NextUpReef dashboard showing AI advice, Reef Score, and water parameters"
             width={1363} height={1076}
             priority
-            style={{ width: "100%", maxWidth: "380px", height: "auto", position: "relative", zIndex: 1 }}
+            style={{ width: "140%", maxWidth: "680px", height: "auto", position: "relative", zIndex: 1, marginLeft: "-20%" }}
           />
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function HomePage() {
 
       {/* AI SECTION */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", borderBottom: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(44,196,214,0.05) 0%, transparent 60%)", padding: "100px 24px" }}>
-        <div style={{ maxWidth: "960px", margin: "0 auto" }} className="feature-spotlight">
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="feature-spotlight">
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">AI-Powered</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your reef advisor<br />is already in the app.</h2>
@@ -190,16 +190,16 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={1363} height={1076} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
+            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ width: "100%", maxWidth: "480px", height: "auto" }} />
           </div>
         </div>
       </section>
 
       {/* MY REEF SECTION */}
-      <section style={{ padding: "100px 24px", maxWidth: "960px", margin: "0 auto" }}>
+      <section style={{ padding: "60px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={1363} height={1076} style={{ width: "100%", maxWidth: "400px", height: "auto" }} />
+            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ width: "100%", maxWidth: "480px", height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Your Reef. Your Community.</div>

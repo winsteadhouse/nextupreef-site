@@ -1004,3 +1004,28 @@ h1, h2, h3, h4 {
 .phone-trio-section {
   padding: 60px 24px !important;
 }
+
+/* BIGGER PHONES - aggressive overrides */
+.home-hero-phone img {
+  max-height: 80vh !important;
+  width: auto !important;
+  max-width: 700px !important;
+}
+.feature-spotlight-phone img {
+  max-height: 80vh !important;
+  width: 100% !important;
+  max-width: 480px !important;
+}
+
+/* FINAL phone size overrides - wins everything */
+.home-hero-phone img {
+  max-height: none !important;
+  width: 140% !important;
+  max-width: 680px !important;
+  margin-left: -20% !important;
+}
+.feature-spotlight-phone img {
+  max-height: none !important;
+  width: 100% !important;
+  max-width: 480px !important;
+}
