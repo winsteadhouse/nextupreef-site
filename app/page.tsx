@@ -16,7 +16,7 @@ const softwareAppSchema = {
     "https://play.google.com/store/apps/details?id=com.nextupreef.app",
   ],
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-  screenshot: "https://nextupreef.com/screenshots/phone-home.png",
+  screenshot: "https://nextupreef.com/screenshots/phone-home-v2.png",
   featureList: [
     "AI-powered reef tank analysis every 24 hours",
     "Ask Reef AI — chat with AI that knows your tank",
@@ -132,11 +132,11 @@ export default function HomePage() {
             pointerEvents: "none",
           }} />
           <Image
-            src="/screenshots/phone-home.png"
+            src="/screenshots/phone-home-v2.png"
             alt="NextUpReef dashboard showing AI advice, Reef Score, and water parameters"
             width={446} height={988}
             priority
-            style={{ width: "100%", maxWidth: "300px", height: "auto", position: "relative", zIndex: 1 }}
+            style={{ width: "100%", maxWidth: "360px", height: "auto", position: "relative", zIndex: 1 }}
           />
         </div>
       </section>
@@ -150,9 +150,9 @@ export default function HomePage() {
         </div>
         <div className="phone-trio">
           { [
-            { img: "/screenshots/phone-log.png", alt: "Log reef parameters", title: "Log in seconds", desc: "Alk, Ca, Mg, NO3, PO4, salinity, pH, and more. Last values pre-filled. Color-coded against your targets." },
-            { img: "/screenshots/phone-charts.png", alt: "Parameter trend charts", title: "See the trends", desc: "Charts for every parameter with target range bands and water change markers. See exactly when things shifted." },
-            { img: "/screenshots/phone-reminders.png", alt: "Mantenance reminders", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
+            { img: "/screenshots/phone-log-v2.png", alt: "Log reef parameters", title: "Log in seconds", desc: "Alk, Ca, Mg, NO3, PO4, salinity, pH, and more. Last values pre-filled. Color-coded against your targets." },
+            { img: "/screenshots/phone-charts-v2.png", alt: "Parameter trend charts", title: "See the trends", desc: "Charts for every parameter with target range bands and water change markers. See exactly when things shifted." },
+            { img: "/screenshots/phone-reminders-v2.png", alt: "Mantenance reminders", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
           ].map((item) => (
             <div key={item.title} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "24px" }}>
               <Image src={item.img} alt={item.alt} width={446} height={988} style={{ width: "100%", height: "auto" }} />
@@ -189,7 +189,7 @@ export default function HomePage() {
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Image src="/screenshots/phone-ai.png" alt="Ask Reef AI answering why pH drops at night" width={446} height={988} style={{ width: "100%", maxWidth: "280px", height: "auto" }} />
+            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={446} height={988} style={{ width: "100%", maxWidth: "340px", height: "auto" }} />
           </div>
         </div>
       </section>
@@ -198,7 +198,7 @@ export default function HomePage() {
       <section style={{ padding: "100px 24px", maxWidth: "960px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Image src="/screenshots/phone-reef-hub.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={446} height={988} style={{ width: "100%", maxWidth: "280px", height: "auto" }} />
+            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={446} height={988} style={{ width: "100%", maxWidth: "340px", height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Your Reef. Your Community.</div>
