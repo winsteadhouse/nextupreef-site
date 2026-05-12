@@ -119,7 +119,7 @@ export default function FirstLivestockPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_LIVESTOCK_01.png"
+            src="/screenshots/phone-home-v2.png"
             alt="NextUpReef log screen showing ammonia and nitrite at 0 ppm before adding first fish"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
@@ -351,7 +351,7 @@ export default function FirstLivestockPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "32px",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_LIVESTOCK_02.png"
+            src="/screenshots/phone-reef-hub-v2.png"
             alt="NextUpReef tank tab showing first fish added with health tracking"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}

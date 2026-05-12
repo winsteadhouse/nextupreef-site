@@ -201,7 +201,7 @@ export default function EstablishedReefPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "32px",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_ESTABLISHED_01.png"
+            src="/screenshots/phone-home-v2.png"
             alt="NextUpReef dashboard showing established reef with high stability score"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
@@ -328,7 +328,7 @@ export default function EstablishedReefPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "16px",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_ESTABLISHED_02.png"
+            src="/screenshots/phone-ai-v2.png"
             alt="NextUpReef community feed showing established reef with high scores"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}

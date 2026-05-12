@@ -212,7 +212,7 @@ export default function AddingFirstCoralsPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_CORALS_01.png"
+            src="/screenshots/phone-charts-v2.png"
             alt="NextUpReef log screen showing Alkalinity, Calcium, and Magnesium tracked for coral health"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
@@ -312,7 +312,7 @@ export default function AddingFirstCoralsPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_CORALS_02.png"
+            src="/screenshots/phone-ai-v2.png"
             alt="NextUpReef New Tank Guide Phase 5 checklist showing coral-ready requirements"
             width={320} height={580}
             style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}

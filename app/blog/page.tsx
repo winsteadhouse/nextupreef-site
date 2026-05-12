@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 const posts = [
+  // ===== NEW TANK JOURNEY SERIES =====
   {
     slug: "tank-setup",
     title: "How to Set Up a Reef Tank: A Beginner's Complete Guide",
@@ -26,6 +27,7 @@ const posts = [
     readTime: "8 min read",
     tags: ["Beginner Guide", "Tank Setup"],
     series: "New Tank Journey · Phase 1",
+    category: "journey",
   },
   {
     slug: "cycling-your-tank",
@@ -36,6 +38,7 @@ const posts = [
     readTime: "9 min read",
     tags: ["Beginner Guide", "The Cycle"],
     series: "New Tank Journey · Phase 2",
+    category: "journey",
   },
   {
     slug: "the-ugly-phase",
@@ -46,6 +49,7 @@ const posts = [
     readTime: "7 min read",
     tags: ["Beginner Guide", "Algae"],
     series: "New Tank Journey · Phase 3",
+    category: "journey",
   },
   {
     slug: "first-livestock",
@@ -56,6 +60,7 @@ const posts = [
     readTime: "8 min read",
     tags: ["Beginner Guide", "Fish"],
     series: "New Tank Journey · Phase 4",
+    category: "journey",
   },
   {
     slug: "adding-first-corals",
@@ -66,6 +71,7 @@ const posts = [
     readTime: "9 min read",
     tags: ["Beginner Guide", "Corals", "Alkalinity"],
     series: "New Tank Journey · Phase 5",
+    category: "journey",
   },
   {
     slug: "established-reef",
@@ -76,7 +82,98 @@ const posts = [
     readTime: "10 min read",
     tags: ["Advanced Guide", "Dosing", "Refugium"],
     series: "New Tank Journey · Phase 6",
+    category: "journey",
   },
+  // ===== REEF AQUARIUM GUIDES =====
+  {
+    slug: "nano-reef-tank-guide",
+    title: "Nano Reef Tank Guide: 10, 20, and 40 Gallon Setups That Actually Work",
+    description:
+      "Complete guide to nano reef tanks — pico, nano, and mini reef setups from 5 to 40 gallons. Equipment, livestock, parameters, and the small-tank mistakes most beginners make.",
+    date: "May 9, 2026",
+    readTime: "9 min read",
+    tags: ["Nano Reef", "Beginner Guide", "Tank Setup"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "reef-tank-ph-guide",
+    title: "Reef Tank pH: How to Test, Track, and Raise It Safely",
+    description:
+      "Complete guide to reef tank pH — target ranges, why pH swings, how to raise low pH safely, and how to track daily trends without obsessing over a single number.",
+    date: "May 9, 2026",
+    readTime: "8 min read",
+    tags: ["pH", "Water Chemistry", "Troubleshooting"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "reef-tank-sump-guide",
+    title: "Reef Tank Sump Guide: Do You Need One, and How to Set It Up",
+    description:
+      "Complete guide to reef tank sumps — what they do, what size you need, how to plumb one, and whether your tank actually needs a sump or if an all-in-one will do.",
+    date: "May 9, 2026",
+    readTime: "9 min read",
+    tags: ["Sump", "Equipment", "Tank Setup"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "reef-tank-salinity-guide",
+    title: "Reef Tank Salinity: Targets, Testing, and How to Adjust It Safely",
+    description:
+      "Complete guide to reef tank salinity — ideal ranges, how to test with a refractometer, what causes salinity swings, and how to adjust without shocking your corals.",
+    date: "May 9, 2026",
+    readTime: "7 min read",
+    tags: ["Salinity", "Water Chemistry", "Testing"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "reef-tank-temperature-guide",
+    title: "Reef Tank Temperature: Ideal Range and How to Control It",
+    description:
+      "Complete guide to reef tank temperature — ideal range, summer cooling, winter heating, heater sizing, controllers, and how to prevent the swings that crash tanks.",
+    date: "May 9, 2026",
+    readTime: "8 min read",
+    tags: ["Temperature", "Equipment", "Stability"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "cyanobacteria-dinoflagellates-algae-reef-pests",
+    title: "Cyanobacteria, Dinoflagellates & Green Hair Algae: How to Beat the Three Reef Tank Pests",
+    description:
+      "Complete guide to cyanobacteria, dinoflagellates, and green hair algae in reef tanks — how to identify each one, what causes them, and how to get rid of them safely.",
+    date: "May 9, 2026",
+    readTime: "10 min read",
+    tags: ["Pests", "Troubleshooting", "Nuisance Algae"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "frag-tank-setup-guide",
+    title: "Frag Tank Setup Guide: Coral Propagation Made Simple",
+    description:
+      "Complete guide to setting up a frag tank for coral propagation — sizing, lighting, flow, racks, plumbing into your display, and how to grow out coral frags for sale or trade.",
+    date: "May 9, 2026",
+    readTime: "9 min read",
+    tags: ["Frag Tank", "Coral Propagation", "Tank Setup"],
+    series: null,
+    category: "reef",
+  },
+  {
+    slug: "live-rock-vs-dry-rock",
+    title: "Live Rock vs Dry Rock: Which Is Right for Your Reef Tank?",
+    description:
+      "Complete comparison of live rock vs dry rock for reef tanks — pros, cons, cycling time, pest risk, cost, and how to decide which is right for your build.",
+    date: "May 9, 2026",
+    readTime: "8 min read",
+    tags: ["Live Rock", "Dry Rock", "Tank Setup"],
+    series: null,
+    category: "reef",
+  },
+  // ===== NEXTUPREEF APP GUIDES =====
   {
     slug: "ai-reef-tank-advisor",
     title: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef",
@@ -86,6 +183,7 @@ const posts = [
     readTime: "7 min read",
     tags: ["AI Features", "Pro"],
     series: null,
+    category: "app",
   },
   {
     slug: "best-reef-tank-tracking-app",
@@ -96,6 +194,7 @@ const posts = [
     readTime: "6 min read",
     tags: ["App Comparison", "Free Apps"],
     series: null,
+    category: "app",
   },
   {
     slug: "how-to-track-saltwater-aquarium-parameters",
@@ -106,6 +205,7 @@ const posts = [
     readTime: "8 min read",
     tags: ["Parameter Tracking", "Beginner Guide"],
     series: null,
+    category: "app",
   },
   {
     slug: "reef-tank-alkalinity-calcium-magnesium-guide",
@@ -116,11 +216,13 @@ const posts = [
     readTime: "7 min read",
     tags: ["Alk / Cal / Mag", "Water Chemistry"],
     series: null,
+    category: "app",
   },
 ];
 
-const journeyPosts = posts.filter(p => p.series?.startsWith("New Tank Journey"));
-const otherPosts = posts.filter(p => !p.series?.startsWith("New Tank Journey"));
+const journeyPosts = posts.filter(p => p.category === "journey");
+const reefPosts = posts.filter(p => p.category === "reef");
+const appPosts = posts.filter(p => p.category === "app");
 
 export default function BlogPage() {
   return (
@@ -136,7 +238,7 @@ export default function BlogPage() {
           Parameter tracking tips, app guides, and reef keeping best practices.
         </p>
 
-        {/* New Tank Journey series callout */}
+        {/* ===== NEW TANK JOURNEY series callout ===== */}
         <div style={{
           background: "rgba(61, 26, 110, 0.15)", border: "1px solid rgba(61, 26, 110, 0.4)",
           borderRadius: "16px", padding: "20px 24px", marginBottom: "32px",
@@ -151,13 +253,13 @@ export default function BlogPage() {
               New Tank Journey: The Complete New Reefer's Guide
             </p>
             <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-              Six-part series covering every phase of your first reef tank — from day one setup through cycling, the ugly phase, first fish, first corals, and an established reef.
+              Six-part series matching the in-app New Tank Journey — every phase of your first reef tank, from day one setup through cycling, the ugly phase, first fish, first corals, and an established reef.
             </p>
           </div>
         </div>
 
         {/* Journey series posts */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "48px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "64px" }}>
           {journeyPosts.map((post) => (
             <Link
               key={post.slug}
@@ -201,15 +303,66 @@ export default function BlogPage() {
           ))}
         </div>
 
+        {/* ===== REEF AQUARIUM GUIDES ===== */}
+        <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "8px", color: "var(--text-light)" }}>
+          Reef Aquarium Guides
+        </h2>
+        <p style={{ color: "var(--text-muted)", fontSize: "15px", marginBottom: "24px" }}>
+          Deep-dive guides on reef tank chemistry, equipment, pests, and propagation.
+        </p>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "64px" }}>
+          {reefPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              style={{
+                display: "block",
+                background: "rgba(44, 196, 214, 0.04)",
+                border: "1px solid rgba(44, 196, 214, 0.18)",
+                borderRadius: "20px",
+                padding: "28px 32px",
+                textDecoration: "none",
+              }}
+            >
+              <div style={{ display: "flex", gap: "8px", marginBottom: "12px", flexWrap: "wrap" }}>
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      fontSize: "12px", fontWeight: "700", padding: "4px 12px",
+                      borderRadius: "999px", background: "rgba(44, 196, 214, 0.08)",
+                      border: "1px solid rgba(44, 196, 214, 0.12)", color: "var(--reef)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 style={{ fontSize: "20px", fontWeight: "900", marginBottom: "8px", color: "var(--text-light)", lineHeight: "1.3" }}>
+                {post.title}
+              </h3>
+              <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.7", margin: "0 0 12px 0" }}>
+                {post.description}
+              </p>
+              <p style={{ color: "var(--text-muted)", fontSize: "13px", fontWeight: "700", margin: 0 }}>
+                {post.date} · {post.readTime}
+              </p>
+            </Link>
+          ))}
+        </div>
+
         {/* Divider */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginBottom: "48px" }} />
 
-        {/* Other posts */}
-        <h2 style={{ fontSize: "22px", fontWeight: "900", marginBottom: "24px", color: "var(--text-light)" }}>
-          More Guides
+        {/* ===== NEXTUPREEF APP GUIDES ===== */}
+        <h2 style={{ fontSize: "22px", fontWeight: "900", marginBottom: "8px", color: "var(--text-light)" }}>
+          NextUpReef App Guides
         </h2>
+        <p style={{ color: "var(--text-muted)", fontSize: "15px", marginBottom: "24px" }}>
+          App features, parameter tracking how-tos, and tools for getting more from NextUpReef.
+        </p>
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-          {otherPosts.map((post) => (
+          {appPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
@@ -236,9 +389,9 @@ export default function BlogPage() {
                   </span>
                 ))}
               </div>
-              <h2 style={{ fontSize: "22px", fontWeight: "900", marginBottom: "10px", color: "var(--text-light)", lineHeight: "1.3" }}>
+              <h3 style={{ fontSize: "22px", fontWeight: "900", marginBottom: "10px", color: "var(--text-light)", lineHeight: "1.3" }}>
                 {post.title}
-              </h2>
+              </h3>
               <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: "1.7", margin: "0 0 16px 0" }}>
                 {post.description}
               </p>
