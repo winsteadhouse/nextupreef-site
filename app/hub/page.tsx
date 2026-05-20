@@ -52,6 +52,14 @@ const faqSchema = {
   },
   {
     "@type": "Question",
+    "name": "What hardware does the Hub run on?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Hub is a dedicated device built on a Raspberry Pi 5 \u2014 proven, industry-standard hardware \u2014 running the NextUpReef software made specifically for reef monitoring and control. It plugs into power, joins your home Wi-Fi, and runs on its own around the clock, independent of your phone."
+    }
+  },
+  {
+    "@type": "Question",
     "name": "I already have a Neptune Apex. Can the Hub work with it?",
     "acceptedAnswer": {
       "@type": "Answer",
@@ -334,6 +342,59 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* ============ WHAT IS THE HUB ============ */}
+      <section style={{ padding: "40px 20px 60px", maxWidth: "900px", margin: "0 auto" }}>
+        <div
+          style={{
+            background: "var(--bg-card)", border: "1px solid var(--border)",
+            borderRadius: "20px", padding: "36px 32px",
+          }}
+        >
+          <div className="section-label" style={{ marginBottom: "10px" }}>WHAT EXACTLY IS THE HUB?</div>
+          <h2 style={{ fontSize: "clamp(24px, 3.6vw, 32px)", fontWeight: 900, margin: "0 0 16px", color: "var(--text-light)" }}>
+            A small piece of hardware that runs NextUpReef
+          </h2>
+          <p style={{ fontSize: "16px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 16px" }}>
+            The NextUpReef Hub is a dedicated device — a small box that sits by your tank, plugs into power, and joins your home Wi-Fi. It runs the <strong style={{ color: "var(--text-light)" }}>NextUpReef software</strong>, built specifically for reef monitoring and control.
+          </p>
+          <p style={{ fontSize: "16px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 24px" }}>
+            Unlike a phone app that only works when your phone is on, the Hub runs <strong style={{ color: "var(--text-light)" }}>on its own, around the clock</strong>. It continuously reads your probes, talks to your smart plugs, and keeps your tank data flowing — whether your phone is in your pocket, at work, or dead on the nightstand.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "12px" }}>
+            {([
+              { icon: "box" as const, title: "It is hardware", body: "A physical device you own — not just an app or a cloud login." },
+              { icon: "link" as const, title: "Plug in & connect", body: "Power it, join it to Wi-Fi, and pair it in the NextUpReef app." },
+              { icon: "activity" as const, title: "Always on", body: "Runs 24/7 on its own, independent of your phone being nearby." },
+            ]).map((c) => (
+              <div
+                key={c.title}
+                style={{
+                  background: "rgba(44,196,214,0.04)", border: "1px solid var(--border)",
+                  borderRadius: "14px", padding: "16px",
+                }}
+              >
+                <div
+                  style={{
+                    width: "38px", height: "38px", borderRadius: "10px", marginBottom: "10px",
+                    background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.20)",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}
+                >
+                  <HubIcon name={c.icon} />
+                </div>
+                <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>{c.title}</div>
+                <div style={{ fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.5 }}>{c.body}</div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.6, margin: "20px 0 0", fontStyle: "italic" }}>
+            Built on proven, industry-standard hardware (Raspberry Pi 5) — reliable, well-supported, and not a locked-down black box.
+          </p>
+        </div>
+      </section>
+
       {/* ============ WHY APEX OWNERS SWITCH APPS ============ */}
       <section style={{ padding: "40px 20px 60px", maxWidth: "1100px", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
@@ -460,6 +521,10 @@ export default function HubPage() {
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What is the NextUpReef Hub?</summary>
             <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The NextUpReef Hub is a small device that connects your reef tank to the NextUpReef app. It brings live probe readings, smart-plug control, and alerts together in one place — monitoring, trending, and the AI Reef Advisor you already use, now driven by real-time data.</p>
+          </details>
+          <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
+            <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What hardware does the Hub run on?</summary>
+            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The Hub is a dedicated device built on a Raspberry Pi 5 — proven, industry-standard hardware — running the NextUpReef software made specifically for reef monitoring and control. It plugs into power, joins your home Wi-Fi, and runs on its own around the clock, independent of your phone.</p>
           </details>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>I already have a Neptune Apex. Can the Hub work with it?</summary>
