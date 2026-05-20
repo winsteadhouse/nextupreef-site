@@ -42,7 +42,7 @@ const faqSchema = {
     "name": "Is the NextUpReef Hub a Neptune Apex replacement?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "It can be, depending on your setup. The Hub covers temperature, pH, and outlet control (via Shelly Wi-Fi outlets) \u2014 the same core jobs as an Apex EL plus base modules. If you depend on Apex-specific accessories like the Trident or DOS dosing pumps, you may want to keep your Apex and let NextUpReef sync from it instead."
+      "text": "It can be, depending on your setup. The Hub covers temperature, pH, and outlet control (via Wi-Fi smart plugs) \u2014 the same core jobs as an Apex EL plus base modules. If you depend on Apex-specific accessories like the Trident or DOS dosing pumps, you may want to keep your Apex and let NextUpReef sync from it instead."
     }
   },
   {
@@ -74,7 +74,7 @@ const faqSchema = {
     "name": "What about Apex Trident, DOS, and other Neptune accessories?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The Trident automatically tests alkalinity, calcium, and magnesium \u2014 there's no Hub equivalent in the initial release. DOS is Neptune's dedicated dosing pump. The Hub takes a different approach: pair it with off-the-shelf Shelly Wi-Fi outlets and any third-party dosing pump or stirrer to build the same automation at a fraction of the cost."
+      "text": "The Trident automatically tests alkalinity, calcium, and magnesium \u2014 there's no Hub equivalent in the initial release. DOS is Neptune's dedicated dosing pump. The Hub takes a different approach: pair it with off-the-shelf Wi-Fi smart plugs and any third-party dosing pump or stirrer to build the same automation at a fraction of the cost."
     }
   },
   {
@@ -128,7 +128,7 @@ export default function HubVsApexPost() {
             For most of the past decade, if you wanted to monitor and automate a reef tank, the answer was almost always the same: buy a Neptune Apex. The platform has earned its reputation — it works, it&apos;s reliable, and Neptune has built a mature ecosystem around it. But that ecosystem has also become a moat, and a more recent generation of reefers is asking a fair question: do I really need to spend $400–$1,000+ on hardware and pay a recurring subscription just to know my temperature?
           </p>
           <p>
-            We built the <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> for those reefers. It&apos;s a small, modern reef controller designed around three principles: bundled probes (no à la carte upsells), inexpensive smart outlets (Shelly Wi-Fi plugs instead of $220 EnergyBars), and a single app stack (the NextUpReef app you already use, no separate Fusion account). This post is the side-by-side comparison so you can decide which one fits your tank.
+            We built the <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> for those reefers. It&apos;s a small, modern reef controller designed around three principles: bundled probes (no à la carte upsells), inexpensive smart outlets (Wi-Fi smart plugs instead of $220 EnergyBars), and a single app stack (the NextUpReef app you already use, end to end). This post is the side-by-side comparison so you can decide which one fits your tank.
           </p>
 
           <div
@@ -141,7 +141,7 @@ export default function HubVsApexPost() {
               QUICK VERDICT
             </div>
             <p style={{ color: "var(--text-light)", margin: 0, fontSize: "15px", lineHeight: 1.7 }}>
-              If you want a mature, dialed-in controller with deep integrations (Trident, DOS, third-party gear) and you don&apos;t mind paying for the full Apex stack, the <strong>Neptune Apex EL</strong> is still the safe pick. If you want a modern, app-first controller with included probes and an AI-powered companion app — with no separate Fusion account on top of your reef gear — the <strong>NextUpReef Hub</strong> is the more interesting bet, especially for newer reefers and nano builds where Apex&apos;s footprint feels heavy.
+              If you want a mature, dialed-in controller with deep integrations (Trident, DOS, third-party gear) and you don&apos;t mind paying for the full Apex stack, the <strong>Neptune Apex EL</strong> is still the safe pick. If you want a modern, app-first controller with included probes and an AI-powered companion app the <strong>NextUpReef Hub</strong> is the more interesting bet, especially for newer reefers and nano builds where Apex&apos;s footprint feels heavy.
             </p>
           </div>
 
@@ -152,7 +152,7 @@ export default function HubVsApexPost() {
             This is the biggest difference between the two and the easiest place to start. The <strong style={{ color: "var(--text-light)" }}>Neptune Apex EL</strong> is the base unit — a brain. It does <em>not</em> include a temperature probe, a pH probe, or any outlet control hardware out of the box. Those are sold as separate Apex modules: a 1-Link probe module, individual probes, an EnergyBar 832 (eight outlets, around $220), and so on. By the time you have a working monitor with outlet control, you&apos;re comfortably north of $600.
           </p>
           <p>
-            The <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> ships with the temperature and pH probes already included, and outlet control happens through inexpensive Shelly Wi-Fi outlets (the <em>Shelly Plug US</em> runs around $15). You buy as many as you need — one for the heater, one for the skimmer, one for the dosing pump — and they show up in the NextUpReef app automatically. Total controllable outlets at the same dollar amount is dramatically higher.
+            The <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> ships with the temperature and pH probes already included, and outlet control happens through inexpensive Wi-Fi smart plugs (around $15 each). You buy as many as you need — one for the heater, one for the skimmer, one for the dosing pump — and they show up in the NextUpReef app automatically. Total controllable outlets at the same dollar amount is dramatically higher.
           </p>
 
           <h2 style={{ color: "var(--text-light)", fontSize: "28px", marginTop: "48px", marginBottom: "16px" }}>
@@ -206,7 +206,7 @@ export default function HubVsApexPost() {
             {[
               ["Base controller", "TBD", "~$400"],
               ["Temp + pH probes", "Included", "~$140"],
-              ["Outlet control (8 channels)", "~$120 (8 Shellys)", "~$220 (EnergyBar 832)"],
+              ["Outlet control (8 channels)", "~$120 (8 smart plugs)", "~$220 (EnergyBar 832)"],
               ["Remote access (5 yr)", "$0", "Fusion / ReefBeat"],
               ["AI Reef Advisor (5 yr Pro)", "~$200", "— not available"],
               ["Mobile app upgrades", "Included", "Included"],
@@ -273,7 +273,7 @@ export default function HubVsApexPost() {
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "24px" }}>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Is the NextUpReef Hub a Neptune Apex replacement?</summary>
-              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>It can be, depending on your setup. The Hub covers temperature, pH, and outlet control (via Shelly Wi-Fi outlets) — the same core jobs as an Apex EL plus base modules. If you depend on Apex-specific accessories like the Trident or DOS dosing pumps, you may want to keep your Apex and let NextUpReef sync from it instead.</p>
+              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>It can be, depending on your setup. The Hub covers temperature, pH, and outlet control (via Wi-Fi smart plugs) — the same core jobs as an Apex EL plus base modules. If you depend on Apex-specific accessories like the Trident or DOS dosing pumps, you may want to keep your Apex and let NextUpReef sync from it instead.</p>
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Why is the Hub cheaper than a Neptune Apex?</summary>
@@ -289,7 +289,7 @@ export default function HubVsApexPost() {
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What about Apex Trident, DOS, and other Neptune accessories?</summary>
-              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The Trident automatically tests alkalinity, calcium, and magnesium — there's no Hub equivalent in the initial release. DOS is Neptune's dedicated dosing pump. The Hub takes a different approach: pair it with off-the-shelf Shelly Wi-Fi outlets and any third-party dosing pump or stirrer to build the same automation at a fraction of the cost.</p>
+              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The Trident automatically tests alkalinity, calcium, and magnesium — there's no Hub equivalent in the initial release. DOS is Neptune's dedicated dosing pump. The Hub takes a different approach: pair it with off-the-shelf Wi-Fi smart plugs and any third-party dosing pump or stirrer to build the same automation at a fraction of the cost.</p>
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>When can I buy the NextUpReef Hub?</summary>

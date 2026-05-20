@@ -6,7 +6,6 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 export default function HubWaitlistForm({ compact = false }: { compact?: boolean }) {
   const [email, setEmail] = useState("");
-  const [hasApex, setHasApex] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -23,7 +22,7 @@ export default function HubWaitlistForm({ compact = false }: { compact?: boolean
       const res = await fetch("/api/hub-waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: trimmed, has_apex: hasApex }),
+        body: JSON.stringify({ email: trimmed }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -93,15 +92,6 @@ export default function HubWaitlistForm({ compact = false }: { compact?: boolean
           {status === "submitting" ? "Adding…" : "Join the Waitlist"}
         </button>
       </div>
-      <label style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "var(--text-muted)", cursor: "pointer" }}>
-        <input
-          type="checkbox"
-          checked={hasApex}
-          onChange={(e) => setHasApex(e.target.checked)}
-          style={{ accentColor: "var(--reef)", width: 16, height: 16 }}
-        />
-        I currently use a Neptune Apex
-      </label>
       {errorMsg ? (
         <div style={{ color: "#EF4444", fontSize: "13px", fontWeight: 700 }}>{errorMsg}</div>
       ) : (

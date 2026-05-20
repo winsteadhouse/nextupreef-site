@@ -5,12 +5,12 @@ import HubWaitlistForm from "@/components/HubWaitlistForm";
 export const metadata: Metadata = {
   title: "NextUpReef Hub — The Reef Controller Without the Lock-In",
   description:
-    "A modern reef tank controller with included temperature and pH probes, Shelly smart outlet support, 24/7 monitoring, and AI Reef Advisor built into the NextUpReef app. No separate Fusion account. Join the pre-order waitlist.",
+    "A modern reef tank controller with included temperature and pH probes, Wi-Fi smart plug support, 24/7 monitoring, and AI Reef Advisor — your whole reef in one app. Join the pre-order waitlist.",
   alternates: { canonical: "https://nextupreef.com/hub" },
   openGraph: {
     title: "NextUpReef Hub — The Reef Controller Without the Lock-In",
     description:
-      "Temperature + pH probes included. Shelly outlet support. AI Reef Advisor. Built for the NextUpReef app you already use. The reef controller for the next generation.",
+      "Temperature + pH probes included. Wi-Fi smart plug support. AI Reef Advisor. Your whole reef in one app.",
     url: "https://nextupreef.com/hub",
     images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
   },
@@ -21,7 +21,7 @@ const productSchema = {
   "@type": "Product",
   name: "NextUpReef Hub",
   description:
-    "Reef aquarium controller with included temperature and pH probes, Shelly smart outlet support, 24/7 monitoring, and AI Reef Advisor integration with the NextUpReef app.",
+    "Reef aquarium controller with included temperature and pH probes, Wi-Fi smart plug support, 24/7 monitoring, and AI Reef Advisor integration with the NextUpReef app.",
   image: "https://nextupreef.com/brand/splash2.png",
   brand: { "@type": "Brand", name: "NextUpReef" },
   category: "Aquarium Controller",
@@ -47,7 +47,7 @@ const faqSchema = {
     "name": "What is the NextUpReef Hub?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The NextUpReef Hub is a small, dedicated controller that lives on your tank. It comes with temperature and pH probes, monitors your reef around the clock, and works with Shelly smart outlets so you can control dosing pumps, heaters, skimmers, and lights \u2014 all from the NextUpReef app you already use. No separate Fusion-style cloud account required."
+      "text": "The NextUpReef Hub is a small, dedicated controller that lives on your tank. It comes with temperature and pH probes, monitors your reef around the clock, and works with Wi-Fi smart plugs so you can control dosing pumps, heaters, skimmers, and lights \u2014 all from the NextUpReef app you already use. No separate Fusion-style cloud account required."
     }
   },
   {
@@ -55,7 +55,7 @@ const faqSchema = {
     "name": "How is the Hub different from the Neptune Apex?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Three big things. First, probes are included in the price \u2014 Apex sells probes and probe modules separately. Second, the Hub uses inexpensive Shelly Wi-Fi outlets (around $15 each) instead of Apex's EnergyBar 832 (around $220). Third, the Hub connects directly to the NextUpReef app, so there's no separate Fusion account to manage on top."
+      "text": "Three big things. First, probes are included in the price \u2014 Apex sells probes and probe modules separately. Second, the Hub uses inexpensive Wi-Fi smart plugs (around $15 each) instead of Apex's EnergyBar 832 (around $220). Third, the Hub connects directly to the NextUpReef app, so there's no separate Fusion account to manage on top."
     }
   },
   {
@@ -124,7 +124,7 @@ export default function HubPage() {
             margin: "0 0 18px 0",
           }}
         >
-          The reef controller{" "}
+          Your whole reef,{" "}
           <span
             style={{
               background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)",
@@ -133,11 +133,11 @@ export default function HubPage() {
               backgroundClip: "text",
             }}
           >
-            without the lock-in
+            in one app
           </span>
         </h1>
         <p style={{ fontSize: "19px", color: "var(--text-muted)", lineHeight: 1.55, maxWidth: "680px", margin: "0 auto 32px" }}>
-          Temperature and pH probes included. Add Shelly outlets for dosing pumps, heaters, lights, and skimmers. Powered by the NextUpReef app and AI Reef Advisor — no separate Fusion account on top of your reef gear.
+          Temperature and pH probes included. Add Wi-Fi smart plugs for dosing pumps, heaters, lights, and skimmers. Every reading, every alert, every adjustment lives in the NextUpReef app — powered by the AI Reef Advisor.
         </p>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <HubWaitlistForm />
@@ -196,8 +196,8 @@ export default function HubPage() {
             },
             {
               icon: "⚡",
-              title: "Add Shelly outlets",
-              body: "Use inexpensive Shelly Wi-Fi outlets for dosing pumps, heaters, skimmers, and lights — controlled from one app.",
+              title: "Add smart plugs",
+              body: "Use inexpensive Wi-Fi smart plugs for dosing pumps, heaters, skimmers, and lights — all controlled from one app.",
             },
             {
               icon: "☁️",
@@ -253,7 +253,7 @@ export default function HubPage() {
           {[
             { label: "Starting price", hub: "TBD (pre-order)", apex: "$400+" },
             { label: "Temperature + pH probes", hub: "Included", apex: "Sold separately" },
-            { label: "Smart outlets", hub: "Shelly (~$15 each)", apex: "EnergyBar 832 (~$220)" },
+            { label: "Smart outlets", hub: "Smart plug (~$15 each)", apex: "EnergyBar 832 (~$220)" },
             { label: "Mobile app", hub: "NextUpReef (modern)", apex: "Fusion / ReefBeat" },
             { label: "AI Reef Advisor", hub: "✓ Built in", apex: "—" },
             { label: "Community + reef scores", hub: "✓ Built in", apex: "—" },
@@ -318,11 +318,11 @@ export default function HubPage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What is the NextUpReef Hub?</summary>
-            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The NextUpReef Hub is a small, dedicated controller that lives on your tank. It comes with temperature and pH probes, monitors your reef around the clock, and works with Shelly smart outlets so you can control dosing pumps, heaters, skimmers, and lights — all from the NextUpReef app you already use. No separate Fusion-style cloud account required.</p>
+            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The NextUpReef Hub is a small, dedicated controller that lives on your tank. It comes with temperature and pH probes, monitors your reef around the clock, and works with Wi-Fi smart plugs so you can control dosing pumps, heaters, skimmers, and lights — all from the NextUpReef app you already use. No separate Fusion-style cloud account required.</p>
           </details>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>How is the Hub different from the Neptune Apex?</summary>
-            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>Three big things. First, probes are included in the price — Apex sells probes and probe modules separately. Second, the Hub uses inexpensive Shelly Wi-Fi outlets (around $15 each) instead of Apex's EnergyBar 832 (around $220). Third, the Hub connects directly to the NextUpReef app, so there's no separate Fusion account to manage on top.</p>
+            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>Three big things. First, probes are included in the price — Apex sells probes and probe modules separately. Second, the Hub uses inexpensive Wi-Fi smart plugs (around $15 each) instead of Apex's EnergyBar 832 (around $220). Third, the Hub connects directly to the NextUpReef app, so there's no separate Fusion account to manage on top.</p>
           </details>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>When will the Hub ship?</summary>
