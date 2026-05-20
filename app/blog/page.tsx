@@ -198,11 +198,11 @@ const posts = [
   },
   {
     slug: "nextupreef-hub-vs-neptune-apex",
-    title: "NextUpReef Hub vs Neptune Apex EL: Full Comparison (2026)",
+    title: "NextUpReef Hub vs Neptune Apex: A Modern Reef Controller Compared (2026)",
     description:
-      "Detailed comparison of the NextUpReef Hub and the Neptune Apex EL — probes, outlets, app, cloud, AI, and 5-year cost of ownership. Find the right reef controller.",
+      "Honest comparison of the NextUpReef Hub and Neptune A3 Apex — pricing, included probes, equipment control, app features, and total cost. Find the right reef controller.",
     date: "May 20, 2026",
-    readTime: "9 min read",
+    readTime: "8 min read",
     tags: ["Comparison", "Reef Controllers", "Hardware"],
     series: null,
     category: "reef",
