@@ -197,6 +197,17 @@ const posts = [
     category: "app",
   },
   {
+    slug: "nextupreef-hub-vs-neptune-apex",
+    title: "NextUpReef Hub vs Neptune Apex EL: Full Comparison (2026)",
+    description:
+      "Detailed comparison of the NextUpReef Hub and the Neptune Apex EL — probes, outlets, app, cloud, AI, and 5-year cost of ownership. Find the right reef controller.",
+    date: "May 20, 2026",
+    readTime: "9 min read",
+    tags: ["Comparison", "Reef Controllers", "Hardware"],
+    series: null,
+    category: "reef",
+  },
+  {
     slug: "how-to-track-saltwater-aquarium-parameters",
     title: "How to Track Saltwater Aquarium Parameters (Complete Guide)",
     description:
