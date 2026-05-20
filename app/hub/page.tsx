@@ -26,14 +26,12 @@ const productSchema = {
   brand: { "@type": "Brand", name: "NextUpReef" },
   category: "Aquarium Controller",
   offers: {
-    "@type": "Offer",
+    "@type": "AggregateOffer",
     availability: "https://schema.org/PreOrder",
     priceCurrency: "USD",
-    price: "0",
-    priceSpecification: {
-      "@type": "PriceSpecification",
-      description: "Pricing to be announced. Join the pre-order waitlist for first access.",
-    },
+    lowPrice: "179",
+    highPrice: "379",
+    offerCount: 2,
     url: "https://nextupreef.com/hub",
   },
 };
@@ -68,10 +66,18 @@ const faqSchema = {
   },
   {
     "@type": "Question",
-    "name": "What comes in the Hub package?",
+    "name": "How much does the NextUpReef Hub cost?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The Hub package includes the Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs. The smart plugs let you monitor and control equipment like a heater, dosing pump, return pump, or anything else you want automated \u2014 all from the app."
+      "text": "There are two options. The NextUpReef Hub is $179 \u2014 the standalone Hub device, ideal if you already have probes or a Neptune Apex. The NextUpReef Hub Complete is $379 and includes the Hub, a lab-grade pH probe, a temperature monitor, and two smart plugs. Both are one-time hardware purchases. The app runs on NextUpReef Pro at $4.99/month, with a discount for paying yearly."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "What comes in the NextUpReef Hub Complete?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The $379 NextUpReef Hub Complete includes the Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs. The smart plugs let you monitor and control equipment like a heater, dosing pump, return pump, or anything else you want automated \u2014 all from the app."
     }
   },
   {
@@ -257,19 +263,19 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* ============ PRICE TBD BANNER ============ */}
+      {/* ============ PRICING NOTE BANNER ============ */}
       <section style={{ padding: "0 20px 56px", maxWidth: "720px", margin: "0 auto" }}>
         <div
           style={{
             display: "flex", alignItems: "center", justifyContent: "center", gap: "10px",
             padding: "14px 20px", borderRadius: "14px",
-            background: "rgba(234,179,8,0.06)", border: "1px solid rgba(234,179,8,0.20)",
+            background: "rgba(44,196,214,0.05)", border: "1px solid rgba(44,196,214,0.18)",
             color: "var(--text-muted)", fontSize: "14px", textAlign: "center", flexWrap: "wrap",
           }}
         >
           <HubIcon name="tag" />
           <span>
-            <strong style={{ color: "var(--yellow)" }}>Pricing coming soon</strong> — we&apos;re finalizing hardware costs and will share launch pricing with the waitlist first.
+            One-time hardware purchase. The app runs on <strong style={{ color: "var(--text-light)" }}>NextUpReef Pro</strong> — $4.99/month, or save with a year up front.
           </span>
         </div>
       </section>
@@ -292,7 +298,9 @@ export default function HubPage() {
               tag: "MOST POPULAR",
               tagColor: "var(--yellow)",
               icon: "box" as const,
-              title: "Hub Package",
+              title: "NextUpReef Hub Complete",
+              price: "$379",
+              priceNote: "one-time",
               sub: "Everything to monitor & automate",
               body: "The Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs — ready to monitor and control a heater, dosing pump, return pump, or anything else you want automated.",
             },
@@ -300,15 +308,19 @@ export default function HubPage() {
               tag: "LOWEST COST",
               tagColor: "var(--reef)",
               icon: "link" as const,
-              title: "Hub Connect",
-              sub: "Already have an Apex?",
-              body: "Connect the Hub to your existing Neptune Apex and your live readings flow straight into NextUpReef — then get what the Apex app doesn't give you: an AI Reef Advisor that reviews your parameters, livestock, and dosing; Reef and Stability Scores that grade your tank at a glance; drift detection that flags swings before they become problems; and the Reef Hub community to see how you stack up. Keep your Apex — reef with a smarter app.",
+              title: "NextUpReef Hub",
+              price: "$179",
+              priceNote: "one-time",
+              sub: "The standalone Hub device",
+              body: "The Hub on its own — perfect if you already have probes or a Neptune Apex. Connect it and your live readings flow straight into NextUpReef, where you get an AI Reef Advisor, Reef and Stability Scores, drift detection, and the Reef Hub community. Add probes and smart plugs whenever you want.",
             },
             {
               tag: "GROW ANYTIME",
               tagColor: "#A855F7",
               icon: "plus" as const,
               title: "Add-Ons",
+              price: "from $15",
+              priceNote: "each",
               sub: "Expand as your tank grows",
               body: "Add more smart plugs, leak sensors, and accessories whenever you want. Start small and build out over time — everything new appears in the app automatically.",
             },
@@ -340,8 +352,12 @@ export default function HubPage() {
                   {c.tag}
                 </div>
               </div>
-              <div style={{ fontSize: "19px", fontWeight: 900, color: "var(--text-light)", marginBottom: "2px" }}>
+              <div style={{ fontSize: "18px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>
                 {c.title}
+              </div>
+              <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "4px" }}>
+                <span style={{ fontSize: "26px", fontWeight: 900, color: "var(--text-light)" }}>{c.price}</span>
+                <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--text-muted)" }}>{c.priceNote}</span>
               </div>
               <div style={{ fontSize: "13px", fontWeight: 800, color: c.tagColor, marginBottom: "10px" }}>
                 {c.sub}
@@ -470,6 +486,92 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* ============ PRICE COMPARISON ============ */}
+      <section style={{ padding: "40px 20px 60px", maxWidth: "940px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "32px" }}>
+          <div className="section-label">WHAT YOU GET FOR THE PRICE</div>
+          <h2 style={{ fontSize: "clamp(27px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 8px" }}>
+            Hub Complete vs. a control-capable Apex
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "16px", maxWidth: "640px", margin: "0 auto" }}>
+            To actually <em>control</em> equipment — not just monitor it — the closest Neptune system is the A3 Apex with its EnergyBar. Here is how the two compare.
+          </p>
+        </div>
+
+        <div
+          style={{
+            background: "var(--bg-card)", border: "1px solid var(--border)",
+            borderRadius: "18px", padding: "6px 18px", overflow: "hidden",
+          }}
+        >
+          {/* Header row */}
+          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: "10px", padding: "16px 0 14px", borderBottom: "1px solid var(--border)" }}>
+            <div style={{ fontSize: "11px", fontWeight: 900, color: "var(--text-muted)", letterSpacing: "0.5px" }}>&nbsp;</div>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textAlign: "center", letterSpacing: "0.4px" }}>
+              NEXTUPREEF<br />HUB COMPLETE
+            </div>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--text-muted)", textAlign: "center", letterSpacing: "0.4px" }}>
+              A3 APEX
+            </div>
+          </div>
+
+          {/* Price row — emphasized */}
+          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: "10px", padding: "16px 0", borderBottom: "1px solid var(--border)", alignItems: "center" }}>
+            <div style={{ fontSize: "14px", fontWeight: 800, color: "var(--text-light)" }}>Price</div>
+            <div style={{ textAlign: "center" }}>
+              <span style={{ fontSize: "24px", fontWeight: 900, color: "var(--reef)" }}>$379</span>
+            </div>
+            <div style={{ textAlign: "center" }}>
+              <span style={{ fontSize: "24px", fontWeight: 900, color: "var(--text-muted)" }}>$669.99</span>
+            </div>
+          </div>
+
+          {([
+            ["pH probe", "Lab-grade, included", "Included"],
+            ["Temperature probe", "Included", "Included"],
+            ["Equipment control", "2 smart plugs included", "EnergyBar (8 outlets)"],
+            ["Leak detection", "Available add-on", "Included"],
+            ["Expandable", "Smart plugs & sensors", "Apex modules"],
+            ["AI Reef Advisor", "Yes", "No"],
+            ["Reef & Stability Scores", "Yes", "No"],
+            ["Community & leaderboard", "Yes", "No"],
+            ["App", "NextUpReef", "Apex Fusion"],
+          ]).map((row, i, arr) => {
+            const [label, hub, apex] = row;
+            return (
+              <div
+                key={label}
+                style={{
+                  display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr", gap: "10px",
+                  padding: "13px 0", borderBottom: i < arr.length - 1 ? "1px solid var(--border)" : "none",
+                  alignItems: "center",
+                }}
+              >
+                <div style={{ fontSize: "13px", fontWeight: 700, color: "var(--text-muted)" }}>{label}</div>
+                <div style={{ fontSize: "13px", fontWeight: 800, color: "var(--reef)", textAlign: "center" }}>{hub}</div>
+                <div style={{ fontSize: "13px", fontWeight: 700, color: "var(--text-muted)", textAlign: "center" }}>{apex}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Takeaway */}
+        <div
+          style={{
+            marginTop: "16px", padding: "16px 20px", borderRadius: "14px",
+            background: "rgba(44,196,214,0.06)", border: "1px solid rgba(44,196,214,0.18)",
+            fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6,
+          }}
+        >
+          <strong style={{ color: "var(--text-light)" }}>The honest comparison:</strong> Neptune&apos;s cheaper A3 Apex Jr ($319.99) is monitor-only — it can&apos;t switch a heater or dosing pump on and off. For real equipment control you need the A3 Apex at $669.99. The Hub Complete does both monitoring and control for $379, and adds AI advice the Apex app doesn&apos;t offer.
+        </div>
+
+        {/* Legal disclaimer */}
+        <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--text-muted)", lineHeight: 1.6, fontStyle: "italic" }}>
+          Comparison based on pricing and specifications publicly listed by retailers as of May 2026; details may change — verify current information with the manufacturer. Neptune Systems® and Apex® are trademarks of Neptune Systems. NextUpReef is independent and is not affiliated with, endorsed by, or sponsored by Neptune Systems.
+        </p>
+      </section>
+
       {/* ============ LOCAL-FIRST SAFETY ============ */}
       <section style={{ padding: "40px 20px 60px", maxWidth: "840px", margin: "0 auto" }}>
         <div
@@ -541,8 +643,12 @@ export default function HubPage() {
             <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>Yes — that's exactly what the standalone Hub is for. It connects to your existing Apex and streams your live pH, temperature, Trident, and other readings straight into the NextUpReef app in real time. You keep your Apex; you just get a better app experience on top of it. This is the lowest-cost way to start.</p>
           </details>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
-            <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What comes in the Hub package?</summary>
-            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The Hub package includes the Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs. The smart plugs let you monitor and control equipment like a heater, dosing pump, return pump, or anything else you want automated — all from the app.</p>
+            <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>How much does the NextUpReef Hub cost?</summary>
+            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>There are two options. The <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> is $179 — the standalone Hub device, ideal if you already have probes or a Neptune Apex. The <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub Complete</strong> is $379 and adds a lab-grade pH probe, a temperature monitor, and two smart plugs. Both are one-time hardware purchases. The app runs on NextUpReef Pro at $4.99/month, with a discount for paying yearly.</p>
+          </details>
+          <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
+            <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>What comes in the NextUpReef Hub Complete?</summary>
+            <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>The $379 NextUpReef Hub Complete includes the Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs. The smart plugs let you monitor and control equipment like a heater, dosing pump, return pump, or anything else you want automated — all from the app.</p>
           </details>
           <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
             <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Can I add more later?</summary>

@@ -201,15 +201,16 @@ export default function HubVsApexPost() {
             <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr", gap: "12px", padding: "14px 0", borderBottom: "1px solid var(--border)" }}>
               <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--text-muted)", letterSpacing: "0.5px" }}>ITEM</div>
               <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textAlign: "center", letterSpacing: "0.5px" }}>HUB SETUP</div>
-              <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--text-muted)", textAlign: "center", letterSpacing: "0.5px" }}>APEX EL</div>
+              <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--text-muted)", textAlign: "center", letterSpacing: "0.5px" }}>A3 APEX</div>
             </div>
             {[
-              ["Base controller", "TBD", "~$400"],
-              ["Temp + pH probes", "Included", "~$140"],
-              ["Outlet control (8 channels)", "~$120 (8 smart plugs)", "~$220 (EnergyBar 832)"],
-              ["Remote access (5 yr)", "$0", "Fusion / ReefBeat"],
-              ["AI Reef Advisor (5 yr Pro)", "~$200", "— not available"],
-              ["Mobile app upgrades", "Included", "Included"],
+              ["System price", "$379 (Hub Complete)", "$669.99 (A3 Apex)"],
+              ["pH + temperature probes", "Included", "Included"],
+              ["Equipment control", "2 smart plugs included", "EnergyBar included"],
+              ["Extra smart plugs", "~$15 each", "—"],
+              ["Remote access", "Included", "Apex Fusion"],
+              ["AI Reef Advisor", "Yes", "Not available"],
+              ["App updates", "Included", "Included"],
             ].map(([label, hub, apex], i, arr) => (
               <div
                 key={label}
@@ -225,8 +226,11 @@ export default function HubVsApexPost() {
             ))}
           </div>
 
-          <p style={{ fontSize: "14px", fontStyle: "italic", color: "var(--text-muted)" }}>
-            Apex pricing reflects current retail at the time of writing and may not include taxes, shipping, or bundle deals. The Hub launch price will be published when pre-orders open — join the waitlist for first notification.
+          <p style={{ fontSize: "14px", fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6 }}>
+            The A3 Apex is shown because it is the closest control-capable Neptune system. Neptune&apos;s lower-cost A3 Apex Jr ($319.99) is monitor-only and cannot switch equipment on or off. NextUpReef Hub Complete is $379 (Hub, lab-grade pH probe, temperature monitor, two smart plugs); the standalone NextUpReef Hub is $179. NextUpReef Pro is $4.99/month, billed monthly or discounted yearly.
+          </p>
+          <p style={{ fontSize: "12px", fontStyle: "italic", color: "var(--text-muted)", lineHeight: 1.6, marginTop: "10px" }}>
+            Comparison based on pricing and specifications publicly listed by retailers as of May 2026; details may change — verify current information with the manufacturer. Neptune Systems® and Apex® are trademarks of Neptune Systems. NextUpReef is independent and is not affiliated with, endorsed by, or sponsored by Neptune Systems.
           </p>
 
           <h2 style={{ color: "var(--text-light)", fontSize: "28px", marginTop: "48px", marginBottom: "16px" }}>
@@ -301,7 +305,7 @@ export default function HubVsApexPost() {
             Bottom line
           </h2>
           <p>
-            The Neptune Apex isn&apos;t going anywhere — it&apos;s well-built and the ecosystem is real. But the assumption that &quot;serious reef = Apex&quot; is starting to look dated. The NextUpReef Hub is built for the reefer who wants modern, mobile-first, AI-assisted reefing in a single app stack instead of juggling Fusion alongside their gear. Pricing will be announced when pre-orders open. <Link href="/hub" style={{ color: "var(--reef)", fontWeight: 700 }}>Drop your email on the waitlist</Link> and we&apos;ll let you know.
+            The Neptune Apex isn&apos;t going anywhere — it&apos;s well-built and the ecosystem is real. But the assumption that &quot;serious reef = Apex&quot; is starting to look dated. The NextUpReef Hub is built for the reefer who wants modern, mobile-first, AI-assisted reefing in a single app stack instead of juggling Fusion alongside their gear. The standalone Hub is $179 and the Hub Complete bundle is $379. <Link href="/hub" style={{ color: "var(--reef)", fontWeight: 700 }}>Drop your email on the waitlist</Link> and we&apos;ll let you know.
           </p>
 
           <p style={{ fontStyle: "italic", color: "var(--text-muted)", marginTop: "32px", fontSize: "14px" }}>
