@@ -201,6 +201,13 @@ function HubIcon({ name }: { name: string }) {
           <path d="M3 12h4l3 8 4-16 3 8h4" />
         </svg>
       );
+    case "tag":
+      return (
+        <svg {...common} stroke="var(--yellow)">
+          <path d="M12.6 2.7 21 11a2 2 0 0 1 0 2.8l-7.2 7.2a2 2 0 0 1-2.8 0L2.7 12.6A2 2 0 0 1 2 11V4a2 2 0 0 1 2-2h7a2 2 0 0 1 1.6.7Z" />
+          <circle cx="7.5" cy="7.5" r="1.4" fill="var(--yellow)" stroke="none" />
+        </svg>
+      );
     default:
       return (
         <svg {...common}>
@@ -239,8 +246,11 @@ export default function HubPage() {
           </span>
           . One app. One Hub.
         </h1>
-        <p style={{ fontSize: "18px", color: "var(--text-muted)", lineHeight: 1.55, maxWidth: "600px", margin: "0 auto 32px" }}>
+        <p style={{ fontSize: "18px", color: "var(--text-muted)", lineHeight: 1.55, maxWidth: "600px", margin: "0 auto 16px" }}>
           The NextUpReef Hub brings your probes, equipment, and alerts into the app you already use — monitoring, trending, and AI advice, all in real time.
+        </p>
+        <p style={{ fontSize: "14px", fontWeight: 800, color: "var(--reef)", margin: "0 auto 32px" }}>
+          Works on any reef tank — a brand-new setup or alongside a controller you already own.
         </p>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <HubWaitlistForm />
@@ -257,7 +267,7 @@ export default function HubPage() {
             color: "var(--text-muted)", fontSize: "14px", textAlign: "center", flexWrap: "wrap",
           }}
         >
-          <span style={{ fontSize: "16px" }}>💰</span>
+          <HubIcon name="tag" />
           <span>
             <strong style={{ color: "var(--yellow)" }}>Pricing coming soon</strong> — we&apos;re finalizing hardware costs and will share launch pricing with the waitlist first.
           </span>
@@ -279,20 +289,20 @@ export default function HubPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "16px" }}>
           {([
             {
-              tag: "LOWEST COST",
-              tagColor: "var(--reef)",
-              icon: "link" as const,
-              title: "Hub Connect",
-              sub: "Already have an Apex?",
-              body: "Connect the Hub to your existing Neptune Apex and your live readings flow straight into NextUpReef — then get what the Apex app doesn't give you: an AI Reef Advisor that reviews your parameters, livestock, and dosing; Reef and Stability Scores that grade your tank at a glance; drift detection that flags swings before they become problems; and the Reef Hub community to see how you stack up. Keep your Apex — reef with a smarter app.",
-            },
-            {
               tag: "MOST POPULAR",
               tagColor: "var(--yellow)",
               icon: "box" as const,
               title: "Hub Package",
               sub: "Everything to monitor & automate",
               body: "The Hub device, a lab-grade pH probe, a temperature monitor, and two smart plugs — ready to monitor and control a heater, dosing pump, return pump, or anything else you want automated.",
+            },
+            {
+              tag: "LOWEST COST",
+              tagColor: "var(--reef)",
+              icon: "link" as const,
+              title: "Hub Connect",
+              sub: "Already have an Apex?",
+              body: "Connect the Hub to your existing Neptune Apex and your live readings flow straight into NextUpReef — then get what the Apex app doesn't give you: an AI Reef Advisor that reviews your parameters, livestock, and dosing; Reef and Stability Scores that grade your tank at a glance; drift detection that flags swings before they become problems; and the Reef Hub community to see how you stack up. Keep your Apex — reef with a smarter app.",
             },
             {
               tag: "GROW ANYTIME",
