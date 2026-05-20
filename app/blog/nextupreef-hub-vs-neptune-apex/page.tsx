@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "NextUpReef Hub vs Neptune Apex EL: A Modern Reef Controller Compared (2026)",
   description:
-    "Honest comparison of NextUpReef Hub and the Neptune Apex EL in 2026. Pricing, probes, smart outlets, Fusion subscription, AI features, and total cost of ownership — see which reef controller fits your tank.",
+    "Honest comparison of NextUpReef Hub and the Neptune Apex EL in 2026. Pricing, probes, smart outlets, Fusion vs NextUpReef, AI features, and total cost of ownership — see which reef controller fits your tank.",
   alternates: { canonical: "https://nextupreef.com/blog/nextupreef-hub-vs-neptune-apex" },
   openGraph: {
     title: "NextUpReef Hub vs Neptune Apex EL: A Modern Reef Controller Compared (2026)",
@@ -20,7 +20,7 @@ const articleSchema = {
   "@type": "Article",
   headline: "NextUpReef Hub vs Neptune Apex EL: A Modern Reef Controller Compared (2026)",
   description:
-    "Side-by-side comparison of NextUpReef Hub and the Neptune Apex EL — pricing, probes, smart outlets, Fusion subscription, AI features, and total cost of ownership.",
+    "Side-by-side comparison of NextUpReef Hub and the Neptune Apex EL — pricing, probes, smart outlets, Fusion vs NextUpReef, AI features, and total cost of ownership.",
   image: "https://nextupreef.com/brand/splash2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
@@ -50,7 +50,7 @@ const faqSchema = {
     "name": "Why is the Hub cheaper than a Neptune Apex?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Two reasons. First, we bundle probes and outlet support that Apex sells as separate modules and accessories. Second, we don't require a cloud subscription (Apex Fusion) for remote access \u2014 your Hub talks to NextUpReef directly. There's no recurring revenue model bolted on top of the hardware."
+      "text": "Two reasons. First, we bundle probes and outlet support that Apex sells as separate modules and accessories. Second, the Hub talks directly to the NextUpReef app you already use \u2014 there's no separate Fusion-style cloud account to set up. NextUpReef Pro ($4.99/mo or $39.99/yr) unlocks AI advice and advanced analytics, but the Hub itself doesn't require it for basic monitoring."
     }
   },
   {
@@ -58,7 +58,7 @@ const faqSchema = {
     "name": "Do I need Apex Fusion or a subscription with the Hub?",
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. Remote monitoring, dosing schedules, and outlet control all work through the NextUpReef app with no separate cloud subscription. NextUpReef Pro ($4.99/month or $39.99/year) unlocks the AI Reef Advisor and advanced analytics \u2014 but the controller itself doesn't require it for basic monitoring."
+      "text": "No separate Apex Fusion account is required. Remote monitoring, dosing schedules, and outlet control work directly through the NextUpReef app you already use. NextUpReef Pro ($4.99/mo or $39.99/yr) unlocks the AI Reef Advisor and advanced analytics \u2014 but the Hub itself works on the free NextUpReef tier for basic monitoring."
     }
   },
   {
@@ -128,7 +128,7 @@ export default function HubVsApexPost() {
             For most of the past decade, if you wanted to monitor and automate a reef tank, the answer was almost always the same: buy a Neptune Apex. The platform has earned its reputation — it works, it&apos;s reliable, and Neptune has built a mature ecosystem around it. But that ecosystem has also become a moat, and a more recent generation of reefers is asking a fair question: do I really need to spend $400–$1,000+ on hardware and pay a recurring subscription just to know my temperature?
           </p>
           <p>
-            We built the <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> for those reefers. It&apos;s a small, modern reef controller designed around three principles: bundled probes (no à la carte upsells), inexpensive smart outlets (Shelly Wi-Fi plugs instead of $220 EnergyBars), and no cloud subscription for remote access. This post is the side-by-side comparison so you can decide which one fits your tank.
+            We built the <strong style={{ color: "var(--text-light)" }}>NextUpReef Hub</strong> for those reefers. It&apos;s a small, modern reef controller designed around three principles: bundled probes (no à la carte upsells), inexpensive smart outlets (Shelly Wi-Fi plugs instead of $220 EnergyBars), and a single app stack (the NextUpReef app you already use, no separate Fusion account). This post is the side-by-side comparison so you can decide which one fits your tank.
           </p>
 
           <div
@@ -141,7 +141,7 @@ export default function HubVsApexPost() {
               QUICK VERDICT
             </div>
             <p style={{ color: "var(--text-light)", margin: 0, fontSize: "15px", lineHeight: 1.7 }}>
-              If you want a mature, dialed-in controller with deep integrations (Trident, DOS, third-party gear) and you don&apos;t mind paying for the ecosystem, the <strong>Neptune Apex EL</strong> is still the safe pick. If you want a modern, app-first controller with included probes, no subscription, and an AI-powered companion app, the <strong>NextUpReef Hub</strong> is the more interesting bet — especially for newer reefers and nano builds where Apex&apos;s footprint feels heavy.
+              If you want a mature, dialed-in controller with deep integrations (Trident, DOS, third-party gear) and you don&apos;t mind paying for the full Apex stack, the <strong>Neptune Apex EL</strong> is still the safe pick. If you want a modern, app-first controller with included probes and an AI-powered companion app — with no separate Fusion account on top of your reef gear — the <strong>NextUpReef Hub</strong> is the more interesting bet, especially for newer reefers and nano builds where Apex&apos;s footprint feels heavy.
             </p>
           </div>
 
@@ -236,7 +236,7 @@ export default function HubVsApexPost() {
             <strong style={{ color: "var(--text-light)" }}>Buy the Neptune Apex if</strong> you already own Apex accessories (Trident, DOS, COR pumps, EnergyBars), you run a high-end mixed-reef or SPS-dominant build that needs the full module catalog, or you just want the most mature ecosystem available and don&apos;t mind the price tag.
           </p>
           <p>
-            <strong style={{ color: "var(--text-light)" }}>Pre-order the NextUpReef Hub if</strong> you&apos;re building a new tank from scratch, you want included probes and inexpensive outlet control, you don&apos;t want to depend on a third-party cloud subscription, you&apos;d use the AI Reef Advisor, or you want an app-first experience that feels modern.
+            <strong style={{ color: "var(--text-light)" }}>Pre-order the NextUpReef Hub if</strong> you&apos;re building a new tank from scratch, you want included probes and inexpensive outlet control, you&apos;d rather have one app stack (NextUpReef) than two (Apex + Fusion), you&apos;d use the AI Reef Advisor, or you want an app-first experience that feels modern.
           </p>
           <p>
             And if you already have an Apex — the choice isn&apos;t binary. NextUpReef supports one-tap Apex sync today. You can keep using your Apex and pull probe data into NextUpReef for AI advice and reef scoring. When you&apos;re ready to expand outlets or move off of Fusion, the Hub is there.
@@ -277,11 +277,11 @@ export default function HubVsApexPost() {
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Why is the Hub cheaper than a Neptune Apex?</summary>
-              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>Two reasons. First, we bundle probes and outlet support that Apex sells as separate modules and accessories. Second, we don't require a cloud subscription (Apex Fusion) for remote access — your Hub talks to NextUpReef directly. There's no recurring revenue model bolted on top of the hardware.</p>
+              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>Two reasons. First, we bundle probes and outlet support that Apex sells as separate modules and accessories. Second, the Hub talks directly to the NextUpReef app you already use — there's no separate Fusion-style cloud account to set up. NextUpReef Pro ($4.99/mo or $39.99/yr) unlocks AI advice and advanced analytics, but the Hub itself doesn't require it for basic monitoring.</p>
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Do I need Apex Fusion or a subscription with the Hub?</summary>
-              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>No. Remote monitoring, dosing schedules, and outlet control all work through the NextUpReef app with no separate cloud subscription. NextUpReef Pro ($4.99/month or $39.99/year) unlocks the AI Reef Advisor and advanced analytics — but the controller itself doesn't require it for basic monitoring.</p>
+              <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginTop: "12px", marginBottom: 0 }}>No separate Apex Fusion account is required. Remote monitoring, dosing schedules, and outlet control work directly through the NextUpReef app you already use. NextUpReef Pro ($4.99/mo or $39.99/yr) unlocks the AI Reef Advisor and advanced analytics — but the Hub itself works on the free NextUpReef tier for basic monitoring.</p>
             </details>
             <details style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 20px" }}>
               <summary style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", cursor: "pointer" }}>Will the Hub work alongside an existing Neptune Apex?</summary>
@@ -301,7 +301,7 @@ export default function HubVsApexPost() {
             Bottom line
           </h2>
           <p>
-            The Neptune Apex isn&apos;t going anywhere — it&apos;s well-built and the ecosystem is real. But the assumption that &quot;serious reef = Apex&quot; is starting to look dated. The NextUpReef Hub is built for the reefer who wants modern, mobile-first, AI-assisted reefing without the subscription tax. Pricing will be announced when pre-orders open. <Link href="/hub" style={{ color: "var(--reef)", fontWeight: 700 }}>Drop your email on the waitlist</Link> and we&apos;ll let you know.
+            The Neptune Apex isn&apos;t going anywhere — it&apos;s well-built and the ecosystem is real. But the assumption that &quot;serious reef = Apex&quot; is starting to look dated. The NextUpReef Hub is built for the reefer who wants modern, mobile-first, AI-assisted reefing in a single app stack instead of juggling Fusion alongside their gear. Pricing will be announced when pre-orders open. <Link href="/hub" style={{ color: "var(--reef)", fontWeight: 700 }}>Drop your email on the waitlist</Link> and we&apos;ll let you know.
           </p>
 
           <p style={{ fontStyle: "italic", color: "var(--text-muted)", marginTop: "32px", fontSize: "14px" }}>

@@ -16,12 +16,9 @@ export default function SiteNav() {
         </Link>
 
         <nav className="nav-links">
-          <Link href="/">Home</Link>
           <Link href="/hub">Hub</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact</Link>
-          <Link href="/privacy">Privacy</Link>
-          <Link href="/terms">Terms</Link>
         </nav>
       </div>
     </header>
