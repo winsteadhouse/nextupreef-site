@@ -83,7 +83,7 @@ export default function HowToAddShellyPage() {
         <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "20px 24px", marginBottom: "48px" }}>
           <p style={{ fontSize: "12px", fontWeight: "900", color: "var(--reef)", margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.06em" }}>What you need</p>
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "8px" }}>
-            {["Shelly Plug US Gen4 (available on Amazon)", "NextUpReef app with Pro subscription or active trial", "Your home WiFi name and password (2.4GHz)"].map((text) => (
+            {["Shelly Plug US Gen4", "NextUpReef app with Pro subscription or active trial", "Your home WiFi name and password (2.4GHz)"].map((text) => (
               <li key={text} style={{ display: "flex", gap: "10px", fontSize: "14px", color: "var(--text-muted)", fontWeight: "600" }}>
                 <span style={{ color: "var(--reef)", flexShrink: 0 }}>&#x2713;</span>{text}
               </li>
@@ -180,12 +180,19 @@ export default function HowToAddShellyPage() {
           ))}
         </div>
 
-        <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(44,196,214,0.1))", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "16px", padding: "32px 28px", textAlign: "center" }}>
+        <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(44,196,214,0.1))", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "16px", padding: "40px 28px", textAlign: "center" }}>
           <p style={{ fontSize: "20px", fontWeight: "900", margin: "0 0 8px" }}>Ready to automate your reef?</p>
-          <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: "0 0 22px", lineHeight: 1.6 }}>Shelly smart outlets are a NextUpReef Pro feature. All new users get a free 30-day Pro trial.</p>
-          <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" style={{ display: "inline-block", background: "var(--reef-dark)", color: "white", fontWeight: "900", fontSize: "15px", padding: "13px 28px", borderRadius: "10px", textDecoration: "none" }}>
-            Download NextUpReef
-          </a>
+          <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: "0 0 28px", lineHeight: 1.6 }}>Shelly smart outlets are a NextUpReef Pro feature. All new users get a free 30-day Pro trial.</p>
+          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+            <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className="btn primary large">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nextupreef.app" target="_blank" rel="noopener noreferrer" className="btn secondary large">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M3.18 23.76c.3.17.64.24.99.2l13.29-13.29L13.9 7.1 3.18 23.76z" fill="#EA4335"/><path d="M20.96 10.34L18.1 8.7l-3.66 3.66 3.66 3.66 2.89-1.66c.82-.47.82-1.55-.03-2.02z" fill="#FBBC04"/><path d="M3.18.24C2.83.2 2.49.27 2.19.44.94 1.16.94 2.84 2.19 3.56L13.9 17.1l3.56-3.56L3.18.24z" fill="#34A853"/><path d="M2.19.44C1.37.91 1 1.76 1 2.64v18.72c0 .88.37 1.72 1.19 2.2L13.9 12 2.19.44z" fill="#4285F4"/></svg>
+              Google Play
+            </a>
+          </div>
         </div>
 
       </article>
