@@ -77,7 +77,7 @@ export default function HowToAddShellyPage() {
         </h1>
         <p style={{ color: "var(--text-muted)", fontSize: "14px", fontWeight: "700", marginBottom: "32px" }}>May 23, 2026 &middot; 5 min read &middot; NextUpReef Team</p>
         <p style={{ fontSize: "18px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "40px", fontWeight: "500" }}>
-          Automate your doser, heater, skimmer, or return pump straight from your reef tracker. Setup takes about 5 minutes and you never need to install the Shelly app.
+          Automate your doser, heater, skimmer, or return pump straight from the NextUpReef app. Setup takes about 5 minutes and you never need to install the Shelly app.
         </p>
 
         <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "20px 24px", marginBottom: "48px" }}>

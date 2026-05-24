@@ -952,10 +952,11 @@ h1, h2, h3, h4 {
     text-align: center;
     padding: 60px 24px;
   }
-  .feature-spotlight > *:first-child,
-  .feature-spotlight > *:last-child,
-  .feature-spotlight.reverse > *:first-child,
-  .feature-spotlight.reverse > *:last-child { order: 0; }
+  /* On mobile: text always first, phone always second */
+  .feature-spotlight > .feature-spotlight-phone,
+  .feature-spotlight.reverse > .feature-spotlight-phone { order: 2; }
+  .feature-spotlight > *:not(.feature-spotlight-phone),
+  .feature-spotlight.reverse > *:not(.feature-spotlight-phone) { order: 1; }
 }
 
 /* MOBILE */
