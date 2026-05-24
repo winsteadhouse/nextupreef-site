@@ -272,10 +272,10 @@ export default function HomePage() {
           {/* Two screenshot row */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", marginBottom: "64px", alignItems: "center" }} className="home-screenshot-grid">
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img src="/screenshots/dosing-dashboard-mockup.png" alt="NextUpReef dosing dashboard showing alkalinity progress ring and daily schedule timeline" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
+              <img src="/screenshots/dosing-dashboard-mockupv2.png" alt="NextUpReef dosing dashboard showing alkalinity progress ring and daily schedule timeline" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img src="/screenshots/smart-outlets-mockup.png" alt="NextUpReef Shelly Smart Outlets screen showing doser outlet online with Turn On and Off controls" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
+              <img src="/screenshots/smart-outlets-mockupv2.png" alt="NextUpReef Shelly Smart Outlets screen showing doser outlet online with Turn On and Off controls" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
             </div>
           </div>
 
