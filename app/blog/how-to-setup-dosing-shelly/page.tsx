@@ -188,10 +188,9 @@ export default function DosingSetupPage() {
               </div>
             </div>
             {step.img && (
-              <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-                <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 4px 24px rgba(0,0,0,0.3)", maxWidth: "280px", width: "100%" }}>
-                  <img src={step.img} alt={step.alt} style={{ width: "100%", display: "block" }} />
-                </div>
+              <div style={{ background: "#F8FAFC", borderRadius: "16px", border: "1px solid var(--border)",
+                padding: "20px", textAlign: "center", marginBottom: "12px" }}>
+                <img src={step.img} alt={step.alt} style={{ maxWidth: "320px", width: "100%", borderRadius: "12px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }} />
               </div>)}
             {step.tip && (
               <div style={{ background: "var(--reef-glow)", border: "1px solid rgba(14,165,233,0.2)",
@@ -201,57 +200,47 @@ export default function DosingSetupPage() {
               </div>)}
           </div>))}
         <h2 style={{ fontSize: "24px", fontWeight: "900", margin: "0 0 20px" }}>Schedule patterns</h2>
-        <div style={{ border: "1px solid var(--border)", borderRadius: "12px", overflow: "hidden", marginBottom: "48px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", background: "#F1F5F9", padding: "10px 16px" }}>
-            {["Pattern","What it does","Best for"].map(h => (
-              <span key={h} style={{ fontSize: "11px", fontWeight: "900", color: "var(--text-muted)", letterSpacing: "0.05em", textTransform: "uppercase" }}>{h}</span>))}
-          </div>
-          {patternRows.map(([name,what,best],i) => (
-            <div key={name} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", padding: "14px 16px",
-              borderTop: i>0?"1px solid var(--border)":"none", background: i%2===0?"white":"#FAFAFA" }}>
-              <span style={{ fontSize: "13px", fontWeight: "900", color: "var(--text)" }}>{name}</span>
-              <span style={{ fontSize: "13px", fontWeight: "600", color: "var(--text-muted)", lineHeight: 1.5 }}>{what}</span>
-              <span style={{ fontSize: "13px", fontWeight: "600", color: "var(--text-muted)", lineHeight: 1.5 }}>{best}</span>
-            </div>))}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "48px" }}>
+          {patternRows.map(([name,what,best]) => (
+            <div key={name} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "14px 16px" }}>
+              <span style={{ fontSize: "13px", fontWeight: "900", color: "var(--reef)", display: "block", marginBottom: "6px" }}>{name}</span>
+              <p style={{ fontSize: "13px", color: "var(--text-muted)", margin: 0, lineHeight: 1.65 }}>{what} — {best}</p>
+            </div>
+          ))}
         </div>
         <h2 style={{ fontSize: "24px", fontWeight: "900", margin: "0 0 16px" }}>After setup: what you can do</h2>
         <p style={{ fontSize: "15px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "20px", fontWeight: "500" }}>The Now tab becomes your dosing dashboard once a schedule is active.</p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "48px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "48px" }}>
           {postSaveRows.map(([action,desc]) => (
-            <div key={action} style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: "16px",
-              padding: "14px 18px", borderRadius: "10px", border: "1px solid var(--border)", background: "white" }}>
-              <span style={{ fontSize: "13px", fontWeight: "900", color: "var(--reef)" }}>{action}</span>
-              <span style={{ fontSize: "13px", fontWeight: "600", color: "var(--text-muted)", lineHeight: 1.6 }}>{desc}</span>
-            </div>))}
+            <div key={action} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "14px 16px", display: "flex", gap: "12px" }}>
+              <span style={{ fontSize: "13px", fontWeight: "900", color: "var(--reef)", flexShrink: 0, minWidth: "110px" }}>{action}</span>
+              <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: 0, lineHeight: 1.65 }}>{desc}</p>
+            </div>
+          ))}
         </div>
         <h2 style={{ fontSize: "24px", fontWeight: "900", margin: "0 0 16px" }}>Safety and reliability</h2>
         <p style={{ fontSize: "15px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "20px", fontWeight: "500" }}>NextUpReef applies these protections every time a dosing schedule is saved.</p>
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "48px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "48px" }}>
           {safetyRows.map(([title,desc]) => (
-            <div key={title} style={{ padding: "16px 20px", borderRadius: "12px", border: "1px solid var(--border)", background: "white" }}>
-              <p style={{ fontWeight: "900", fontSize: "14px", color: "var(--text)", margin: "0 0 4px" }}>✓ {title}</p>
-              <p style={{ fontSize: "13px", fontWeight: "600", color: "var(--text-muted)", margin: 0, lineHeight: 1.6 }}>{desc}</p>
-            </div>))}
+            <div key={title} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "12px", padding: "14px 16px", display: "flex", gap: "12px" }}>
+              <span style={{ fontSize: "13px", fontWeight: "900", color: "var(--reef)", flexShrink: 0, minWidth: "180px" }}>{title}</span>
+              <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: 0, lineHeight: 1.65 }}>{desc}</p>
+            </div>
+          ))}
+        </div>))}
         </div>
-        <h2 style={{ fontSize: "24px", fontWeight: "900", margin: "0 0 24px" }}>Frequently asked questions</h2>
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "56px" }}>
-          {faqSchema.mainEntity.map((item) => (
-            <div key={item.name} style={{ padding: "20px", borderRadius: "12px", border: "1px solid var(--border)", background: "white" }}>
-              <p style={{ fontWeight: "900", fontSize: "15px", color: "var(--text)", margin: "0 0 8px" }}>{item.name}</p>
-              <p style={{ fontSize: "14px", fontWeight: "600", color: "var(--text-muted)", margin: 0, lineHeight: 1.7 }}>{item.acceptedAnswer.text}</p>
-            </div>))}
-        </div>
-        <div style={{ background: "linear-gradient(135deg,#0EA5E9 0%,#0284C7 100%)", borderRadius: "20px", padding: "40px", textAlign: "center", color: "white" }}>
-          <p style={{ fontSize: "22px", fontWeight: "900", margin: "0 0 12px" }}>Ready to automate your dosing?</p>
-          <p style={{ fontSize: "15px", fontWeight: "600", opacity: 0.9, margin: "0 0 24px", lineHeight: 1.6 }}>
-            Start with a Shelly Plug US Gen4. Add it to NextUpReef in 5 minutes.
-            Your reef gets dosed on schedule every day, even when you&apos;re not home.
-          </p>
+                <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(44,196,214,0.1))", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "16px", padding: "40px 28px", textAlign: "center" }}>
+          <p style={{ fontSize: "20px", fontWeight: "900", margin: "0 0 8px" }}>Ready to automate your reef?</p>
+          <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: "0 0 28px", lineHeight: 1.6 }}>Shelly smart outlets are a NextUpReef Pro feature. All new users get a free 30-day Pro trial.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/blog/how-to-add-shelly-plug" style={{ background: "white", color: "#0EA5E9", padding: "12px 28px", borderRadius: "999px", fontWeight: "900", fontSize: "14px", textDecoration: "none", display: "inline-block" }}>
-              Add a Shelly outlet →</Link>
-            <Link href="/" style={{ background: "rgba(255,255,255,0.15)", color: "white", padding: "12px 28px", borderRadius: "999px", fontWeight: "900", fontSize: "14px", textDecoration: "none", display: "inline-block", border: "1px solid rgba(255,255,255,0.3)" }}>
-              Download NextUpReef</Link>
+            <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className="btn primary large">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.nextupreef.app" target="_blank" rel="noopener noreferrer" className="btn secondary large">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M3.18 23.76c.3.17.64.24.99.2l13.29-13.29L13.9 7.1 3.18 23.76z" fill="#EA4335"/><path d="M20.96 10.34L18.1 8.7l-3.66 3.66 3.66 3.66 2.89-1.66c.82-.47.82-1.55-.03-2.02z" fill="#FBBC04"/><path d="M3.18.24C2.83.2 2.49.27 2.19.44.94 1.16.94 2.84 2.19 3.56L13.9 17.1l3.56-3.56L3.18.24z" fill="#34A853"/><path d="M2.19.44C1.37.91 1 1.76 1 2.64v18.72c0 .88.37 1.72 1.19 2.2L13.9 12 2.19.44z" fill="#4285F4"/></svg>
+              Google Play
+            </a>
           </div>
         </div>
       </article>
