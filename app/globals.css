@@ -1100,3 +1100,24 @@ h1, h2, h3, h4 {
     padding-bottom: 48px !important;
   }
 }
+
+/* Device card grid */
+.device-card-grid {
+  grid-template-columns: 240px 1fr !important;
+}
+.device-specs-grid {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 700px) {
+  .device-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .device-card-grid > *:first-child {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+    min-height: 160px !important;
+  }
+  .device-specs-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
