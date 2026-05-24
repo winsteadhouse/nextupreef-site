@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/blog/how-to-setup-dosing-shelly`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/how-to-add-shelly-plug`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/ai-reef-tank-advisor`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/best-reef-tank-tracking-app`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
