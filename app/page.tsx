@@ -106,15 +106,15 @@ export default function HomePage() {
             fontSize: "clamp(42px, 6vw, 72px)", fontWeight: 900,
             lineHeight: 1.05, letterSpacing: "-0.04em", margin: 0,
           }}>
-            Track your reef.<br />
+            Track, automate,<br />
             <span style={{
               background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-            }}>Know your reef.</span>
+            }}>and control your reef.</span>
           </h1>
 
           <p style={{ fontSize: "18px", lineHeight: 1.65, color: "var(--text-muted)", margin: 0, maxWidth: "440px" }}>
-            Log parameters in seconds, get AI-powered advice, and track everything that keeps your reef healthy.
+            Log parameters, automate dosing and lighting, get AI-powered advice, and control everything that keeps your reef alive — all from one app.
           </p>
 
           <DownloadButtons />
@@ -255,6 +255,96 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* AUTOMATION SECTION */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "100px 24px", background: "linear-gradient(160deg, rgba(14,165,233,0.06) 0%, transparent 60%)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "64px" }}>
+            <div className="section-label">Automation &amp; Control</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: "16px 0 20px", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+              Your reef runs itself.<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Even when you’re not home.</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 auto", maxWidth: "520px" }}>
+              NextUpReef connects to Shelly smart outlets and Neptune Apex controllers to automate dosing, lighting, and equipment control — directly from the app. Schedules run on the device, so your reef stays on track 24/7 even when your phone is off.
+            </p>
+          </div>
+
+          {/* Two screenshot row */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", marginBottom: "64px", alignItems: "center" }} className="home-screenshot-grid">
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img src="/screenshots/dosing-dashboard-mockup.png" alt="NextUpReef dosing dashboard showing alkalinity progress ring and daily schedule timeline" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <img src="/screenshots/smart-outlets-mockup.png" alt="NextUpReef Shelly Smart Outlets screen showing doser outlet online with Turn On and Off controls" style={{ maxWidth: "340px", width: "100%", height: "auto" }} />
+            </div>
+          </div>
+
+          {/* Feature grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }} className="home-feature-grid">
+            {[
+              {
+                icon: "⚡",
+                color: "#0EA5E9",
+                title: "Shelly Smart Outlets",
+                desc: "Connect any Shelly Plug US Gen4 in minutes — no Shelly app needed. Tag it as a doser, heater, light, skimmer, or return pump and control it directly from NextUpReef.",
+              },
+              {
+                icon: "💧",
+                color: "#10B981",
+                title: "Automated Dosing",
+                desc: "Calibrate your pump once, set a daily mL target, choose a schedule pattern. NextUpReef writes the schedule directly to the outlet — it doses on time even if your internet goes down.",
+              },
+              {
+                icon: "☀️",
+                color: "#EAB308",
+                title: "Lighting Automation",
+                desc: "Set on/off times and ramp schedules for each fixture. Link a Shelly outlet and NextUpReef pushes the schedule to the plug automatically — no separate timer needed.",
+              },
+              {
+                icon: "🏭",
+                color: "#8B5CF6",
+                title: "Neptune Apex Integration",
+                desc: "Connect your Apex controller and pull probe readings with one tap. pH, ORP, salinity, and temperature sync directly into your parameter logs — no manual entry.",
+              },
+            ].map((feat) => (
+              <div key={feat.title} style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(44,196,214,0.1)",
+                borderRadius: "16px",
+                padding: "24px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <span style={{ fontSize: "24px", lineHeight: 1 }}>{feat.icon}</span>
+                  <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)" }}>{feat.title}</div>
+                </div>
+                <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>{feat.desc}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Differentiator callout */}
+          <div style={{
+            marginTop: "48px",
+            background: "linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(16,185,129,0.07) 100%)",
+            border: "1px solid rgba(14,165,233,0.2)",
+            borderRadius: "16px",
+            padding: "28px 32px",
+            display: "flex",
+            gap: "16px",
+            alignItems: "flex-start",
+          }}>
+            <span style={{ fontSize: "28px", lineHeight: 1, flexShrink: 0 }}>🔒</span>
+            <div>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "6px" }}>Schedules run on the device — not in the cloud</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.7 }}>When you save a dosing or lighting schedule, NextUpReef writes it directly to the Shelly outlet’s onboard memory. The outlet runs every dose and every on/off cycle on its own real-time clock — no internet, no server, no phone required. Your reef stays on schedule through power outages, router reboots, and travel.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="cta-section">
         <div className="container-narrow">
