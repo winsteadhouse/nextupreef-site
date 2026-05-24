@@ -188,9 +188,10 @@ export default function DosingSetupPage() {
               </div>
             </div>
             {step.img && (
-              <div style={{ background: "#F8FAFC", borderRadius: "16px", border: "1px solid var(--border)",
-                padding: "20px", textAlign: "center", marginBottom: "12px" }}>
-                <img src={step.img} alt={step.alt} style={{ maxWidth: "320px", width: "100%", borderRadius: "12px", boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }} />
+              <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+                <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid var(--border)", boxShadow: "0 4px 24px rgba(0,0,0,0.3)", maxWidth: "280px", width: "100%" }}>
+                  <img src={step.img} alt={step.alt} style={{ width: "100%", display: "block" }} />
+                </div>
               </div>)}
             {step.tip && (
               <div style={{ background: "var(--reef-glow)", border: "1px solid rgba(14,165,233,0.2)",
