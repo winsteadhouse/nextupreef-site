@@ -228,8 +228,7 @@ export default function DosingSetupPage() {
             </div>
           ))}
         </div>
-        </div>
-                <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(44,196,214,0.1))", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "16px", padding: "40px 28px", textAlign: "center" }}>
+        <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(44,196,214,0.1))", border: "1px solid rgba(44,196,214,0.2)", borderRadius: "16px", padding: "40px 28px", textAlign: "center" }}>
           <p style={{ fontSize: "20px", fontWeight: "900", margin: "0 0 8px" }}>Ready to automate your reef?</p>
           <p style={{ fontSize: "14px", color: "var(--text-muted)", margin: "0 0 28px", lineHeight: 1.6 }}>Shelly smart outlets are a NextUpReef Pro feature. All new users get a free 30-day Pro trial.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
