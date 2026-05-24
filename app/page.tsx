@@ -175,7 +175,6 @@ export default function HomePage() {
                 { title: "Reef AI Advisor", desc: "Full tank analysis every 24 hours. Tells you what to fix, what's working, and what to watch." },
                 { title: "Ask Reef AI", desc: "Chat with AI that has full context. Why is my alk dropping? gets a real answer, not a Google search." },
                 { title: "AI Photo Logging", desc: "Point your camera at any test kit. AI reads the values and logs them for you." },
-                { title: "Neptune Apex Integration", desc: "Connect your Apex controller and sync parameters automatically. No manual entry needed." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />

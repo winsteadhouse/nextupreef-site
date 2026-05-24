@@ -1073,3 +1073,29 @@ h1, h2, h3, h4 {
   width: auto !important;
   max-width: 100% !important;
 }
+
+/* Tighter mobile section spacing */
+@media (max-width: 900px) {
+  .feature-spotlight,
+  .feature-spotlight.reverse {
+    padding: 48px 20px !important;
+    gap: 32px !important;
+  }
+  .phone-trio-section {
+    padding: 48px 20px !important;
+  }
+}
+@media (max-width: 600px) {
+  .feature-spotlight,
+  .feature-spotlight.reverse {
+    padding: 36px 16px !important;
+    gap: 24px !important;
+  }
+  .phone-trio-section {
+    padding: 36px 16px !important;
+  }
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
