@@ -48,7 +48,7 @@ const devices = [
     brand: "Shelly",
     name: "Plug US Gen4",
     tagline: "Smart outlet for dosing, lighting, heaters & more",
-    price: "~$19",
+    price: "$24.99",
     image: "/devices/shelly-plug-gen4.webp",
     mfgUrl: shellyMfgUrl,
     buyUrl: shellyOutletUrl,
@@ -77,7 +77,7 @@ const devices = [
     brand: "Shelly",
     name: "Flood Sensor",
     tagline: "Leak detection for under your sump or ATO reservoir",
-    price: "~$15",
+    price: "$39.99",
     image: "/devices/shelly-flood.webp",
     mfgUrl: shellyLeakMfgUrl,
     buyUrl: shellyLeakUrl,
@@ -382,41 +382,6 @@ export default function DevicesPage() {
         </p>
       </section>
 
-      {/* BOTTOM CTA */}
-      <section style={{ padding: "40px 20px 80px", maxWidth: "720px", margin: "0 auto" }}>
-        <div style={{
-          background: "linear-gradient(135deg, rgba(44,196,214,0.08) 0%, rgba(142,233,242,0.04) 100%)",
-          border: "1px solid rgba(44,196,214,0.25)", borderRadius: "20px", padding: "36px 28px", textAlign: "center",
-        }}>
-          <div style={{ fontSize: "22px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>
-            Ready to automate your reef?
-          </div>
-          <p style={{ color: "var(--text-muted)", marginBottom: "24px", fontSize: "15px", lineHeight: 1.55, maxWidth: "440px", margin: "0 auto 24px" }}>
-            Pick up a Shelly Plug US Gen4 on Amazon, add it to NextUpReef in 5 minutes, and your dosing and lighting run on their own from day one.
-          </p>
-          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={shellyOutletUrl} target="_blank" rel="noopener noreferrer sponsored"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "8px",
-                padding: "12px 24px", borderRadius: "10px",
-                background: "var(--reef)", color: "white",
-                fontWeight: 900, fontSize: "14px", textDecoration: "none",
-              }}>
-              Buy Shelly Plug on Amazon
-            </a>
-            <Link href="/blog/how-to-add-shelly-plug"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: "8px",
-                padding: "12px 24px", borderRadius: "10px",
-                background: "rgba(44,196,214,0.10)", color: "var(--reef)",
-                fontWeight: 900, fontSize: "14px", textDecoration: "none",
-                border: "1px solid rgba(44,196,214,0.25)",
-              }}>
-              Setup guide →
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+    </>>
   );
 }
