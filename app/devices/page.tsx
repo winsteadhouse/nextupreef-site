@@ -382,6 +382,6 @@ export default function DevicesPage() {
         </p>
       </section>
 
-    </>>
+    </>
   );
 }

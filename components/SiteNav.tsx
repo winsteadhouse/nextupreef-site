@@ -16,7 +16,7 @@ export default function SiteNav() {
         </Link>
 
         <nav className="nav-links">
-          <Link href="/hub">Hub</Link>
+          <Link href="/devices">Devices</Link><Link href="/hub">Hub</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contact">Contact</Link>
         </nav>
