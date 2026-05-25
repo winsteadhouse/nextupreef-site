@@ -253,14 +253,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={{ display: "flex", justifyContent: "center", marginTop: "32px" }}>
-            <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
-              padding: "12px 28px", borderRadius: "10px",
-              background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
-              color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
-              Shop compatible hardware →
-            </Link>
-          </div>
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+          <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
+            padding: "12px 28px", borderRadius: "10px",
+            background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
+            color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+            Shop compatible hardware →
+          </Link>
         </div>
       </section>
 

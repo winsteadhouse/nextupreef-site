@@ -78,7 +78,7 @@ const devices = [
     name: "Flood Sensor",
     tagline: "Leak detection for under your sump or ATO reservoir",
     price: "$39.99",
-    image: "/devices/shelly-flood.webp",
+    image: "/devices/shelly-flood-new.webp",
     mfgUrl: shellyLeakMfgUrl,
     buyUrl: shellyLeakUrl,
     specs: [
