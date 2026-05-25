@@ -16,9 +16,8 @@ export const metadata: Metadata = {
 };
 
 // AFFILIATE LINK PLACEHOLDERS — replace tag=nextupreef-20 with your real Amazon affiliate tag
-const AFFILIATE_TAG = "nextupreef-20";
-const shellyOutletUrl = `https://www.amazon.com/dp/B0CZ6KHJHX?tag=${AFFILIATE_TAG}`;
-const shellyLeakUrl = `https://www.amazon.com/dp/B09S3ZFG2K?tag=${AFFILIATE_TAG}`;
+const shellyOutletUrl = "https://amzn.to/4dLhHOO";
+const shellyLeakUrl = "https://amzn.to/4uvMrdN";
 const shellyMfgUrl = "https://www.shelly.com/en-us/products/shelly-plug-us-gen4";
 const shellyLeakMfgUrl = "https://www.shelly.com/en-us/products/flood";
 
