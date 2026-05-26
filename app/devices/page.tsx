@@ -175,7 +175,7 @@ export default function DevicesPage() {
                     <img
                       src={d.image}
                       alt={`${d.brand} ${d.name}`}
-                      style={{ maxWidth: "160px", maxHeight: "160px", objectFit: "contain" }}
+                      style={{ maxWidth: "210px", maxHeight: "210px", objectFit: "contain" }}
                     />
                   ) : (
                     <div style={{
