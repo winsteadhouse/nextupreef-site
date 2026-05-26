@@ -79,6 +79,12 @@ export default function HowToAddShellyPage() {
         <p style={{ fontSize: "18px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "40px", fontWeight: "500" }}>
           Automate your doser, heater, skimmer, or return pump straight from the NextUpReef app. Setup takes about 5 minutes and you never need to install the Shelly app.
         </p>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 16px",
+          background: "var(--reef-glow)", borderRadius: "10px", border: "1px solid rgba(44,196,214,0.2)" }}>
+          <p style={{ margin: 0, fontSize: "13px", fontWeight: "700", color: "var(--reef)" }}>
+            Don’t have a Shelly outlet yet?{" "}<a href="/devices" style={{ color: "var(--reef)", textDecoration: "underline" }}>Shop compatible hardware →</a>
+          </p>
+        </div>
 
         <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "20px 24px", marginBottom: "48px" }}>
           <p style={{ fontSize: "12px", fontWeight: "900", color: "var(--reef)", margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "0.06em" }}>What you need</p>

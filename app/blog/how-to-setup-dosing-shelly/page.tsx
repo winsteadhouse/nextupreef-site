@@ -172,6 +172,12 @@ export default function DosingSetupPage() {
             </p>
           </div>
         </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 16px",
+          background: "var(--reef-glow)", borderRadius: "10px", border: "1px solid rgba(44,196,214,0.2)" }}>
+          <p style={{ margin: 0, fontSize: "13px", fontWeight: "700", color: "var(--reef)" }}>
+            Need to buy a Shelly outlet?{" "}<a href="/devices" style={{ color: "var(--reef)", textDecoration: "underline" }}>Shop compatible hardware →</a>
+          </p>
+        </div>
         <h2 style={{ fontSize: "28px", fontWeight: "900", marginBottom: "32px", letterSpacing: "-0.01em" }}>The setup flow, step by step</h2>
         {steps.map((step) => (
           <div key={step.n} style={{ marginBottom: "48px" }}>

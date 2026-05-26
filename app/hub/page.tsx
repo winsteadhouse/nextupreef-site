@@ -261,7 +261,12 @@ export default function HubPage() {
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <HubWaitlistForm />
         </div>
-      </section>
+      
+      <div style={{ textAlign: "center", padding: "16px 20px 0" }}>
+        <p style={{ fontSize: "14px", color: "var(--text-muted)", fontWeight: "700" }}>
+          Want to automate your reef today? <a href="/devices" style={{ color: "var(--reef)", textDecoration: "underline" }}>Shop Shelly smart outlets →</a>— works with NextUpReef right now, no Hub needed.
+        </p>
+      </div></section>
 
       {/* ============ PRICING NOTE BANNER ============ */}
       <section style={{ padding: "0 20px 56px", maxWidth: "720px", margin: "0 auto" }}>
