@@ -38,6 +38,8 @@ const articleSchema = {
     "reef tank AI",
     "AI aquarium advice",
     "reef tank parameter tracking AI",
+    "AI reef stocking advisor",
+    "reef tank compatibility checker",
     "AI photo parameter logging",
     "reef tank app with AI",
     "NextUpReef AI",
@@ -63,6 +65,14 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "The Reef AI Advisor generates a full analysis of your tank once every 24 hours. It reviews your recent parameter trends, equipment setup, livestock, dosing products, and water change history, then produces a prioritized list of findings — what's going well, what needs attention, and specific actions to take.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does the Stocking Advisor do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The Stocking Advisor reviews the fish, corals, and inverts in your tank against catalog care data — adult size, temperament, aggression, reef-safety, minimum tank size, placement, and flow — then checks them against your tank size and current bioload. It flags compatibility and aggression conflicts, warns about bioload, and suggests species that fit your tank when you are deciding what to add next.",
       },
     },
     {

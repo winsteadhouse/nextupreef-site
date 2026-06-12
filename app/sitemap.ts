@@ -3,13 +3,14 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nextupreef.com";
   return [
-    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-05-26"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-06-12"), changeFrequency: "weekly",  priority: 1.0 },
     { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-05-26"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/hub`,                                                lastModified: new Date("2026-05-20"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-05-26"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog/how-to-setup-dosing-shelly`,                   lastModified: new Date("2026-05-26"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/how-to-add-shelly-plug`,                       lastModified: new Date("2026-05-26"), changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/blog/ai-reef-tank-advisor`,                         lastModified: new Date("2026-05-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog/ai-reef-tank-advisor`,                         lastModified: new Date("2026-06-12"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog/my-reef-tank-tracking`,                          lastModified: new Date("2026-06-12"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/best-reef-tank-tracking-app`,                  lastModified: new Date("2026-05-10"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/nextupreef-hub-vs-neptune-apex`,               lastModified: new Date("2026-05-15"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/how-to-track-saltwater-aquarium-parameters`,   lastModified: new Date("2026-04-01"), changeFrequency: "monthly", priority: 0.85 },

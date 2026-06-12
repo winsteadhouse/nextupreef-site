@@ -271,8 +271,8 @@ export default function HomePage() {
         <div className="feature-spotlight">
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">My Reef</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your whole reef,<br />
-              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>in one living profile.</span>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Everything in your tank,<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>in one place.</span>
             </h2>
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>My Reef is the home base for everything in your tank — every fish, coral, and invert, every piece of gear, your dosing, your lighting, your monthly photos, and what it all cost. It is not a static list. It powers your scores, your reminders, and the AI that knows your tank.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
