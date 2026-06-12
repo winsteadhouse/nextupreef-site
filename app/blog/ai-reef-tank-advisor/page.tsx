@@ -31,7 +31,7 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
   },
   datePublished: "2026-05-06",
-  dateModified: "2026-05-06",
+  dateModified: "2026-06-12",
   mainEntityOfPage: "https://nextupreef.com/blog/ai-reef-tank-advisor",
   keywords: [
     "AI reef tank advisor",
@@ -163,7 +163,7 @@ export default function AIReefAdvisorPost() {
 
         {/* Section: Ask Reef AI */}
         <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
-          Ask Reef AI: Chat With an Advisor That Knows Your Tank
+          Reef AI Chat: Ask Anything, About Your Actual Tank
         </h2>
         <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "16px" }}>
           Beyond the scheduled analysis, you can ask Reef AI anything at any time. The chat interface works like talking to an experienced reefer who has seen your logs — because it has.
@@ -180,7 +180,7 @@ export default function AIReefAdvisorPost() {
           <li><em style={{ color: "var(--text-light)" }}>"My Reef Score dropped 8 points — what changed?"</em></li>
         </ul>
         <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "40px" }}>
-          The AI has context about your specific tank when answering — your tank type, size, parameters, equipment, and livestock. So when you ask whether your nitrate is too high for SPS, it can factor in that you have an SPS-dominant tank, what your phosphate is doing, and whether your current levels are trending up or stabilizing.
+          Reef AI Chat knows both sides of your tank — the water chemistry AND the livestock. It has your tank type, size, parameters, equipment, dosing, and every fish, coral, and invert you have logged. So “is my nitrate too high for SPS?” factors in that you run an SPS-dominant tank and where your phosphate is trending, and “can I add a tang?” factors in your tank size, current bioload, and the temperament of what is already in there. It is the same context the Stocking Advisor uses, available as a conversation.
         </p>
 
         {/* Callout box */}
@@ -196,6 +196,19 @@ export default function AIReefAdvisorPost() {
           </p>
         </div>
 
+        {/* Section: Stocking Advisor */}
+        <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
+          Stocking Advisor: Will It Actually Work in Your Tank?
+        </h2>
+        <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "16px" }}>
+          Water chemistry is only half of a reef. The other half is what is living in it, and that is where most reef apps stop — they store a livestock list and nothing more. The Stocking Advisor reads that list and actually reasons about it.
+        </p>
+        <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "16px" }}>
+          It checks every fish, coral, and invert against catalog care data — adult size, temperament, aggression, reef-safety, minimum tank size, placement, and flow needs — then weighs it against your tank size and current bioload. It flags real conflicts, like an aggressive fish that will harass tankmates, a predator that eats your cleanup crew, or a coral that needs more flow than you run. When you ask what to add, it suggests species that fit your tank and fill an actual gap instead of generic crowd-pleasers.
+        </p>
+        <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "16px" }}>
+          Because it shares the same context as Reef AI Chat, the two work together: the Advisor gives you a structured read on your whole stock list, and the chat lets you drill into any single “can I add this?” question with the same tank-aware reasoning. Most trackers can hold the list — NextUpReef tells you whether the list makes sense.
+        </p>
         {/* Section: AI Photo Logging */}
         <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
           AI Photo Parameter Logging: Point, Shoot, Done
@@ -319,7 +332,7 @@ export default function AIReefAdvisorPost() {
             Try AI Reef Advisor free for 30 days
           </h3>
           <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginBottom: "24px", fontWeight: "600" }}>
-            Every new NextUpReef account gets a free 30-day Pro trial. No credit card required. Includes Reef AI Advisor, Ask Reef AI Chat, AI Photo Logging, and all Pro features.
+            Every new NextUpReef account gets a free 30-day Pro trial. No credit card required. Includes the Water Advisor, Reef AI Chat, the Stocking Advisor, AI Photo Logging, and all Pro features.
           </p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
             <a

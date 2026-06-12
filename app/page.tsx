@@ -19,8 +19,9 @@ const softwareAppSchema = {
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   screenshot: "https://nextupreef.com/screenshots/phone-home-v2.png",
   featureList: [
-    "AI-powered reef tank analysis every 24 hours",
-    "Ask Reef AI — chat with AI that knows your tank",
+    "Water Advisor — AI chemistry analysis every 24 hours",
+    "Reef AI Chat — chat with AI that knows your parameters and livestock",
+    "Stocking Advisor — AI livestock compatibility and bioload checks",
     "AI photo parameter logging from any test kit",
     "Neptune Apex integration — one-tap sync",
     "Tank journal with photos",
@@ -170,11 +171,12 @@ export default function HomePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">AI-Powered</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your reef advisor<br />is already in the app.</h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>AI that knows your actual tank — your parameters, equipment, livestock, dosing, and history. Not generic advice. Yours.</p>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>Most reef apps just store your data — or export it so you can paste it into some other AI. NextUpReef builds the AI in, and it already knows your parameters, equipment, livestock, dosing, and full history. Not generic advice. Yours.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
-                { title: "Reef AI Advisor", desc: "Full tank analysis every 24 hours. Tells you what to fix, what's working, and what to watch." },
-                { title: "Ask Reef AI", desc: "Chat with AI that has full context. Why is my alk dropping? gets a real answer, not a Google search." },
+                { title: "Water Advisor", desc: "A full chemistry analysis of your tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps." },
+                { title: "Reef AI Chat", desc: "Ask anything. It knows your parameters and your livestock, so why your alk is dropping or whether a tang fits gets a real answer about your tank." },
+                { title: "Stocking Advisor", desc: "Checks compatibility, bioload, and aggression across your fish, corals, and inverts, then suggests what to add next." },
                 { title: "AI Photo Logging", desc: "Point your camera at any test kit. AI reads the values and logs them for you." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
@@ -265,20 +267,56 @@ export default function HomePage() {
       </section>
 
       {/* MY REEF SECTION */}
-      <section style={{ padding: "60px 24px", maxWidth: "1200px", margin: "0 auto" }}>
+      <section style={{ padding: "80px 24px", maxWidth: "1200px", margin: "0 auto" }}>
+        <div className="feature-spotlight">
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            <div className="section-label">My Reef</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your whole reef,<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>in one living profile.</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>My Reef is the home base for everything in your tank — every fish, coral, and invert, every piece of gear, your dosing, your lighting, your monthly photos, and what it all cost. It is not a static list. It powers your scores, your reminders, and the AI that knows your tank.</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              { [
+                { title: "Livestock, coral by coral", desc: "Track every fish, coral, and invert with catalog care data, health status, acquisition date, and what you paid. Frag or split a colony and keep the lineage." },
+                { title: "Equipment and dosing", desc: "Log skimmer, pumps, reactors, ATO, and dosing products — brands, settings, flow rates, and cost — so your whole setup is documented in one place." },
+                { title: "Monthly photo timeline", desc: "One photo per month builds a growth timeline you can scroll back through to see how far your reef has come." },
+                { title: "Investment tracking", desc: "See what your reef actually costs — livestock, equipment, and lighting totaled up and broken down by category." },
+                { title: "AI Stocking Advisor built in", desc: "Your livestock list feeds the Stocking Advisor, which flags compatibility and bioload issues and suggests what to add next." },
+              ].map((f) => (
+                <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+                  <div>
+                    <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>{f.title}</div>
+                    <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>{f.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Link href="/blog/my-reef-tank-tracking" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+              See everything My Reef tracks →
+            </Link>
+          </div>
+          <div className="feature-spotlight-phone">
+            <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1146} style={{ height: "auto" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* COMMUNITY SECTION */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "80px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
             <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div className="section-label">Your Reef. Your Community.</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Track your tank.<br />Compare with the best.</h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>Log your equipment, livestock, corals, and dosing. See how your reef scores against other reefers. — Learn from the tanks at the top.</p>
+            <div className="section-label">Community</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Compare with<br />the best tanks.</h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>The Reef Hub ranks public tanks by combined Reef and Stability score. See where you stand, then learn from the reefs at the top.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
-                { title: "Reef Hub Leaderboard", desc: "See where your tank ranks. Browse top tanks, their params, salt mix, equipment, and lighting setups." },
-                { title: "My Reef Profile", desc: "Track equipment, livestock, corals, dosing, and lighting. Everything about your reef in one place." },
-                { title: "Reef Score & Stability Score", desc: "One photo per month \u2014 watch your reef grow over time." },
+                { title: "Reef Hub Leaderboard", desc: "See where your tank ranks. Browse top tanks — their params, salt mix, equipment, and lighting setups." },
+                { title: "Reef Score and Stability Score", desc: "Two 0-100 scores grade your parameter health and how stable you keep alk, calcium, magnesium, and salinity over time." },
+                { title: "Learn from real reefs", desc: "Every public tank is a real setup you can study — no theory, just what is actually working for other reefers." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
