@@ -174,10 +174,10 @@ export default function HomePage() {
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>Most reef apps just store your data — or export it so you can paste it into some other AI. NextUpReef builds the AI in, and it already knows your parameters, equipment, livestock, dosing, and full history. Not generic advice. Yours.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
-                { title: "Water Advisor", desc: "A full chemistry analysis of your tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps." },
-                { title: "Reef AI Chat", desc: "Ask anything. It knows your parameters and your livestock, so why your alk is dropping or whether a tang fits gets a real answer about your tank." },
-                { title: "Stocking Advisor", desc: "Checks compatibility, bioload, and aggression across your fish, corals, and inverts, then suggests what to add next." },
-                { title: "AI Photo Logging", desc: "Point your camera at any test kit. AI reads the values and logs them for you." },
+                { title: "Water Advisor", desc: "A full AI chemistry analysis of your reef tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps." },
+                { title: "Reef AI Chat", desc: "AI chat that knows your parameters and your livestock, so why your alk is dropping or whether a tang fits gets a real answer about your tank." },
+                { title: "Stocking Advisor", desc: "AI compatibility, bioload, and aggression checks across your fish, corals, and inverts, then suggests what to add next." },
+                { title: "AI Photo Logging", desc: "AI photo scan: point your camera at any test kit and it reads the values and logs them for you." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
@@ -271,7 +271,7 @@ export default function HomePage() {
         <div className="feature-spotlight">
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">My Reef</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Everything in your tank,<br />
+            <h2 style={{ fontSize: "clamp(26px, 4.2vw, 38px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.15 }}>Everything in your tank,<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>in one place.</span>
             </h2>
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>My Reef is the home base for everything in your tank — every fish, coral, and invert, every piece of gear, your dosing, your lighting, your monthly photos, and what it all cost. It is not a static list. It powers your scores, your reminders, and the AI that knows your tank.</p>
