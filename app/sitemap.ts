@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nextupreef.com";
   return [
     { url: `${baseUrl}`,                                                    lastModified: new Date("2026-06-12"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}/features`,                                           lastModified: new Date("2026-06-12"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-05-26"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/hub`,                                                lastModified: new Date("2026-05-20"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-05-26"), changeFrequency: "weekly",  priority: 0.9 },

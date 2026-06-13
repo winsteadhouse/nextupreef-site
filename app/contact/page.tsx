@@ -193,6 +193,18 @@ export default function FAQPage() {
               Log 1-2x per week for strong trend data. Increase frequency during new setups or when making adjustments.
             </p>
           </div>
+
+          <div style={{ marginTop: "20px", backgroundColor: "rgba(44,196,214,0.06)", borderRadius: "16px", border: "1px solid rgba(44,196,214,0.2)", padding: "24px" }}>
+            <h3 style={{ fontSize: "16px", fontWeight: "900", marginBottom: "8px", color: "var(--text-light)" }}>
+              Want the full feature list?
+            </h3>
+            <p style={{ color: "var(--text-muted)", lineHeight: "1.6", fontWeight: "700", fontSize: "14px", margin: "0 0 12px 0" }}>
+              See everything NextUpReef can do, from AI advisors to automation and the Hub.
+            </p>
+            <a href="/features" style={{ color: "var(--reef)", fontWeight: "900", fontSize: "14px", textDecoration: "none" }}>
+              Explore all features →
+            </a>
+          </div>
         </div>
       </section>
     </>

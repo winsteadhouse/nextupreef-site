@@ -43,7 +43,7 @@ export default function SiteFooter() {
               Product
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <Link href="/" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
+              <Link href="/features" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
                 Features
               </Link>
               <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>

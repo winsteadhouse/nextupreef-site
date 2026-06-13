@@ -42,7 +42,7 @@ const softwareSchema = {
     "Automated dosing and lighting",
     "Neptune Apex integration",
     "NextUpReef Hub 24/7 monitoring",
-    "Reef Hub community leaderboard",
+    "Community leaderboard",
     "6-phase Tank Journey guided setup",
     "Monthly tank photo timeline",
     "Multiple tank support",
@@ -57,12 +57,12 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Is NextUpReef free?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. NextUpReef is free to download and the core of the app — parameter logging, trend charts, My Reef tracking, Reef and Stability scores, the community Reef Hub, and the Tank Journey — is free to use. AI features and automation are part of NextUpReef Pro, which every new account can try free for 30 days with no credit card." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes. NextUpReef is free to download and the core of the app — parameter logging, trend charts, My Reef tracking, monthly tank photos, Reef and Stability scores, the community leaderboard, and the Tank Journey — is free to use. AI features and automation are part of NextUpReef Pro, which every new account can try free for 30 days with no credit card." },
     },
     {
       "@type": "Question",
       name: "What do I get with NextUpReef Pro?",
-      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, monthly tank photos, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
+      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
     },
     {
       "@type": "Question",
@@ -72,7 +72,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Do I need any special hardware?",
-      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring." },
+      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring when it launches." },
     },
   ],
 };
@@ -94,6 +94,7 @@ export default function FeaturesPage() {
           NextUpReef is the complete reef tank app — parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation, and 24/7 monitoring. Free to download, with a 30-day Pro trial on every new account.
         </p>
         <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center", maxWidth: "760px", margin: "0 auto" }}>
+          <a href="#compare" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Free vs Pro</a>
           <a href="#tracking" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tracking</a>
           <a href="#ai" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>AI</a>
           <a href="#my-reef" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>My Reef</a>
@@ -103,7 +104,118 @@ export default function FeaturesPage() {
           <a href="#hub" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Hub</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
-          <a href="#compare" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Free vs Pro</a>
+        </div>
+      </section>
+
+      {/* FREE VS PRO */}
+      <section id="compare" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "64px 24px", maxWidth: "880px", margin: "0 auto", scrollMarginTop: "80px" }}>
+        <div className="section-label">Free vs Pro</div>
+        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>What’s free, what’s Pro.</h2>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>
+          The core of NextUpReef is free forever. Pro adds the AI features, automation, and power-user tools. It is $4.99/month or $39.99/year, and every new account gets a free 30-day Pro trial with no credit card.
+        </p>
+        <div style={{ overflowX: "auto", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "440px" }}>
+            <thead>
+              <tr>
+                <th style={{ padding: "16px", textAlign: "left", fontSize: "13px", fontWeight: 900, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
+                <th style={{ padding: "16px 12px", textAlign: "center", fontSize: "13px", fontWeight: 900, color: "var(--text-light)" }}>Free</th>
+                <th style={{ padding: "16px 12px", textAlign: "center", fontSize: "13px", fontWeight: 900, color: "var(--reef)" }}>Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Parameter logging & trend charts</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Custom target ranges</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>My Reef: livestock, equipment, dosing, cost</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef Score & Stability Score</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Community leaderboard</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Journey guided setup</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Monthly tank photos</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water change & maintenance reminders</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Up to 3</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Unlimited</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Multiple tanks</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>1 tank</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Unlimited</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Journal with photos</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water Advisor (AI chemistry analysis)</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef AI Chat</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Stocking Advisor</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>AI Photo Logging</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Shelly automation & device control</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Automated dosing & lighting</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Neptune Apex sync</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Extended history (6 months+)</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -291,21 +403,21 @@ export default function FeaturesPage() {
 
       {/* NEXTUPREEF HUB */}
       <section id="hub" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
-        <div className="section-label">NextUpReef Hub</div>
+        <div className="section-label">NextUpReef Hub <span style={{ fontSize: "12px", fontWeight: 900, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--reef)", background: "rgba(44,196,214,0.1)", border: "1px solid rgba(44,196,214,0.25)", borderRadius: "999px", padding: "4px 12px", verticalAlign: "middle", marginLeft: "10px", whiteSpace: "nowrap" }}>Coming soon</span></div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>24/7 monitoring,<br />built for reefers.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The NextUpReef Hub is a dedicated device that bridges your reef hardware to the app and watches your tank around the clock — so you get alerts the moment something drifts, even when your phone is nowhere near the tank.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The NextUpReef Hub is a dedicated device that bridges your reef hardware to the app and watches your tank around the clock — so you get alerts the moment something drifts, even when your phone is nowhere near the tank. The Hub is launching soon.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Always-on monitoring</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Hub logs temperature, pH, and connected equipment continuously and pushes it to your account, so your data and alerts keep flowing 24/7.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Hub will log temperature, pH, and connected equipment continuously and push it to your account, so your data and alerts keep flowing 24/7.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Built-in probes</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Complete Kit ships with a calibrated pH probe and temperature probe, plus Shelly smart plugs — everything you need to monitor and control from day one.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Complete Kit will ship with a calibrated pH probe and temperature probe, plus Shelly smart plugs — everything you need to monitor and control from day one.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Health alerts</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>If the Hub goes offline or a sensor reads stale, you get a push notification right away instead of finding out hours later.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>If the Hub goes offline or a sensor reads stale, you will get a push notification right away instead of finding out hours later.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Configured from your phone</div>
@@ -314,14 +426,14 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* COMMUNITY & REEF HUB */}
+      {/* COMMUNITY */}
       <section id="community" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
-        <div className="section-label">Community & Reef Hub</div>
+        <div className="section-label">Community</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Compare with<br />the best tanks.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The Reef Hub ranks public tanks by their combined Reef and Stability score. See where you stand, browse the setups at the top, and learn from real reefs instead of forum theory.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The community leaderboard ranks public tanks by their combined Reef and Stability score. See where you stand, browse the setups at the top, and learn from real reefs instead of forum theory.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Reef Hub leaderboard</div>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Leaderboard</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>See where your tank ranks. Browse top tanks and study their parameters, salt mix, equipment, and lighting setups.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
@@ -385,149 +497,65 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* FREE VS PRO */}
-      <section id="compare" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "880px", margin: "0 auto", scrollMarginTop: "80px" }}>
-        <div className="section-label">Free vs Pro</div>
-        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>What’s free, what’s Pro.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>
-          The core of NextUpReef is free forever. Pro adds the AI features, automation, and power-user tools. It is $4.99/month or $39.99/year, and every new account gets a free 30-day Pro trial with no credit card.
-        </p>
-        <div style={{ overflowX: "auto", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "440px" }}>
-            <thead>
-              <tr>
-                <th style={{ padding: "16px", textAlign: "left", fontSize: "13px", fontWeight: 900, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
-                <th style={{ padding: "16px 12px", textAlign: "center", fontSize: "13px", fontWeight: 900, color: "var(--text-light)" }}>Free</th>
-                <th style={{ padding: "16px 12px", textAlign: "center", fontSize: "13px", fontWeight: 900, color: "var(--reef)" }}>Pro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Parameter logging & trend charts</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Custom target ranges</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>My Reef: livestock, equipment, dosing, cost</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef Score & Stability Score</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef Hub community & leaderboard</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Journey guided setup</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water change & maintenance reminders</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Up to 3</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Unlimited</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Multiple tanks</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>1 tank</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Unlimited</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Monthly tank photos</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Journal with photos</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water Advisor (AI chemistry analysis)</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef AI Chat</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Stocking Advisor</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>AI Photo Logging</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Shelly automation & device control</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Automated dosing & lighting</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Neptune Apex sync</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Extended history (6 months+)</td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
-                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
       {/* RECENTLY SHIPPED */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "880px", margin: "0 auto" }}>
         <div className="section-label">Recently shipped</div>
-        <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 24px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>Always improving.</h2>
+        <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>Always improving.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-            <div style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>June 2026</div>
             <div>
-              <span style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)" }}>Reef AI Chat</span>
-              <span style={{ fontSize: "15px", color: "var(--text-muted)" }}> — A full chat advisor that knows your parameters and your livestock, now with cleaner, easier-to-read replies.</span>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Reef AI Chat</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>A full chat advisor that knows your parameters and your livestock, now with cleaner, easier-to-read replies.</div>
             </div>
           </div>
-          <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-            <div style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>June 2026</div>
             <div>
-              <span style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)" }}>Stocking Advisor</span>
-              <span style={{ fontSize: "15px", color: "var(--text-muted)" }}> — AI compatibility, bioload, and aggression checks across everything in your tank, built into My Reef.</span>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Stocking Advisor</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>AI compatibility, bioload, and aggression checks across everything in your tank, built into My Reef.</div>
             </div>
           </div>
-          <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-            <div style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>June 2026</div>
             <div>
-              <span style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)" }}>My Reef redesign</span>
-              <span style={{ fontSize: "15px", color: "var(--text-muted)" }}> — A cleaner home base for livestock, equipment, dosing, photos, and total tank investment.</span>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>My Reef redesign</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>A cleaner home base for livestock, equipment, dosing, monthly photos, and total tank investment.</div>
             </div>
           </div>
-          <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-            <div style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>May 2026</div>
             <div>
-              <span style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)" }}>Hub health alerts</span>
-              <span style={{ fontSize: "15px", color: "var(--text-muted)" }}> — Get a push notification the moment your Hub goes offline or a sensor reads stale.</span>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Catalog expansion</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>226 species and a full equipment catalog, every entry with complete care data and specs.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>May 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Control Center & Shelly</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Connect Shelly smart outlets and control your dosing, lighting, and equipment from the app.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>May 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Automated dosing</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Calibrate once, set a daily target, and let schedules run on the device even if your internet drops.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>May 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Neptune Apex auto-sync</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Pull pH, salinity, temperature, and Trident values automatically every 15 minutes.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>May 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Tanks Like Yours</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Compare your tank against similar reefs in the community to see how you stack up.</div>
             </div>
           </div>
         </div>
@@ -539,11 +567,11 @@ export default function FeaturesPage() {
         <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>Common questions.</h2>
           <div key={0} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Is NextUpReef free?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Yes. NextUpReef is free to download and the core of the app — parameter logging, trend charts, My Reef tracking, Reef and Stability scores, the community Reef Hub, and the Tank Journey — is free to use. AI features and automation are part of NextUpReef Pro, which every new account can try free for 30 days with no credit card.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Yes. NextUpReef is free to download and the core of the app — parameter logging, trend charts, My Reef tracking, monthly tank photos, Reef and Stability scores, the community leaderboard, and the Tank Journey — is free to use. AI features and automation are part of NextUpReef Pro, which every new account can try free for 30 days with no credit card.</p>
           </div>
           <div key={1} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>What do I get with NextUpReef Pro?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, monthly tank photos, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
           </div>
           <div key={2} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Does NextUpReef work on iPhone and Android?</h3>
@@ -551,7 +579,7 @@ export default function FeaturesPage() {
           </div>
           <div key={3} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Do I need any special hardware?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring when it launches.</p>
           </div>
         <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, marginTop: "8px" }}>
           Looking for how-to answers and details on every screen? See the full{" "}
