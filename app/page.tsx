@@ -297,7 +297,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1242} style={{ height: "auto" }} />
+            <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1146} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

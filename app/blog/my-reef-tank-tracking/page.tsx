@@ -112,7 +112,7 @@ export default function MyReefTrackingPost() {
 
         {/* Hero image */}
         <div style={{ maxWidth: "300px", margin: "0 auto 40px" }}>
-          <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1242} style={{ width: "100%", height: "auto", display: "block" }} />
+          <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1146} style={{ width: "100%", height: "auto", display: "block" }} />
         </div>
 
         <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "16px" }}>
