@@ -4,6 +4,8 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import "./globals.css";
 
+import { headers } from 'next/headers';
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -82,11 +84,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const h = await headers();
+  const isPortal = h.get('x-portal') === '1';
   return (
     <html lang="en">
       <head>
@@ -94,9 +98,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/brand/logo.png" />
       </head>
       <body>
-        <SiteNav />
+        {!isPortal && <SiteNav />}
         {children}
-        <SiteFooter />
+        {!isPortal && <SiteFooter />}
         <Analytics />
       </body>
     </html>

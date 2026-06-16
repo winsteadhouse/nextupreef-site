@@ -1,0 +1,42 @@
+import { createClient } from '@/lib/supabase/server';
+import { getActiveTank } from '@/lib/active-tank';
+
+export default async function MyReefPage() {
+  const supabase = await createClient();
+  const { tanks, activeTankId } = await getActiveTank();
+  const tank = tanks.find((t) => t.id === activeTankId) ?? null;
+  if (!tank) return (<div><h1>My Reef</h1><p style={{ color: 'var(--mid)', marginTop: 8 }}>No tanks yet.</p></div>);
+
+  const full = (await supabase.from('tanks').select('sump_gallons, salt_brand, setup_date, has_refugium, tank_type, display_gallons, name').eq('id', tank.id).maybeSingle()).data;
+  const live = await supabase.from('user_livestock').select('id', { count: 'exact', head: true }).eq('tank_id', tank.id);
+  const equip = await supabase.from('user_equipment').select('id', { count: 'exact', head: true }).eq('tank_id', tank.id);
+  const dose = await supabase.from('dosing_products').select('id', { count: 'exact', head: true }).eq('tank_id', tank.id);
+
+  return (
+    <div>
+      <h1>{tank.name}</h1>
+      <p style={{ color: 'var(--mid)', marginTop: 8, fontSize: 14 }}>Tank overview. Photo timeline, livestock gallery, and PAR placement land here next.</p>
+
+      <div style={{ marginTop: 20, background: 'var(--panel)', border: '1px solid var(--hair)', borderRadius: 'var(--r)', padding: '20px 22px' }}>
+        <div style={{ fontSize: 13, color: 'var(--mid)' }}>{(full?.tank_type ?? 'reef') + ' . ' + (full?.display_gallons ?? '-') + ' gal' + (full?.sump_gallons ? ' + ' + full.sump_gallons + ' sump' : '')}</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginTop: 14 }}>
+          {full?.salt_brand && <Chip text={full.salt_brand} />}
+          {full?.has_refugium && <Chip text='Refugium' />}
+          {full?.setup_date && <Chip text={'Since ' + String(full.setup_date).slice(0, 10)} />}
+        </div>
+        <div style={{ display: 'flex', gap: 28, marginTop: 22 }}>
+          <Mini label='Livestock' value={live.count ?? 0} />
+          <Mini label='Equipment' value={equip.count ?? 0} />
+          <Mini label='Dosing' value={dose.count ?? 0} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Mini({ label, value }: { label: string; value: number }) {
+  return (<div><div style={{ fontSize: 24, fontWeight: 600 }}>{value}</div><div style={{ fontSize: 12, color: 'var(--mid)' }}>{label}</div></div>);
+}
+function Chip({ text }: { text: string }) {
+  return (<span style={{ fontSize: 12, color: 'var(--mid)', background: 'var(--panel-2)', border: '1px solid var(--hair)', borderRadius: 999, padding: '4px 10px' }}>{text}</span>);
+}
