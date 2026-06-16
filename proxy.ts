@@ -1,9 +1,10 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
-const PORTAL_PATHS = ['/dashboard', '/my-reef', '/analytics', '/control', '/login', '/upgrade'];
+const PORTAL_HOST = 'portal.nextupreef.com';
+const PORTAL_PATHS = ['/dashboard', '/my-reef', '/analytics', '/control', '/settings', '/login', '/upgrade'];
 
 function isPortalHost(host: string) {
-  return host.startsWith('app.') || host.includes('localhost') || host.startsWith('127.');
+  return host.startsWith('portal.') || host.includes('localhost') || host.startsWith('127.');
 }
 function isPortalPath(p: string) {
   return PORTAL_PATHS.some((x) => p === x || p.startsWith(x + '/'));
@@ -16,7 +17,7 @@ export default function proxy(request: NextRequest) {
   if (!isPortalHost(host)) {
     if (isPortalPath(path)) {
       const url = request.nextUrl.clone();
-      url.host = 'app.nextupreef.com';
+      url.host = PORTAL_HOST;
       url.port = '';
       return NextResponse.redirect(url);
     }
@@ -29,13 +30,11 @@ export default function proxy(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  if (isPortalPath(path)) {
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set('x-portal', '1');
-    return NextResponse.next({ request: { headers: requestHeaders } });
-  }
-
-  return NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  if (isPortalPath(path)) requestHeaders.set('x-portal', '1');
+  const res = NextResponse.next({ request: { headers: requestHeaders } });
+  res.headers.set('X-Robots-Tag', 'noindex, nofollow');
+  return res;
 }
 
 export const config = {
