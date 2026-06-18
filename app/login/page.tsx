@@ -65,6 +65,7 @@ export default function LoginPage() {
   return (
     <div className="authwrap">
       <div className="authcard">
+        <div className="login-desktop-note">The web dashboard is built for desktop. On your phone, the NextUpReef app is the best experience — grab it below.</div>
         {mode === 'in' ? (
           <>
             <h2>Sign in</h2>

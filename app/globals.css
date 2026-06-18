@@ -762,6 +762,9 @@ h1, h2, h3, h4 {
   .nav-links a {
     font-size: 13px;
   }
+  .nav-signin {
+    display: none;
+  }
 
   .hero {
     min-height: 620px;

@@ -18,7 +18,7 @@ export default function SiteNav() {
         <nav className="nav-links">
           <Link href="/features">Features</Link><Link href="/devices">Devices</Link><Link href="/hub">Hub</Link>
           <Link href="/blog">Blog</Link>
-          <a href="https://portal.nextupreef.com">Sign in</a>
+          <a href="https://portal.nextupreef.com" className="nav-signin">Sign in</a>
         </nav>
       </div>
     </header>
