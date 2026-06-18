@@ -12,8 +12,15 @@ export default function SignOutButton() {
       const sb = createClient();
       await sb.auth.signOut();
     } finally {
-      router.push('/login');
-      router.refresh();
+      const host = window.location.host;
+      if (host.startsWith('portal.') && !host.includes('localhost')) {
+        // Leave the portal subdomain for the public marketing site.
+        window.location.href = 'https://' + host.slice(7) + '/';
+      } else {
+        // localhost (or any non-portal host): marketing home is served at /.
+        router.push('/');
+        router.refresh();
+      }
     }
   };
   return (

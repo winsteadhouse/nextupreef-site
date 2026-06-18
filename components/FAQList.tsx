@@ -63,6 +63,22 @@ const faqs = [
     a: "Dashboard — your at-a-glance view with Reef Score, Stability Score, latest parameter values, upcoming reminders, badges, and personalized recommendations. Tank — manage your tank details, equipment, livestock, dosing products, and monthly photos. Log — enter your test results with real-time color feedback. Reminders — set up water change schedules and maintenance tasks with push notification alerts. Analytics — deep dive into trends with interactive charts, time-in-range stats, stability grades, and NO3:PO4 ratio tracking.",
   },
 
+  // ── Web Dashboard ────────────────────────────────────────────
+  {
+    category: "Web Dashboard",
+    q: "Is there a web version of NextUpReef?",
+    a: "Yes. Alongside the iOS and Android apps, you can sign in to the NextUpReef web dashboard at portal.nextupreef.com from any browser. It mirrors your app data — your Dashboard with Reef and Stability scores, latest parameters and trend charts, My Reef, Analytics, device Control, and parameter logging. Your account and tanks are shared with the app, so everything stays in sync. The web dashboard is part of NextUpReef Pro and is also available during your free 30-day trial.",
+  },
+  {
+    category: "Web Dashboard",
+    q: "How do I sign in to the web dashboard?",
+    a: "Go to portal.nextupreef.com and sign in with the same email and password you use in the app. Accounts are created in the app, not on the web — so download NextUpReef, create your account, then sign in on the web with those same credentials. If you forget your password, tap 'Forgot password?' on the web sign-in page and we'll email you a reset link.",
+  },
+  {
+    category: "Web Dashboard",
+    q: "Can I log parameters from the web?",
+    a: "Yes. The web dashboard has a Log page that works like the app: enter any of your parameters — alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, temperature, ammonia, and nitrite — with live in-range feedback against your tank's targets, then save. The reading syncs to your account and shows up on your dashboard and in the app right away.",
+  },
   // ── Logging ──────────────────────────────────────────────────
   {
     category: "Logging Parameters",

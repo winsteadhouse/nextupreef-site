@@ -23,6 +23,22 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
+      name: "Is there a web version of NextUpReef?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. You can sign in to the NextUpReef web dashboard at portal.nextupreef.com from any browser using the same account as the app. It shows your Dashboard, Reef and Stability scores, latest parameters and trends, My Reef, Analytics, device control, and parameter logging, all synced with the app. The web dashboard is included with NextUpReef Pro and the free 30-day trial.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I log reef parameters from a web browser?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The NextUpReef web dashboard at portal.nextupreef.com has a Log page where you can enter alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, temperature, ammonia, and nitrite with live in-range feedback, then save. Readings sync instantly to your account and appear in the app.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "What is NextUpReef?",
       acceptedAnswer: {
         "@type": "Answer",

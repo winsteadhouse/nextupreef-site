@@ -104,6 +104,7 @@ export default function FeaturesPage() {
           <a href="#hub" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Hub</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
+          <a href="/contact" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>FAQ</a>
         </div>
       </section>
 
@@ -115,7 +116,7 @@ export default function FeaturesPage() {
           The core of NextUpReef is free forever. Pro adds the AI features, automation, and power-user tools. It is $4.99/month or $39.99/year, and every new account gets a free 30-day Pro trial with no credit card.
         </p>
         <div style={{ overflowX: "auto", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "440px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr>
                 <th style={{ padding: "16px", textAlign: "left", fontSize: "13px", fontWeight: 900, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
