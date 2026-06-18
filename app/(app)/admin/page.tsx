@@ -1,0 +1,17 @@
+import { redirect } from 'next/navigation';
+import { createClient } from '@/lib/supabase/server';
+import AdminClient from './AdminClient';
+
+const ADMIN_ID = '311089a8-5d8f-4e8d-a3d6-97d35bd89e60';
+
+export default async function AdminPage() {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user || user.id !== ADMIN_ID) redirect('/dashboard');
+  const [m, s, u] = await Promise.all([
+    supabase.rpc('admin_metrics'),
+    supabase.rpc('admin_timeseries', { days: 90 }),
+    supabase.rpc('admin_recent_users', { lim: 5000 }),
+  ]);
+  return <AdminClient metrics={m.data} series={(s.data ?? []) as Record<string, number>[]} users={(u.data ?? []) as Record<string, unknown>[]} />;
+}

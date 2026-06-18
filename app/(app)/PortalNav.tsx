@@ -10,11 +10,12 @@ const ITEMS = [
   { href: '/settings', label: 'Settings' },
 ];
 
-export default function PortalNav() {
+export default function PortalNav({ isAdmin = false }: { isAdmin?: boolean }) {
   const path = usePathname();
+  const items = isAdmin ? [...ITEMS, { href: '/admin', label: 'Admin' }] : ITEMS;
   return (
     <>
-      {ITEMS.map((it) => (
+      {items.map((it) => (
         <Link key={it.href} href={it.href} className={'nav' + (path === it.href || path.startsWith(it.href + '/') ? ' on' : '')}>{it.label}</Link>
       ))}
     </>

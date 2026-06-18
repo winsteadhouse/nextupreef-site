@@ -8,6 +8,10 @@ export default async function AnalyticsPage() {
   const tank = tanks.find((t) => t.id === activeTankId) ?? null;
   if (!tank) return (<div><h1>Analytics</h1><p style={{ color: 'var(--mid)', marginTop: 8 }}>No tanks yet.</p></div>);
 
+  const tt = tank.tank_type ?? 'mixed';
+  const rawTargets = ((await supabase.from('param_targets').select('param, min, max').eq('tank_type', tt)).data ?? []) as Record<string, unknown>[];
+  const targets: Record<string, { min: number; max: number }> = {};
+  for (const r of rawTargets) targets[String(r.param)] = { min: Number(r.min), max: Number(r.max) };
   const rawLogs = ((await supabase.from('parameter_logs').select('logged_at, alk, ca, mg, no3, po4, salinity, ph, temp').eq('tank_id', tank.id).order('logged_at', { ascending: true })).data ?? []) as Record<string, unknown>[];
   const rawScores = ((await supabase.from('score_snapshots').select('snapshot_date, reef_score, stability_score, community_rank, community_total').eq('tank_id', tank.id).order('snapshot_date', { ascending: true })).data ?? []) as Record<string, unknown>[];
   const rawEvents = ((await supabase.rpc('analytics_events', { p_tank: tank.id })).data ?? []) as Record<string, unknown>[];
@@ -19,5 +23,5 @@ export default async function AnalyticsPage() {
   const events = rawEvents.filter((e) => e.t).map((e) => ({ t: new Date(String(e.t)).getTime(), type: String(e.etype), label: String(e.label) })).sort((a, b) => a.t - b.t);
   const doseDaily = rawDose.map((r) => ({ t: new Date(String(r.d) + 'T12:00:00').getTime(), product: String(r.product), param: String(r.param), ml: Number(r.ml) }));
 
-  return <AnalyticsClient tankName={tank.name} logs={logs} scores={scores} events={events} doseDaily={doseDaily} />;
+  return <AnalyticsClient tankName={tank.name} logs={logs} scores={scores} events={events} doseDaily={doseDaily} targets={targets} />;
 }

@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
 const PORTAL_HOST = 'portal.nextupreef.com';
-const PORTAL_PATHS = ['/dashboard', '/my-reef', '/analytics', '/control', '/settings', '/login', '/upgrade'];
+const PORTAL_PATHS = ['/dashboard', '/my-reef', '/analytics', '/control', '/settings', '/admin', '/login', '/upgrade'];
 
 function isPortalHost(host: string) {
   return host.startsWith('portal.') || host.includes('localhost') || host.startsWith('127.');

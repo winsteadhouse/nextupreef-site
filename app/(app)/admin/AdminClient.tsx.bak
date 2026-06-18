@@ -1,0 +1,218 @@
+'use client';
+import { useState, useMemo, type ReactNode } from 'react';
+import { ResponsiveContainer, ComposedChart, BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+
+type Series = Record<string, number | string>;
+type UserRow = Record<string, unknown>;
+
+const CY = '#2EE6CF', RO = '#5B8DEF', GD = '#36D89B', AM = '#F6A623', BD = '#FF5D5D', PU = '#A78BFA', PK = '#E879F9', BL = '#60A5FA';
+
+const fmt = (n: unknown) => (n == null ? '0' : Number(n).toLocaleString());
+const pct = (a: number, b: number) => (b > 0 ? Math.round((a / b) * 100) : 0);
+const d2 = (iso: unknown) => { if (!iso) return '-'; const dt = new Date(String(iso)); if (isNaN(dt.getTime())) return '-'; return (dt.getMonth() + 1) + '/' + dt.getDate() + '/' + String(dt.getFullYear()).slice(2); };
+const daysAgo = (iso: unknown) => { if (!iso) return null; const t = new Date(String(iso)).getTime(); if (isNaN(t)) return null; return Math.floor((Date.now() - t) / 86400000); };
+const tick = (d: any) => { const p = String(d).split('-'); return p.length === 3 ? p[1] + '/' + p[2] : d; };
+
+const panel = { background: 'var(--panel)', border: '1px solid var(--hair)', borderRadius: 'var(--r)', padding: '16px 18px' } as const;
+const tipStyle = { background: '#0C121D', border: '1px solid var(--hair)', borderRadius: 8, fontSize: 12, color: 'var(--hi)' } as const;
+
+function Kpi({ label, value, sub, color }: { label: string; value: string; sub?: string; color?: string }) {
+  return (
+    <div style={{ ...panel, padding: '14px 16px' }}>
+      <div style={{ fontSize: 11, color: 'var(--dim)', textTransform: 'uppercase', letterSpacing: '.4px' }}>{label}</div>
+      <div style={{ fontSize: 26, fontWeight: 800, color: color || 'var(--hi)', marginTop: 4, lineHeight: 1.1 }}>{value}</div>
+      {sub ? <div style={{ fontSize: 11.5, color: 'var(--mid)', marginTop: 3 }}>{sub}</div> : null}
+    </div>
+  );
+}
+function Panel({ title, children, right }: { title: string; children: ReactNode; right?: ReactNode }) {
+  return (
+    <div style={{ ...panel, marginTop: 16 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--hi)' }}>{title}</div>
+        {right}
+      </div>
+      {children}
+    </div>
+  );
+}
+function MiniStat({ label, value, color }: { label: string; value: string; color?: string }) {
+  return (
+    <div style={{ background: '#0C121D', border: '1px solid var(--hair)', borderRadius: 10, padding: '11px 13px' }}>
+      <div style={{ fontSize: 19, fontWeight: 800, color: color || 'var(--hi)' }}>{value}</div>
+      <div style={{ fontSize: 11, color: 'var(--dim)', marginTop: 2 }}>{label}</div>
+    </div>
+  );
+}
+function Bars({ data, items }: { data: { k: string; v: number }[]; items?: number }) {
+  const max = Math.max(1, ...data.map((d) => d.v));
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+      {data.slice(0, items || 99).map((d) => (
+        <div key={d.k} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ width: 78, fontSize: 12, color: 'var(--mid)', textAlign: 'right', textTransform: 'capitalize' }}>{d.k}</div>
+          <div style={{ flex: 1, height: 16, background: '#0C121D', borderRadius: 5, overflow: 'hidden' }}>
+            <div style={{ width: pct(d.v, max) + '%', height: '100%', background: RO, borderRadius: 5 }} />
+          </div>
+          <div style={{ width: 38, fontSize: 12, color: 'var(--hi)', fontWeight: 600 }}>{fmt(d.v)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function AdminClient({ metrics, series, users }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[] }) {
+  const [days, setDays] = useState(90);
+  const m = metrics || {};
+  const u = (m.users || {}) as Record<string, number>;
+  const t = (m.tanks || {}) as Record<string, unknown>;
+  const ai = (m.ai || {}) as Record<string, number>;
+  const ig = (m.integrations || {}) as Record<string, unknown>;
+  const ds = (m.dosing || {}) as Record<string, number>;
+  const lg = (m.logging || {}) as Record<string, number>;
+
+  const data = useMemo(() => (series || []).slice(-days), [series, days]);
+  const tankTypes = useMemo(() => Object.entries((t.by_type || {}) as Record<string, number>).map(([k, v]) => ({ k, v })).sort((a, b) => b.v - a.v), [t]);
+  const brands = useMemo(() => Object.entries((ig.shelly_by_brand || {}) as Record<string, number>).map(([k, v]) => ({ k: k.replace(/_/g, ' '), v })).sort((a, b) => b.v - a.v), [ig]);
+  const proP = pct(u.pro || 0, u.total || 0);
+
+  const Toggle = (
+    <div style={{ display: 'flex', gap: 6 }}>
+      {[30, 90].map((d) => (
+        <button key={d} onClick={() => setDays(d)} style={{ cursor: 'pointer', fontSize: 12, fontWeight: 600, padding: '4px 10px', borderRadius: 7, border: '1px solid ' + (days === d ? RO : 'var(--hair)'), background: days === d ? 'rgba(91,141,239,.15)' : 'transparent', color: days === d ? RO : 'var(--mid)' }}>{d}d</button>
+      ))}
+    </div>
+  );
+
+  const tierColor = (tier: string) => (tier === 'pro' ? CY : 'var(--mid)');
+
+  return (
+    <div>
+      <h1>Admin</h1>
+      <div style={{ fontSize: 13, color: 'var(--dim)', marginTop: -4, marginBottom: 4 }}>Usage and growth across all users. Visible only to you.</div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginTop: 14 }}>
+        <Kpi label='Total users' value={fmt(u.total)} sub={fmt(u.active_7d) + ' active (7d)'} />
+        <Kpi label='Pro' value={fmt(u.pro)} sub={proP + '% of users'} color={CY} />
+        <Kpi label='Free' value={fmt(u.free)} sub={fmt(u.portal_access) + ' with portal access'} />
+        <Kpi label='New (7d)' value={fmt(u.new_7d)} sub={fmt(u.new_30d) + ' in 30d'} color={GD} />
+        <Kpi label='Active (30d)' value={fmt(u.active_30d)} sub={pct(u.active_30d || 0, u.total || 0) + '% of base'} color={BL} />
+        <Kpi label='Tanks' value={fmt(t.total)} sub={fmt(t.public) + ' public'} />
+      </div>
+
+      <Panel title='Growth' right={Toggle}>
+        <ResponsiveContainer width='100%' height={250}>
+          <ComposedChart data={data} margin={{ top: 6, right: 8, left: -8, bottom: 0 }}>
+            <CartesianGrid stroke='rgba(125,165,210,.08)' vertical={false} />
+            <XAxis dataKey='d' tickFormatter={tick} tick={{ fontSize: 11, fill: 'var(--dim)' }} minTickGap={24} />
+            <YAxis yAxisId='L' tick={{ fontSize: 11, fill: 'var(--dim)' }} />
+            <YAxis yAxisId='R' orientation='right' tick={{ fontSize: 11, fill: 'var(--dim)' }} />
+            <Tooltip contentStyle={tipStyle} labelFormatter={tick} />
+            <Bar yAxisId='L' dataKey='signups' name='Signups' fill={GD} radius={[3, 3, 0, 0]} maxBarSize={14} />
+            <Line yAxisId='R' type='monotone' dataKey='cum_users' name='Total users' stroke={CY} strokeWidth={2} dot={false} />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </Panel>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, marginTop: 16 }}>
+        <div style={panel}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--hi)', marginBottom: 12 }}>Daily active users</div>
+          <ResponsiveContainer width='100%' height={210}>
+            <ComposedChart data={data} margin={{ top: 6, right: 8, left: -8, bottom: 0 }}>
+              <CartesianGrid stroke='rgba(125,165,210,.08)' vertical={false} />
+              <XAxis dataKey='d' tickFormatter={tick} tick={{ fontSize: 11, fill: 'var(--dim)' }} minTickGap={24} />
+              <YAxis tick={{ fontSize: 11, fill: 'var(--dim)' }} />
+              <Tooltip contentStyle={tipStyle} labelFormatter={tick} />
+              <Bar dataKey='logs' name='Logs' fill='rgba(91,141,239,.35)' radius={[3, 3, 0, 0]} maxBarSize={14} />
+              <Line type='monotone' dataKey='active' name='Active users' stroke={BL} strokeWidth={2} dot={false} />
+            </ComposedChart>
+          </ResponsiveContainer>
+        </div>
+        <div style={panel}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--hi)', marginBottom: 12 }}>AI generations per day</div>
+          <ResponsiveContainer width='100%' height={210}>
+            <BarChart data={data} margin={{ top: 6, right: 8, left: -8, bottom: 0 }}>
+              <CartesianGrid stroke='rgba(125,165,210,.08)' vertical={false} />
+              <XAxis dataKey='d' tickFormatter={tick} tick={{ fontSize: 11, fill: 'var(--dim)' }} minTickGap={24} />
+              <YAxis tick={{ fontSize: 11, fill: 'var(--dim)' }} />
+              <Tooltip contentStyle={tipStyle} labelFormatter={tick} />
+              <Bar dataKey='advisor' name='Advisor' stackId='a' fill={PU} maxBarSize={16} />
+              <Bar dataKey='stocking' name='Stocking' stackId='a' fill={AM} maxBarSize={16} />
+              <Bar dataKey='chat' name='Chat' stackId='a' fill={PK} maxBarSize={16} />
+            </BarChart>
+          </ResponsiveContainer>
+          <div style={{ fontSize: 11.5, color: 'var(--dim)', marginTop: 8 }}>Totals: Advisor {fmt(ai.advisor_total)} . Stocking {fmt(ai.stocking_total)} . Chat {fmt(ai.chat_total)} ({fmt(ai.advisor_7d + ai.stocking_7d + ai.chat_7d)} in 7d)</div>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, marginTop: 16 }}>
+        <div style={panel}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--hi)', marginBottom: 14 }}>Subscription mix</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
+            <div style={{ fontSize: 34, fontWeight: 800, color: CY }}>{proP}%</div>
+            <div style={{ fontSize: 12.5, color: 'var(--mid)' }}>Pro conversion<br />{fmt(u.pro)} Pro / {fmt(u.free)} free</div>
+          </div>
+          <div style={{ display: 'flex', height: 14, borderRadius: 7, overflow: 'hidden', border: '1px solid var(--hair)' }}>
+            <div style={{ width: proP + '%', background: CY }} />
+            <div style={{ width: (100 - proP) + '%', background: 'var(--raised)' }} />
+          </div>
+        </div>
+        <div style={panel}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--hi)', marginBottom: 14 }}>Tank types</div>
+          <Bars data={tankTypes} />
+        </div>
+      </div>
+
+      <Panel title='Integrations and hardware'>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 10 }}>
+          <MiniStat label='Apex users' value={fmt(ig.apex_active_users)} color={RO} />
+          <MiniStat label='Apex synced 24h' value={fmt(ig.apex_synced_24h)} />
+          <MiniStat label='Smart outlets' value={fmt(ig.shelly_outlets)} color={GD} />
+          <MiniStat label='Outlet users' value={fmt(ig.shelly_users)} />
+          <MiniStat label='Hubs claimed' value={fmt(ig.hub_claimed)} color={PU} />
+          <MiniStat label='Hubs live 24h' value={fmt(ig.hub_active_24h)} />
+          <MiniStat label='Dosing users' value={fmt(ds.users)} color={AM} />
+          <MiniStat label='Dosing products' value={fmt(ds.products)} />
+          <MiniStat label='Scheduled dosers' value={fmt(ds.scheduled)} />
+          <MiniStat label='Dose events 7d' value={fmt(ds.dose_events_7d)} />
+          <MiniStat label='Param logs' value={fmt(lg.total)} color={BL} />
+          <MiniStat label='Logs 7d' value={fmt(lg.logs_7d)} />
+        </div>
+        {brands.length ? <div style={{ marginTop: 14 }}><div style={{ fontSize: 11, color: 'var(--dim)', textTransform: 'uppercase', letterSpacing: '.4px', marginBottom: 8 }}>Smart outlet brands</div><Bars data={brands} /></div> : null}
+      </Panel>
+
+      <Panel title={'Users (' + (users || []).length + ')'}>
+        <div style={{ overflowX: 'auto', maxHeight: 520, overflowY: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12.5 }}>
+            <thead style={{ position: 'sticky', top: 0, background: 'var(--panel)' }}>
+              <tr style={{ textAlign: 'left', color: 'var(--dim)', borderBottom: '1px solid var(--hair)' }}>
+                <th style={{ padding: '7px 8px' }}>User</th><th style={{ padding: '7px 8px' }}>Joined</th><th style={{ padding: '7px 8px' }}>Tier</th>
+                <th style={{ padding: '7px 8px' }}>Last seen</th><th style={{ padding: '7px 8px', textAlign: 'right' }}>Tanks</th>
+                <th style={{ padding: '7px 8px', textAlign: 'right' }}>Logs</th><th style={{ padding: '7px 8px', textAlign: 'right' }}>AI</th>
+                <th style={{ padding: '7px 8px' }}>Gear</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(users || []).map((r, i) => {
+                const seen = daysAgo(r.last_seen_at);
+                const gear = [r.apex ? 'Apex' : null, r.shelly ? 'Outlet' : null, r.hub ? 'Hub' : null, r.dosing ? 'Dose' : null].filter(Boolean).join(' . ');
+                return (
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(125,165,210,.06)' }}>
+                    <td style={{ padding: '7px 8px', color: 'var(--hi)', maxWidth: 180, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{String(r.name)}</td>
+                    <td style={{ padding: '7px 8px', color: 'var(--mid)' }}>{d2(r.created_at)}</td>
+                    <td style={{ padding: '7px 8px', fontWeight: 700, color: tierColor(String(r.tier)) }}>{String(r.tier)}</td>
+                    <td style={{ padding: '7px 8px', color: seen != null && seen <= 7 ? GD : 'var(--mid)' }}>{seen == null ? '-' : seen === 0 ? 'today' : seen + 'd ago'}</td>
+                    <td style={{ padding: '7px 8px', textAlign: 'right', color: 'var(--mid)' }}>{fmt(r.tanks)}</td>
+                    <td style={{ padding: '7px 8px', textAlign: 'right', color: 'var(--mid)' }}>{fmt(r.logs)}</td>
+                    <td style={{ padding: '7px 8px', textAlign: 'right', color: Number(r.ai) > 0 ? PU : 'var(--dim)' }}>{fmt(r.ai)}</td>
+                    <td style={{ padding: '7px 8px', color: 'var(--mid)', fontSize: 11.5 }}>{gear || '-'}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Panel>
+    </div>
+  );
+}

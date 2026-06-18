@@ -7,7 +7,7 @@ const UP = String.fromCharCode(9650);
 const DN = String.fromCharCode(9660);
 
 type P = { key: string; label: string; unit: string; color: string; lo: number; hi: number; dec: number; axis: [number, number] };
-const PARAMS: P[] = [
+const BASE_PARAMS: P[] = [
   { key: 'alk', label: 'Alkalinity', unit: 'dKH', color: '#38BDF8', lo: 8.0, hi: 9.5, dec: 2, axis: [6, 12] },
   { key: 'ca', label: 'Calcium', unit: 'ppm', color: '#A78BFA', lo: 400, hi: 450, dec: 0, axis: [350, 500] },
   { key: 'mg', label: 'Magnesium', unit: 'ppm', color: '#34D399', lo: 1300, hi: 1400, dec: 0, axis: [1200, 1500] },
@@ -17,7 +17,7 @@ const PARAMS: P[] = [
   { key: 'ph', label: 'pH', unit: '', color: '#E879F9', lo: 7.9, hi: 8.4, dec: 2, axis: [7.6, 8.6] },
   { key: 'temp', label: 'Temp', unit: DEG + 'F', color: '#60A5FA', lo: 76, hi: 82, dec: 1, axis: [72, 86] },
 ];
-const PMAP: Record<string, P> = Object.fromEntries(PARAMS.map((p) => [p.key, p] as [string, P]));
+const BASE_PMAP: Record<string, P> = Object.fromEntries(BASE_PARAMS.map((p) => [p.key, p] as [string, P]));
 
 const EVENT_META: Record<string, { color: string; label: string }> = {
   wc: { color: '#5B8DEF', label: 'Water change' },
@@ -74,7 +74,7 @@ function ChartTip({ active, payload, label }: { active?: boolean; payload?: { da
     <div style={{ background: '#0C121D', border: '1px solid rgba(125,165,210,.18)', borderRadius: 8, padding: '8px 10px', fontSize: 12 }}>
       <div style={{ color: 'var(--dim)', marginBottom: 4 }}>{label != null ? new Date(label).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : ''}</div>
       {rows.map((it, i) => {
-        const pp = it.dataKey ? PMAP[it.dataKey] : undefined;
+        const pp = it.dataKey ? BASE_PMAP[it.dataKey] : undefined;
         const lab = pp ? pp.label : (it.dataKey === 'reef' ? 'Reef Score' : it.dataKey === 'stab' ? 'Stability' : it.dataKey === 'rank' ? 'Community rank' : String(it.dataKey));
         return (
           <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 7, color: 'var(--hi)', padding: '1px 0' }}>
@@ -94,7 +94,9 @@ function lastTwo(logs: Log[], key: string): [number | null, number | null] {
   return [n ? vals[n - 1] : null, n > 1 ? vals[n - 2] : null];
 }
 
-export default function AnalyticsClient({ tankName, logs, scores, events, doseDaily }: { tankName: string; logs: Log[]; scores: Score[]; events: Ev[]; doseDaily: Dose[] }) {
+export default function AnalyticsClient({ tankName, logs, scores, events, doseDaily, targets }: { tankName: string; logs: Log[]; scores: Score[]; events: Ev[]; doseDaily: Dose[]; targets: Record<string, { min: number; max: number }> }) {
+  const PARAMS = BASE_PARAMS.map((p) => ({ ...p, lo: targets[p.key]?.min ?? p.lo, hi: targets[p.key]?.max ?? p.hi }));
+  const PMAP: Record<string, P> = Object.fromEntries(PARAMS.map((p) => [p.key, p] as [string, P]));
   const [range, setRange] = useState<string>('all');
   const [focus, setFocus] = useState<string>('alk');
   const [overlay, setOverlay] = useState<string>('none');
