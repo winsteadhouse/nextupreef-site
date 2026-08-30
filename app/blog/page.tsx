@@ -31,14 +31,12 @@ const posts = [
   { slug: "my-reef-tank-tracking", title: "My Reef: Track Livestock, Equipment, Corals, and Cost in One App", description: "How NextUpReef tracks every fish, coral, invert, piece of equipment, dosing product, monthly photo, and dollar you spend — with an AI Stocking Advisor that checks compatibility for your tank.", date: "June 12, 2026", readTime: "7 min read", tags: ["Livestock", "Equipment", "Cost Tracking"], series: null, category: "app" },
   { slug: "ai-reef-tank-advisor", title: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef", description: "How NextUpReef uses AI to analyze your reef tank parameters, equipment, and livestock giving you personalized advice, answering reef questions, and reading test kits from a photo.", date: "May 2026", readTime: "7 min read", tags: ["AI Features", "Pro"], series: null, category: "app" },
   { slug: "best-reef-tank-tracking-app", title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)", description: "An honest comparison of reef aquarium tracking apps. Find the best free reef app for iOS and Android.", date: "April 4, 2026", readTime: "6 min read", tags: ["App Comparison", "Free Apps"], series: null, category: "app" },
-  { slug: "nextupreef-hub-vs-neptune-apex", title: "NextUpReef Hub vs Neptune Apex: A Modern Reef Controller Compared (2026)", description: "Honest comparison of the NextUpReef Hub and Neptune A3 Apex. Pricing, included probes, equipment control, app features, and total cost.", date: "May 20, 2026", readTime: "8 min read", tags: ["Comparison", "Reef Controllers", "Hardware"], series: null, category: "reef" },
   { slug: "how-to-track-saltwater-aquarium-parameters", title: "How to Track Saltwater Aquarium Parameters (Complete Guide)", description: "Everything you need to know about monitoring your reef tank: what to test, how often, target ranges, and the best way to spot problems before they crash your tank.", date: "April 4, 2026", readTime: "8 min read", tags: ["Parameter Tracking", "Beginner Guide"], series: null, category: "app" },
   { slug: "reef-tank-alkalinity-calcium-magnesium-guide", title: "Reef Tank Alkalinity, Calcium & Magnesium: The Complete Tracking Guide", description: "Why alk, cal, and mag are the big three in reef keeping, what ideal ranges look like, and how to track them consistently.", date: "April 4, 2026", readTime: "7 min read", tags: ["Alk / Cal / Mag", "Water Chemistry"], series: null, category: "app" },
 ];
 
 const comingSoonDocs = [
   { title: "How to Set Up Automated Dosing in NextUpReef", description: "Calibrate your dosing pump, set a daily mL target, and let NextUpReef handle the schedule with dose history logged automatically.", tags: ["Dosing", "Automation"] },
-  { title: "Setting Up the NextUpReef Hub", description: "Unbox your Hub, connect it to your home network, and link it to your tank. Full walkthrough with photos for every step.", tags: ["Hub", "Hardware"] },
   { title: "How to Connect a Neptune Apex to NextUpReef", description: "Sync your Apex probe readings directly into your parameter log. Enter your IP and credentials once and NextUpReef pulls data automatically.", tags: ["Neptune Apex", "Controller"] },
 ];
 
@@ -117,7 +115,7 @@ export default function BlogPage() {
           <div>
             <p style={{ color: "#38bdf8", fontWeight: "900", fontSize: "13px", letterSpacing: "0.05em", margin: "0 0 4px 0" }}>COMING SOON</p>
             <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "16px", margin: "0 0 4px 0" }}>More Automation & Control Guides</p>
-            <p style={{ color: "var(--text-muted)", fontSize: "13px", lineHeight: "1.6", margin: 0 }}>Step-by-step guides for automated dosing, the NextUpReef Hub, and Apex sync are on the way.</p>
+            <p style={{ color: "var(--text-muted)", fontSize: "13px", lineHeight: "1.6", margin: 0 }}>Step-by-step guides for automated dosing and Apex sync are on the way.</p>
           </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "12px" }}>

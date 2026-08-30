@@ -215,7 +215,7 @@ export default function FAQPage() {
               Want the full feature list?
             </h3>
             <p style={{ color: "var(--text-muted)", lineHeight: "1.6", fontWeight: "700", fontSize: "14px", margin: "0 0 12px 0" }}>
-              See everything NextUpReef can do, from AI advisors to automation and the Hub.
+              See everything NextUpReef can do, from AI advisors to automation.
             </p>
             <a href="/features" style={{ color: "var(--reef)", fontWeight: "900", fontSize: "14px", textDecoration: "none" }}>
               Explore all features →

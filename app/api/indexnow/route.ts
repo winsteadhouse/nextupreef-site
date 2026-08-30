@@ -6,13 +6,11 @@ const HOST = "nextupreef.com";
 const URLS = [
   "https://nextupreef.com",
   "https://nextupreef.com/devices",
-  "https://nextupreef.com/hub",
   "https://nextupreef.com/blog",
   "https://nextupreef.com/blog/how-to-setup-dosing-shelly",
   "https://nextupreef.com/blog/how-to-add-shelly-plug",
   "https://nextupreef.com/blog/ai-reef-tank-advisor",
   "https://nextupreef.com/blog/best-reef-tank-tracking-app",
-  "https://nextupreef.com/blog/nextupreef-hub-vs-neptune-apex",
   "https://nextupreef.com/blog/how-to-track-saltwater-aquarium-parameters",
   "https://nextupreef.com/blog/reef-tank-alkalinity-calcium-magnesium-guide",
   "https://nextupreef.com/blog/nano-reef-tank-guide",

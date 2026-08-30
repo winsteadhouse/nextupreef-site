@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Compatible Devices — NextUpReef",
     description:
-      "Shop Shelly smart outlets and leak detectors that work with NextUpReef today. Plus the NextUpReef Hub — coming soon.",
+      "Shop Shelly smart outlets and leak detectors that work with NextUpReef today.",
     url: "https://nextupreef.com/devices",
     images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
   },
@@ -46,7 +46,7 @@ const devices = [
     icon: "flash",
     brand: "Shelly",
     name: "Plug US Gen4",
-    tagline: "Smart outlet for dosing, lighting, heaters & more",
+    tagline: "Manage & automate dosing, lighting & equipment right from the app",
     price: "$24.99",
     image: "/devices/shelly-plug-gen4.webp",
     mfgUrl: shellyMfgUrl,
@@ -95,34 +95,6 @@ const devices = [
     setupGuide: null,
     dosingGuide: null,
   },
-  {
-    id: "nextupreef-hub",
-    badge: "COMING SOON",
-    badgeColor: "var(--yellow)",
-    icon: "hub",
-    brand: "NextUpReef",
-    name: "Hub",
-    tagline: "Our all-in-one controller — no separate hardware needed",
-    price: "from $179",
-    image: null,
-    mfgUrl: "/hub",
-    buyUrl: null,
-    specs: [
-      "Dedicated hardware — runs 24/7 on its own",
-      "pH & temperature probe inputs",
-      "Shelly smart plug control built in",
-      "Leak sensor support",
-      "Works standalone or alongside a Neptune Apex",
-    ],
-    whatYouGet: [
-      "Live probe readings in the app",
-      "AI Reef Advisor driven by real-time data",
-      "Equipment control from the app",
-      "Alerts when something goes wrong",
-    ],
-    setupGuide: null,
-    dosingGuide: null,
-  },
 ];
 
 export default function DevicesPage() {
@@ -147,7 +119,7 @@ export default function DevicesPage() {
           </span>
         </h1>
         <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.65, maxWidth: "580px", margin: "0 auto" }}>
-          NextUpReef works with off-the-shelf Shelly smart outlets and leak sensors available on Amazon today — no proprietary hardware required. Our own Hub is coming soon for even deeper integration.
+          NextUpReef works with off-the-shelf Shelly smart outlets and leak sensors available on Amazon today — no proprietary hardware required. Manage and automate them right from the NextUpReef app: set schedules, automate dosing, and control your equipment.
         </p>
       </section>
 
@@ -252,18 +224,7 @@ export default function DevicesPage() {
                         Buy on Amazon
                         <DeviceIcon name="external" />
                       </a>
-                    ) : (
-                      <Link href="/hub"
-                        style={{
-                          display: "inline-flex", alignItems: "center", gap: "7px",
-                          padding: "10px 20px", borderRadius: "10px",
-                          background: "rgba(44,196,214,0.10)", color: "var(--reef)",
-                          fontWeight: 900, fontSize: "14px", textDecoration: "none",
-                          border: "1px solid rgba(44,196,214,0.25)",
-                        }}>
-                        Join the waitlist →
-                      </Link>
-                    )}
+                    ) : null}
                     {d.mfgUrl && d.mfgUrl.startsWith("http") && (
                       <a href={d.mfgUrl} target="_blank" rel="noopener noreferrer"
                         style={{
@@ -330,6 +291,28 @@ export default function DevicesPage() {
               }}>
                 <div style={{ fontSize: "14px", fontWeight: 900, color: "var(--text-light)", marginBottom: "5px" }}>{f.title}</div>
                 <div style={{ fontSize: "13px", color: "var(--text-muted)", lineHeight: 1.55 }}>{f.body}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* APEX INTEGRATION */}
+        <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '18px', padding: '26px 24px', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-block', padding: '5px 12px', borderRadius: '999px', background: 'rgba(44,196,214,0.10)', border: '1px solid rgba(44,196,214,0.25)', fontSize: '12px', fontWeight: 900, color: 'var(--reef)', letterSpacing: '0.4px', marginBottom: '12px' }}>NEPTUNE APEX</div>
+          <h2 style={{ fontSize: 'clamp(22px, 3.5vw, 30px)', fontWeight: 900, color: 'var(--text-light)', margin: '0 0 10px', letterSpacing: '-0.02em' }}>Already run a Neptune Apex? Connect it.</h2>
+          <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 20px', maxWidth: '680px' }}>
+            Link the Apex you already own with no extra hardware. NextUpReef pulls your probe readings straight into the app, so your Apex data lives alongside your logs, scores, and AI advice in one place.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
+            {[
+              ['Auto-sync your probes', 'Temperature, pH, and salinity read straight from your Apex, with no manual entry.'],
+              ['Live on your dashboard', 'See current Apex values at a glance, with a green or red indicator for whether it is reachable on your network.'],
+              ['Feeds your AI and scores', 'Apex readings drive the AI Reef Advisor and your Reef and Stability scores with real, continuous data.'],
+              ['Add Shelly for control', 'Pair your Apex with Shelly outlets to schedule and automate equipment right from the app.'],
+            ].map(([t, d]) => (
+              <div key={t} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '12px', padding: '16px 18px' }}>
+                <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '6px' }}>{t}</div>
+                <div style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.6 }}>{d}</div>
               </div>
             ))}
           </div>

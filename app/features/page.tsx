@@ -5,12 +5,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
   description:
-    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, Shelly automation, Neptune Apex sync, and the NextUpReef Hub.",
+    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, Shelly automation, Neptune Apex sync.",
   alternates: { canonical: "https://nextupreef.com/features" },
   openGraph: {
     title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
     description:
-      "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation, and 24/7 Hub monitoring — everything NextUpReef does, in one place.",
+      "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation — everything NextUpReef does, in one place.",
     url: "https://nextupreef.com/features",
     images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
   },
@@ -41,7 +41,6 @@ const softwareSchema = {
     "Shelly smart outlet automation",
     "Automated dosing and lighting",
     "Neptune Apex integration",
-    "NextUpReef Hub 24/7 monitoring",
     "Community leaderboard",
     "6-phase Tank Journey guided setup",
     "Monthly tank photo timeline",
@@ -72,7 +71,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Do I need any special hardware?",
-      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring when it launches." },
+      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own." },
     },
   ],
 };
@@ -101,7 +100,6 @@ export default function FeaturesPage() {
           <a href="#scores" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Scores</a>
           <a href="#maintenance" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Reminders</a>
           <a href="#automation" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Automation</a>
-          <a href="#hub" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Hub</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
           <a href="/contact" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>FAQ</a>
@@ -402,31 +400,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* NEXTUPREEF HUB */}
-      <section id="hub" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
-        <div className="section-label">NextUpReef Hub <span style={{ fontSize: "12px", fontWeight: 900, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--reef)", background: "rgba(44,196,214,0.1)", border: "1px solid rgba(44,196,214,0.25)", borderRadius: "999px", padding: "4px 12px", verticalAlign: "middle", marginLeft: "10px", whiteSpace: "nowrap" }}>Coming soon</span></div>
-        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>24/7 monitoring,<br />built for reefers.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The NextUpReef Hub is a dedicated device that bridges your reef hardware to the app and watches your tank around the clock — so you get alerts the moment something drifts, even when your phone is nowhere near the tank. The Hub is launching soon.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Always-on monitoring</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Hub will log temperature, pH, and connected equipment continuously and push it to your account, so your data and alerts keep flowing 24/7.</div>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Built-in probes</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Complete Kit will ship with a calibrated pH probe and temperature probe, plus Shelly smart plugs — everything you need to monitor and control from day one.</div>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Health alerts</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>If the Hub goes offline or a sensor reads stale, you will get a push notification right away instead of finding out hours later.</div>
-          </div>
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Configured from your phone</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The Hub is headless and Wi-Fi only. All setup happens in the app — no screen, no keyboard, no command line.</div>
-          </div>
-        </div>
-      </section>
-
       {/* COMMUNITY */}
       <section id="community" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Community</div>
@@ -580,7 +553,7 @@ export default function FeaturesPage() {
           </div>
           <div key={3} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Do I need any special hardware?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own, or add the NextUpReef Hub for 24/7 monitoring when it launches.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own.</p>
           </div>
         <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, marginTop: "8px" }}>
           Looking for how-to answers and details on every screen? See the full{" "}
