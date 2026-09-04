@@ -131,12 +131,12 @@ export default function DevicesPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
           {integrations.map((d) => (
             <div key={d.id} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', overflow: 'hidden' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '0' }} className='device-card-grid'>
-                <div style={{ background: 'rgba(44,196,214,0.04)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '28px', minHeight: '250px', gap: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '0' }} className='device-card-grid'>
+                <div style={{ background: 'rgba(44,196,214,0.04)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', minHeight: '250px', gap: '12px' }}>
                   {d.image ? (
-                    <img src={d.image} alt={d.heading + ' in NextUpReef'} style={{ maxWidth: '100%', maxHeight: '270px', objectFit: 'contain', borderRadius: '18px' }} />
+                    <img src={d.image} alt={d.heading + ' in NextUpReef'} style={{ width: '100%', maxWidth: '300px', height: 'auto', display: 'block' }} />
                   ) : (
-                    <div style={{ width: '150px', height: '215px', borderRadius: '22px', border: '1px dashed var(--border)', background: 'var(--bg-card)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                    <div style={{ width: '215px', height: '310px', borderRadius: '30px', border: '1px dashed var(--border)', background: 'var(--bg-card)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
                       <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'rgba(44,196,214,0.10)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <Ico name={d.icon} color={d.accent} />
                       </div>
