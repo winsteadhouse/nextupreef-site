@@ -233,16 +233,16 @@ export default function HomePage() {
             <Image src="/screenshots/smart-outlets-mockupv2.png" alt="NextUpReef Shelly Smart Outlets screen showing doser outlet online with direct controls" width={574} height={1146} style={{ height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div className="section-label">Device Control</div>
+            <div className="section-label">Integrations</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One app.<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Every device.</span>
             </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>See every outlet, sync your Apex, and control your equipment directly from the NextUpReef app. No switching between apps.</p>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect CoralVue HYDROS, Neptune Apex, or Shelly smart outlets and run your whole reef from the NextUpReef app - probes, dosing, lighting, and equipment, all in one place.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                { title: "Lighting Automation", desc: "Set on/off times and ramp schedules per fixture. Link a Shelly outlet and NextUpReef pushes the schedule to the plug automatically." },
-                { title: "Neptune Apex Integration", desc: "One-tap sync pulls pH, ORP, salinity, and temperature straight from your Apex into your parameter logs. No manual entry." },
-                { title: "Control Center", desc: "Unified dashboard showing every outlet, its status, live power draw, and quick on/off controls — all in one place." },
+                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - live pH, temp, salinity and ORP, with 24/7 trends and alerts." },
+                { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
+                { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
@@ -261,7 +261,7 @@ export default function HomePage() {
             padding: "12px 28px", borderRadius: "10px",
             background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
             color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
-            Shop compatible hardware →
+            Explore integrations →
           </Link>
         </div>
       </section>

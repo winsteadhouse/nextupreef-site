@@ -51,7 +51,7 @@ const integrations = [
     cons: ['Local only - needs the same WiFi as your Apex', 'The Apex ecosystem is a bigger investment'],
     ctaLabel: 'Visit Neptune Systems', ctaUrl: 'https://www.neptunesystems.com/',
     mfgName: 'neptunesystems.com', mfgUrl: 'https://www.neptunesystems.com/',
-    guide: '/blog', guideLabel: 'Learn more', image: '/devices/apex-app.png',
+    guide: '/blog/how-to-connect-apex', guideLabel: 'Learn more', image: '/devices/apex-app.png',
   },
   {
     id: 'shelly', icon: 'flash', brand: 'Shelly', heading: 'Shelly Smart Outlets',

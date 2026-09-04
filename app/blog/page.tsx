@@ -28,6 +28,7 @@ const posts = [
   // NEXTUPREEF APP GUIDES
   { slug: "how-to-setup-dosing-shelly", title: "How to Set Up Automated Dosing with a Shelly Outlet", description: "Calibrate your dosing pump and save a schedule to your Shelly outlet. Doses run 24/7 on the outlet itself even with no phone or internet.", date: "May 23, 2026", readTime: "8 min read", tags: ["Dosing", "Smart Outlets", "Setup Guide"], series: null, category: "app" },
   { slug: "how-to-add-shelly-plug", title: "How to Add a Shelly Smart Outlet to NextUpReef", description: "Set up a Shelly Plug US Gen4 in 5 steps entirely inside the NextUpReef app. No Shelly app needed. Control your doser, heater, skimmer, or return pump and get automated dosing history.", date: "May 23, 2026", readTime: "5 min read", tags: ["Shelly", "Smart Outlets", "Setup Guide"], series: null, category: "app" },
+  { slug: "how-to-connect-apex", title: "How to Connect and Manage a Neptune Apex in NextUpReef", description: "Connect the Apex you already own. Sync probes into your logs, control every outlet, run Feed Mode, set heater temps, and dose - all from one app.", date: "September 4, 2026", readTime: "7 min read", tags: ["Neptune Apex", "Controller", "Setup Guide"], series: null, category: "app" },
   { slug: "my-reef-tank-tracking", title: "My Reef: Track Livestock, Equipment, Corals, and Cost in One App", description: "How NextUpReef tracks every fish, coral, invert, piece of equipment, dosing product, monthly photo, and dollar you spend — with an AI Stocking Advisor that checks compatibility for your tank.", date: "June 12, 2026", readTime: "7 min read", tags: ["Livestock", "Equipment", "Cost Tracking"], series: null, category: "app" },
   { slug: "ai-reef-tank-advisor", title: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef", description: "How NextUpReef uses AI to analyze your reef tank parameters, equipment, and livestock giving you personalized advice, answering reef questions, and reading test kits from a photo.", date: "May 2026", readTime: "7 min read", tags: ["AI Features", "Pro"], series: null, category: "app" },
   { slug: "best-reef-tank-tracking-app", title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)", description: "An honest comparison of reef aquarium tracking apps. Find the best free reef app for iOS and Android.", date: "April 4, 2026", readTime: "6 min read", tags: ["App Comparison", "Free Apps"], series: null, category: "app" },
@@ -37,7 +38,6 @@ const posts = [
 
 const comingSoonDocs = [
   { title: "How to Set Up Automated Dosing in NextUpReef", description: "Calibrate your dosing pump, set a daily mL target, and let NextUpReef handle the schedule with dose history logged automatically.", tags: ["Dosing", "Automation"] },
-  { title: "How to Connect a Neptune Apex to NextUpReef", description: "Sync your Apex probe readings directly into your parameter log. Enter your IP and credentials once and NextUpReef pulls data automatically.", tags: ["Neptune Apex", "Controller"] },
 ];
 
 const journeyPosts = posts.filter((p) => p.category === "journey");
