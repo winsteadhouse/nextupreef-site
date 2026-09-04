@@ -138,6 +138,27 @@ export default function HowToConnectApexPage() {
           ))}
         </div>
 
+        <h2 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '16px' }}>Controlling an outlet</h2>
+        <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '24px' }}>Tap any outlet to open its controls. The top of the screen shows its live status and power draw, with one control for its mode.</p>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+          <div style={{ borderRadius: '18px', overflow: 'hidden', maxWidth: '300px' }}>
+            <img src='/blog/apex-setup/apex-outlet.png' alt='Apex outlet control screen with AUTO, ON and OFF' style={{ width: '100%', display: 'block' }} />
+          </div>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+          {[
+            ['AUTO', 'Hands control back to your Apex program. The outlet follows its normal schedule and logic.'],
+            ['ON', 'Forces the outlet on now, overriding the schedule, until you switch it back to AUTO.'],
+            ['OFF', 'Forces the outlet off now, overriding the schedule, until you switch it back to AUTO.'],
+          ].map(([label, desc]) => (
+            <div key={label} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '12px', padding: '14px 16px', display: 'flex', gap: '12px' }}>
+              <span style={{ fontSize: '13px', fontWeight: '900', color: 'var(--reef)', flexShrink: 0, minWidth: '60px' }}>{label}</span>
+              <p style={{ fontSize: '14px', color: 'var(--text-muted)', margin: 0, lineHeight: 1.65 }}>{desc}</p>
+            </div>
+          ))}
+        </div>
+        <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '56px' }}>ON and OFF are manual overrides; AUTO returns the outlet to your Apex program. The same screen shows the current program, a Pause during Feed Mode toggle for pumps, and a Reset to unused option to clear an outlet and start over.</p>
+
         <h2 style={{ fontSize: '24px', fontWeight: '900', marginBottom: '16px' }}>What each outlet tag unlocks</h2>
         <p style={{ fontSize: '15px', color: 'var(--text-muted)', lineHeight: 1.75, marginBottom: '24px' }}>Tagging an outlet tells the app what it controls, so it shows the right setup.</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '56px' }}>
