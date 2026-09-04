@@ -51,7 +51,7 @@ const integrations = [
     cons: ['Local only - needs the same WiFi as your Apex', 'The Apex ecosystem is a bigger investment'],
     ctaLabel: 'Visit Neptune Systems', ctaUrl: 'https://www.neptunesystems.com/',
     mfgName: 'neptunesystems.com', mfgUrl: 'https://www.neptunesystems.com/',
-    guide: '/blog', guideLabel: 'Learn more', image: '',
+    guide: '/blog', guideLabel: 'Learn more', image: '/devices/apex-app.png',
   },
   {
     id: 'shelly', icon: 'flash', brand: 'Shelly', heading: 'Shelly Smart Outlets',
@@ -62,7 +62,7 @@ const integrations = [
     cons: ['Outlets only - no pH or temperature', 'Set up one plug at a time'],
     ctaLabel: 'Buy on Amazon', ctaUrl: shellyOutletUrl, ctaSponsored: true,
     mfgName: 'shelly.com', mfgUrl: 'https://www.shelly.com/en-us/products/shelly-plug-us-gen4',
-    guide: '/blog/how-to-add-shelly-plug', guideLabel: 'Setup guide', image: '',
+    guide: '/blog/how-to-add-shelly-plug', guideLabel: 'Setup guide', image: '/devices/shelly-app.png',
   },
 ];
 
