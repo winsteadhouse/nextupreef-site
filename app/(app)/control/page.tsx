@@ -38,14 +38,18 @@ export default async function ControlPage() {
   const tank = tanks.find((t) => t.id === activeTankId) ?? null;
   if (!tank) return (<div><h1>Control</h1><p style={{ color: 'var(--mid)', marginTop: 8 }}>No tanks yet.</p></div>);
 
-  const ctrl = ((await supabase.from('controller_integrations').select('controller_type, hostname, last_sync_at, last_sync_status, last_error, is_active, probe_map').eq('tank_id', tank.id).limit(1)).data ?? [])[0] as any || null;
-  const hub = ((await supabase.from('hub_devices').select('id, name, local_ip, firmware_version, available_version, update_status, ph_enabled, temp_probe_count, polls_apex, last_seen_at, last_reading_at, last_error, boot_at, wifi_rssi, wifi_ssid').eq('tank_id', tank.id).eq('is_active', true).order('last_seen_at', { ascending: false }).limit(1)).data ?? [])[0] as any || null;
+  const ctrls = ((await supabase.from('controller_integrations').select('controller_type, hostname, last_sync_at, last_sync_status, last_error, is_active, probe_map').eq('tank_id', tank.id).eq('is_active', true)).data ?? []) as any[];
+  const ctrl = ctrls.find((c) => c.controller_type === 'apex') || null;
+  const hydros = ctrls.find((c) => c.controller_type === 'hydros') || null;
+  const hub: any = null;
   const outlets = ((await supabase.from('smart_outlets').select('id, display_name, brand, equipment_kind, local_ip, last_output_on, last_watts, last_voltage, last_current, last_temperature_c, last_state_at, last_seen_on_network, last_error, flow_rate_ml_per_sec').eq('tank_id', tank.id).eq('is_active', true).order('display_name')).data ?? []) as any[];
-  const alertRules = ((await supabase.from('hub_alert_rules').select('metric, alert_enabled, high_threshold, low_threshold, cutoff_enabled, cutoff_high_temp, cutoff_recovery_temp, cutoff_active, last_alerted_at, last_alert_kind, last_health_alert_kind, last_health_alerted_at').eq('tank_id', tank.id)).data ?? []) as any[];
+  const alertRules: any[] = [];
   const doseEvents = ((await supabase.from('dose_events').select('amount_ml, dosed_at, source, outlet_id').eq('tank_id', tank.id).order('dosed_at', { ascending: false }).limit(8)).data ?? []) as any[];
-  const probeErrors = hub ? (((await supabase.from('hub_probe_errors').select('metric, reason, recorded_at').eq('hub_id', hub.id).order('recorded_at', { ascending: false }).limit(6)).data ?? []) as any[]) : [];
-  const phRows = hub ? (((await supabase.from('hub_readings').select('value, recorded_at').eq('hub_id', hub.id).eq('metric', 'ph').order('recorded_at', { ascending: false }).limit(60)).data ?? []) as any[]) : [];
-  const tempRows = hub ? (((await supabase.from('hub_readings').select('value, recorded_at').eq('hub_id', hub.id).eq('metric', 'temp').order('recorded_at', { ascending: false }).limit(60)).data ?? []) as any[]) : [];
+  const probeErrors: any[] = [];
+  const phLog = ((await supabase.from('parameter_logs').select('ph, logged_at').eq('tank_id', tank.id).not('ph', 'is', null).order('logged_at', { ascending: false }).limit(60)).data ?? []) as any[];
+  const phRows = phLog.map((r) => ({ value: r.ph, recorded_at: r.logged_at }));
+  const tempLog = ((await supabase.from('parameter_logs').select('temp, logged_at').eq('tank_id', tank.id).not('temp', 'is', null).order('logged_at', { ascending: false }).limit(60)).data ?? []) as any[];
+  const tempRows = tempLog.map((r) => ({ value: r.temp, recorded_at: r.logged_at }));
   const outletIds = outlets.map((o) => o.id);
   const powerRows = outletIds.length ? (((await supabase.from('outlet_power_readings').select('outlet_id, watts, recorded_at').in('outlet_id', outletIds).order('recorded_at', { ascending: false }).limit(700)).data ?? []) as any[]) : [];
   const runtimeRows = ((await supabase.rpc('control_outlet_runtime', { p_tank: tank.id })).data ?? []) as any[];
@@ -84,8 +88,8 @@ export default async function ControlPage() {
   const phSeries = phRows.map((r) => Number(r.value)).reverse();
   const tempSeries = tempRows.map((r) => Number(r.value)).reverse();
 
-  const phRule = alertRules.find((a) => a.metric === 'ph') || null;
-  const tempRule = alertRules.find((a) => a.metric === 'temp') || null;
+  const phRule: any = { low_threshold: 8.1, high_threshold: 8.4 };
+  const tempRule: any = { low_threshold: 76, high_threshold: 82 };
   const phLast = phRows[0] ? Number(phRows[0].value) : null;
   const tempLast = tempRows[0] ? Number(tempRows[0].value) : null;
 
@@ -96,6 +100,9 @@ export default async function ControlPage() {
   const apexConfigured = !!ctrl;
   const apexActive = !!ctrl?.is_active;
   const apexOnline = apexActive && within(ctrl?.last_sync_at, 180) && (ctrl?.last_sync_status === 'ok' || ctrl?.last_sync_status === 'success');
+  const hydrosConfigured = !!hydros;
+  const hydrosActive = !!(hydros && hydros.is_active);
+  const hydrosOnline = hydrosActive && within(hydros && hydros.last_sync_at, 180) && (hydros && (hydros.last_sync_status === 'ok' || hydros.last_sync_status === 'success'));
   const lastDose = doseEvents[0] || null;
   const dosingActive = lastDose ? within(lastDose.dosed_at, 90) : false;
 
@@ -121,12 +128,12 @@ export default async function ControlPage() {
           <span style={{ width: 11, height: 11, borderRadius: 9, flex: 'none', background: allGood ? 'var(--good)' : 'var(--amber)', boxShadow: '0 0 0 4px ' + (allGood ? 'rgba(54,216,155,.16)' : 'rgba(246,166,35,.16)') }} />
           <div>
             <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--hi)' }}>{allGood ? 'All systems nominal' : 'Needs attention'}</div>
-            <div style={{ fontSize: 11.5, color: 'var(--dim)', marginTop: 1 }}>{outletOnlineCount + '/' + outlets.length + ' outlets online . hub ' + (hubOnline ? 'online' : 'offline') + (apexActive ? ' . apex ' + (apexOnline ? 'syncing' : 'idle') : '')}</div>
+            <div style={{ fontSize: 11.5, color: 'var(--dim)', marginTop: 1 }}>{outletOnlineCount + '/' + outlets.length + ' outlets online' + (apexActive ? ' . apex ' + (apexOnline ? 'syncing' : 'idle') : '') + (hydrosActive ? ' . hydros ' + (hydrosOnline ? 'syncing' : 'idle') : '')}</div>
           </div>
         </div>
         <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
           {apexConfigured ? <Dot label='Apex' online={apexOnline} partial={apexActive && !apexOnline} /> : null}
-          {hub ? <Dot label='Hub' online={hubOnline} partial={hubOnline && !hubFresh} /> : null}
+          {hydrosConfigured ? <Dot label='HYDROS' online={!!hydrosOnline} partial={hydrosActive && !hydrosOnline} /> : null}
           <Dot label={outletOnlineCount + '/' + outlets.length + ' outlets'} online={outlets.length > 0 && outletOnlineCount === outlets.length} partial={outletOnlineCount > 0 && outletOnlineCount < outlets.length} />
           <Dot label='Dosing' online={dosingActive} partial={!dosingActive && doseEvents.length > 0} />
         </div>
@@ -171,30 +178,25 @@ export default async function ControlPage() {
       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 14, marginTop: 22, alignItems: 'start' }}>
         <div style={pan}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
-            <span style={{ fontSize: 13, color: 'var(--mid)' }}>Hub</span>
-            {hub ? <Pill text={hubOnline ? (hubFresh ? 'online' : 'no readings') : 'offline'} tone={hubOnline ? (hubFresh ? 'good' : 'amber') : 'bad'} /> : <Pill text='none' tone='dim' />}
+            <span style={{ fontSize: 13, color: 'var(--mid)' }}>HYDROS</span>
+            {hydrosConfigured ? <Pill text={hydrosOnline ? 'synced' : hydrosActive ? 'stale' : 'off'} tone={hydrosOnline ? 'good' : hydrosActive ? 'amber' : 'dim'} /> : <Pill text='none' tone='dim' />}
           </div>
-          {hub ? (
+          {hydrosConfigured ? (
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                <div style={{ width: 42, height: 42, borderRadius: 11, background: 'rgba(46,230,207,.12)', border: '1px solid rgba(46,230,207,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--cyan)', fontWeight: 800, flex: 'none' }}>H</div>
+                <div style={{ width: 42, height: 42, borderRadius: 11, background: 'rgba(124,58,237,.14)', border: '1px solid rgba(124,58,237,.32)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7C3AED', fontWeight: 800, flex: 'none' }}>H</div>
                 <div style={{ minWidth: 0 }}>
-                  <div style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--hi)' }}>{hub.name}</div>
-                  <div style={{ fontSize: 11.5, color: 'var(--dim)' }}>{'fw ' + (hub.firmware_version || '-') + (hub.available_version && hub.available_version !== hub.firmware_version ? ' . update ' + hub.available_version + ' available' : '')}</div>
+                  <div style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--hi)' }}>HYDROS</div>
+                  <div style={{ fontSize: 11.5, color: 'var(--dim)' }}>Cloud controller</div>
                 </div>
               </div>
-              <InfoRow k='Uptime' v={uptimeStr(hub.boot_at)} />
-              <InfoRow k='Last seen' v={relTime(hub.last_seen_at)} color={hubOnline ? 'var(--good)' : 'var(--bad)'} />
-              <InfoRow k='Last reading' v={relTime(hub.last_reading_at)} color={hubFresh ? 'var(--good)' : 'var(--amber)'} />
-              <InfoRow k='IP address' v={hub.local_ip || '-'} />
-              <InfoRow k='WiFi' v={(hub.wifi_ssid || '-')} extra={<SignalBars rssi={hub.wifi_rssi} />} />
-              <InfoRow k='Probes' v={(hub.ph_enabled ? 'pH on' : 'pH off') + ' . ' + (Number(hub.temp_probe_count) || 0) + ' temp'} />
-              <InfoRow k='Polls Apex' v={hub.polls_apex ? 'yes' : 'no'} last />
-              {hub.last_error ? <div style={{ fontSize: 11.5, color: 'var(--bad)', marginTop: 8, borderTop: '1px solid var(--hair)', paddingTop: 8 }}>{'Error: ' + hub.last_error}</div> : null}
+              <InfoRow k='Last sync' v={relTime(hydros.last_sync_at)} color={hydrosOnline ? 'var(--good)' : 'var(--mid)'} />
+              <InfoRow k='Sync status' v={hydros.last_sync_status || '-'} />
+              <InfoRow k='State' v={hydrosActive ? 'active' : 'off'} last />
+              {hydros.last_error ? <div style={{ fontSize: 11.5, color: 'var(--bad)', marginTop: 8 }}>{'Error: ' + hydros.last_error}</div> : null}
             </div>
-          ) : <div style={{ fontSize: 12.5, color: 'var(--dim)' }}>No NextUpReef hub paired. Pair one in the app to monitor pH, temp, and dosing.</div>}
+          ) : <div style={{ fontSize: 12.5, color: 'var(--dim)' }}>No HYDROS connected. Add a Device Key in the app to monitor and control from anywhere.</div>}
         </div>
-
         <div style={pan}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
             <span style={{ fontSize: 13, color: 'var(--mid)' }}>Controller</span>
@@ -261,7 +263,7 @@ export default async function ControlPage() {
             <span style={{ color: 'var(--dim)' }}>{relTime(fr.at)}</span>
           </div>
         ); }) : <div style={{ fontSize: 12.5, color: 'var(--dim)' }}>No notifications sent yet.</div>}
-        <div style={{ fontSize: 10.5, color: 'var(--dim)', marginTop: 9, borderTop: '1px solid var(--hair)', paddingTop: 8 }}>Reminders and threshold alerts sent to this account. Temperature and pH alerts come from your hub alert rules, not the push log.</div>
+        <div style={{ fontSize: 10.5, color: 'var(--dim)', marginTop: 9, borderTop: '1px solid var(--hair)', paddingTop: 8 }}>Reminders and threshold alerts sent to this account. Temperature and pH alerts are based on your controller readings.</div>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 14, marginTop: 14, alignItems: 'start' }}>
         <div style={pan}>

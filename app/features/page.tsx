@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
   description:
-    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, Shelly automation, Neptune Apex sync.",
+    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, Shelly automation, and full Neptune Apex and CoralVue HYDROS control.",
   alternates: { canonical: "https://nextupreef.com/features" },
   openGraph: {
     title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
@@ -204,7 +204,7 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Neptune Apex sync</td>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Controller integrations (Apex, HYDROS, Shelly)</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
@@ -371,7 +371,7 @@ export default function FeaturesPage() {
       <section id="automation" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Automation & Device Control</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Your reef runs itself,<br />even when you’re away.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Connect Shelly smart outlets and automate dosing, lighting, and equipment — all without leaving the app, and all running on the device itself so schedules continue 24/7 even when your phone is off. Automation features are part of NextUpReef Pro.</p>
+        <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 32px', maxWidth: '680px' }}>Connect a Neptune Apex, a CoralVue HYDROS, or Shelly smart outlets and run your whole reef from one app - monitor probes, control equipment, automate dosing and lighting, and watch your trends. Schedules run on the device, so they keep going 24/7 even when your phone is off. Control and automation are part of NextUpReef Pro.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly smart outlets</div>
@@ -385,9 +385,13 @@ export default function FeaturesPage() {
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Lighting automation</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Set on/off times and ramp schedules per fixture. Link a Shelly outlet and the schedule is pushed to the plug automatically.</div>
           </div>
-          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Neptune Apex sync</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>One-tap sync pulls pH, ORP, salinity, temperature, and Trident alk/Ca/Mg straight from your Apex into your parameter logs — no manual entry.</div>
+          <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
+            <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>Neptune Apex</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Connect the Apex you already own. Sync probes into your logs, control every outlet, run Feed Mode, set heater temperatures, and dose - all from the app. Name and tag each outlet to unlock the right controls.</div>
+          </div>
+          <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
+            <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected control and monitoring from anywhere - live pH, temperature, salinity and ORP, with continuous trends and round-the-clock alerts.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Control Center</div>
@@ -476,6 +480,27 @@ export default function FeaturesPage() {
         <div className="section-label">Recently shipped</div>
         <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>Always improving.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>Neptune Apex full control</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Control every outlet on, off or auto, run Feed Mode, set heater temperatures, and dose. Name and tag each outlet to unlock the right controls, right from the app.</div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>CoralVue HYDROS integration</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Connect a HYDROS controller and monitor and control your tank from anywhere, with continuous trends and round-the-clock alerts.</div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>Parameter trends and graphs</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Visual trend charts for temperature, pH and more, with your target range built in so you can spot drift at a glance.</div>
+            </div>
+          </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>June 2026</div>
             <div>
