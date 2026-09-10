@@ -92,6 +92,7 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="home-hero">
+        <div className="home-hero-inner">
         <div className="home-hero-text">
           <div style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
@@ -105,39 +106,33 @@ export default function HomePage() {
           </div>
 
           <h1 style={{
-            fontSize: "clamp(42px, 6vw, 72px)", fontWeight: 900,
-            lineHeight: 1.05, letterSpacing: "-0.04em", margin: 0,
+            fontSize: "clamp(48px, 6.6vw, 88px)", fontWeight: 900,
+            lineHeight: 1.0, letterSpacing: "-0.045em", margin: 0,
           }}>
-            Track, automate,<br />
+            Track.<br />
+            Analyze.<br />
             <span style={{
               background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)",
               WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-            }}>and control your reef.</span>
+            }}>Control.</span>
           </h1>
 
-          <p style={{ fontSize: "18px", lineHeight: 1.65, color: "var(--text-muted)", margin: 0, maxWidth: "440px" }}>
-            Log parameters, automate dosing and lighting, get AI-powered advice, and control everything that keeps your reef alive — all from one app.
+          <p style={{ fontSize: "19px", lineHeight: 1.6, color: "var(--text-muted)", margin: 0, maxWidth: "440px" }}>
+            Parameter logging, built-in Reef AI, and reef integrations in one app.
           </p>
 
           <DownloadButtons />
-
-
         </div>
 
-        <div className="home-hero-phone">
-          <div style={{
-            position: "absolute", top: "10%", left: "50%", transform: "translateX(-50%)",
-            width: "260px", height: "500px",
-            background: "radial-gradient(ellipse, rgba(44,196,214,0.2) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }} />
+        <div className="home-hero-phones">
           <Image
-            src="/screenshots/phone-home-hero.png"
-            alt="NextUpReef dashboard showing AI advice, Reef Score, and water parameters"
-            width={1363} height={1076}
+            src="/screenshots/hero-phones.png"
+            alt="NextUpReef app: dashboard with live temperature, pH and Apex status, and Reef Pulse tank health scores"
+            width={1195} height={1370}
             priority
-            style={{ width: "140%", maxWidth: "680px", height: "auto", position: "relative", zIndex: 1, marginLeft: "-20%" }}
+            sizes="(max-width: 900px) 90vw, 560px"
           />
+        </div>
         </div>
       </section>
 

@@ -879,18 +879,31 @@ h1, h2, h3, h4 {
 
 /* == HOME PAGE REDESIGN (May 2026) == */
 
-/* HERO */
+/* HERO — full-bleed reef background, real text left, framed app screenshots right.
+   Assets: /images/hero-reef.webp (desktop), /images/hero-reef-mobile.webp (mobile),
+   /screenshots/hero-phones.png (transparent, bottom fades out). */
 .home-hero {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px 60px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 60px;
-  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(6, 19, 33, 0.55) 0%, rgba(6, 19, 33, 0) 55%),
+    linear-gradient(180deg, rgba(6, 19, 33, 0) 70%, var(--bg-dark) 100%),
+    url("/images/hero-reef.webp") 25% center / cover no-repeat,
+    var(--bg-dark);
 }
-.home-hero-text { display: flex; flex-direction: column; gap: 24px; }
-.home-hero-phone { display: flex; justify-content: center; position: relative; }
+.home-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  min-height: clamp(600px, 44vw, 780px);
+}
+.home-hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding-bottom: 64px; }
+.home-hero-phones { align-self: end; display: flex; justify-content: center; position: relative; margin-bottom: -40px; }
+.home-hero-phones img { position: relative; z-index: 1; display: block; width: 100%; max-width: 560px; height: auto; }
 
 /* PHONE TRIO */
 .phone-trio-section {
@@ -940,13 +953,32 @@ h1, h2, h3, h4 {
 
 /* TABLET */
 @media (max-width: 900px) {
-  .home-hero {
+  /* !important beats the global mobile `section { padding: 48px !important }` rule */
+  .home-hero { background: var(--bg-dark); padding-top: 0 !important; padding-bottom: 0 !important; }
+  .home-hero-inner {
     grid-template-columns: 1fr;
-    padding: 60px 24px 40px;
-    gap: 0;
+    padding: 40px 20px 0;
+    gap: 8px;
+    min-height: 0;
   }
-  .home-hero-text { align-items: center; text-align: center; }
-  .home-hero-phone { display: none; }
+  .home-hero-text { align-items: center; text-align: center; padding-bottom: 0; }
+  /* mobile: portrait reef sits behind the phones, faded top + bottom into the page */
+  .home-hero-phones {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+    aspect-ratio: 4 / 5;
+    max-height: 720px;
+    align-items: flex-end;
+  }
+  .home-hero-phones::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("/images/hero-reef-mobile.webp") center bottom / cover no-repeat;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 80%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 80%, transparent 100%);
+  }
+  .home-hero-phones img { width: 88%; max-width: 480px; }
   .phone-trio { gap: 24px; }
   .feature-spotlight,
   .feature-spotlight.reverse {
@@ -988,13 +1020,7 @@ h1, h2, h3, h4 {
   max-width: 300px !important;
 }
 
-/* Hero, AI and Community phone size fix */
-.home-hero-phone img {
-  max-height: 55vh !important;
-  width: auto !important;
-  max-width: 260px !important;
-}
-
+/* AI and Community phone size fix */
 .feature-spotlight-phone img {
   max-height: 55vh !important;
   width: auto !important;
@@ -1010,11 +1036,6 @@ h1, h2, h3, h4 {
 }
 
 /* BIGGER PHONES - aggressive overrides */
-.home-hero-phone img {
-  max-height: 80vh !important;
-  width: auto !important;
-  max-width: 700px !important;
-}
 .feature-spotlight-phone img {
   max-height: 80vh !important;
   width: 100% !important;
@@ -1022,12 +1043,6 @@ h1, h2, h3, h4 {
 }
 
 /* FINAL phone size overrides - wins everything */
-.home-hero-phone img {
-  max-height: none !important;
-  width: 140% !important;
-  max-width: 680px !important;
-  margin-left: -20% !important;
-}
 .feature-spotlight-phone img {
   max-height: none !important;
   width: 100% !important;
@@ -1038,29 +1053,6 @@ h1, h2, h3, h4 {
 .feature-spotlight-phone img {
   max-width: 380px !important;
   max-height: none !important;
-}
-
-/* Hero phone glow */
-.home-hero-phone {
-  position: relative;
-}
-.home-hero-phone::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 60%;
-  background: radial-gradient(ellipse, rgba(44,196,214,0.25) 0%, rgba(139,92,246,0.15) 40%, transparent 70%);
-  filter: blur(40px);
-  z-index: 0;
-  pointer-events: none;
-}
-.home-hero-phone img {
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 20px 60px rgba(44,196,214,0.2)) drop-shadow(0 0 30px rgba(139,92,246,0.15));
 }
 
 /* CTA buttons centered */
