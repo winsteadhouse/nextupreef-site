@@ -145,12 +145,12 @@ export default function HomePage() {
         </div>
         <div className="phone-trio">
           { [
-            { img: "/screenshots/phone-log-v2.png", alt: "Log reef parameters", title: "Log in seconds", desc: "Alk, Ca, Mg, NO3, PO4, salinity, pH, and more. Last values pre-filled. Color-coded against your targets." },
-            { img: "/screenshots/phone-charts-v2.png", alt: "Parameter trend charts", title: "See the trends", desc: "Charts for every parameter with target range bands and water change markers. See exactly when things shifted." },
-            { img: "/screenshots/phone-reminders-v2.png", alt: "Mantenance reminders", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
+            { img: "/screenshots/site-v3/phone-log.png", alt: "Log Parameters screen with alkalinity and calcium entered and shown in range", title: "Log in seconds", desc: "Alk, Ca, Mg, NO3, PO4, salinity, pH, and more. Last values pre-filled. Color-coded against your targets." },
+            { img: "/screenshots/site-v3/phone-reef-pulse.png", alt: "Reef Pulse showing Reef Score, Stability Score and parameter averages", title: "See the trends", desc: "Reef Score, Stability Score, and every parameter's average and trend at a glance. Tap any one for its full chart with target bands." },
+            { img: "/screenshots/site-v3/phone-reminders.png", alt: "Maintenance reminders for water change, filter socks and dosing", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
           ].map((item) => (
             <div key={item.title} className="phone-trio-item">
-              <Image src={item.img} alt={item.alt} width={1363} height={1076} style={{ width: "100%", height: "auto" }} />
+              <Image src={item.img} alt={item.alt} width={777} height={1557} style={{ width: "100%", height: "auto" }} />
               <div style={{ textAlign: "center", maxWidth: "260px" }}>
                 <h3 style={{ fontSize: "18px", fontWeight: 900, margin: "0 0 8px", color: "var(--text-light)" }}>{item.title}</h3>
                 <p style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
@@ -185,7 +185,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-ai-v2.png" alt="Ask Reef AI answering why pH drops at night" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phones-ai.png" alt="AI Reef Advisor tank analysis and Reef AI Chat explaining why pH drops at night" width={1227} height={1434} style={{ height: "auto" }} />
           </div>
         </div>
       </section>
@@ -216,7 +216,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/dosing-dashboard-mockupv2.png" alt="NextUpReef automated dosing dashboard showing alkalinity progress ring and daily dose schedule" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phone-doser.png" alt="NextUpReef automated dosing screen showing 20 of 30 mL of alkalinity confirmed today and the day's dose schedule" width={777} height={1557} style={{ height: "auto" }} />
           </div>
         </div>
       </section>
@@ -225,7 +225,7 @@ export default function HomePage() {
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.04) 0%, transparent 60%)" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/smart-outlets-mockupv2.png" alt="NextUpReef Shelly Smart Outlets screen showing doser outlet online with direct controls" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phones-integrations.png" alt="Neptune Apex screen with live temperature and pH gauges, Feed Mode and outlet status, in front of the Devices and Automation list" width={1227} height={1434} style={{ height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Integrations</div>
@@ -292,7 +292,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-my-reef-v2.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phone-my-reef.png" alt="NextUpReef My Reef page showing livestock, equipment, dosing, and total tank investment" width={777} height={1557} style={{ height: "auto" }} />
           </div>
         </div>
       </section>
@@ -301,15 +301,15 @@ export default function HomePage() {
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "80px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight reverse">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-reef-hub-v2.png" alt="Reef Hub community leaderboard showing tank rankings and scores" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phone-community.png" alt="Community leaderboard showing a ranked tank with Reef and Stability scores and water chemistry" width={777} height={1557} style={{ height: "auto" }} />
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Community</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Compare with<br />the best tanks.</h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>The Reef Hub ranks public tanks by combined Reef and Stability score. See where you stand, then learn from the reefs at the top.</p>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>The Community leaderboard ranks public tanks by combined Reef and Stability score. See where you stand, then learn from the reefs at the top.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
-                { title: "Reef Hub Leaderboard", desc: "See where your tank ranks. Browse top tanks — their params, salt mix, equipment, and lighting setups." },
+                { title: "Community Leaderboard", desc: "See where your tank ranks. Browse top tanks — their params, salt mix, equipment, and lighting setups." },
                 { title: "Reef Score and Stability Score", desc: "Two 0-100 scores grade your parameter health and how stable you keep alk, calcium, magnesium, and salinity over time." },
                 { title: "Learn from real reefs", desc: "Every public tank is a real setup you can study — no theory, just what is actually working for other reefers." },
               ].map((f) => (
@@ -355,7 +355,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/phone-journey-v2.png" alt="Tank Journey guide showing new reefer setup phases and checklists" width={574} height={1146} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phone-new-tank-guide.png" alt="New Tank Guide on the home screen showing the cycle phase and next checklist step" width={777} height={1557} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

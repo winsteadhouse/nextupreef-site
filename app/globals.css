@@ -1063,9 +1063,9 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
-/* DEFINITIVE spotlight phone size - constrain by height */
+/* DEFINITIVE spotlight phone size - constrain by height (site-v3 images include glow padding) */
 .feature-spotlight-phone img {
-  max-height: 520px !important;
+  max-height: 590px !important;
   width: auto !important;
   max-width: 100% !important;
 }

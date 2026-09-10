@@ -300,9 +300,9 @@ export default function LiveRockVsDryRockPost() {
 
           <div style={{ display: "flex", justifyContent: "center", margin: "40px 0" }}>
             <img
-              src="/screenshots/phone-journey-v2.png"
-              alt="Tank cycling progress in NextUpReef"
-              style={{ width: "100%", maxWidth: "280px", borderRadius: "24px", boxShadow: "0 12px 32px rgba(0,0,0,0.3)" }}
+              src="/screenshots/site-v3/phone-new-tank-guide.png"
+              alt="NextUpReef New Tank Guide showing the cycle phase and next checklist step"
+              style={{ width: "100%", maxWidth: "300px", height: "auto" }}
             />
           </div>
 
