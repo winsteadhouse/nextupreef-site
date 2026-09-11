@@ -58,10 +58,10 @@ const integrations = [
   {
     id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',
     badge: 'EARLY ACCESS', badgeColor: '#7C3AED', accent: '#7C3AED',
-    tagline: 'Cloud-connected, so it works from anywhere.',
-    sell: 'HYDROS talks to the cloud, so NextUpReef can read your tank from anywhere, not just on home WiFi. Connect with your HYDROS device key and pH, temperature, salinity and ORP readings flow into your logs around the clock. It is our newest integration: outlet control and more are being added next.',
-    pros: ['Works away from home (cloud)', 'pH, temperature, salinity and ORP readings', 'Syncs 24/7, even with the app closed', 'Connect with your HYDROS device key'],
-    cons: ['Early access: our newest integration', 'Outlet control and dosing are coming next'],
+    tagline: 'Monitor and control your whole HYDROS from anywhere.',
+    sell: 'HYDROS talks to the cloud, so NextUpReef works with it from anywhere, not just on home WiFi. Connect with your HYDROS device key: pH, temperature, salinity, ORP and alkalinity tests flow into your logs around the clock. Switch outputs on, off or back to Auto, set pump levels, run Feeding or Water Change mode, and start tests. Your HYDROS confirms each change.',
+    pros: ['Works away from home (cloud)', 'Readings sync 24/7, including alkalinity tests', 'Outputs, pump levels, Feeding and Water Change modes', 'Read-only key option if you only want readings'],
+    cons: ['Early access: our newest integration', 'Programs and schedules stay in the HYDROS app'],
     ctaLabel: 'Shop HYDROS', ctaUrl: 'https://www.coralvuehydros.com/',
     mfgName: 'coralvuehydros.com', mfgUrl: 'https://www.coralvuehydros.com/',
     guide: '', guideLabel: '', image: '/devices/hydros-app-v3.png',
@@ -73,13 +73,14 @@ const compareRows = [
   ['What it is', 'Local controller', 'Smart outlets', 'Cloud controller'],
   ['Status in NextUpReef', 'live', 'live', 'Early access'],
   ['Water readings (pH, temp, salinity)', 'yes', 'no', 'yes'],
-  ['Outlet control', 'yes', 'yes', 'soon'],
-  ['Automated dosing', 'Outlet + pump', 'yes', 'soon'],
+  ['Outlet control', 'yes', 'yes', 'yes'],
+  ['Feed / water change modes', 'Feed Mode', 'no', 'yes'],
+  ['Automated dosing', 'Outlet + pump', 'yes', 'Manual dose'],
   ['Each dose confirmed + missed-dose alerts', 'no', 'yes', 'no'],
-  ['Schedules saved to the device (run with phone off)', 'yes', 'yes', 'soon'],
+  ['Schedules run on the device (phone off)', 'yes', 'yes', 'Set in HYDROS app'],
   ['Works away from home', 'wifi', 'wifi', 'yes'],
   ['Hardware needed', 'Apex you own', 'Low-cost plugs', 'HYDROS controller'],
-  ['Best for', 'All-in-one you own', 'Budget dosing + lighting', 'Monitoring anywhere'],
+  ['Best for', 'All-in-one you own', 'Budget dosing + lighting', 'Full control from anywhere'],
 ];
 
 const blogPosts = [

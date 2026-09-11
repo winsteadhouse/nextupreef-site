@@ -155,7 +155,7 @@ function Overview({ metrics, series, engagement }: { metrics: Record<string, Rec
       </div>
       <div className='kpis'>
         <Delta label='New users / wk' cur={u.new_7d || 0} prev={u.new_prev_7d || 0} mode='wow' />
-        <Delta label='New users / day' cur={u.new_today || 0} prev={u.new_yesterday || 0} mode='dod' />
+        <Kpi label='New today · so far' value={fmt(u.new_today || 0)} sub={fmt(u.new_yesterday || 0) + ' yesterday · as of ' + new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' }) + ' CT'} color={GD} />
         <Delta label='Active users / wk' cur={u.active_7d || 0} prev={u.active_prev_7d || 0} mode='wow' />
         <Kpi label='Active (30d)' value={fmt(u.active_30d)} sub={pct(u.active_30d || 0, u.total || 0) + '% of base'} color={BL} />
         <Kpi label='Logs (7d)' value={fmt(lg.logs_7d)} sub={fmt(lg.total) + ' all time'} />

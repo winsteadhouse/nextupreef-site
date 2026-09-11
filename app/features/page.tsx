@@ -452,7 +452,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
             <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS <span style={{ fontSize: '11px', fontWeight: 800, color: '#A78BFA', marginLeft: '6px' }}>EARLY ACCESS</span></div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and ORP readings sync into your logs around the clock. Outlet control is coming next.</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity, ORP and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Control Center</div>
@@ -591,7 +591,7 @@ export default function FeaturesPage() {
             <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
             <div>
               <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>CoralVue HYDROS (early access)</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Connect with your HYDROS device key and pH, temperature, salinity and ORP sync from the cloud, even when the app is closed.</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Connect with your HYDROS device key: readings and alkalinity tests sync from the cloud around the clock, and you can switch outputs, set pump levels, change modes and start tests from the app.</div>
             </div>
           </div>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
