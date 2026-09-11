@@ -34,7 +34,7 @@ export default async function DashboardPage() {
     supabase.from('dosing_products').select('parameter, product_brand, product_name, daily_amount, dose_unit, method').eq('tank_id', id).eq('is_active', true),
     supabase.from('light_schedules').select('on_time, off_time, user_equipment(nickname, custom_name, equipment_catalog(brand, model))').eq('tank_id', id),
     supabase.from('hub_devices').select('last_seen_at').eq('tank_id', id).eq('is_active', true).order('last_seen_at', { ascending: false }).limit(1),
-    supabase.from('smart_outlets').select('hub_id, last_seen_at').eq('tank_id', id).eq('is_active', true),
+    supabase.from('smart_outlets').select('hub_id, last_seen_at, last_seen_on_network').eq('tank_id', id).eq('is_active', true),
     supabase.from('controller_integrations').select('controller_type, last_sync_at, last_sync_status').eq('tank_id', id).eq('is_active', true).order('last_sync_at', { ascending: false }).limit(1),
   ]);
 
@@ -108,7 +108,8 @@ export default async function DashboardPage() {
     devices: {
       apex: ctrl ? { label: ctrl.controller_type === 'apex' ? 'Apex' : String(ctrl.controller_type ?? 'Controller'), online: within(ctrl.last_sync_at, 60) && ['ok', 'success'].includes(String(ctrl.last_sync_status)), lastSync: ctrl.last_sync_at ?? null } : null,
       hub: hub ? { online: hubOnline } : null,
-      outlets: outlets.length ? { total: outlets.length, online: outlets.filter((o) => (o.hub_id && hubOnline) || within(o.last_seen_at, 30)).length } : null,
+      // Outlets are 'seen' when the app pinged them on the home LAN or the plug hit the dose webhook.
+      outlets: outlets.length ? { total: outlets.length, online: outlets.filter((o) => (o.hub_id && hubOnline) || within(o.last_seen_on_network, 30) || within(o.last_seen_at, 30)).length } : null,
     },
   };
 

@@ -23,6 +23,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const access = evaluateWebAccess(profile);
   if (!access.hasAccess) redirect('/upgrade');
 
+  // Record a portal visit (one row per user per day; admin reporting). Never blocks the page.
+  try { await supabase.rpc('track_portal_visit'); } catch { /* ignore */ }
+
   const { tanks, activeTankId } = await getActiveTank();
   const name = profile?.display_name || user.email;
 

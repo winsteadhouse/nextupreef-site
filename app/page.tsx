@@ -198,12 +198,12 @@ export default function HomePage() {
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your reef runs itself.<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Even when you’re not home.</span>
             </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect Shelly smart outlets and automate dosing, lighting, and equipment — all without leaving the app. Schedules live on the device and run 24/7 even when your phone is off.</p>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "440px" }}>However you dose — by hand, with your own pump, or fully automated — NextUpReef keeps it on track. A daily dosing checklist, reminders, a dose calculator, and schedules that run on your Shelly plug or Apex 24/7.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                { title: "Shelly Smart Outlets", desc: "Connect any Shelly Plug US Gen4 in minutes — no Shelly app needed. Tag it as a doser, heater, light, skimmer, or return pump and control it directly from NextUpReef." },
-                { title: "Automated Dosing", desc: "Calibrate your pump once, set a daily mL target, pick a schedule. NextUpReef writes it directly to the outlet — doses run on time even if your internet goes down." },
-                { title: "Schedules Run on the Device", desc: "No cloud, no server, no phone required. Your reef stays dosed and lit through power outages, router reboots, and travel." },
+                { title: "Every Dose, One Checklist", desc: "Track alk, calcium, magnesium and traces however you dose. Tap Dosed to log it, get a reminder at your time, and see alk, Ca and Mg balance trends at a glance." },
+                { title: "Dose Calculator", desc: "Dial in your daily dose from your own test trend, or fix a low reading safely — split over days so alkalinity never jumps more than 1 dKH a day." },
+                { title: "Automated Dosing", desc: "Put your pump on a Shelly smart plug or an Apex outlet. Calibrate once, set a daily mL target, and NextUpReef writes the schedule to the device — it keeps dosing through internet outages and travel." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
@@ -216,7 +216,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phone-doser.png" alt="NextUpReef automated dosing screen showing 20 of 30 mL of alkalinity confirmed today and the day's dose schedule" width={777} height={1557} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phones-dosing.png" alt="NextUpReef Dosing screen with alkalinity, calcium and magnesium balance, today's doses and the dose calculator, in front of an automated doser confirming 20 of 30 mL today" width={1227} height={1434} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

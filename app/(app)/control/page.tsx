@@ -6,6 +6,15 @@ const pan = { background: 'var(--panel)', border: '1px solid var(--hair)', borde
 const PARAM_COLOR: Record<string, string> = { alk: '#0ea5e9', alkalinity: '#0ea5e9', ca: '#8b5cf6', calcium: '#8b5cf6', mg: '#10b981', magnesium: '#10b981', nitrate: '#22c55e', phosphate: '#f59e0b', kalkwasser: '#8b5cf6', custom: '#2EE6CF', other: '#2EE6CF' };
 
 const within = (iso: unknown, mins: number) => (iso ? (Date.now() - new Date(String(iso)).getTime()) <= mins * 60000 : false);
+// The portal can't reach the home network, so an outlet is "seen" when the app
+// pinged it on the LAN (last_seen_on_network) or the plug called our dose webhook
+// (last_seen_at). Use whichever is newer.
+const outletSeen = (o: any): string | null => {
+  const a = o?.last_seen_on_network ? new Date(o.last_seen_on_network).getTime() : 0;
+  const b = o?.last_seen_at ? new Date(o.last_seen_at).getTime() : 0;
+  const t = Math.max(a, b);
+  return t ? new Date(t).toISOString() : null;
+};
 function relTime(iso: unknown): string {
   if (!iso) return 'never';
   const ms = Date.now() - new Date(String(iso)).getTime();
@@ -42,7 +51,7 @@ export default async function ControlPage() {
   const ctrl = ctrls.find((c) => c.controller_type === 'apex') || null;
   const hydros = ctrls.find((c) => c.controller_type === 'hydros') || null;
   const hub: any = null;
-  const outlets = ((await supabase.from('smart_outlets').select('id, display_name, brand, equipment_kind, local_ip, last_output_on, last_watts, last_voltage, last_current, last_temperature_c, last_state_at, last_seen_on_network, last_error, flow_rate_ml_per_sec').eq('tank_id', tank.id).eq('is_active', true).order('display_name')).data ?? []) as any[];
+  const outlets = ((await supabase.from('smart_outlets').select('id, display_name, brand, equipment_kind, local_ip, last_output_on, last_watts, last_voltage, last_current, last_temperature_c, last_state_at, last_seen_on_network, last_seen_at, last_error, flow_rate_ml_per_sec').eq('tank_id', tank.id).eq('is_active', true).order('display_name')).data ?? []) as any[];
   const alertRules: any[] = [];
   const doseEvents = ((await supabase.from('dose_events').select('amount_ml, dosed_at, source, outlet_id').eq('tank_id', tank.id).order('dosed_at', { ascending: false }).limit(8)).data ?? []) as any[];
   const probeErrors: any[] = [];
@@ -95,7 +104,7 @@ export default async function ControlPage() {
 
   const hubOnline = within(hub?.last_seen_at, 10);
   const hubFresh = within(hub?.last_reading_at, 20);
-  const onlineOutlets = outlets.filter((o) => within(o.last_seen_on_network, 30));
+  const onlineOutlets = outlets.filter((o) => within(outletSeen(o), 30));
   const outletOnlineCount = onlineOutlets.length;
   const apexConfigured = !!ctrl;
   const apexActive = !!ctrl?.is_active;
@@ -111,7 +120,7 @@ export default async function ControlPage() {
   if (hub && !hubOnline) issues.push({ tone: 'bad', text: hub.name + ' is offline (last seen ' + relTime(hub.last_seen_at) + ')' });
   if (phLast != null && phRule && (phLast < Number(phRule.low_threshold) || phLast > Number(phRule.high_threshold))) issues.push({ tone: 'bad', text: 'pH out of range at ' + phLast.toFixed(2) + ' (alert ' + phRule.low_threshold + ' to ' + phRule.high_threshold + ')' });
   if (hub && tempRows.length === 0) issues.push({ tone: 'dim', text: 'No temperature readings from the hub' });
-  for (const o of outlets) if (!within(o.last_seen_on_network, 30)) issues.push({ tone: 'bad', text: o.display_name + ' outlet is offline (' + relTime(o.last_seen_on_network) + ')' });
+  for (const o of outlets) if (!within(outletSeen(o), 48 * 60)) issues.push({ tone: 'amber', text: o.display_name + ' has not checked in since ' + relTime(outletSeen(o)) + '. The portal only sees outlets when the app checks them on your home Wi-Fi, so open the app at home to refresh it.' });
   if (apexConfigured && !apexActive) issues.push({ tone: 'dim', text: 'Apex sync is turned off - enable it in the app to pull probe data' });
 
   const allGood = issues.filter((i) => i.tone !== 'dim').length === 0;
@@ -377,7 +386,8 @@ function ProbeTile({ label, value, unit, dec, lo, hi, series, color, updated, fr
 }
 
 function OutletCard({ o, spark, lastDose, avgOn }: { o: any; spark: number[]; lastDose: any; avgOn?: number }) {
-  const online = within(o.last_seen_on_network, 30);
+  const seen = outletSeen(o);
+  const online = within(seen, 30);
   const on = !!o.last_output_on;
   const isDoser = o.equipment_kind === 'doser';
   const watts = o.last_watts != null ? Number(o.last_watts) : null;
@@ -388,9 +398,9 @@ function OutletCard({ o, spark, lastDose, avgOn }: { o: any; spark: number[]; la
           <div style={{ fontSize: 14.5, fontWeight: 700, color: 'var(--hi)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{o.display_name}</div>
           <div style={{ fontSize: 11.5, color: 'var(--dim)', marginTop: 2, textTransform: 'capitalize' }}>{(o.equipment_kind || 'outlet') + ' . ' + (o.brand ? String(o.brand).replace(/_/g, ' ') : 'shelly')}</div>
         </div>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: online ? 'var(--good)' : 'var(--dim)', flex: 'none' }}><span style={{ width: 7, height: 7, borderRadius: 9, background: online ? 'var(--good)' : 'var(--dim)', boxShadow: online ? '0 0 0 3px rgba(54,216,155,.16)' : 'none' }} />{online ? 'online' : 'offline'}</span>
+        <span style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: online ? 'var(--good)' : 'var(--dim)', flex: 'none' }}><span style={{ width: 7, height: 7, borderRadius: 9, background: online ? 'var(--good)' : 'var(--dim)', boxShadow: online ? '0 0 0 3px rgba(54,216,155,.16)' : 'none' }} />{online ? 'online' : 'seen ' + relTime(seen)}</span>
       </div>
-      <div style={{ padding: '0 15px', display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ padding: '0 15px', display: 'flex', alignItems: 'center', gap: 12, opacity: online ? 1 : 0.55 }} title={online ? undefined : 'Last known state, as of ' + relTime(seen)}>
         <span style={{ fontSize: 13, fontWeight: 800, letterSpacing: '.5px', color: on ? 'var(--good)' : 'var(--dim)', background: on ? 'rgba(54,216,155,.14)' : 'rgba(125,165,210,.08)', border: '1px solid ' + (on ? 'rgba(54,216,155,.3)' : 'var(--hair)'), borderRadius: 7, padding: '5px 12px' }}>{on ? 'ON' : 'OFF'}</span>
         <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
           {watts != null ? <Metric k='Power' v={watts.toFixed(1) + ' W'} /> : null}

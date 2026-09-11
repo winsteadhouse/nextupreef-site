@@ -52,6 +52,8 @@ const KIND: Record<string, { label: string; color: string; feature: string }> = 
   smart_outlets: { label: '', color: GD, feature: 'Smart outlets' },
   push_enabled: { label: '', color: AM, feature: 'Push notifications on' },
   new_tank_journey: { label: '', color: GD, feature: 'New Tank Guide active' },
+  dose_log: { label: 'Logged a dose', color: AM, feature: 'Dose logging' },
+  portal: { label: 'Opened the web portal', color: RO, feature: 'Web portal' },
   open: { label: 'Opened the app', color: '#566679', feature: 'App opens' },
 };
 const kindLabel = (k: string) => KIND[k]?.label || k.replace(/_/g, ' ');
@@ -352,6 +354,8 @@ function Engagement({ e, users, onOpen }: { e: Eng | null; users: UserRow[]; onO
         </div>
       </Panel>
 
+      <PortalPanel p={e.portal} />
+
       <Panel className='span-12' title='Retention by signup week' sub='% of each week’s signups who did something in app week 0–7 after signing up'>
         <div className='rtable' style={{ maxHeight: 'none' }}>
           <table className='cohort'>
@@ -383,15 +387,67 @@ function Engagement({ e, users, onOpen }: { e: Eng | null; users: UserRow[]; onO
         ]} empty='Every paying user has been active in the last 10 days.' />
       </Panel>
 
-      <Panel className='span-6' title='Platforms' sub='latest device with push token'>
+      <Panel className='span-4' title='Platforms' sub='latest device with push token'>
         <HBars data={platforms.map(([k, n]) => ({ k: k === 'ios' ? 'iOS' : k === 'android' ? 'Android' : k, v: n, sub: pct(n, platTotal) + '%' }))} color={RO} />
         <div className='dim small' style={{ marginTop: 8 }}>{fmt(platTotal)} of {fmt(total)} users have registered a device ({pct(platTotal, total)}%).</div>
       </Panel>
-      <Panel className='span-6' title='App versions' sub='build · users · active in 30d'>
+      <Panel className='span-4' title='App versions' sub='build · users · active in 30d'>
         {builds.length ? <HBars data={builds.map((b) => ({ k: 'Build ' + b.b, v: b.n, sub: b.active + ' active' }))} color={PU} />
           : <div className='muted-block'>No build numbers recorded yet. The app update in this release starts sending them on launch.</div>}
       </Panel>
+      <ThemePanel t={e.themes} />
     </div>
+  );
+}
+function ThemePanel({ t }: { t: Record<string, { all: number; active30: number }> | undefined }) {
+  const dark = t?.dark?.active30 ?? 0, light = t?.light?.active30 ?? 0, unknown = t?.unknown?.active30 ?? 0;
+  const known = dark + light;
+  return (
+    <Panel className='span-4' title='Dark vs light mode' sub='active users, last 30 days'>
+      {known ? (
+        <>
+          <div className='stackbar big'>
+            <span style={{ width: pct(dark, known) + '%', background: '#818CF8' }} title={'Dark: ' + dark} />
+            <span style={{ width: pct(light, known) + '%', background: '#E2E8F0' }} title={'Light: ' + light} />
+          </div>
+          <div className='minis two' style={{ marginTop: 12 }}>
+            <MiniStat label={'dark · ' + pct(dark, known) + '%'} value={fmt(dark)} color='#818CF8' />
+            <MiniStat label={'light · ' + pct(light, known) + '%'} value={fmt(light)} />
+          </div>
+        </>
+      ) : <div className='muted-block'>No one has reported a theme yet.</div>}
+      <div className='dim small' style={{ marginTop: 10 }}>{fmt(unknown)} active users are on an older app version that doesn’t report a theme (the app defaults to light). This fills in as people update.</div>
+    </Panel>
+  );
+}
+function PortalPanel({ p }: { p: any }) {
+  if (!p) return null;
+  const since = p.tracking_since ? new Date(String(p.tracking_since) + 'T12:00:00') : null;
+  const days = since ? Math.floor((Date.now() - since.getTime()) / 86400000) + 1 : 0;
+  const series = (p.series ?? []) as { d: string; users: number; visits: number }[];
+  return (
+    <Panel className='span-12' title='Web portal' sub={'portal.nextupreef.com · paid & trial users only' + (since ? ' · tracking since ' + since.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : ' · tracking starts with the next visit')}>
+      <div className='minis'>
+        <MiniStat label='used it today' value={fmt(p.today)} color={CY} />
+        <MiniStat label='last 7 days' value={fmt(p.d7)} />
+        <MiniStat label='last 30 days' value={fmt(p.d30)} />
+        <MiniStat label='ever' value={fmt(p.ever)} />
+        <MiniStat label='can access (paid/trial)' value={fmt(p.eligible)} />
+        <MiniStat label='of eligible used it (30d)' value={pct(p.d30 || 0, p.eligible || 0) + '%'} color={p.eligible && (p.d30 || 0) / p.eligible >= 0.2 ? GD : AM} />
+      </div>
+      {days >= 3 && series.length ? (
+        <div style={{ height: 150, marginTop: 12 }}>
+          <ResponsiveContainer width='100%' height='100%'>
+            <BarChart data={series} margin={{ top: 6, right: 4, left: -16, bottom: 0 }}>
+              <XAxis dataKey='d' tickFormatter={tick} tick={AX} stroke={GRID} minTickGap={20} />
+              <YAxis tick={AX} stroke={GRID} allowDecimals={false} />
+              <Tooltip contentStyle={tipStyle} labelFormatter={tick} />
+              <Bar dataKey='users' name='Users' fill={RO} radius={[3, 3, 0, 0]} maxBarSize={14} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      ) : <div className='dim small' style={{ marginTop: 10 }}>A daily chart appears after a few days of visits. Most paid and trial users likely don’t know the portal exists yet.</div>}
+    </Panel>
   );
 }
 function biggestDrop(steps: [string, string][], f: Record<string, number>) {
@@ -435,6 +491,7 @@ function Users({ users, onOpen }: { users: UserRow[]; onOpen: (id: string) => vo
     const val = (r: UserRow): number | string => {
       if (sortKey === 'last_active') return lastActive(r) ?? -Infinity;
       if (sortKey === 'created_at') return r.created_at ? new Date(String(r.created_at)).getTime() : -Infinity;
+      if (sortKey === 'last_portal_at') return r.last_portal_at ? new Date(String(r.last_portal_at)).getTime() : r.web_eligible ? -1e15 : -Infinity;
       if (sortKey === 'segment') return SEG_ORDER.indexOf(String(r.segment));
       if (sortKey === 'status') return status(r);
       const v = r[sortKey]; return typeof v === 'number' ? v : String(v ?? '').toLowerCase();
@@ -464,7 +521,7 @@ function Users({ users, onOpen }: { users: UserRow[]; onOpen: (id: string) => vo
         <table className='users'>
           <thead><tr>
             {th('name', 'User')}{th('created_at', 'Joined')}{th('segment', 'Engagement')}{th('days28', 'Days (28d)', true)}{th('last_active', 'Last active')}
-            {th('status', 'Status')}{th('platform', 'Device')}{th('tanks', 'Tanks', true)}{th('logs', 'Logs', true)}{th('wcs', 'WCs', true)}{th('ai', 'AI', true)}{th('livestock', 'Stock', true)}{th('features', 'Features', true)}
+            {th('status', 'Status')}{th('last_portal_at', 'Web')}{th('platform', 'Device')}{th('tanks', 'Tanks', true)}{th('logs', 'Logs', true)}{th('wcs', 'WCs', true)}{th('ai', 'AI', true)}{th('livestock', 'Stock', true)}{th('features', 'Features', true)}
             <th>Gear</th>
           </tr></thead>
           <tbody>
@@ -479,6 +536,7 @@ function Users({ users, onOpen }: { users: UserRow[]; onOpen: (id: string) => vo
                   <td className='r'>{fmt(r.days28)}</td>
                   <td style={{ color: la && Date.now() - la < 7 * 86400000 ? GD : 'var(--mid)' }}>{la ? ago(new Date(la).toISOString()) : '–'}</td>
                   <td><span className={'stat ' + st}>{st}</span></td>
+                  <td className={r.last_portal_at ? '' : 'dim'} title={r.last_portal_at ? Number(r.portal_days_30 || 0) + ' days in the last 30' : r.web_eligible ? 'Has access, never used it' : 'No web access'}>{r.last_portal_at ? ago(r.last_portal_at) : r.web_eligible ? 'never' : '–'}</td>
                   <td className='dim'>{r.platform ? (r.platform === 'ios' ? 'iOS' : r.platform === 'android' ? 'Android' : String(r.platform)) : '–'}{r.app_build ? ' · ' + r.app_build : ''}</td>
                   <td className='r dim'>{fmt(r.tanks)}</td><td className='r'>{fmt(r.logs)}</td><td className='r dim'>{fmt(r.wcs)}</td>
                   <td className='r' style={{ color: Number(r.ai) > 0 ? PU : 'var(--dim)' }}>{fmt(r.ai)}</td>
@@ -562,6 +620,8 @@ function UserDrawer({ id, onClose }: { id: string; onClose: () => void }) {
               <div><small>Device</small><b>{p.platform ? (p.platform === 'ios' ? 'iOS' : 'Android') : '–'}{p.app_build ? ' · ' + p.app_build : ''}</b></div>
               <div><small>Push</small><b>{p.push ? 'On' : 'Off'}</b></div>
               <div><small>Trial ends</small><b>{d2(p.trial_ends_at)}</b></div>
+              <div><small>Tanks</small><b>{((d?.tanks ?? []) as unknown[]).length}</b></div>
+              <div><small>Web portal</small><b>{d?.portal?.last ? ago(d.portal.last) + ' · ' + d.portal.days + 'd' : 'never'}</b></div>
             </div>
             <div className='dpanel-sub'>Activity · last 17 weeks · {activeDays} active days</div>
             <div className='udays'>{cells.map((c) => <i key={c.k} title={c.k + (c.n ? ' · ' + c.n + ' actions' : '')} style={{ background: c.n === 0 ? 'var(--raised)' : c.n < 3 ? 'rgba(46,230,207,.35)' : c.n < 8 ? 'rgba(46,230,207,.65)' : CY }} />)}</div>
