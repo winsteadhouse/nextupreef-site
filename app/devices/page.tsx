@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Works With Your Controller - NextUpReef',
-  description: 'NextUpReef connects to CoralVue HYDROS, Neptune Apex, and Shelly smart outlets. Monitor your tank, control your gear, and automate dosing and lighting from one app. Integrations are a Pro feature.',
+  description: 'NextUpReef connects to Neptune Apex, Shelly smart outlets and CoralVue HYDROS (early access). Sync probes, control your gear, and automate dosing and lighting from one app. Integrations are a Pro feature.',
   alternates: { canonical: 'https://nextupreef.com/devices' },
   openGraph: {
     title: 'Works With Your Controller - NextUpReef',
-    description: 'Connect HYDROS, Neptune Apex, or Shelly and manage your whole reef from one app.',
+    description: 'Connect a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app.',
     url: 'https://nextupreef.com/devices',
     images: [{ url: '/brand/splash2.png', width: 1200, height: 630 }],
   },
@@ -32,62 +32,69 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
 
 const integrations = [
   {
-    id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',
-    badge: 'CLOUD CONTROLLER', badgeColor: '#7C3AED', accent: '#7C3AED',
-    tagline: 'Full monitoring and control, from anywhere.',
-    sell: 'HYDROS is cloud-connected, so NextUpReef reads your tank and controls your gear from anywhere - not just on your home WiFi. Live pH, temperature, salinity and ORP, continuous 24/7 trend logging, and alerts that reach you even when the app is closed. If you want the fullest picture with the least worry, this is it.',
-    pros: ['Monitor and control from anywhere', 'Live probes: temp, pH, ORP, salinity, water level', 'Continuous 24/7 trends and alerts', 'Dosing and outlet control in the app'],
-    cons: ['Requires HYDROS hardware', 'Probes are an added cost'],
-    ctaLabel: 'Shop HYDROS', ctaUrl: 'https://www.coralvuehydros.com/',
-    mfgName: 'coralvuehydros.com', mfgUrl: 'https://www.coralvuehydros.com/',
-    guide: '/blog', guideLabel: 'Learn more', image: '',
-  },
-  {
     id: 'apex', icon: 'apex', brand: 'Neptune Systems', heading: 'Neptune Apex',
     badge: 'FULL CONTROLLER', badgeColor: '#0EA5E9', accent: '#0EA5E9',
-    tagline: 'The all-in-one local controller you may already own.',
-    sell: 'Already have an Apex? Connect it with no extra hardware. NextUpReef reads your probes straight into your logs and lets you control outlets, run Feed Mode, set heater temperatures, and dose - all from the app, right alongside your scores and AI advice. The best way to get more out of the Apex you already trust.',
-    pros: ['Uses the Apex you already own', 'Probes plus outlet control and programs', 'Live control, Feed Mode, heater and dosing setup', 'Feeds your Reef Score and AI advisor'],
-    cons: ['Local only - needs the same WiFi as your Apex', 'The Apex ecosystem is a bigger investment'],
+    tagline: 'Get more out of the Apex you already own.',
+    sell: 'Connect your Apex with no extra hardware. NextUpReef pulls temperature, pH, salinity, ORP and Trident readings into your logs, and lets you switch outlets, run Feed Mode, set heater temperatures and schedule dosing, all next to your scores and AI advice. Dosing schedules are saved to the Apex, so they keep running when your phone is off.',
+    pros: ['Uses the Apex you already own', 'Probe and Trident readings go straight into your logs', 'Outlets, Feed Mode, heater temps and dosing in one app', 'Schedules are saved to the Apex and run 24/7'],
+    cons: ['Your phone needs to be on the same WiFi as the Apex', 'Dosing uses a regular outlet and pump (DOS/DDR not supported yet)'],
     ctaLabel: 'Visit Neptune Systems', ctaUrl: 'https://www.neptunesystems.com/',
     mfgName: 'neptunesystems.com', mfgUrl: 'https://www.neptunesystems.com/',
-    guide: '/blog/how-to-connect-apex', guideLabel: 'Learn more', image: '/devices/apex-app.png',
+    guide: '/blog/how-to-connect-apex', guideLabel: 'Connect guide', image: '/devices/apex-app-v3.png',
+    alt: 'Neptune Apex in NextUpReef with live temperature and pH gauges, Feed Mode and outlet status',
   },
   {
     id: 'shelly', icon: 'flash', brand: 'Shelly', heading: 'Shelly Smart Outlets',
     badge: 'SIMPLE CONTROL', badgeColor: '#F59E0B', accent: '#F59E0B',
-    tagline: 'Simple, affordable control and schedules - no full controller needed.',
-    sell: 'Shelly smart outlets are the easy, low-cost way to control and automate your gear. Switch pumps, dosers, heaters and lights on and off and on a schedule - and the schedule runs on the plug itself, so it keeps going even if your phone or internet drops. Perfect for dosing and lighting on a budget, on their own or alongside a bigger controller.',
-    pros: ['Inexpensive and easy to add', 'Schedules run on the plug, even offline', 'Great for dosing and lighting', 'Use alone or with an Apex or HYDROS'],
-    cons: ['Outlets only - no pH or temperature', 'Set up one plug at a time'],
+    tagline: 'Affordable dosing and lighting, no controller needed.',
+    sell: 'A Shelly plug is the easiest way to automate a doser, light, heater or pump. Calibrate your pump once and set a daily mL target. NextUpReef saves the schedule to the plug, so it runs even when your phone or internet is off. The plug\u2019s power draw confirms each dose, and you get an alert if a dose is missed.',
+    pros: ['Low cost and quick to add', 'Schedules run on the plug, even offline', 'Each dose confirmed by power draw', 'Missed-dose alerts'],
+    cons: ['Outlet control only, no water probes', 'Phone and plug need the same WiFi to change settings'],
     ctaLabel: 'Buy on Amazon', ctaUrl: shellyOutletUrl, ctaSponsored: true,
     mfgName: 'shelly.com', mfgUrl: 'https://www.shelly.com/en-us/products/shelly-plug-us-gen4',
-    guide: '/blog/how-to-add-shelly-plug', guideLabel: 'Setup guide', image: '/devices/shelly-app.png',
+    guide: '/blog/how-to-setup-dosing-shelly', guideLabel: 'Dosing setup guide', image: '/devices/shelly-app-v3.png',
+    alt: 'Shelly doser in NextUpReef showing 20 of 30 mL dosed today, confirmed by power, with the day\u2019s dose schedule',
+  },
+  {
+    id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',
+    badge: 'EARLY ACCESS', badgeColor: '#7C3AED', accent: '#7C3AED',
+    tagline: 'Cloud-connected, so it works from anywhere.',
+    sell: 'HYDROS talks to the cloud, so NextUpReef can read your tank from anywhere, not just on home WiFi. Connect with your HYDROS device key and pH, temperature, salinity and ORP readings flow into your logs around the clock. It is our newest integration: outlet control and more are being added next.',
+    pros: ['Works away from home (cloud)', 'pH, temperature, salinity and ORP readings', 'Syncs 24/7, even with the app closed', 'Connect with your HYDROS device key'],
+    cons: ['Early access: our newest integration', 'Outlet control and dosing are coming next'],
+    ctaLabel: 'Shop HYDROS', ctaUrl: 'https://www.coralvuehydros.com/',
+    mfgName: 'coralvuehydros.com', mfgUrl: 'https://www.coralvuehydros.com/',
+    guide: '', guideLabel: '', image: '/devices/hydros-app-v3.png',
+    alt: 'Devices and Automation screen in NextUpReef listing CoralVue HYDROS, Neptune Apex and Shelly smart outlets',
   },
 ];
 
 const compareRows = [
-  ['What it is', 'Cloud controller', 'Local controller', 'Smart outlets'],
-  ['Water monitoring (pH, temp, salinity)', 'yes', 'yes', 'no'],
-  ['Works away from home', 'yes', 'wifi', 'wifi'],
-  ['24/7 monitoring and alerts', 'yes', 'no', 'no'],
-  ['Outlet control', 'yes', 'yes', 'yes'],
-  ['Dosing automation', 'yes', 'yes', 'yes'],
-  ['Trends and history', 'Continuous', 'When on network', 'no'],
-  ['Hardware needed', 'HYDROS controller', 'Apex you own', 'Low-cost plugs'],
-  ['Best for', 'Full control, anywhere', 'All-in-one you own', 'Budget automation'],
+  ['What it is', 'Local controller', 'Smart outlets', 'Cloud controller'],
+  ['Status in NextUpReef', 'live', 'live', 'Early access'],
+  ['Water readings (pH, temp, salinity)', 'yes', 'no', 'yes'],
+  ['Outlet control', 'yes', 'yes', 'soon'],
+  ['Automated dosing', 'Outlet + pump', 'yes', 'soon'],
+  ['Each dose confirmed + missed-dose alerts', 'no', 'yes', 'no'],
+  ['Schedules saved to the device (run with phone off)', 'yes', 'yes', 'soon'],
+  ['Works away from home', 'wifi', 'wifi', 'yes'],
+  ['Hardware needed', 'Apex you own', 'Low-cost plugs', 'HYDROS controller'],
+  ['Best for', 'All-in-one you own', 'Budget dosing + lighting', 'Monitoring anywhere'],
 ];
 
 const blogPosts = [
-  { title: 'How to add a Shelly smart plug', href: '/blog/how-to-add-shelly-plug' },
+  { title: 'Connect your Neptune Apex', href: '/blog/how-to-connect-apex' },
   { title: 'Set up automated dosing with Shelly', href: '/blog/how-to-setup-dosing-shelly' },
-  { title: 'How to track your reef parameters', href: '/blog/how-to-track-saltwater-aquarium-parameters' },
+  { title: 'How to add a Shelly smart plug', href: '/blog/how-to-add-shelly-plug' },
+  { title: 'Alkalinity, calcium and magnesium guide', href: '/blog/reef-tank-alkalinity-calcium-magnesium-guide' },
 ];
 
 function Cell({ v }: { v: string }) {
   if (v === 'yes') return <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#22C55E', fontWeight: 700, fontSize: '13px' }}><Ico name='check' size={15} color='#22C55E' /> Yes</span>;
   if (v === 'no') return <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>No</span>;
   if (v === 'wifi') return <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>Home WiFi</span>;
+  if (v === 'live') return <span style={{ color: '#22C55E', fontWeight: 700, fontSize: '13px' }}>Live</span>;
+  if (v === 'soon') return <span style={{ color: '#8B5CF6', fontWeight: 700, fontSize: '13px' }}>Coming soon</span>;
   return <span style={{ color: 'var(--text-light)', fontSize: '13px', fontWeight: 600 }}>{v}</span>;
 }
 
@@ -113,7 +120,7 @@ export default function DevicesPage() {
           </span>
         </h1>
         <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '620px', margin: '0 auto' }}>
-          Connect the gear you already run, or pick the setup that fits your budget. NextUpReef works with CoralVue HYDROS, Neptune Apex, and Shelly smart outlets, so your probes, dosing, lighting, and equipment all live in one app.
+          Connect the gear you already run, or pick the setup that fits your budget. NextUpReef works with Neptune Apex, Shelly smart outlets and CoralVue HYDROS (early access), so your probes, dosing, lighting and equipment live in one app.
         </p>
       </section>
 
@@ -134,7 +141,7 @@ export default function DevicesPage() {
               <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '0' }} className='device-card-grid'>
                 <div style={{ background: 'rgba(44,196,214,0.04)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', minHeight: '250px', gap: '12px' }}>
                   {d.image ? (
-                    <img src={d.image} alt={d.heading + ' in NextUpReef'} style={{ width: '100%', maxWidth: '300px', height: 'auto', display: 'block' }} />
+                    <img src={d.image} alt={d.alt} loading='lazy' style={{ width: '100%', maxWidth: '260px', height: 'auto', display: 'block' }} />
                   ) : (
                     <div style={{ width: '215px', height: '310px', borderRadius: '30px', border: '1px dashed var(--border)', background: 'var(--bg-card)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
                       <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: 'rgba(44,196,214,0.10)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -180,7 +187,7 @@ export default function DevicesPage() {
                     <a href={d.ctaUrl} target='_blank' rel={d.ctaSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer'} style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '11px 22px', borderRadius: '10px', background: 'var(--reef)', color: 'white', fontWeight: 900, fontSize: '14px', textDecoration: 'none' }}>
                       {d.ctaLabel} <Ico name='external' color='white' />
                     </a>
-                    <Link href={d.guide} style={{ fontSize: '13px', fontWeight: 800, color: 'var(--reef)', textDecoration: 'none' }}>{d.guideLabel} {'->'}</Link>
+                    {d.guide ? <Link href={d.guide} style={{ fontSize: '13px', fontWeight: 800, color: 'var(--reef)', textDecoration: 'none' }}>{d.guideLabel} {'->'}</Link> : null}
                     <a href={d.mfgUrl} target='_blank' rel='noopener noreferrer' style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', fontWeight: 700, color: 'var(--text-muted)', textDecoration: 'none' }}>
                       {d.mfgName} <Ico name='external' color='var(--text-muted)' />
                     </a>
@@ -195,6 +202,35 @@ export default function DevicesPage() {
         </p>
       </section>
 
+      <section style={{ padding: '0 20px 60px', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px', alignItems: 'center', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', padding: '32px 28px' }}>
+          <div>
+            <div className='section-label'>NO CONTROLLER NEEDED</div>
+            <h2 style={{ fontSize: 'clamp(22px, 3.4vw, 30px)', fontWeight: 900, margin: '10px 0 12px', color: 'var(--text-light)', lineHeight: 1.15 }}>Dose by hand? The Dosing screen is for you too.</h2>
+            <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: 1.65, margin: 0 }}>
+              Every account gets the Dosing screen, with or without hardware. Pick your products from 50+ common supplements, see what&rsquo;s due today, and tap Dosed to log it. Doses on a Shelly plug or Apex show up in the same list.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {[
+              { t: 'Daily checklist', d: 'Hand doses, your own dosing pump and automated doses in one list. One tap to log.', pro: false },
+              { t: 'Alk, Ca and Mg balance', d: 'See whether each one is holding steady, rising or falling across your last tests.', pro: false },
+              { t: 'One daily reminder', d: 'One push a day at the time you pick, only if something is still due.', pro: true },
+              { t: 'Dose calculator', d: 'Set your daily dose from your own test trend, or fix a low reading safely over a few days.', pro: true },
+            ].map((f) => (
+              <div key={f.t} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <div style={{ flexShrink: 0, marginTop: '1px' }}><Ico name='check' size={16} /></div>
+                <div>
+                  <div style={{ fontSize: '14px', fontWeight: 800, color: 'var(--text-light)', display: 'flex', alignItems: 'center', gap: '8px' }}>{f.t}{f.pro ? <ProChip /> : null}</div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.55 }}>{f.d}</div>
+                </div>
+              </div>
+            ))}
+            <Link href='/features#automation' style={{ fontSize: '13px', fontWeight: 800, color: 'var(--reef)', textDecoration: 'none', marginTop: '4px' }}>All dosing features {'->'}</Link>
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: '10px 20px 60px', maxWidth: '1000px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <div className='section-label'>SIDE BY SIDE</div>
@@ -205,9 +241,9 @@ export default function DevicesPage() {
             <thead>
               <tr style={{ background: 'rgba(44,196,214,0.05)' }}>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '12px', fontWeight: 900, color: 'var(--text-muted)' }}></th>
-                <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#7C3AED' }}>HYDROS</th>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#0EA5E9' }}>Apex</th>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#B45309' }}>Shelly</th>
+                <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#7C3AED' }}>HYDROS</th>
               </tr>
             </thead>
             <tbody>

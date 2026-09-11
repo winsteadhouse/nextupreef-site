@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
   description:
-    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, Shelly automation, and full Neptune Apex and CoralVue HYDROS control.",
+    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, a Dosing screen with reminders and a dose calculator, Shelly automation, and Neptune Apex control.",
   alternates: { canonical: "https://nextupreef.com/features" },
   openGraph: {
     title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
@@ -39,8 +39,10 @@ const softwareSchema = {
     "Reef Score and Stability Score",
     "Water change and maintenance reminders",
     "Shelly smart outlet automation",
+    "Dosing checklist, daily dosing reminder, and dose calculator",
     "Automated dosing and lighting",
     "Neptune Apex integration",
+    "Web dashboard for Pro members",
     "Community leaderboard",
     "6-phase Tank Journey guided setup",
     "Monthly tank photo timeline",
@@ -61,7 +63,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What do I get with NextUpReef Pro?",
-      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
+      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
     },
     {
       "@type": "Question",
@@ -71,7 +73,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Do I need any special hardware?",
-      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own." },
+      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: add Shelly smart outlets for automated dosing and lighting, or connect a Neptune Apex you already own. CoralVue HYDROS is in early access." },
     },
   ],
 };
@@ -99,6 +101,7 @@ export default function FeaturesPage() {
           <a href="#my-reef" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>My Reef</a>
           <a href="#scores" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Scores</a>
           <a href="#maintenance" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Reminders</a>
+          <a href="#dosing" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Dosing</a>
           <a href="#automation" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Automation</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
@@ -139,6 +142,11 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Dosing screen: daily checklist & one-tap logging</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                 <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef Score & Stability Score</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
@@ -162,6 +170,16 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water change & maintenance reminders</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Up to 3</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Unlimited</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Daily dosing reminder</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Dose calculator</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                 <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Multiple tanks</td>
@@ -204,7 +222,12 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Controller integrations (Apex, HYDROS, Shelly)</td>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Controller integrations (Apex, Shelly, HYDROS)</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Web dashboard (portal.nextupreef.com)</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
@@ -296,7 +319,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Dosing products</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Record every dosing product with the parameter it targets, the daily amount, and the method: automated doser, manual, or reactor.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Pick from 50+ common supplements or add your own, with the part (alk, Ca, Mg), label strength, daily amount, and how you dose it: by hand, your own dosing pump, a Shelly plug or Apex outlet, or through your ATO.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Lighting</div>
@@ -346,7 +369,7 @@ export default function FeaturesPage() {
       <section id="maintenance" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Maintenance & Reminders</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Never miss a water change<br />or a filter sock again.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Set your routine once and let the app keep you on schedule with push notifications — water changes, dosing, filter socks, carbon, RO/DI, skimmer cleaning, and anything else you run.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Set your routine once and let the app keep you on schedule with push notifications — water changes, filter socks, carbon, RO/DI, skimmer cleaning, and anything else you run. Dosing gets its own single daily reminder (see below).</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Water change schedules</div>
@@ -367,11 +390,49 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+      {/* DOSING */}
+      <section id="dosing" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
+        <div className="section-label">Dosing</div>
+        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>However you dose,<br />keep it on track.</h2>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>By hand, with your own dosing pump, or fully automated, every dose lives on one Dosing screen. See what&rsquo;s due, log it with one tap, and watch whether alkalinity, calcium and magnesium are holding steady. No controller required.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", alignItems: "center" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Daily checklist</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Everything due today in one list: hand doses, your own pump, and automated doses. Tap Dosed to log one. Doses due every few days show up on the right day.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Alk, Ca & Mg balance</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>A quick read on whether each one is steady, rising or falling across your recent tests, with test noise filtered out so one odd reading doesn’t fool you.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Dose calculator (Pro)</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Dial in your daily dose from your own test trend, or fix a low reading safely, split over days so alkalinity never rises more than 1 dKH a day.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Daily dosing reminder (Pro)</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>One push a day at the time you pick, listing what’s still due. If everything is logged, it stays quiet.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>50+ products built in</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Red Sea, Seachem, Brightwell, Tropic Marin, BRS, plain baking soda and more. Known label strengths fill in for you so the math is right.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Knows your dosing</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Water Advisor and Reef AI Chat know your dosing products and amounts, so advice about a falling alk reading starts from what you actually dose.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Image src="/screenshots/site-v3/phones-dosing.png" alt="NextUpReef Dosing screen with alkalinity, calcium and magnesium balance, today’s doses and the dose calculator, in front of an automated doser confirming 20 of 30 mL today" width={1227} height={1434} style={{ width: "100%", maxWidth: "420px", height: "auto" }} />
+          </div>
+        </div>
+      </section>
+
       {/* AUTOMATION & DEVICE CONTROL */}
       <section id="automation" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Automation & Device Control</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Your reef runs itself,<br />even when you’re away.</h2>
-        <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 32px', maxWidth: '680px' }}>Connect a Neptune Apex, a CoralVue HYDROS, or Shelly smart outlets and run your whole reef from one app - monitor probes, control equipment, automate dosing and lighting, and watch your trends. Schedules run on the device, so they keep going 24/7 even when your phone is off. Control and automation are part of NextUpReef Pro.</p>
+        <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 32px', maxWidth: '680px' }}>Connect a Neptune Apex or Shelly smart outlets and run your reef from one app: sync probes, control equipment, and automate dosing and lighting. Schedules are saved to the device, so they keep going 24/7 even when your phone is off. CoralVue HYDROS is in early access. Control and automation are part of NextUpReef Pro.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly smart outlets</div>
@@ -379,7 +440,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Automated dosing</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Calibrate your pump once, set a daily mL target, pick a schedule. NextUpReef writes it to the outlet so doses run on time even if your internet drops.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Calibrate your pump once, set a daily mL target, pick a schedule. NextUpReef writes it to the outlet so doses run on time even if your internet drops. On a Shelly plug, power draw confirms each dose and you get an alert if one is missed.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Lighting automation</div>
@@ -387,11 +448,11 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
             <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>Neptune Apex</div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Connect the Apex you already own. Sync probes into your logs, control every outlet, run Feed Mode, set heater temperatures, and dose - all from the app. Name and tag each outlet to unlock the right controls.</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Connect the Apex you already own. Sync probes into your logs, control every outlet, run Feed Mode, set heater temperatures, and schedule dosing on a regular outlet and pump. Every dosing program gets a built-in shutoff so a dose can’t run long.</div>
           </div>
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
-            <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS</div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected control and monitoring from anywhere - live pH, temperature, salinity and ORP, with continuous trends and round-the-clock alerts.</div>
+            <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS <span style={{ fontSize: '11px', fontWeight: 800, color: '#A78BFA', marginLeft: '6px' }}>EARLY ACCESS</span></div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and ORP readings sync into your logs around the clock. Outlet control is coming next.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Control Center</div>
@@ -399,7 +460,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Runs on the device</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>No cloud, no server, no phone required. Your reef stays dosed and lit through power outages, router reboots, and travel.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Schedules live on the plug or the Apex, not on our servers or your phone. Your reef stays dosed and lit through internet outages, router reboots, and travel.</div>
           </div>
         </div>
       </section>
@@ -461,6 +522,10 @@ export default function FeaturesPage() {
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Run more than one system? Track each tank separately with its own livestock, equipment, logs, and scores. (Multiple tanks are a Pro feature.)</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Web dashboard</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>See your reef on a big screen. Go to portal.nextupreef.com on a computer or tablet for full-screen trends, every chart, your readings table and CSV export. (Pro)</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Achievement badges</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Dozens of badges for milestones, consistency, and growth, so your progress is recognized as your reef matures.</div>
           </div>
@@ -477,9 +542,44 @@ export default function FeaturesPage() {
 
       {/* RECENTLY SHIPPED */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "880px", margin: "0 auto" }}>
-        <div className="section-label">Recently shipped</div>
-        <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>Always improving.</h2>
+        <div className="section-label">What’s new</div>
+        <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>New in NextUpReef.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>The Dosing screen</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Every dose in one place, with or without a controller: a daily checklist with one-tap logging, alk, calcium and magnesium balance, and 50+ products with label strengths built in.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Dose calculator and daily dosing reminder</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Set your daily dose from your own test trend or fix a low reading safely, and get one push a day at your time listing what’s still due. (Pro)</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Web dashboard</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Your reef on a big screen at portal.nextupreef.com: full-screen trends, every chart, your readings table and CSV export. (Pro)</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Smarter AI advice</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Water Advisor now weighs your tank’s age and ranks what’s urgent. Reef AI Chat knows your dosing and checks the math. Stocking Advisor accounts for tank age and size before suggesting livestock.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Safer Apex dosing</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Every Apex dosing program now gets a built-in shutoff so a dose can’t run long, and doses you run with Dose Now are logged.</div>
+            </div>
+          </div>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
             <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
             <div>
@@ -490,8 +590,8 @@ export default function FeaturesPage() {
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
             <div style={{ fontSize: '12px', fontWeight: 900, color: 'var(--reef)', textTransform: 'uppercase', letterSpacing: '0.04em', minWidth: '84px', paddingTop: '2px' }}>September 2026</div>
             <div>
-              <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>CoralVue HYDROS integration</div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Connect a HYDROS controller and monitor and control your tank from anywhere, with continuous trends and round-the-clock alerts.</div>
+              <div style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '3px' }}>CoralVue HYDROS (early access)</div>
+              <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.6 }}>Connect with your HYDROS device key and pH, temperature, salinity and ORP sync from the cloud, even when the app is closed.</div>
             </div>
           </div>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -570,7 +670,7 @@ export default function FeaturesPage() {
           </div>
           <div key={1} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>What do I get with NextUpReef Pro?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), Shelly automation and device control, automated dosing and lighting, Neptune Apex sync, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
           </div>
           <div key={2} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Does NextUpReef work on iPhone and Android?</h3>
@@ -578,7 +678,7 @@ export default function FeaturesPage() {
           </div>
           <div key={3} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Do I need any special hardware?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking and AI app on its own. Hardware is optional: connect Shelly smart outlets for automation, sync a Neptune Apex you already own.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: add Shelly smart outlets for automated dosing and lighting, or connect a Neptune Apex you already own. CoralVue HYDROS is in early access.</p>
           </div>
         <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, marginTop: "8px" }}>
           Looking for how-to answers and details on every screen? See the full{" "}
