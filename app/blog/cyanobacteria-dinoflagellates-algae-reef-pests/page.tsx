@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "How to identify and eliminate the three most common reef tank pests — cyano, dinos, and GHA — without crashing your tank.",
     url: "https://nextupreef.com/blog/cyanobacteria-dinoflagellates-algae-reef-pests",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "Cyanobacteria, Dinoflagellates & Green Hair Algae: How to Beat the Three Reef Tank Pests",
   description:
     "How to identify and treat cyano, dinos, and green hair algae in a reef tank.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",

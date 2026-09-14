@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Adding Your First Corals to a Reef Tank: Start Soft, Go Slow — NextUpReef",
+  title: "Adding Your First Corals to a Reef Tank: Start Soft, Go Slow",
   description:
     "Your parameters are stable and your fish are thriving. Here's how to choose your first corals, why softies and zoas come first, and what you need to track once corals start consuming alkalinity.",
   alternates: {

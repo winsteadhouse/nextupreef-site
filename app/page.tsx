@@ -19,7 +19,7 @@ const softwareAppSchema = {
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   screenshot: "https://nextupreef.com/screenshots/phone-home-v2.png",
   featureList: [
-    "Water Advisor — AI chemistry analysis every 24 hours",
+    "Reef AI Advisor — AI chemistry analysis every 24 hours",
     "Reef AI Chat — chat with AI that knows your parameters and livestock",
     "Stocking Advisor — AI livestock compatibility and bioload checks",
     "AI photo parameter logging from any test kit",
@@ -33,13 +33,6 @@ const softwareAppSchema = {
     "Monthly tank photo timeline",
     "60+ achievement badges",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5",
-    ratingCount: "10",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 const organizationSchema = {
@@ -147,7 +140,7 @@ export default function HomePage() {
           { [
             { img: "/screenshots/site-v3/phone-log.png", alt: "Log Parameters screen with alkalinity and calcium entered and shown in range", title: "Log in seconds", desc: "Alk, Ca, Mg, NO3, PO4, salinity, pH, and more. Last values pre-filled. Color-coded against your targets." },
             { img: "/screenshots/site-v3/phone-reef-pulse.png", alt: "Reef Pulse showing Reef Score, Stability Score and parameter averages", title: "See the trends", desc: "Reef Score, Stability Score, and every parameter's average and trend at a glance. Tap any one for its full chart with target bands." },
-            { img: "/screenshots/site-v3/phone-reminders.png", alt: "Maintenance reminders for water change, filter socks and dosing", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
+            { img: "/screenshots/site-v3/phone-reminders.png", alt: "Maintenance reminders for a water change, filter socks and feeding", title: "Stay on schedule", desc: "Water changes, filter socks, dosing, skimmer \u2014 set it once, get push notifications on time, every time." },
           ].map((item) => (
             <div key={item.title} className="phone-trio-item">
               <Image src={item.img} alt={item.alt} width={777} height={1557} style={{ width: "100%", height: "auto" }} />
@@ -169,7 +162,7 @@ export default function HomePage() {
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>Most reef apps just store your data — or export it so you can paste it into some other AI. NextUpReef builds the AI in, and it already knows your parameters, equipment, livestock, dosing, and full history. Not generic advice. Yours.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
-                { title: "Water Advisor", desc: "A full AI chemistry analysis of your reef tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps." },
+                { title: "Reef AI Advisor", desc: "A full AI chemistry analysis of your reef tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps." },
                 { title: "Reef AI Chat", desc: "AI chat that knows your parameters and your livestock, so why your alk is dropping or whether a tang fits gets a real answer about your tank." },
                 { title: "Stocking Advisor", desc: "AI compatibility, bioload, and aggression checks across your fish, corals, and inverts, then suggests what to add next." },
                 { title: "AI Photo Logging", desc: "AI photo scan: point your camera at any test kit and it reads the values and logs them for you." },
@@ -235,7 +228,7 @@ export default function HomePage() {
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect CoralVue HYDROS, Neptune Apex, or Shelly smart outlets and run your whole reef from the NextUpReef app - probes, dosing, lighting, and equipment, all in one place.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - live pH, temp, salinity and ORP, with 24/7 trends and alerts." },
+                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
                 { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
                 { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
               ].map((f) => (
@@ -360,7 +353,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* CTA */}
-      <section className="cta-section">
+      <section className="cta-section" id="get-the-app">
         <div className="container-narrow">
           <div className="cta-card">
             <h2>Stop guessing.<br />Start tracking.</h2>

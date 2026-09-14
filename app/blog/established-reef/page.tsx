@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Your Reef is Established: What a Mature Reef Tank Looks Like — NextUpReef",
+  title: "Your Reef is Established: What a Mature Reef Tank Looks Like",
   description:
     "Coralline algae is spreading, parameters are holding, and your reef is maturing. Here's what an established reef looks like, when to start dosing, how to grow your collection, and how to keep it thriving.",
   alternates: {

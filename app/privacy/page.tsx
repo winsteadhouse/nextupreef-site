@@ -1,5 +1,9 @@
-export const metadata = {
-  title: "NextUpReef — Privacy Policy",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "How NextUpReef collects, uses and protects your data, including your tank data, account information and your right to delete it.",
+  alternates: { canonical: "https://nextupreef.com/privacy" },
 };
 
 const EFFECTIVE_DATE = "May 6, 2026";
@@ -128,7 +132,7 @@ export default function PrivacyPage() {
             <li>Update your display name in Settings at any time</li>
             <li>Opt out of community feed sharing via Settings</li>
             <li>Delete tank photos from the Tank tab</li>
-            <li>Unsubscribe from marketing emails via any email's unsubscribe link</li>
+            <li>Unsubscribe from marketing emails via any email&apos;s unsubscribe link</li>
             <li>Manage or cancel your Pro subscription via App Store or Google Play settings</li>
             <li>Request full account deletion via Settings or by emailing {CONTACT_EMAIL}</li>
           </ul>

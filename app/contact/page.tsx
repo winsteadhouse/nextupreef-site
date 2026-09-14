@@ -1,228 +1,127 @@
 import type { Metadata } from "next";
-import FAQList from "@/components/FAQList";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "FAQ & Help — Reef Tank Tracking App | NextUpReef",
+  title: "Contact Us",
   description:
-    "Answers to common questions about NextUpReef — the free reef tank tracking app. Learn how to log parameters, understand Reef Score, use the New Tank Guide, set up reminders, and more.",
-  alternates: {
-    canonical: "https://nextupreef.com/contact",
-  },
+    "Get in touch with the NextUpReef team for app support, account help, bug reports, feature ideas and partnerships. Email info@nextupreef.com.",
+  alternates: { canonical: "https://nextupreef.com/contact" },
   openGraph: {
-    title: "FAQ & Help — NextUpReef Reef Tank App",
-    description:
-      "Common questions about logging reef parameters, Reef Score, the New Tank Guide, water change reminders, and more in the NextUpReef app.",
+    title: "Contact NextUpReef",
+    description: "App support, account help, bug reports, feature ideas and partnerships.",
     url: "https://nextupreef.com/contact",
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
-// FAQPage schema — enables Google to show accordion answers directly in search results
-const faqSchema = {
+const EMAIL = "info@nextupreef.com";
+
+const contactSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is there a web version of NextUpReef?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. You can sign in to the NextUpReef web dashboard at portal.nextupreef.com from any browser using the same account as the app. It shows your Dashboard, Reef and Stability scores, latest parameters and trends, My Reef, Analytics, device control, and parameter logging, all synced with the app. The web dashboard is included with NextUpReef Pro and the free 30-day trial.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I log reef parameters from a web browser?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. The NextUpReef web dashboard at portal.nextupreef.com has a Log page where you can enter alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, temperature, ammonia, and nitrite with live in-range feedback, then save. Readings sync instantly to your account and appear in the app.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is NextUpReef?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "NextUpReef is a free reef tank tracking app for iOS and Android. It lets you log saltwater aquarium parameters like alkalinity, calcium, magnesium, nitrate, phosphate, pH, salinity, and temperature. It calculates a Reef Score and Stability Score, shows trend charts, sends water change and maintenance reminders, includes a 6-phase New Tank Guide for new reefers, and lets you connect with other reefers in the community feed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is NextUpReef free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "NextUpReef is free to download. New accounts get a free 30-day Pro trial with no credit card required. The free plan includes parameter logging, Reef and Stability Scores, charts, reminders, and community access. Pro adds Reef AI Advisor and Chat, AI Photo Parameter Logging, Tank Journal, advanced analytics, Neptune Apex integration, and unlimited reminders at $4.99/month or $39.99/year.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the New Tank Guide?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The New Tank Guide is a built-in 6-phase journey that walks new reefers through their first year — from tank setup and cycling through the ugly phase, first fish, first corals, and an established reef. Each phase has a checklist, biological explanation, and links to detailed guides. It lives on your Dashboard and advances as you complete each phase.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the 6 phases of the New Tank Guide?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Phase 1: Tank Setup. Phase 2: The Nitrogen Cycle. Phase 3: The Ugly Phase (algae blooms). Phase 4: First Livestock (first fish). Phase 5: Coral Ready (first corals). Phase 6: Established Reef. Each phase has a dedicated checklist and a full blog guide on nextupreef.com.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What parameters can I track in NextUpReef?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "NextUpReef supports 10 parameters: Alkalinity (dKH), Calcium (ppm), Magnesium (ppm), Nitrate (ppm), Nitrite (ppm), Phosphate (ppm), Salinity, pH, Temperature (°F), and Ammonia (ppm). You choose which ones to display based on what you test.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is a Reef Score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Your Reef Score (0-100) is a composite measure of your tank's overall health based on how well your parameters stay within target ranges. It factors in recency of logs, parameter balance, water change consistency, equipment diversity, and tank maturity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the Stability Score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Stability Score (0-100) measures how consistent your parameters are over time. Low variation in key readings like alkalinity and calcium earns a higher score. It rewards steady husbandry over chasing 'perfect' numbers.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does NextUpReef work for SPS, LPS, and Mixed Reef tanks?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. NextUpReef supports 7 tank types: Mixed Reef, SPS, LPS, Softies, Nano, ULNS, and Fish Only. Each has tailored default parameter ranges and scoring targets.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I set up water change reminders?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Go to the Reminders tab and tap 'Set Up Water Changes'. Choose your frequency (Weekly, Biweekly, or Monthly), select which day of the week, and enter your water change percentage. The app sends push notifications the day before, day of, and when overdue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is NextUpReef available on iPhone and Android?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. NextUpReef is available on both iOS (iPhone and iPad) via the Apple App Store and on Android via Google Play. It is completely free on both platforms.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I track multiple reef tanks?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. You can add multiple tanks from the Tank tab by tapping the + button. Each tank tracks its own parameters, logs, scores, water changes, and reminders independently.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I get started with NextUpReef?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Download NextUpReef from the App Store or Google Play, create a free account, and a quick 2-step onboarding will walk you through naming your tank, choosing your reef type, entering your tank size, and selecting which parameters you test. It takes about 30 seconds.",
-      },
-    },
-  ],
+  "@type": "ContactPage",
+  name: "Contact NextUpReef",
+  url: "https://nextupreef.com/contact",
+  mainEntity: {
+    "@type": "Organization",
+    name: "NextUpReef",
+    url: "https://nextupreef.com",
+    email: EMAIL,
+    contactPoint: { "@type": "ContactPoint", email: EMAIL, contactType: "customer support", availableLanguage: "English" },
+    sameAs: ["https://www.facebook.com/profile.php?id=61576553765840", "https://www.instagram.com/nextupreefapp/"],
+  },
 };
 
-export default function FAQPage() {
+const TOPICS = [
+  { title: "App support", body: "Something not working, a sync that won't connect, or a question the FAQ doesn't answer.", subject: "App support" },
+  { title: "Account & billing", body: "Pro subscriptions, your free trial, signing in, or deleting your account and data.", subject: "Account and billing" },
+  { title: "Bugs & feature ideas", body: "Found a bug or have an idea that would make the app better for your reef? We read every one.", subject: "Feedback" },
+  { title: "Partnerships & press", body: "Reef stores, equipment makers, clubs and creators who want to work with NextUpReef.", subject: "Partnerships" },
+];
+
+const QUICK_HELP = [
+  { href: "/faq", label: "Frequently asked questions" },
+  { href: "/blog/how-to-connect-apex", label: "Connect a Neptune Apex" },
+  { href: "/blog/how-to-add-shelly-plug", label: "Add a Shelly smart outlet" },
+  { href: "/blog/reef-tank-dosing-calculator", label: "Work out a dose" },
+  { href: "/blog/reef-score-stability-score-explained", label: "Understand your scores" },
+];
+
+const card: React.CSSProperties = { background: "var(--bg-card)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "18px", padding: "22px" };
+
+export default function ContactPage() {
   return (
-    <>
-      {/* FAQPage JSON-LD — enables Google to show accordion answers in search results */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+    <main style={{ background: "var(--bg-dark)" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
 
-      <section className="container" style={{ paddingTop: "80px", paddingBottom: "80px" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <h1 style={{ fontSize: "42px", fontWeight: "900", marginBottom: "12px", textAlign: "center" }}>
-            Help & Contact
-          </h1>
-          <p style={{ color: "var(--text-muted)", fontSize: "18px", marginBottom: "50px", textAlign: "center" }}>
-            Questions? We're here to help.
-          </p>
+      <section style={{ padding: "84px 24px 36px", maxWidth: "1000px", margin: "0 auto" }}>
+        <div className="section-label">Contact</div>
+        <h1 style={{ fontSize: "clamp(34px, 5.5vw, 54px)", fontWeight: 900, letterSpacing: "-0.04em", lineHeight: 1.06, margin: "14px 0 16px" }}>
+          Talk to a{" "}
+          <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>real reefer.</span>
+        </h1>
+        <p style={{ fontSize: "18px", color: "var(--text-muted)", lineHeight: 1.7, maxWidth: "600px", margin: 0 }}>
+          NextUpReef is built by a reefer, and every message is read by a person. Email us about the app, your account, a bug, an idea, or working together.
+        </p>
+      </section>
 
-          {/* Contact Email */}
-          <div
-            style={{
-              backgroundColor: "rgba(44, 196, 214, 0.1)",
-              borderRadius: "20px",
-              border: "1px solid rgba(44, 196, 214, 0.2)",
-              padding: "40px",
-              marginBottom: "50px",
-              textAlign: "center",
-            }}
-          >
-            <div style={{ fontSize: "48px", marginBottom: "16px" }}>📧</div>
-            <h2 style={{ fontSize: "20px", fontWeight: "900", marginBottom: "12px" }}>Contact us</h2>
-            <a
-              href="mailto:info@nextupreef.com"
-              style={{
-                color: "var(--reef)",
-                fontSize: "22px",
-                fontWeight: "900",
-                textDecoration: "none",
-              }}
-            >
-              info@nextupreef.com
-            </a>
-            <p style={{ color: "var(--text-muted)", marginTop: "16px", fontSize: "14px", fontWeight: "700" }}>
-              Support • Feedback • Bug Reports
-            </p>
+      <section style={{ padding: "0 24px 56px", maxWidth: "1000px", margin: "0 auto" }}>
+        <div style={{ ...card, background: "linear-gradient(160deg, rgba(44,196,214,0.08) 0%, rgba(255,255,255,0.02) 70%)", border: "1px solid rgba(44,196,214,0.22)", padding: "32px", display: "flex", flexWrap: "wrap", gap: "20px", alignItems: "center", justifyContent: "space-between" }}>
+          <div>
+            <p style={{ margin: "0 0 6px", fontSize: "12px", fontWeight: 900, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--reef-soft)" }}>Email</p>
+            <a href={`mailto:${EMAIL}`} style={{ fontSize: "clamp(22px, 3.6vw, 32px)", fontWeight: 900, color: "var(--text-light)", letterSpacing: "-0.02em", wordBreak: "break-all" }}>{EMAIL}</a>
           </div>
-
-          {/* FAQs */}
-          <div style={{ marginBottom: "40px" }}>
-            <h2 style={{ fontSize: "28px", fontWeight: "900", marginBottom: "32px" }}>
-              Frequently Asked Questions
-            </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-              <FAQList />
-            </div>
-          </div>
-
-          {/* Pro Tip */}
-          <div
-            style={{
-              backgroundColor: "rgba(255,255,255,0.03)",
-              borderRadius: "16px",
-              border: "1px solid rgba(255,255,255,0.08)",
-              padding: "24px",
-            }}
-          >
-            <h3 style={{ fontSize: "16px", fontWeight: "900", marginBottom: "8px", color: "var(--reef)" }}>
-              💡 Pro Tip
-            </h3>
-            <p style={{ color: "var(--text-muted)", lineHeight: "1.6", fontWeight: "700", fontSize: "14px", margin: 0 }}>
-              Log 1-2x per week for strong trend data. Increase frequency during new setups or when making adjustments.
-            </p>
-          </div>
-
-          <div style={{ marginTop: "20px", backgroundColor: "rgba(44,196,214,0.06)", borderRadius: "16px", border: "1px solid rgba(44,196,214,0.2)", padding: "24px" }}>
-            <h3 style={{ fontSize: "16px", fontWeight: "900", marginBottom: "8px", color: "var(--text-light)" }}>
-              Want the full feature list?
-            </h3>
-            <p style={{ color: "var(--text-muted)", lineHeight: "1.6", fontWeight: "700", fontSize: "14px", margin: "0 0 12px 0" }}>
-              See everything NextUpReef can do, from AI advisors to automation.
-            </p>
-            <a href="/features" style={{ color: "var(--reef)", fontWeight: "900", fontSize: "14px", textDecoration: "none" }}>
-              Explore all features →
-            </a>
-          </div>
+          <a href={`mailto:${EMAIL}`} className="btn primary large">Send an email</a>
         </div>
       </section>
-    </>
+
+      <section style={{ padding: "0 24px 56px", maxWidth: "1000px", margin: "0 auto" }}>
+        <h2 style={{ fontSize: "clamp(22px, 3vw, 28px)", fontWeight: 900, letterSpacing: "-0.02em", margin: "0 0 18px", color: "var(--text-light)" }}>What can we help with?</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "14px" }}>
+          {TOPICS.map((t) => (
+            <a key={t.title} href={`mailto:${EMAIL}?subject=${encodeURIComponent(t.subject)}`} className="blog-card" style={{ ...card, display: "flex", flexDirection: "column", gap: "8px", textDecoration: "none" }}>
+              <span style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)" }}>{t.title}</span>
+              <span style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6, flex: 1 }}>{t.body}</span>
+              <span style={{ fontSize: "13px", fontWeight: 800, color: "var(--reef)" }}>Email about this →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ padding: "0 24px 80px", maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "16px" }}>
+        <div style={card}>
+          <h2 style={{ fontSize: "18px", fontWeight: 900, color: "var(--text-light)", margin: "0 0 12px" }}>Get a faster answer</h2>
+          <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.65, margin: "0 0 12px" }}>For app problems, include:</p>
+          <ul style={{ margin: 0, paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "8px", fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.55 }}>
+            <li>Your phone (iPhone or Android)</li>
+            <li>The app version, shown at the bottom of Settings</li>
+            <li>What you tapped, and what happened instead</li>
+            <li>A screenshot, if you can</li>
+          </ul>
+          <p style={{ fontSize: "13.5px", color: "var(--text-muted)", lineHeight: 1.6, margin: "14px 0 0" }}>
+            Want to delete your account? You can do it yourself in the app under Settings → Delete Account, which removes your account and all its data.
+          </p>
+        </div>
+
+        <div style={card}>
+          <h2 style={{ fontSize: "18px", fontWeight: 900, color: "var(--text-light)", margin: "0 0 12px" }}>Quick help</h2>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "4px" }}>
+            {QUICK_HELP.map((q) => (
+              <li key={q.href}>
+                <Link href={q.href} style={{ display: "flex", justifyContent: "space-between", gap: "12px", padding: "9px 0", borderBottom: "1px solid rgba(255,255,255,0.06)", color: "var(--text-light)", fontSize: "14.5px", fontWeight: 700 }}>
+                  <span>{q.label}</span>
+                  <span style={{ color: "var(--reef)" }} aria-hidden>→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p style={{ fontSize: "13.5px", color: "var(--text-muted)", margin: "16px 0 0" }}>
+            Follow along on{" "}
+            <a href="https://www.facebook.com/profile.php?id=61576553765840" target="_blank" rel="noopener noreferrer" style={{ color: "var(--reef)", fontWeight: 700 }}>Facebook</a>{" "}
+            and{" "}
+            <a href="https://www.instagram.com/nextupreefapp/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--reef)", fontWeight: 700 }}>Instagram</a>.
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }

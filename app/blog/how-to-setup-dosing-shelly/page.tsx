@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "How to Set Up Automated Dosing with NextUpReef",
     description: "Calibrate your pump, set daily mL, save to the outlet. Dosing runs 24/7 even offline.",
     url: "https://nextupreef.com/blog/how-to-setup-dosing-shelly",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Add a Shelly Smart Outlet to NextUpReef (Step-by-Step)",
   description: "Set up a Shelly Plug US Gen4 with NextUpReef in 5 steps. No Shelly app needed.",
   alternates: { canonical: "https://nextupreef.com/blog/how-to-add-shelly-plug" },
-  openGraph: { title: "How to Add a Shelly Smart Outlet to NextUpReef", description: "Set up a Shelly Plug US Gen4 with NextUpReef in 5 steps. No Shelly app needed.", url: "https://nextupreef.com/blog/how-to-add-shelly-plug", images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }] },
+  openGraph: { title: "How to Add a Shelly Smart Outlet to NextUpReef", description: "Set up a Shelly Plug US Gen4 with NextUpReef in 5 steps. No Shelly app needed.", url: "https://nextupreef.com/blog/how-to-add-shelly-plug", images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }] },
 };
 
 const faqSchema = {

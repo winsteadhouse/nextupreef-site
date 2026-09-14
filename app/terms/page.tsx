@@ -1,5 +1,9 @@
-export const metadata = {
-  title: "NextUpReef — Terms of Service",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "The terms for using the NextUpReef app, web dashboard and NextUpReef Pro subscriptions.",
+  alternates: { canonical: "https://nextupreef.com/terms" },
 };
 
 const EFFECTIVE_DATE = "May 6, 2026";

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Why alk, cal, and mag are the most critical parameters, target ranges by tank type, and how to track them consistently.",
     url: "https://nextupreef.com/blog/reef-tank-alkalinity-calcium-magnesium-guide",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "Reef Tank Alkalinity, Calcium & Magnesium: The Complete Tracking Guide",
   description:
     "Why alk, cal, and mag are the most critical reef parameters, what target ranges look like, how they interact, and the best way to track them.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Adding Your First Fish to a Reef Tank: The Beginner's Guide — NextUpReef",
+  title: "Adding Your First Fish to a Reef Tank: The Beginner's Guide",
   description:
     "Your tank cycled, survived the ugly phase, and now it's ready for its first residents. Here's how to choose hardy beginner fish, the one-fish-at-a-time rule, and why patience still matters.",
   alternates: {

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "NextUpReef uses AI to analyze your specific tank and give personalized reef advice — not generic tips. Here's how it works and what it can do for your reef.",
     url: "https://nextupreef.com/blog/ai-reef-tank-advisor",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef",
   description:
     "How NextUpReef uses AI to analyze your reef tank parameters, equipment, and livestock — giving you personalized advice, answering reef questions, and reading test kits from photos.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
@@ -342,7 +342,7 @@ export default function AIReefAdvisorPost() {
             Try AI Reef Advisor free for 30 days
           </h3>
           <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: 1.65, marginBottom: "24px", fontWeight: "600" }}>
-            Every new NextUpReef account gets a free 30-day Pro trial. No credit card required. Includes the Water Advisor, Reef AI Chat, the Stocking Advisor, AI Photo Logging, and all Pro features.
+            Every new NextUpReef account gets a free 30-day Pro trial. No credit card required. Includes the Reef AI Advisor, Reef AI Chat, the Stocking Advisor, AI Photo Logging, and all Pro features.
           </p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
             <a

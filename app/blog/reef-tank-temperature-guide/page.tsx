@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Target reef tank temperature, heater sizing, summer cooling strategies, and how to prevent the temperature swings that crash tanks.",
     url: "https://nextupreef.com/blog/reef-tank-temperature-guide",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "Reef Tank Temperature: Ideal Range and How to Control It",
   description:
     "Ideal reef tank temperature ranges, heater sizing, summer cooling, and how to prevent dangerous swings.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",

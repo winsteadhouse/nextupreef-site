@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "How to Cycle a Reef Tank: The Complete Beginner's Guide — NextUpReef",
+  title: "How to Cycle a Reef Tank: The Complete Beginner's Guide",
   description:
     "Everything you need to know about cycling a new saltwater reef tank. How the nitrogen cycle works, how long it takes, what to test, and how to know when you're done.",
   alternates: {

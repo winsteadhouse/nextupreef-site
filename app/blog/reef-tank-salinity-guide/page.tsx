@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "What salinity targets to hit, how to test accurately, and how to fix high or low salinity without crashing your tank.",
     url: "https://nextupreef.com/blog/reef-tank-salinity-guide",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "Reef Tank Salinity: Targets, Testing, and How to Adjust It Safely",
   description:
     "Ideal salinity ranges, refractometer calibration, and the right way to raise or lower salinity in a reef tank.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",

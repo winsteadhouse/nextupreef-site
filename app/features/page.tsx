@@ -3,16 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
+  title: "Features: The Complete Reef Tank Tracking & AI App",
   description:
-    "Every NextUpReef feature in one place: reef tank parameter logging, AI Water Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, a Dosing screen with reminders and a dose calculator, Shelly automation, and Neptune Apex control.",
+    "Every NextUpReef feature in one place: reef tank parameter logging, Reef AI Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, a Dosing screen with reminders and a dose calculator, Shelly automation, and Neptune Apex control.",
   alternates: { canonical: "https://nextupreef.com/features" },
   openGraph: {
     title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
     description:
       "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation — everything NextUpReef does, in one place.",
     url: "https://nextupreef.com/features",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -30,7 +30,7 @@ const softwareSchema = {
   featureList: [
     "Reef tank parameter logging and trend charts",
     "Custom parameter target ranges",
-    "AI Water Advisor chemistry analysis",
+    "Reef AI Advisor chemistry analysis",
     "Reef AI Chat",
     "AI Stocking Advisor",
     "AI photo parameter logging",
@@ -63,7 +63,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What do I get with NextUpReef Pro?",
-      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
+      acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Reef AI Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
     },
     {
       "@type": "Question",
@@ -105,7 +105,7 @@ export default function FeaturesPage() {
           <a href="#automation" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Automation</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
-          <a href="/contact" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>FAQ</a>
+          <a href="/faq" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>FAQ</a>
         </div>
       </section>
 
@@ -192,7 +192,7 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Water Advisor (AI chemistry analysis)</td>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Reef AI Advisor (AI chemistry analysis)</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
@@ -245,11 +245,11 @@ export default function FeaturesPage() {
       <section id="tracking" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Parameter Tracking</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Log every parameter,<br />see every trend.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>NextUpReef is built around fast, accurate logging. Record alkalinity, calcium, magnesium, nitrate, phosphate, salinity, pH, temperature, ORP and more — color-coded against your targets the moment you type, with last values pre-filled so a full test session takes seconds.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>NextUpReef is built around fast, accurate logging. Record alkalinity, calcium, magnesium, nitrate, phosphate, salinity, pH, temperature, ammonia and nitrite — color-coded against your targets the moment you type, with last values pre-filled so a full test session takes seconds.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Fast parameter logging</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Alk, Ca, Mg, NO3, PO4, salinity, pH, temp, ORP and more. Last values pre-fill automatically and each entry is color-coded green / amber / red against your target the instant you type it.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Alk, Ca, Mg, NO3, PO4, salinity, pH, temp, ammonia and nitrite. Last values pre-fill automatically and each entry is color-coded green / amber / red against your target the instant you type it.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Custom target ranges</div>
@@ -269,7 +269,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Apex auto-import</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Running a Neptune Apex? Pull pH, ORP, salinity, temperature and Trident values straight into your log — no manual re-entry.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Running a Neptune Apex? Pull pH, salinity, temperature and Trident alk, calcium and magnesium straight into your log — no manual re-entry.</div>
           </div>
         </div>
       </section>
@@ -281,7 +281,7 @@ export default function FeaturesPage() {
         <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Most reef apps just store your data, or export it so you can paste it into some other AI. NextUpReef builds the AI in — and it already knows your parameters, equipment, livestock, dosing, and full history. Every AI feature is part of NextUpReef Pro.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Water Advisor</div>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Reef AI Advisor</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>A full AI chemistry analysis of your reef tank, refreshed every 24 hours. What’s dialed in, what needs attention, and the exact next steps — ranked by priority, written for your tank.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
@@ -419,7 +419,7 @@ export default function FeaturesPage() {
             </div>
             <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
               <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Knows your dosing</div>
-              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Water Advisor and Reef AI Chat know your dosing products and amounts, so advice about a falling alk reading starts from what you actually dose.</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Reef AI Advisor and Reef AI Chat know your dosing products and amounts, so advice about a falling alk reading starts from what you actually dose.</div>
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
@@ -452,7 +452,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
             <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS <span style={{ fontSize: '11px', fontWeight: 800, color: '#A78BFA', marginLeft: '6px' }}>EARLY ACCESS</span></div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity, ORP and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode.</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Control Center</div>
@@ -570,7 +570,7 @@ export default function FeaturesPage() {
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
             <div>
               <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Smarter AI advice</div>
-              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Water Advisor now weighs your tank’s age and ranks what’s urgent. Reef AI Chat knows your dosing and checks the math. Stocking Advisor accounts for tank age and size before suggesting livestock.</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Reef AI Advisor now weighs your tank’s age and ranks what’s urgent. Reef AI Chat knows your dosing and checks the math. Stocking Advisor accounts for tank age and size before suggesting livestock.</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
@@ -670,7 +670,7 @@ export default function FeaturesPage() {
           </div>
           <div key={1} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>What do I get with NextUpReef Pro?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Water Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>Pro unlocks all four AI features (Reef AI Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year.</p>
           </div>
           <div key={2} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Does NextUpReef work on iPhone and Android?</h3>
@@ -682,7 +682,7 @@ export default function FeaturesPage() {
           </div>
         <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, marginTop: "8px" }}>
           Looking for how-to answers and details on every screen? See the full{" "}
-          <Link href="/contact" style={{ color: "var(--reef)", fontWeight: 700 }}>FAQ</Link>.
+          <Link href="/faq" style={{ color: "var(--reef)", fontWeight: 700 }}>FAQ</Link>.
         </p>
       </section>
 

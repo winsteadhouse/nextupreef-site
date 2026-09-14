@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "How to Set Up a Reef Tank: A Beginner's Complete Guide — NextUpReef",
+  title: "How to Set Up a Reef Tank: A Beginner's Complete Guide",
   description:
     "Step-by-step guide to setting up your first saltwater reef tank. Equipment checklist, salinity targets, rock types, and the one mistake every new reefer makes on day one.",
   alternates: {

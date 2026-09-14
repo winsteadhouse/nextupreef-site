@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Everything you need to know about pico, nano, and mini reef tanks — equipment, livestock, parameters, and how to keep small tanks stable.",
     url: "https://nextupreef.com/blog/nano-reef-tank-guide",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "Nano Reef Tank Guide: 10, 20, and 40 Gallon Setups That Actually Work",
   description:
     "Complete guide to pico, nano, and mini reef tanks — equipment, livestock, parameters, and the small-tank mistakes most beginners make.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",

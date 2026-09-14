@@ -1118,3 +1118,63 @@ h1, h2, h3, h4 {
 }
 .reefcard { transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease; }
 .reefcard:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+
+/* ================= NAV: active link + app CTA ================= */
+.nav-links { align-items: center; }
+.nav-links a.active { color: var(--text-light); }
+.nav-cta {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--reef);
+  color: #061321 !important;
+  font-weight: 800 !important;
+}
+.nav-cta:hover { background: var(--reef-soft); }
+@media (max-width: 900px) { .nav-cta { display: none; } }
+
+/* ================= SITE FOOTER ================= */
+.site-footer { text-align: left; padding: 56px 20px 32px; }
+.site-footer-inner { max-width: 1200px; margin: 0 auto; }
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.6fr) repeat(4, minmax(130px, 1fr));
+  gap: 40px 32px;
+  margin-bottom: 40px;
+}
+.site-footer-brand p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin: 12px 0 16px; max-width: 300px; }
+.site-footer-logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 17px; color: var(--text-light) !important; }
+.site-footer-logo img { border-radius: 8px; }
+.site-footer-stores { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.site-footer-stores a {
+  font-size: 13px; font-weight: 800; padding: 7px 12px; border-radius: 10px;
+  border: 1px solid rgba(44,196,214,0.25); background: rgba(44,196,214,0.08); color: var(--reef) !important;
+}
+.site-footer-stores a:hover { border-color: rgba(44,196,214,0.45); }
+.site-footer .footer-social { justify-content: flex-start; margin-bottom: 0; }
+.site-footer-col h2 {
+  font-size: 12px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-light); margin: 6px 0 14px;
+}
+.site-footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.site-footer-col a { color: var(--text-muted) !important; font-size: 14px; font-weight: 600; }
+.site-footer-col a:hover { color: var(--reef) !important; }
+.site-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px;
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+}
+.site-footer-bottom p { margin: 0; color: var(--text-muted); font-size: 13px; font-weight: 600; }
+.site-footer-bottom a { color: var(--text-muted) !important; }
+.site-footer-bottom a:hover { color: var(--reef) !important; }
+@media (max-width: 900px) {
+  .site-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .site-footer-bottom { flex-direction: column; }
+}
+
+/* ================= SHARED CARD HOVER ================= */
+.blog-card { transition: border-color .18s ease, transform .18s ease; }
+.blog-card:hover { border-color: rgba(44,196,214,0.35) !important; transform: translateY(-2px); }
+.blog-card:focus-visible { outline: 2px solid var(--reef); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .blog-card { transition: none; } .blog-card:hover { transform: none; } }

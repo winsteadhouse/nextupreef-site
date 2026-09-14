@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "The Ugly Phase: Why Your Reef Tank Looks Terrible (And Why That's Normal) — NextUpReef",
+  title: "The Ugly Phase: Why Your Reef Tank Looks Terrible (And Why That's Normal)",
   description:
     "Diatoms, green hair algae, and cyano in your new reef tank are completely normal. Here's why the ugly phase happens, what each algae type means, and how to get through it without losing your mind.",
   alternates: {

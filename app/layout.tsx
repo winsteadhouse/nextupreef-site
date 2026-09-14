@@ -9,6 +9,7 @@ import { headers } from 'next/headers';
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#061321",
 };
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
       "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. The best free reef tank app for iOS and Android.",
     images: [
       {
-        url: "/brand/splash2.png",
+        url: "/brand/og-image.png",
         width: 1200,
         height: 630,
         alt: "NextUpReef — Free Reef Tank Tracking App for iOS and Android",
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     title: "NextUpReef — Free Reef Tank Tracking App",
     description:
       "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. Free on iOS and Android.",
-    images: ["/brand/splash2.png"],
+    images: ["/brand/og-image.png"],
   },
   robots: {
     index: true,
@@ -93,10 +94,6 @@ export default async function RootLayout({
   const isPortal = h.get('x-portal') === '1';
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/brand/logo.png" />
-      </head>
       <body>
         {!isPortal && <SiteNav />}
         {children}

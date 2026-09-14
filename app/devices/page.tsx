@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Works With Your Controller - NextUpReef',
+  title: 'Reef Controller Integrations: Neptune Apex, CoralVue HYDROS & Shelly',
   description: 'NextUpReef connects to Neptune Apex, Shelly smart outlets and CoralVue HYDROS (early access). Sync probes, control your gear, and automate dosing and lighting from one app. Integrations are a Pro feature.',
   alternates: { canonical: 'https://nextupreef.com/devices' },
   openGraph: {
     title: 'Works With Your Controller - NextUpReef',
     description: 'Connect a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app.',
     url: 'https://nextupreef.com/devices',
-    images: [{ url: '/brand/splash2.png', width: 1200, height: 630 }],
+    images: [{ url: '/brand/og-image.png', width: 1200, height: 630 }],
   },
 };
 
@@ -35,7 +35,7 @@ const integrations = [
     id: 'apex', icon: 'apex', brand: 'Neptune Systems', heading: 'Neptune Apex',
     badge: 'FULL CONTROLLER', badgeColor: '#0EA5E9', accent: '#0EA5E9',
     tagline: 'Get more out of the Apex you already own.',
-    sell: 'Connect your Apex with no extra hardware. NextUpReef pulls temperature, pH, salinity, ORP and Trident readings into your logs, and lets you switch outlets, run Feed Mode, set heater temperatures and schedule dosing, all next to your scores and AI advice. Dosing schedules are saved to the Apex, so they keep running when your phone is off.',
+    sell: 'Connect your Apex with no extra hardware. NextUpReef pulls temperature, pH, salinity and Trident alk, calcium and magnesium readings into your logs, and lets you switch outlets, run Feed Mode, set heater temperatures and schedule dosing, all next to your scores and AI advice. Dosing schedules are saved to the Apex, so they keep running when your phone is off.',
     pros: ['Uses the Apex you already own', 'Probe and Trident readings go straight into your logs', 'Outlets, Feed Mode, heater temps and dosing in one app', 'Schedules are saved to the Apex and run 24/7'],
     cons: ['Your phone needs to be on the same WiFi as the Apex', 'Dosing uses a regular outlet and pump (DOS/DDR not supported yet)'],
     ctaLabel: 'Visit Neptune Systems', ctaUrl: 'https://www.neptunesystems.com/',
@@ -59,7 +59,7 @@ const integrations = [
     id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',
     badge: 'EARLY ACCESS', badgeColor: '#7C3AED', accent: '#7C3AED',
     tagline: 'Monitor and control your whole HYDROS from anywhere.',
-    sell: 'HYDROS talks to the cloud, so NextUpReef works with it from anywhere, not just on home WiFi. Connect with your HYDROS device key: pH, temperature, salinity, ORP and alkalinity tests flow into your logs around the clock. Switch outputs on, off or back to Auto, set pump levels, run Feeding or Water Change mode, and start tests. Your HYDROS confirms each change.',
+    sell: 'HYDROS talks to the cloud, so NextUpReef works with it from anywhere, not just on home WiFi. Connect with your HYDROS device key: pH, temperature, salinity and alkalinity tests flow into your logs around the clock. Switch outputs on, off or back to Auto, set pump levels, run Feeding or Water Change mode, and start tests. Your HYDROS confirms each change.',
     pros: ['Works away from home (cloud)', 'Readings sync 24/7, including alkalinity tests', 'Outputs, pump levels, Feeding and Water Change modes', 'Read-only key option if you only want readings'],
     cons: ['Early access: our newest integration', 'Programs and schedules stay in the HYDROS app'],
     ctaLabel: 'Shop HYDROS', ctaUrl: 'https://www.coralvuehydros.com/',

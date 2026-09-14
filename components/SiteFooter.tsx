@@ -1,99 +1,101 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const APP_STORE = "https://apps.apple.com/us/app/nextupreef/id6760728959";
+const GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.nextupreef.app";
+
+type FooterLink = { href: string; label: string; external?: boolean };
+
+const COLUMNS: { title: string; links: FooterLink[] }[] = [
+  {
+    title: "Product",
+    links: [
+      { href: "/features", label: "Features" },
+      { href: "/features#compare", label: "Free vs Pro" },
+      { href: "/devices", label: "Devices & integrations" },
+      { href: "https://portal.nextupreef.com", label: "Web dashboard", external: true },
+    ],
+  },
+  {
+    title: "Guides",
+    links: [
+      { href: "/blog", label: "All guides" },
+      { href: "/blog#journey", label: "New Tank Journey" },
+      { href: "/blog/reef-tank-parameters-chart", label: "Parameters chart" },
+      { href: "/blog/reef-tank-dosing-calculator", label: "Dosing calculator" },
+      { href: "/blog/how-to-connect-apex", label: "Connect a Neptune Apex" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { href: "/faq", label: "FAQ" },
+      { href: "/contact", label: "Contact us" },
+      { href: "https://portal.nextupreef.com", label: "Sign in", external: true },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
+    ],
+  },
+];
 
 export default function SiteFooter() {
   return (
-    <footer className="footer">
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Footer Content */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '40px',
-          marginBottom: '40px',
-          textAlign: 'left'
-        }}>
-          {/* Brand */}
-          <div>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', marginBottom: '12px', color: 'var(--text-light)' }}>
-              NextUpReef
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '14px', lineHeight: '1.6', margin: '0 0 16px 0' }}>
-              Track your reef aquarium parameters with ease.
-            </p>
-            {/* Social links */}
-            <div className="footer-social" style={{ justifyContent: 'flex-start' }}>
-              <a href="https://www.facebook.com/profile.php?id=61576553765840" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <footer className="footer site-footer">
+      <div className="site-footer-inner">
+        <div className="site-footer-grid">
+          <div className="site-footer-brand">
+            <Link href="/" className="site-footer-logo" aria-label="NextUpReef home">
+              <Image src="/brand/logo.png" alt="" width={32} height={32} />
+              <span>NextUpReef</span>
+            </Link>
+            <p>The reef tank app for tracking parameters, dosing, scores and AI advice. Free on iOS and Android.</p>
+            <div className="site-footer-stores">
+              <a href={APP_STORE} target="_blank" rel="noopener noreferrer">App Store</a>
+              <a href={GOOGLE_PLAY} target="_blank" rel="noopener noreferrer">Google Play</a>
+            </div>
+            <div className="footer-social">
+              <a href="https://www.facebook.com/profile.php?id=61576553765840" target="_blank" rel="noopener noreferrer" aria-label="NextUpReef on Facebook">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="https://www.instagram.com/nextupreefapp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              <a href="https://www.instagram.com/nextupreefapp/" target="_blank" rel="noopener noreferrer" aria-label="NextUpReef on Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
             </div>
           </div>
 
-          {/* Product */}
-          <div>
-            <h4 style={{ fontSize: '14px', fontWeight: '900', marginBottom: '12px', color: 'var(--text-light)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Product
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <Link href="/features" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Features
-              </Link>
-              <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Download on App Store
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.nextupreef.app" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Download on Google Play
-              </a>
-            </div>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 style={{ fontSize: '14px', fontWeight: '900', marginBottom: '12px', color: 'var(--text-light)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Support
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <Link href="/contact" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Contact
-              </Link>
-              <a href="mailto:info@nextupreef.com" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                info@nextupreef.com
-              </a>
-            </div>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 style={{ fontSize: '14px', fontWeight: '900', marginBottom: '12px', color: 'var(--text-light)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Legal
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <Link href="/privacy" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Privacy Policy
-              </Link>
-              <Link href="/terms" style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700' }}>
-                Terms of Service
-              </Link>
-            </div>
-          </div>
+          {COLUMNS.map((col) => (
+            <nav key={col.title} className="site-footer-col" aria-label={col.title}>
+              <h2>{col.title}</h2>
+              <ul>
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    {l.external ? (
+                      <a href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a>
+                    ) : (
+                      <Link href={l.href}>{l.label}</Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
 
-        {/* Copyright */}
-        <div style={{ 
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-          paddingTop: '24px',
-          textAlign: 'center'
-        }}>
-          <p style={{ color: 'var(--text-muted)', fontSize: '14px', fontWeight: '700', margin: 0 }}>
-            © {new Date().getFullYear()} NextUpReef. All rights reserved.
+        <div className="site-footer-bottom">
+          <p>© {new Date().getFullYear()} NextUpReef. All rights reserved.</p>
+          <p>
+            <a href="mailto:info@nextupreef.com">info@nextupreef.com</a>
           </p>
         </div>
       </div>

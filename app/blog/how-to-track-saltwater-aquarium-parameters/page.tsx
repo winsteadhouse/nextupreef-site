@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "What to test, how often, target ranges for SPS/LPS/Mixed, and the best tools to monitor your reef tank.",
     url: "https://nextupreef.com/blog/how-to-track-saltwater-aquarium-parameters",
-    images: [{ url: "/brand/splash2.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,7 +23,7 @@ const articleSchema = {
   headline: "How to Track Saltwater Aquarium Parameters (Complete Guide)",
   description:
     "Everything you need to know about monitoring your reef tank: what to test, how often, target ranges, and the best app to track it all.",
-  image: "https://nextupreef.com/brand/splash2.png",
+  image: "https://nextupreef.com/brand/og-image.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
