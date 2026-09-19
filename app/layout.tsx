@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import GoogleAdsTag from "@/components/GoogleAdsTag";
 import "./globals.css";
 
 import { headers } from 'next/headers';
@@ -99,6 +100,7 @@ export default async function RootLayout({
         {children}
         {!isPortal && <SiteFooter />}
         <Analytics />
+        {!isPortal && <GoogleAdsTag />}
       </body>
     </html>
   );

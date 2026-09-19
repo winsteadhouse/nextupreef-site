@@ -119,6 +119,7 @@ export default function PrivacyPage() {
             <li><strong style={{ color: "var(--text-light)" }}>Apple App Store / Google Play</strong> — payment processing</li>
             <li><strong style={{ color: "var(--text-light)" }}>SendGrid</strong> — transactional email delivery</li>
             <li><strong style={{ color: "var(--text-light)" }}>Expo / Firebase</strong> — push notifications</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Google Ads</strong> — on nextupreef.com only (not in the app), cookies measure whether a visitor who arrived from one of our ads taps an App Store or Google Play button</li>
           </ul>
           <p style={{ color: "var(--text-muted)", fontWeight: "700", marginTop: "12px" }}>We do not sell your personal information to third parties.</p>
 
