@@ -23,7 +23,7 @@ const softwareAppSchema = {
     "Reef AI Chat — chat with AI that knows your parameters and livestock",
     "Stocking Advisor — AI livestock compatibility and bioload checks",
     "AI photo parameter logging from any test kit",
-    "Neptune Apex integration — one-tap sync",
+    "Works with Jebao pumps, Apex, HYDROS and Shelly",
     "Tank journal with photos",
     "Reef Score and Stability Score",
     "Parameter trend charts",
@@ -111,7 +111,7 @@ export default function HomePage() {
           </h1>
 
           <p style={{ fontSize: "19px", lineHeight: 1.6, color: "var(--text-muted)", margin: 0, maxWidth: "440px" }}>
-            Parameter logging, built-in Reef AI, and reef integrations in one app.
+            Parameter logging, built-in Reef AI, and your pumps and controllers in one app.
           </p>
 
           <DownloadButtons />
@@ -225,9 +225,10 @@ export default function HomePage() {
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One app.<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Every device.</span>
             </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect CoralVue HYDROS, Neptune Apex, or Shelly smart outlets and run your whole reef from the NextUpReef app - probes, dosing, lighting, and equipment, all in one place.</p>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect your Jebao pumps, Neptune Apex, CoralVue HYDROS or Shelly outlets and run the whole tank from one app - flow, probes, dosing, lighting and equipment. More brands are being added.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
+                { title: "Jebao & Jecod Pumps", desc: "The flow pumps most reefers own. Set wave mode and flow from anywhere, and get told the moment a pump jams or runs dry." },
                 { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
                 { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
                 { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },

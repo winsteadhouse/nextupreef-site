@@ -42,6 +42,7 @@ const softwareSchema = {
     "Dosing checklist, daily dosing reminder, and dose calculator",
     "Automated dosing and lighting",
     "Neptune Apex integration",
+    "Jebao & Jecod pump control",
     "Web dashboard for Pro members",
     "Community leaderboard",
     "6-phase Tank Journey guided setup",
@@ -73,7 +74,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Do I need any special hardware?",
-      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: add Shelly smart outlets for automated dosing and lighting, or connect a Neptune Apex you already own. CoralVue HYDROS is in early access." },
+      acceptedAnswer: { "@type": "Answer", text: "No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: connect the Jebao pumps or Neptune Apex you already own, or add Shelly smart outlets for automated dosing and lighting. CoralVue HYDROS is supported too." },
     },
   ],
 };
@@ -222,7 +223,7 @@ export default function FeaturesPage() {
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Controller integrations (Apex, Shelly, HYDROS)</td>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Integrations (Jebao, Apex, Shelly, HYDROS)</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "rgba(139,158,179,0.4)" }}>—</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
@@ -432,9 +433,13 @@ export default function FeaturesPage() {
       <section id="automation" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Automation & Device Control</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Your reef runs itself,<br />even when you’re away.</h2>
-        <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 32px', maxWidth: '680px' }}>Connect a Neptune Apex or Shelly smart outlets and run your reef from one app: sync probes, control equipment, and automate dosing and lighting. Schedules are saved to the device, so they keep going 24/7 even when your phone is off. CoralVue HYDROS is in early access. Control and automation are part of NextUpReef Pro.</p>
+        <p style={{ fontSize: '17px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 32px', maxWidth: '680px' }}>Connect your Jebao pumps, a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app: set flow and wave modes, sync probes, control equipment, and automate dosing and lighting. Schedules are saved to the device, so they keep going 24/7 even when your phone is off. More brands are being added. Control and automation are part of NextUpReef Pro.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Jebao &amp; Jecod pumps</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Set flow and wave mode from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry. Your real flow in GPH feeds your turnover automatically.</div>
+          </div>
+          <div style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "22px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly smart outlets</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Connect any Shelly Plug US Gen4 in minutes — no Shelly app needed. Tag it as a doser, heater, light, skimmer, or return pump and control it directly from NextUpReef.</div>
           </div>
@@ -678,7 +683,7 @@ export default function FeaturesPage() {
           </div>
           <div key={3} style={{ marginBottom: "24px" }}>
             <h3 style={{ fontSize: "17px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px", lineHeight: 1.4 }}>Do I need any special hardware?</h3>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: add Shelly smart outlets for automated dosing and lighting, or connect a Neptune Apex you already own. CoralVue HYDROS is in early access.</p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0 }}>No. NextUpReef works as a tracking, dosing and AI app on its own, and the Dosing screen works even if you dose by hand. Hardware is optional: connect the Jebao pumps or Neptune Apex you already own, or add Shelly smart outlets for automated dosing and lighting. CoralVue HYDROS is supported too.</p>
           </div>
         <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, marginTop: "8px" }}>
           Looking for how-to answers and details on every screen? See the full{" "}

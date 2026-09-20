@@ -229,11 +229,27 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   {
     id: "controllers-devices",
     title: "Controllers & devices",
-    blurb: "Neptune Apex, CoralVue HYDROS and Shelly smart outlets.",
+    blurb: "Jebao pumps, Neptune Apex, CoralVue HYDROS and Shelly smart outlets.",
     faqs: [
       {
         q: "Which controllers and devices work with NextUpReef?",
-        a: "Neptune Apex, CoralVue HYDROS (in early access) and Shelly Plug US Gen4 smart outlets. All device integrations are part of NextUpReef Pro. Apex works over your local WiFi, HYDROS is cloud-connected, and Shelly plugs are a low-cost way to automate a doser, lights or other equipment.",
+        a: "Jebao and Jecod WiFi pumps, Neptune Apex, CoralVue HYDROS and Shelly Plug US Gen4 smart outlets. All device integrations are part of NextUpReef Pro. Jebao pumps and HYDROS work from anywhere; Apex and Shelly work over your home WiFi. More brands are being added.",
+      },
+      {
+        q: "How do I connect my Jebao or Jecod pump?",
+        a: "Set the pump up in the free Jebao Aqua app first and make sure it is on your 2.4GHz WiFi, because pairing happens over Bluetooth between the pump and your phone. Then open Devices in NextUpReef, choose Jebao, and sign in with the same email or phone number and password you used in the Jebao app. Your pumps are listed and you pick which belong to this tank. You never have to find an IP address.",
+      },
+      {
+        q: "What can I do with a Jebao pump in NextUpReef?",
+        a: "Turn it on and off, set flow from 0 to 100 percent with a dial, pick any of the nine wave modes with a plain-English description of what each one does to your water, set pump linkage for multi-pump setups, and include it in Feed Mode. It also lands in My Reef as equipment with its real flow in GPH, so your turnover figure updates itself instead of being a number you typed once.",
+      },
+      {
+        q: "Will NextUpReef tell me if a Jebao pump fails?",
+        a: "Yes. The pumps report their own faults, and the two that matter most are a jammed impeller and running dry. Both show on the pump card and the dashboard. That is the real reason to connect a flow pump: a stopped powerhead is usually noticed hours later, by which time corals have suffered.",
+      },
+      {
+        q: "Which Jebao pumps work?",
+        a: "Any Jebao or Jecod device that appears in the Jebao Aqua app, which covers the WiFi wavemakers, return pumps and dosers going back several years. The GMP-40 is the model confirmed on real hardware; others use the same platform and should work. This is not an official Jebao integration, so a firmware change on their side could interrupt it.",
       },
       {
         q: "How do I connect my Neptune Apex?",

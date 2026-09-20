@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Reef Controller Integrations: Neptune Apex, CoralVue HYDROS & Shelly',
-  description: 'NextUpReef connects to Neptune Apex, Shelly smart outlets and CoralVue HYDROS (early access). Sync probes, control your gear, and automate dosing and lighting from one app. Integrations are a Pro feature.',
+  title: 'Reef Integrations: Jebao Pumps, Neptune Apex, CoralVue HYDROS & Shelly',
+  description: 'NextUpReef connects to Jebao and Jecod WiFi pumps, Neptune Apex, Shelly smart outlets and CoralVue HYDROS. Set wave modes and flow, sync probes, automate dosing, and get alerted when a pump jams or runs dry. Integrations are a Pro feature.',
   alternates: { canonical: 'https://nextupreef.com/devices' },
   openGraph: {
-    title: 'Works With Your Controller - NextUpReef',
-    description: 'Connect a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app.',
+    title: 'Works With Your Gear - NextUpReef',
+    description: 'Connect Jebao pumps, a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app.',
     url: 'https://nextupreef.com/devices',
     images: [{ url: '/brand/og-image.png', width: 1200, height: 630 }],
   },
@@ -21,6 +21,7 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
   switch (name) {
     case 'cloud': return <svg {...c}><path d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/></svg>;
     case 'apex': return <svg {...c}><circle cx='12' cy='12' r='9'/><path d='M12 8v4l3 3'/></svg>;
+    case 'wave': return <svg {...c}><path d='M2 8c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3 2.5-3 5-3'/><path d='M2 15c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3 2.5-3 5-3'/></svg>;
     case 'flash': return <svg {...c}><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>;
     case 'check': return <svg {...c} stroke='#22C55E'><polyline points='20 6 9 17 4 12'/></svg>;
     case 'minus': return <svg {...c} stroke='var(--text-muted)'><line x1='5' y1='12' x2='19' y2='12'/></svg>;
@@ -31,6 +32,18 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
 }
 
 const integrations = [
+  {
+    id: 'jebao', icon: 'wave', brand: 'Jebao / Jecod', heading: 'Jebao & Jecod Pumps',
+    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    tagline: 'The flow pumps most reefers actually own.',
+    sell: 'Jebao and Jecod WiFi pumps are on more reef tanks than anything else, because they do the job for a fraction of the price. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
+    pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Covers Jebao WiFi pumps, return pumps and dosers'],
+    cons: ['The pump must be set up in the Jebao Aqua app first', 'Not an official Jebao integration, so a firmware change could interrupt it'],
+    ctaLabel: 'View GMP pumps', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,
+    mfgName: 'jebao.com', mfgUrl: 'https://www.jebao.com/',
+    guide: '/blog/connect-jebao-pump', guideLabel: 'Connect guide', image: '/devices/jebao-app-v3.png',
+    alt: 'Jebao GMP-40 in NextUpReef showing a flow dial at 74 percent, pump linkage and the nine wave modes',
+  },
   {
     id: 'apex', icon: 'apex', brand: 'Neptune Systems', heading: 'Neptune Apex',
     badge: 'FULL CONTROLLER', badgeColor: '#0EA5E9', accent: '#0EA5E9',
