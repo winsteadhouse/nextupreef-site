@@ -35,8 +35,8 @@ const integrations = [
   {
     id: 'jebao', icon: 'wave', brand: 'Jebao / Jecod', heading: 'Jebao & Jecod Pumps',
     badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
-    tagline: 'The flow pumps most reefers actually own.',
-    sell: 'Jebao and Jecod WiFi pumps are on more reef tanks than anything else, because they do the job for a fraction of the price. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
+    tagline: 'Real wave control, at Jebao prices.',
+    sell: 'Jebao and Jecod WiFi pumps move a lot of water for the money, which is why so many reef tanks run them. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
     pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Covers Jebao WiFi pumps, return pumps and dosers'],
     cons: ['The pump must be set up in the Jebao Aqua app first', 'Not an official Jebao integration, so a firmware change could interrupt it'],
     ctaLabel: 'View GMP pumps', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,

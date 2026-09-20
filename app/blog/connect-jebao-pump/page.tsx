@@ -115,10 +115,10 @@ export default function ConnectJebaoPumpPage() {
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: 1.8 }}>
           <p>
-            Jebao and Jecod pumps are on more reef tanks than any other brand, for a simple reason: they move a serious amount of water for a fraction of what the premium names charge. A GMP-40 pushes around 6,000 gallons an hour for about $150.
+            Jebao and Jecod pumps have a straightforward appeal: they move a lot of water for the money. A GMP-40 pushes around 6,000 gallons an hour for about $150.
           </p>
           <p>
-            What they have never had is a good app. If you keep a reef, you already know the Jebao Aqua app: it works, eventually, and you close it as fast as you can. NextUpReef connects to the same pumps and puts them next to your parameters, your scores and the rest of your equipment, so flow stops being a thing you set once and forget.
+            What they have never had is an app you want to live in. The Jebao Aqua app gets a pump set up and running, and most people close it and leave the pump alone for months. NextUpReef connects to the same pumps and puts them next to your parameters, your scores and the rest of your equipment, so flow stops being something you set once and forget.
           </p>
           <p>
             More usefully, it watches them. Your pump already reports when its impeller is jammed or when it is running dry. Nobody was listening to that. Now something is.
