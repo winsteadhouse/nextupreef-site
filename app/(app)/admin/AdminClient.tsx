@@ -229,8 +229,11 @@ function Overview({ metrics, series, engagement }: { metrics: Record<string, Rec
             <MiniStat label='Apex synced 24h' value={fmt(ig.apex_synced_24h)} />
             <MiniStat label='Smart outlets' value={fmt(ig.shelly_outlets)} color={GD} />
             <MiniStat label='Outlet users' value={fmt(ig.shelly_users)} />
-            <MiniStat label='Hubs claimed' value={fmt(ig.hub_claimed)} color={PU} />
-            <MiniStat label='Hubs live 24h' value={fmt(ig.hub_active_24h)} />
+            <MiniStat label='HYDROS users' value={fmt(ig.hydros_users)} color={PU} />
+            <MiniStat label='Jebao users' value={fmt(ig.jebao_users)} color={PU} />
+            <MiniStat label='Jebao pumps' value={fmt(ig.jebao_pumps)} />
+            <MiniStat label='Jebao online 24h' value={fmt(ig.jebao_online_24h)} />
+            <MiniStat label='Jebao faults' value={fmt(ig.jebao_faults)} color={RO} />
             <MiniStat label='Dosing users' value={fmt(ds.users)} color={AM} />
             <MiniStat label='Dosing products' value={fmt(ds.products)} />
             <MiniStat label='Scheduled dosers' value={fmt(ds.scheduled)} />
@@ -527,7 +530,7 @@ function Users({ users, onOpen }: { users: UserRow[]; onOpen: (id: string) => vo
           <tbody>
             {rows.map((r) => {
               const la = lastActive(r); const st = status(r);
-              const gear = [r.apex ? 'Apex' : null, r.shelly ? 'Outlet' : null, r.hub ? 'Hub' : null, r.dosing ? 'Dose' : null].filter(Boolean).join(' · ');
+              const gear = [r.apex ? 'Apex' : null, r.hydros ? 'HYDROS' : null, r.jebao ? 'Jebao' : null, r.shelly ? 'Outlet' : null, r.dosing ? 'Dose' : null].filter(Boolean).join(' · ');
               return (
                 <tr key={String(r.id)} className='click' onClick={() => onOpen(String(r.id))}>
                   <td className='name'><div>{String(r.name)}</div><small>{r.email ? String(r.email) : ''}</small></td>
