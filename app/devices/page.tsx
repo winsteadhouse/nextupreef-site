@@ -53,7 +53,7 @@ const integrations = [
     cons: ['Only WiFi models work - controller-only and Bluetooth-only pumps cannot be connected', 'The pump must be signed in to a Jebao Aqua account first', 'Confirmed on the GMP-40; other models use the same platform but are untested', 'Not an official Jebao integration, so a firmware change could interrupt it'],
     ctaLabel: 'View the GMP series', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,
     mfgName: 'jebao.com', mfgUrl: 'https://www.jebao.com/',
-    guide: '/blog/connect-jebao-pump', guideLabel: 'Connect guide', image: '/devices/jebao-app-v3.png',
+    guide: '/blog/connect-jebao-pump', guideLabel: 'Connect guide', image: '/devices/jebao-app-v4.png',
     alt: 'Jebao GMP-40 in NextUpReef showing a flow dial at 74 percent, pump linkage and the nine wave modes',
   },
   {
