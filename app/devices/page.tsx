@@ -37,11 +37,12 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
 // sizing assumes this is the only powerhead and a mixed-reef turnover of roughly
 // 20-40x the display volume.
 const gmpModels = [
-  { model: 'GMP-20', gph: '3,200', watts: '25 W', tank: '50 - 125 gal', url: 'https://link.amazon/B00m6rWgr' },
-  { model: 'GMP-30', gph: '4,800', watts: '35 W', tank: '90 - 190 gal', url: 'https://link.amazon/B09CtCzE8' },
-  { model: 'GMP-40', gph: '6,100', watts: '40 W', tank: '120 - 250 gal', url: 'https://link.amazon/B0j5QTs4t' },
+  { model: 'GMP-20', gph: '3,200', tank: '50 - 125 gal', url: 'https://link.amazon/B00m6rWgr' },
+  { model: 'GMP-30', gph: '4,800', tank: '90 - 190 gal', url: 'https://link.amazon/B09CtCzE8' },
+  { model: 'GMP-40', gph: '6,100', tank: '120 - 250 gal', url: 'https://link.amazon/B0j5QTs4t' },
+  { model: 'GMP-50', gph: '6,900', tank: '150 - 300 gal', url: 'https://link.amazon/B0dl3vgMY' },
+  { model: 'GMP-60', gph: '7,900', tank: '180 - 350 gal', url: 'https://link.amazon/B02te6diw' },
 ];
-
 const integrations = [
   {
     id: 'jebao', icon: 'wave', brand: 'Jebao / Jecod', heading: 'Jebao & Jecod Pumps',
@@ -108,6 +109,7 @@ const compareRows = [
 ];
 
 const blogPosts = [
+  { title: 'Connect a Jebao or Jecod pump', href: '/blog/connect-jebao-pump' },
   { title: 'Connect your Neptune Apex', href: '/blog/how-to-connect-apex' },
   { title: 'Set up automated dosing with Shelly', href: '/blog/how-to-setup-dosing-shelly' },
   { title: 'How to add a Shelly smart plug', href: '/blog/how-to-add-shelly-plug' },
@@ -222,7 +224,6 @@ export default function DevicesPage() {
                           >
                             <span style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', minWidth: '78px' }}>{m.model}</span>
                             <span style={{ fontSize: '13.5px', fontWeight: 800, color: 'var(--reef)', minWidth: '96px' }}>~{m.gph} GPH</span>
-                            <span style={{ fontSize: '13px', color: 'var(--text-muted)', minWidth: '52px' }}>{m.watts}</span>
                             <span style={{ fontSize: '13px', color: 'var(--text-muted)', flex: 1 }}>Suits {m.tank}</span>
                             <span style={{ fontSize: '12.5px', fontWeight: 800, color: 'var(--reef)', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>View <Ico name='external' color='var(--reef)' /></span>
                           </a>
@@ -341,7 +342,7 @@ export default function DevicesPage() {
 
       <section style={{ padding: '0 20px 60px', maxWidth: '860px', margin: '0 auto' }}>
         <p style={{ fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.6, textAlign: 'center' }}>
-          Neptune Systems and Apex are trademarks of Neptune Systems. CoralVue and HYDROS are trademarks of CoralVue, Inc. Shelly is a trademark of Allterco Robotics. NextUpReef is independent and is not affiliated with, endorsed by, or sponsored by these companies. Verify current pricing and specifications with the manufacturer.
+          Jebao and Jecod are trademarks of Jebao Co., Ltd. Neptune Systems and Apex are trademarks of Neptune Systems. CoralVue and HYDROS are trademarks of CoralVue, Inc. Shelly is a trademark of Allterco Robotics. NextUpReef is independent and is not affiliated with, endorsed by, or sponsored by these companies. Verify current pricing and specifications with the manufacturer.
         </p>
       </section>
     </>

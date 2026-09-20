@@ -115,7 +115,7 @@ export default function ConnectJebaoPumpPage() {
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: 1.8 }}>
           <p>
-            Jebao and Jecod pumps have a straightforward appeal: they move a lot of water for the money. A GMP-40 pushes around 6,000 gallons an hour for about $150.
+            Jebao and Jecod pumps have a straightforward appeal: they move a lot of water for the money. A GMP-40 pushes around 6,000 gallons an hour for about $150, and the range runs from the GMP-10 up to the GMP-60 at roughly 7,900 GPH.
           </p>
           <p>
             What they have never had is an app you want to live in. The Jebao Aqua app gets a pump set up and running, and most people close it and leave the pump alone for months. NextUpReef connects to the same pumps and puts them next to your parameters, your scores and the rest of your equipment, so flow stops being something you set once and forget.
@@ -138,7 +138,7 @@ export default function ConnectJebaoPumpPage() {
             This is worth doing before anything else, because not every Jebao pump can be connected by any app. Jebao sells plenty of pumps that ship with a controller box and no networking at all, and a few that pair to your phone over Bluetooth without ever creating an account.
           </p>
           <ul style={list}>
-            <li><strong style={strong}>Works:</strong> WiFi models signed in to a Jebao Aqua account. Confirmed on a GMP-40; the rest of the G series uses the same platform.</li>
+            <li><strong style={strong}>Works:</strong> WiFi models signed in to a Jebao Aqua account. Confirmed on a GMP-40; the rest of the G series (GMP-10 through GMP-60) uses the same platform.</li>
             <li><strong style={strong}>Does not work:</strong> any pump with a controller but no WiFi. There is nothing to connect to.</li>
             <li><strong style={strong}>Does not work:</strong> a pump paired over Bluetooth only. Bluetooth talks to your phone, not to an account, so there is nothing for NextUpReef to sign in to.</li>
           </ul>
