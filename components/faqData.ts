@@ -233,7 +233,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     faqs: [
       {
         q: "Which controllers and devices work with NextUpReef?",
-        a: "Jebao and Jecod WiFi pumps, Neptune Apex, CoralVue HYDROS and Shelly Plug US Gen4 smart outlets. All device integrations are part of NextUpReef Pro. Jebao pumps and HYDROS work from anywhere; Apex and Shelly work over your home WiFi. More brands are being added.",
+        a: "Jebao and Jecod WiFi pumps (the models that sign in to a Jebao Aqua account, not the controller-only ones), Neptune Apex, CoralVue HYDROS and Shelly Plug US Gen4 smart outlets. All device integrations are part of NextUpReef Pro. Jebao pumps and HYDROS work from anywhere; Apex and Shelly work over your home WiFi. More brands are being added.",
       },
       {
         q: "How do I connect my Jebao or Jecod pump?",
@@ -249,7 +249,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Which Jebao pumps work?",
-        a: "Any Jebao or Jecod device that appears in the Jebao Aqua app, which covers the WiFi wavemakers, return pumps and dosers going back several years. The GMP-40 is the model confirmed on real hardware; others use the same platform and should work. This is not an official Jebao integration, so a firmware change on their side could interrupt it.",
+        a: "The WiFi models only. Jebao also sells pumps that come with a controller and no network, and those cannot be connected by any app. To check yours: turn WiFi off on your phone and open the Jebao Aqua app. If the pump still shows up, it is cloud-connected and will work here. A Bluetooth-only pump will not, because there is no account behind it. The GMP-40 is confirmed on real hardware; other WiFi models use the same platform and should work. This is not an official Jebao integration, so a firmware change on their side could interrupt it.",
       },
       {
         q: "How do I connect my Neptune Apex?",

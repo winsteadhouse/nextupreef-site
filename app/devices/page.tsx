@@ -31,15 +31,26 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
   }
 }
 
+
+// GMP models with their own affiliate links. Flow is from reseller listings (Jebao
+// publishes no spec sheet for the G series), so it is quoted as approximate. Tank
+// sizing assumes this is the only powerhead and a mixed-reef turnover of roughly
+// 20-40x the display volume.
+const gmpModels = [
+  { model: 'GMP-20', gph: '3,200', watts: '25 W', tank: '50 - 125 gal', url: 'https://link.amazon/B00m6rWgr' },
+  { model: 'GMP-30', gph: '4,800', watts: '35 W', tank: '90 - 190 gal', url: 'https://link.amazon/B09CtCzE8' },
+  { model: 'GMP-40', gph: '6,100', watts: '40 W', tank: '120 - 250 gal', url: 'https://link.amazon/B0j5QTs4t' },
+];
+
 const integrations = [
   {
     id: 'jebao', icon: 'wave', brand: 'Jebao / Jecod', heading: 'Jebao & Jecod Pumps',
     badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
     tagline: 'Real wave control, at Jebao prices.',
-    sell: 'Jebao and Jecod WiFi pumps move a lot of water for the money, which is why so many reef tanks run them. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
-    pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Covers Jebao WiFi pumps, return pumps and dosers'],
-    cons: ['The pump must be set up in the Jebao Aqua app first', 'Not an official Jebao integration, so a firmware change could interrupt it'],
-    ctaLabel: 'View GMP pumps', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,
+    sell: 'Jebao and Jecod WiFi pumps move a lot of water for the money, which is why so many reef tanks run them. This works with the WiFi models signed in to a Jebao Aqua account, not the controller-only pumps. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
+    pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Works with WiFi Jebao wavemakers, return pumps and dosers'],
+    cons: ['Only WiFi models work - controller-only and Bluetooth-only pumps cannot be connected', 'The pump must be signed in to a Jebao Aqua account first', 'Confirmed on the GMP-40; other models use the same platform but are untested', 'Not an official Jebao integration, so a firmware change could interrupt it'],
+    ctaLabel: 'View the GMP series', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,
     mfgName: 'jebao.com', mfgUrl: 'https://www.jebao.com/',
     guide: '/blog/connect-jebao-pump', guideLabel: 'Connect guide', image: '/devices/jebao-app-v3.png',
     alt: 'Jebao GMP-40 in NextUpReef showing a flow dial at 74 percent, pump linkage and the nine wave modes',
@@ -197,6 +208,35 @@ export default function DevicesPage() {
                       </div>
                     </div>
                   </div>
+                  {d.id === 'jebao' ? (
+                    <div style={{ margin: '0 0 22px' }}>
+                      <div style={{ fontSize: '13px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '10px' }}>Which GMP should you buy?</div>
+                      <div style={{ display: 'grid', gap: '8px' }}>
+                        {gmpModels.map((m) => (
+                          <a
+                            key={m.model}
+                            href={m.url}
+                            target='_blank'
+                            rel='noopener noreferrer sponsored'
+                            style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', padding: '12px 14px', borderRadius: '12px', background: 'var(--card)', border: '1px solid var(--border)', textDecoration: 'none' }}
+                          >
+                            <span style={{ fontSize: '15px', fontWeight: 900, color: 'var(--text-light)', minWidth: '78px' }}>{m.model}</span>
+                            <span style={{ fontSize: '13.5px', fontWeight: 800, color: 'var(--reef)', minWidth: '96px' }}>~{m.gph} GPH</span>
+                            <span style={{ fontSize: '13px', color: 'var(--text-muted)', minWidth: '52px' }}>{m.watts}</span>
+                            <span style={{ fontSize: '13px', color: 'var(--text-muted)', flex: 1 }}>Suits {m.tank}</span>
+                            <span style={{ fontSize: '12.5px', fontWeight: 800, color: 'var(--reef)', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>View <Ico name='external' color='var(--reef)' /></span>
+                          </a>
+                        ))}
+                      </div>
+                      <p style={{ fontSize: '12.5px', color: 'var(--text-muted)', margin: '10px 0 0', lineHeight: 1.6 }}>
+                        Sizing assumes one powerhead and a mixed reef. These pumps are variable, so a
+                        larger model turned down is usually a better buy than a smaller one at full
+                        tilt - it is quieter and gentler on the motor. Two smaller pumps on opposite
+                        walls beat one big pump for most tanks. Flow figures are approximate: Jebao
+                        does not publish a spec sheet for this series.
+                      </p>
+                    </div>
+                  ) : null}
                   <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
                     <a href={d.ctaUrl} target='_blank' rel={d.ctaSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer'} style={{ display: 'inline-flex', alignItems: 'center', gap: '7px', padding: '11px 22px', borderRadius: '10px', background: 'var(--reef)', color: 'white', fontWeight: 900, fontSize: '14px', textDecoration: 'none' }}>
                       {d.ctaLabel} <Ico name='external' color='white' />

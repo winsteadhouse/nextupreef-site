@@ -38,7 +38,7 @@ const articleSchema = {
 const faqs: { q: string; a: string }[] = [
   {
     q: "Which Jebao and Jecod pumps work with NextUpReef?",
-    a: "Any Jebao or Jecod device that appears in the Jebao Aqua app. That covers the WiFi wavemakers, return pumps and dosers going back several years, including the GMP, MOW, SLW, SOW, MLW and DCP families. The GMP-40 is the model confirmed on real hardware.",
+    a: "Only the WiFi models. Jebao sells many pumps that come with a controller and no network at all, and those cannot be connected by any app. The test is simple: if your pump is signed in to a Jebao Aqua account and you can still see it when you are away from home, it is cloud-connected and NextUpReef can use it. A pump paired to your phone over Bluetooth only will not work, because there is no account behind it. The GMP-40 is the model we have confirmed on real hardware."
   },
   {
     q: "Do I need to be at home to control my pump?",
@@ -131,6 +131,21 @@ export default function ConnectJebaoPumpPage() {
               <li>The email or phone number and password for that Jebao account</li>
               <li>NextUpReef Pro, or the free 30-day trial every new account gets</li>
             </ul>
+          </div>
+
+          <h2 style={h2}>First, check your pump is one of the WiFi ones</h2>
+          <p>
+            This is worth doing before anything else, because not every Jebao pump can be connected by any app. Jebao sells plenty of pumps that ship with a controller box and no networking at all, and a few that pair to your phone over Bluetooth without ever creating an account.
+          </p>
+          <ul style={list}>
+            <li><strong style={strong}>Works:</strong> WiFi models signed in to a Jebao Aqua account. Confirmed on a GMP-40; the rest of the G series uses the same platform.</li>
+            <li><strong style={strong}>Does not work:</strong> any pump with a controller but no WiFi. There is nothing to connect to.</li>
+            <li><strong style={strong}>Does not work:</strong> a pump paired over Bluetooth only. Bluetooth talks to your phone, not to an account, so there is nothing for NextUpReef to sign in to.</li>
+          </ul>
+          <div style={callout}>
+            <p style={{ margin: 0 }}>
+              <strong style={strong}>A 30-second test.</strong> Turn WiFi off on your phone, so you are on mobile data only, and open the Jebao Aqua app. If your pump still shows and you can change its speed, it is cloud-connected and NextUpReef will work with it. If it disappears, it is Bluetooth or local only.
+            </p>
           </div>
 
           <h2 style={h2}>Step 1: set the pump up in Jebao&apos;s app first</h2>
