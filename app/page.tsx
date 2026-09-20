@@ -154,6 +154,47 @@ export default function HomePage() {
       </section>
 
       {/* AI SECTION */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.04) 0%, transparent 60%)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight reverse">
+          <div className="feature-spotlight-phone">
+            <Image src="/screenshots/site-v3/phones-integrations.png" alt="Neptune Apex screen with live temperature and pH gauges, Feed Mode and outlet status, in front of the Devices and Automation list" width={1227} height={1434} style={{ height: "auto" }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            <div className="section-label">Integrations</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One app.<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Every device.</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect your Jebao pumps, Neptune Apex, CoralVue HYDROS or Shelly outlets and run the whole tank from one app - flow, probes, dosing, lighting and equipment. More brands are being added.</p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              {[
+                { title: "Jebao & Jecod Pumps", desc: "Set wave mode and flow from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry." },
+                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
+                { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
+                { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
+              ].map((f) => (
+                <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
+                  <div>
+                    <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>{f.title}</div>
+                    <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>{f.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+          <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
+            padding: "12px 28px", borderRadius: "10px",
+            background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
+            color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+            Explore integrations →
+          </Link>
+        </div>
+      </section>
+
+      {/* MY REEF SECTION */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", borderBottom: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(44,196,214,0.05) 0%, transparent 60%)", padding: "100px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="feature-spotlight">
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
@@ -215,47 +256,6 @@ export default function HomePage() {
       </section>
 
       {/* AUTOMATION SECTION - Part 2: Control */}
-      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.04) 0%, transparent 60%)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight reverse">
-          <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phones-integrations.png" alt="Neptune Apex screen with live temperature and pH gauges, Feed Mode and outlet status, in front of the Devices and Automation list" width={1227} height={1434} style={{ height: "auto" }} />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-            <div className="section-label">Integrations</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One app.<br />
-              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Every device.</span>
-            </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect your Jebao pumps, Neptune Apex, CoralVue HYDROS or Shelly outlets and run the whole tank from one app - flow, probes, dosing, lighting and equipment. More brands are being added.</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              {[
-                { title: "Jebao & Jecod Pumps", desc: "Set wave mode and flow from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry." },
-                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
-                { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
-                { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
-              ].map((f) => (
-                <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
-                  <div>
-                    <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>{f.title}</div>
-                    <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>{f.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
-          <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
-            padding: "12px 28px", borderRadius: "10px",
-            background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
-            color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
-            Explore integrations →
-          </Link>
-        </div>
-      </section>
-
-      {/* MY REEF SECTION */}
       <section style={{ padding: "80px 24px", maxWidth: "1200px", margin: "0 auto" }}>
         <div className="feature-spotlight">
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
