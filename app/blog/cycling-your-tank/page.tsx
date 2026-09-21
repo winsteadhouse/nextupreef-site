@@ -59,6 +59,9 @@ export default function CyclingPost() {
         </p>
 
         {/* Section: What is the nitrogen cycle */}
+        <p>
+          Once the cycle finishes, ammonia and nitrite stop being the numbers that matter and the reef parameters take over. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> covers what to aim for from that point on.
+        </p>
         <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginBottom: "16px" }}>
           What Is the Nitrogen Cycle (And Why Does It Matter)?
         </h2>

@@ -62,6 +62,9 @@ export default function AddingFirstCoralsPost() {
         </p>
 
         {/* The coral hierarchy */}
+        <p>
+          Corals are far less forgiving of swings than fish are. Before you add any, it is worth knowing the <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>ideal parameters for a mixed reef tank</Link> and which numbers need to be stable first.
+        </p>
         <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginBottom: "16px" }}>
           The Coral Hierarchy: From Forgiving to Demanding
         </h2>

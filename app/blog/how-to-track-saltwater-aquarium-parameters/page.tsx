@@ -86,6 +86,9 @@ export default function HowToTrackPost() {
             Tracking saltwater aquarium parameters is the single most effective thing you can do to keep your reef alive and thriving. It sounds obvious — but most hobbyists either test inconsistently, don't record what they find, or both. This guide covers everything: what to test, how often, what the numbers mean, and the best way to track it all.
           </p>
 
+          <p>
+            Before you track anything, it helps to know what you are aiming at. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> lists ideal ranges for mixed reef, SPS, LPS, softie, nano and ULNS tanks, next to what real tanks actually run.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             Why Tracking Parameters Matters
           </h2>

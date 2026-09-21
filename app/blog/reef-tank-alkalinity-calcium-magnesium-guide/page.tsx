@@ -79,6 +79,9 @@ export default function AlkCalMagPost() {
             This guide covers what each parameter does, how they interact, what the target ranges look like for different tank types, and the most practical way to track them consistently.
           </p>
 
+          <p>
+            Alkalinity, calcium and magnesium are three of roughly a dozen numbers worth watching, and the right targets shift depending on whether you keep SPS, LPS or softies. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> lists all of them side by side.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             Why Alkalinity Is the Most Important Parameter in Reef Keeping
           </h2>

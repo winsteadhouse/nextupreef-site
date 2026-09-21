@@ -118,6 +118,9 @@ export default function ReefTankPhPost() {
             This guide walks through what reef tank pH actually is, what target ranges matter, why your pH is probably low (hint: it&apos;s not the water), and how to raise it safely if you decide you need to.
           </p>
 
+          <p>
+            pH is one number among many, and what counts as good depends on what you keep. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>full parameters chart for mixed reef, SPS and LPS tanks</Link> puts it in context.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             What pH Actually Measures
           </h2>

@@ -118,6 +118,9 @@ export default function ReefTankSalinityPost() {
             This guide covers reef tank salinity targets, why hydrometers are useless, how to calibrate a refractometer, what causes salinity to drift, and how to adjust it without shocking your livestock.
           </p>
 
+          <p>
+            Salinity sits alongside alkalinity, calcium and nutrients in the handful of numbers a reef tank is judged by. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> lists ideal ranges for all of them by tank type.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             What Salinity Actually Is
           </h2>

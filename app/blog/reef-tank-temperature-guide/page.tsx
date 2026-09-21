@@ -118,6 +118,9 @@ export default function ReefTankTempPost() {
             This guide covers ideal reef tank temperature ranges, how to size and protect your heaters, how to cool a tank in summer, and how to track temperature so you spot problems before they kill things.
           </p>
 
+          <p>
+            Temperature is one of the easier parameters to hold steady. For where it sits against everything else worth testing, see the <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>ideal reef tank parameters by tank type</Link>.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             What Temperature Should a Reef Tank Be?
           </h2>

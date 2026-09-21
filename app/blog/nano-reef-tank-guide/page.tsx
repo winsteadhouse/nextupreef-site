@@ -118,6 +118,9 @@ export default function NanoReefPost() {
             This guide covers everything you need to know about pico, nano, and mini reef tanks — what size to pick, what equipment you actually need, what livestock works, and how to keep your parameters stable when every drop of water matters.
           </p>
 
+          <p>
+            Nano tanks swing faster than large ones, so knowing your targets matters more, not less. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> has a nano column alongside mixed reef, SPS and LPS.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             What Counts as a Nano Reef Tank?
           </h2>

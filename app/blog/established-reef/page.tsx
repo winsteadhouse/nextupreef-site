@@ -62,6 +62,9 @@ export default function EstablishedReefPost() {
         </p>
 
         {/* What maturity means */}
+        <p>
+          An established tank is mostly about holding numbers steady rather than chasing them. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> shows the ranges, and what real tanks actually run.
+        </p>
         <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginBottom: "16px" }}>
           What Biological Maturity Actually Means
         </h2>

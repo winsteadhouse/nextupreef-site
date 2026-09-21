@@ -152,6 +152,9 @@ export default function ReefTankWaterChangeGuidePost() {
             The rest of this guide explains <em>why</em> that range works. There is simple dilution math behind it, real data from NextUpReef tanks that backs it up, and a few situations where an established tank can reasonably do less. We&apos;ll also cover the step-by-step routine and the mistakes that turn a routine water change into a stressed-out tank.
           </p>
 
+          <p>
+            A water change moves several parameters at once. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> shows the ranges you are trying to land in for each of them.
+          </p>
           <h2 style={h2Style}>What Water Changes Actually Do</h2>
           <p>
             A reef tank is a closed box. Everything you add (food, supplements, salt mix) stays in there until something takes it out. Water changes are the one tool that does three jobs at once:
