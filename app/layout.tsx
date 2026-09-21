@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import GoogleAdsTag from "@/components/GoogleAdsTag";
+import RedditPixel from "@/components/RedditPixel";
 import "./globals.css";
 
 import { headers } from 'next/headers';
@@ -101,6 +102,7 @@ export default async function RootLayout({
         {!isPortal && <SiteFooter />}
         <Analytics />
         {!isPortal && <GoogleAdsTag />}
+        {!isPortal && <RedditPixel />}
       </body>
     </html>
   );
