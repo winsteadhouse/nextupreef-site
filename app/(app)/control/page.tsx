@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { createClient } from '@/lib/supabase/server';
 import { getActiveTank } from '@/lib/active-tank';
 
@@ -174,6 +175,24 @@ export default async function ControlPage() {
           {outlets.map((o) => <OutletCard key={o.id} o={o} spark={powerByOutlet[o.id] || []} avgOn={runtimeBy[o.id]} lastDose={o.equipment_kind === 'doser' ? (doseEvents.find((d) => d.outlet_id === o.id) || null) : null} />)}
         </div>
       ) : <div style={{ ...pan, color: 'var(--dim)', fontSize: 13 }}>No smart outlets paired to this tank.</div>}
+
+      <Link
+        href='/control/dose-calculator'
+        style={{
+          display: 'flex', alignItems: 'center', gap: 13, textDecoration: 'none',
+          margin: '22px 0 0', padding: '15px 17px',
+          background: 'var(--panel)', border: '1px solid var(--hair)', borderRadius: 'var(--r)',
+        }}
+      >
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: 15, fontWeight: 900, color: 'var(--text-light)' }}>Dose calculator</div>
+          <div style={{ fontSize: 13, color: 'var(--mid)', marginTop: 3, lineHeight: 1.6 }}>
+            Work out the daily dose that holds alk, calcium or magnesium steady from your own
+            test history, or plan a correction that rises at a safe rate.
+          </div>
+        </div>
+        <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--reef)' }}>{'Open ->'}</div>
+      </Link>
 
       {autoDosers.length ? (
         <div>
