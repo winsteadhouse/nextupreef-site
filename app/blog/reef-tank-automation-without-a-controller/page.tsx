@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const TITLE = "Automate a Reef Tank Without a Controller";
+const TITLE = "How to Run Your Whole Reef From One App, at Any Budget";
 const DESCRIPTION =
-  "You do not need a $300 controller to automate a reef tank. Three Shelly smart plugs, a temperature probe and the pumps you already own will handle lighting, dosing, temperature and flow — with NextUpReef as the brain.";
+  "NextUpReef runs your reef whether you spend $90 or $900 on hardware. Start with smart plugs and a temperature probe, add as you go, and connect a Neptune Apex or CoralVue HYDROS when you are ready. Here is how to build it up.";
 const URL = "https://nextupreef.com/blog/reef-tank-automation-without-a-controller";
 
 const PLUG_URL = "https://amzn.to/4dLhHOO";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: TITLE,
-    description: "Smart plugs, a temperature probe and NextUpReef instead of a controller.",
+    description: "Build up your reef automation at your own pace - smart plugs and probes now, a full controller later.",
     url: URL,
     images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
@@ -41,8 +41,8 @@ const articleSchema = {
 
 const faqs: { q: string; a: string }[] = [
   {
-    q: "Is this really a replacement for an Apex?",
-    a: "For scheduling, dosing, flow and temperature monitoring, yes. For probe-driven safety shutoffs it is not. An Apex reads a probe and cuts an outlet on its own, without a phone involved. This setup alerts you instead. If unattended shutoffs matter to you, buy the controller.",
+    q: "Does NextUpReef work with a Neptune Apex or CoralVue HYDROS?",
+    a: "Yes, and those are the deepest integrations we have. An Apex syncs probe readings into your logs, including Trident alkalinity, calcium and magnesium, and lets you control outlets, Feed Mode, heater temperatures and dosing. HYDROS does the same and works from anywhere rather than only at home. The app is the same whichever hardware you run.",
   },
   {
     q: "Do the schedules keep running if my phone is off?",
@@ -58,11 +58,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What about pH, salinity and ALK monitoring?",
-    a: "Not covered. Those need probes, and probes need a controller. This setup handles temperature, flow, lighting, dosing and reminders. Everything else you test by hand and log in the app, which is what most reefers do anyway.",
+    a: "Those need probes, and probes mean a controller — an Apex or a HYDROS, both of which NextUpReef supports fully. The smart-plug setup covers temperature, flow, lighting, dosing and reminders; everything else you test by hand and log in the app, which is what most reefers do anyway. You can add a controller later without losing anything you already set up.",
   },
   {
     q: "How much does it come to?",
-    a: "Roughly $90 in automation hardware: three smart plugs and a temperature probe. Pumps are extra, but they are equipment you would buy regardless. The median NextUpReef user who owns a controller paid $325 for it.",
+    a: "Stage one is roughly $90 in automation hardware: three smart plugs and a temperature probe. Pumps are extra, but they are equipment you would buy regardless. For comparison, the median NextUpReef user who owns a controller paid $325 for it, and plenty paid far more.",
   },
 ];
 
@@ -119,11 +119,11 @@ export default function BudgetAutomationPage() {
           {" › "}
           <Link href="/blog" style={{ color: "var(--reef)" }}>Blog</Link>
           {" › "}
-          Automation without a controller
+          Building your setup
         </p>
 
         <div style={{ display: "flex", gap: "8px", marginBottom: "20px", flexWrap: "wrap" }}>
-          {["Budget Build", "Shelly", "Jebao", "Automation"].map((tag) => (
+          {["Setup Guide", "Budget Build", "Shelly", "Jebao", "Apex"].map((tag) => (
             <span key={tag} style={{ fontSize: "12px", fontWeight: 700, padding: "4px 12px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.12)", color: "var(--reef)" }}>{tag}</span>
           ))}
         </div>
@@ -135,13 +135,16 @@ export default function BudgetAutomationPage() {
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: 1.8 }}>
           <p>
-            Ask how to automate a reef tank and the answer is usually a controller. They are excellent, and they are also the single most expensive thing most people put under their tank — the typical NextUpReef user who owns one paid <strong style={strong}>$325</strong>, and plenty paid three times that.
+            NextUpReef is the part that does not change. It holds your parameters, your livestock, your equipment, your dosing, your reminders and your scores, and it is where the AI Advisor looks when it tells you what to fix. What changes is the hardware you point it at.
           </p>
           <p>
-            For a lot of tanks that is the wrong first purchase. Automation is mostly three jobs: switch things on and off on a schedule, watch the temperature, and control the flow. You can do all three with hardware you can buy for the price of a couple of frags.
+            That hardware can be a <strong style={strong}>$325 controller</strong> — the median our users with one actually paid — or it can be <strong style={strong}>$90 of smart plugs and a probe</strong>. Both work. The app is the same either way, and you can move from one to the other without starting over.
+          </p>
+          <p>
+            This is how to build it up, in the order that gets you the most for the least.
           </p>
 
-          <h2 style={h2}>The build</h2>
+          <h2 style={h2}>Stage one: the essentials</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", margin: "24px 0" }}>
             {BUILD.map((b) => (
               <div key={b.what} style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "14px", padding: "16px 18px" }}>
@@ -151,7 +154,7 @@ export default function BudgetAutomationPage() {
             ))}
           </div>
           <p>
-            Three plugs and a probe come to roughly <strong style={strong}>$90</strong>. The pump is equipment you would buy anyway.
+            Three plugs and a probe come to roughly <strong style={strong}>$90</strong>. The pump is equipment you would buy anyway. Nothing here needs wiring, and every piece is useful on its own — you do not have to buy it all at once.
           </p>
 
           <h2 style={h2}>The bit that makes it work</h2>
@@ -188,9 +191,36 @@ export default function BudgetAutomationPage() {
             Tick which devices should pause while you feed — the skimmer, the pump, whatever else — and one tap on the home screen starts them all. Each device counts its own time and starts itself again, so if your phone dies mid-feed nothing stays off.
           </p>
 
-          <h2 style={h2}>What you are giving up</h2>
+          <h2 style={h2}>Stage two: fill in the gaps</h2>
           <p>
-            This is where most &ldquo;budget setup&rdquo; articles go quiet. Here is the honest list.
+            Once the essentials are running, these are the next things worth money — roughly in the order most people feel the lack of them.
+          </p>
+          <ul style={list}>
+            <li><strong style={strong}>A second temperature probe.</strong> Five dollars, and it changes what the first one tells you. Put it in the room. When the tank drifts you will know instantly whether it is the heater or the house, which are different problems with different fixes.</li>
+            <li><strong style={strong}>A plug for your ATO reservoir pump.</strong> Being able to cut it remotely is worth a lot the day something sticks.</li>
+            <li><strong style={strong}>A second Jebao pump.</strong> Two smaller pumps on opposite walls beat one big one for almost every tank, and NextUpReef will run them as a linked pair.</li>
+            <li><strong style={strong}>A doser on its own plug</strong>, if you are still dosing by hand. Confirmed doses and missed-dose alerts remove a whole class of silent failure.</li>
+          </ul>
+
+          <h2 style={h2}>Stage three: when you want probes</h2>
+          <p>
+            There is a point where the cheap approach genuinely runs out, and it is when you want <strong style={strong}>pH, salinity or alkalinity monitored continuously</strong>, or you want the tank to protect itself while you are away. That is what controllers are for, and it is a real reason to buy one.
+          </p>
+          <p>
+            NextUpReef supports them fully. This is not a consolation prize — the Apex and HYDROS integrations are the deepest ones we have.
+          </p>
+          <ul style={list}>
+            <li><strong style={strong}>Neptune Apex.</strong> Probe readings flow straight into your logs beside your test kit results, including Trident alkalinity, calcium and magnesium. Control every outlet, run Feed Mode, set heater temperatures, and schedule dosing — all from the same app that holds your scores and AI advice.</li>
+            <li><strong style={strong}>CoralVue HYDROS.</strong> Cloud-connected, so unlike an Apex it works from anywhere, not just at home. Full monitoring and control of probes, outlets and dosing.</li>
+          </ul>
+          <p>
+            And nothing you bought in stage one is wasted. Your plugs keep running your lights and doser, your probe keeps logging, and your Jebao pumps keep working — a controller sits alongside them rather than replacing them. See the full list on the{" "}
+            <Link href="/devices" style={link}>integrations page</Link>.
+          </p>
+
+          <h2 style={h2}>What stage one does not do</h2>
+          <p>
+            This is where most budget setup articles go quiet. Here is the honest list.
           </p>
 
           <div style={warn}>
@@ -208,9 +238,9 @@ export default function BudgetAutomationPage() {
           </ul>
 
           <div style={callout}>
-            <p style={{ margin: "0 0 8px" }}><strong style={strong}>Who should just buy the controller</strong></p>
+            <p style={{ margin: "0 0 8px" }}><strong style={strong}>Skip straight to a controller if…</strong></p>
             <p style={{ margin: 0 }}>
-              If you travel often, run a large or expensive SPS system, or would lose sleep over a heater failure while you are away, buy the Apex. The unattended shutoff is the feature you are paying for and this setup does not replace it. If you are running a nano or a mixed reef at home and mostly want your dosing to be reliable, your lights on time and your temperature actually tracked, start here.
+              You travel often, run a large or expensive SPS system, or would lose sleep over a heater failure while you are away. The unattended shutoff is the thing you are paying for, and stage one does not replace it. Everyone else is usually better off starting small and adding.
             </p>
           </div>
 
@@ -238,7 +268,7 @@ export default function BudgetAutomationPage() {
           <div style={{ ...callout, marginTop: "48px" }}>
             <p style={{ margin: "0 0 8px" }}><strong style={strong}>Start with what you own</strong></p>
             <p style={{ margin: 0 }}>
-              NextUpReef is free on <Link href="/" style={link}>iPhone and Android</Link>, and the dosing screen and logging work with no hardware at all. Device integrations are part of Pro, with 30 days free. See everything it connects to on the{" "}
+              NextUpReef is free on <Link href="/" style={link}>iPhone and Android</Link>, and logging, dosing and reminders work with no hardware at all. Add a plug, a probe or a full controller whenever you are ready — the app grows with the tank. Device integrations are part of Pro, with 30 days free. See everything it connects to on the{" "}
               <Link href="/devices" style={link}>integrations page</Link>.
             </p>
           </div>

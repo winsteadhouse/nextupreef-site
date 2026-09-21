@@ -124,7 +124,7 @@ const compareRows = [
 const blogPosts = [
   { title: 'Connect a Jebao or Jecod pump', href: '/blog/connect-jebao-pump' },
   { title: 'Monitor temperature without a controller', href: '/blog/reef-tank-temperature-monitor' },
-  { title: 'Automate a tank without a controller', href: '/blog/reef-tank-automation-without-a-controller' },
+  { title: 'Build your setup at any budget', href: '/blog/reef-tank-automation-without-a-controller' },
   { title: 'Connect your Neptune Apex', href: '/blog/how-to-connect-apex' },
   { title: 'Set up automated dosing with Shelly', href: '/blog/how-to-setup-dosing-shelly' },
   { title: 'How to add a Shelly smart plug', href: '/blog/how-to-add-shelly-plug' },
