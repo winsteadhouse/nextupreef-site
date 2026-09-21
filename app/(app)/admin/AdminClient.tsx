@@ -234,10 +234,18 @@ function Overview({ metrics, series, engagement }: { metrics: Record<string, Rec
             <MiniStat label='Jebao pumps' value={fmt(ig.jebao_pumps)} />
             <MiniStat label='Jebao online 24h' value={fmt(ig.jebao_online_24h)} />
             <MiniStat label='Jebao faults' value={fmt(ig.jebao_faults)} color={RO} />
+            <MiniStat label='Temp probes' value={fmt(ig.temp_probes)} color={GD} />
+            <MiniStat label='Temp users' value={fmt(ig.temp_users)} />
+            <MiniStat label='Temp read 24h' value={fmt(ig.temp_read_24h)} />
+            <MiniStat label='Temp alerting' value={fmt(ig.temp_alerting)} color={RO} />
+            <MiniStat label='ReefRun pumps' value={fmt(ig.redsea_pumps)} color={PU} />
+            <MiniStat label='ReefRun users' value={fmt(ig.redsea_users)} />
             <MiniStat label='Dosing users' value={fmt(ds.users)} color={AM} />
             <MiniStat label='Dosing products' value={fmt(ds.products)} />
             <MiniStat label='Scheduled dosers' value={fmt(ds.scheduled)} />
             <MiniStat label='Dose events 7d' value={fmt(ds.dose_events_7d)} />
+            <MiniStat label='Calculator users' value={fmt(ds.calc_users)} color={AM} />
+            <MiniStat label='Calculator 30d' value={fmt(ds.calc_users_30d)} />
           </div>
         </Panel>
       </div>
