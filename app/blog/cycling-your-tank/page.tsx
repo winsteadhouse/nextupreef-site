@@ -141,6 +141,12 @@ export default function CyclingPost() {
           ))}
         </div>
 
+        <p style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: "1.8", marginBottom: "32px" }}>
+          Which rock you start with is the single biggest factor in how long this takes, and it
+          affects pest risk for the life of the tank. We compare both in{" "}
+          <Link href="/blog/live-rock-vs-dry-rock" style={{ color: "var(--reef)", fontWeight: 700 }}>live rock vs dry rock</Link>.
+        </p>
+
         <div style={{
           background: "rgba(249, 115, 22, 0.06)", border: "1px solid rgba(249, 115, 22, 0.15)",
           borderRadius: "12px", padding: "16px", marginBottom: "48px",

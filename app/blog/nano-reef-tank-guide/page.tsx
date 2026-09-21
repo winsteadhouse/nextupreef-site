@@ -181,7 +181,7 @@ export default function NanoReefPost() {
             <li><strong style={{ color: "var(--text-light)" }}>Heater:</strong> 50W is plenty for a 20 gallon. Use a thermostat — heaters fail open or closed, and either failure mode can cook or freeze a small tank.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Wavemaker:</strong> One small powerhead like a Tunze NanoStream or a Sicce Voyager Nano. Aim for around 20x tank turnover combined with the return pump.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Salt:</strong> Quality salt mix is non-negotiable. Reef Crystals, Red Sea Coral Pro, and Tropic Marin Pro Reef are all solid choices.</li>
-            <li><strong style={{ color: "var(--text-light)" }}>Live rock:</strong> 1 to 1.5 lbs per gallon. Dry rock from BRS or live rock from a local fish store.</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Live rock:</strong> 1 to 1.5 lbs per gallon. Dry rock from BRS or live rock from a local fish store — <Link href="/blog/live-rock-vs-dry-rock" style={{ color: "var(--reef)", fontWeight: 700 }}>here is how the two compare</Link>.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Sand:</strong> A 1 inch sand bed of CaribSea Special Grade or Fiji Pink is standard.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Refractometer:</strong> Test salinity properly. Hydrometers are inaccurate.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Test kits:</strong> Salifert or Red Sea kits for alkalinity, calcium, magnesium, nitrate, phosphate.</li>
