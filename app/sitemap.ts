@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog/connect-jebao-pump`, lastModified: new Date("2026-09-20"), changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/blog/reef-tank-automation-without-a-controller`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-temperature-monitor`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-parameters-chart`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-dosing-calculator`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
