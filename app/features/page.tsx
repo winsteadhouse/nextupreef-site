@@ -43,6 +43,7 @@ const softwareSchema = {
     "Automated dosing and lighting",
     "Neptune Apex integration",
     "Jebao & Jecod pump control",
+    "Shelly temperature probe",
     "Web dashboard for Pro members",
     "Community leaderboard",
     "6-phase Tank Journey guided setup",
@@ -438,6 +439,10 @@ export default function FeaturesPage() {
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Jebao &amp; Jecod pumps</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Set flow and wave mode from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry. Your real flow in GPH feeds your turnover automatically.</div>
+          </div>
+          <div style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "22px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly temperature probe</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>A Shelly Pill with a temperature probe reads your actual water and feeds it into your log, charts and scores, with high and low alerts. No controller needed.</div>
           </div>
           <div style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "22px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly smart outlets</div>

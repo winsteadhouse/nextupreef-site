@@ -73,7 +73,7 @@ const integrations = [
     badge: 'SIMPLE CONTROL', badgeColor: '#F59E0B', accent: '#F59E0B',
     tagline: 'Affordable dosing and lighting, no controller needed.',
     sell: 'A Shelly plug is the easiest way to automate a doser, light, heater or pump. Calibrate your pump once and set a daily mL target. NextUpReef saves the schedule to the plug, so it runs even when your phone or internet is off. The plug\u2019s power draw confirms each dose, and you get an alert if a dose is missed.',
-    pros: ['Low cost and quick to add', 'Schedules run on the plug, even offline', 'Each dose confirmed by power draw', 'Missed-dose alerts'],
+    pros: ['Low cost and quick to add', 'Schedules run on the plug, even offline', 'Each dose confirmed by power draw', 'Missed-dose alerts', 'Add a Shelly Pill and probe for real water temperature'],
     cons: ['Outlet control only, no water probes', 'Phone and plug need the same WiFi to change settings'],
     ctaLabel: 'Buy on Amazon', ctaUrl: shellyOutletUrl, ctaSponsored: true,
     mfgName: 'shelly.com', mfgUrl: 'https://www.shelly.com/en-us/products/shelly-plug-us-gen4',
@@ -110,6 +110,7 @@ const compareRows = [
 
 const blogPosts = [
   { title: 'Connect a Jebao or Jecod pump', href: '/blog/connect-jebao-pump' },
+  { title: 'Monitor temperature without a controller', href: '/blog/reef-tank-temperature-monitor' },
   { title: 'Connect your Neptune Apex', href: '/blog/how-to-connect-apex' },
   { title: 'Set up automated dosing with Shelly', href: '/blog/how-to-setup-dosing-shelly' },
   { title: 'How to add a Shelly smart plug', href: '/blog/how-to-add-shelly-plug' },
