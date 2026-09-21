@@ -11,9 +11,9 @@ import { useEffect } from "react";
 // It also means Reddit's optimiser has no signal to bid on, so the campaign
 // cannot improve on its own.
 //
-// ADVERTISER_ID comes from Reddit Ads -> Events Manager, and looks like
-// "t2_xxxxxxx". Until it is filled in, this renders nothing at all.
-const ADVERTISER_ID = process.env.NEXT_PUBLIC_REDDIT_PIXEL_ID ?? "";
+// From Reddit Ads -> Events Manager. Public by design: it ships in the client
+// bundle either way, exactly like the Google Ads tag ID next door.
+const ADVERTISER_ID = process.env.NEXT_PUBLIC_REDDIT_PIXEL_ID ?? "a2_jpmpfssjw6vb";
 const STORE_HOSTS = new Set(["apps.apple.com", "play.google.com"]);
 
 declare global {
