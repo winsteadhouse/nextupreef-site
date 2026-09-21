@@ -191,6 +191,9 @@ export default function ReefTankDosingCalculatorPost() {
             </ul>
           </div>
 
+          <p>
+            Dose maths only works if your test history is reliable, which comes down to logging habit. See our comparison of <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank tracking apps</Link> if you need one.
+          </p>
           <h2 style={h2Style}>Step 1: Find Your Real Water Volume</h2>
           <p>
             The number on the tank&apos;s box is not the number to use. Your system&apos;s water is the display plus the sump, minus whatever rock, sand and equipment push out. A reasonable allowance is <strong style={{ color: "var(--text-light)" }}>10–20% displacement</strong>.

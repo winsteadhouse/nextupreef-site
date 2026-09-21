@@ -166,6 +166,9 @@ export default function ReefScoreStabilityScorePost() {
             </ul>
           </div>
 
+          <p>
+            Both scores depend on logging often enough to see a trend. If you have not settled on a tool yet, we compared <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank tracking apps</Link> head to head.
+          </p>
           <h2 style={h2Style}>Why Two Scores Instead of One</h2>
           <p>
             A tank can look perfect in a single test and still be a rough place for corals. Picture alkalinity at 8.5 dKH on Sunday — right in range — after sitting at 7.2 on Wednesday and 9.8 the week before. One snapshot says everything is fine. The history says the tank is on a rollercoaster.

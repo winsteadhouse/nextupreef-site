@@ -220,6 +220,9 @@ export default function ReefTankParametersChartPost() {
             Real-tank values: NextUpReef app data, January–September 2026. Method explained below.
           </p>
 
+          <p>
+            Knowing the targets is half of it; the other half is logging often enough to spot drift before it matters. We compared the <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>best reef tank tracking apps</Link> for exactly that.
+          </p>
           <h2 style={h2Style}>
             Why Reef Parameters Are Ranges, Not Single Numbers
           </h2>

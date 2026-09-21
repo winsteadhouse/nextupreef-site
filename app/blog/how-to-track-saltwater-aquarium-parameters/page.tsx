@@ -89,6 +89,9 @@ export default function HowToTrackPost() {
           <p>
             Before you track anything, it helps to know what you are aiming at. The <Link href="/blog/reef-tank-parameters-chart" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank parameters chart</Link> lists ideal ranges for mixed reef, SPS, LPS, softie, nano and ULNS tanks, next to what real tanks actually run.
           </p>
+          <p>
+            Doing this on paper or in a spreadsheet works, but most reefers end up wanting something that charts trends for them. We compared the options in <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>best reef tank tracking apps</Link>, free and paid.
+          </p>
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             Why Tracking Parameters Matters
           </h2>

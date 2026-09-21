@@ -122,6 +122,9 @@ export default function MyReefTrackingPost() {
           My Reef is NextUpReef’s answer to that. It is the home base for everything in your tank that is not a test result — and it is built to stay useful, because it feeds your scores, your reminders, and the AI that actually knows your reef.
         </p>
 
+        <p>
+          If you are still deciding what to track with, we put the main options side by side in our <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>reef tank app comparison</Link>.
+        </p>
         <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
           Livestock: every fish, coral, and invert, with real care data
         </h2>

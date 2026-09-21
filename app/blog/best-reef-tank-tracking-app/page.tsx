@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
   description:
-    "Honest comparison of reef aquarium tracking apps in 2026: NextUpReef, ReefBay, Aquarimate, Pocket Marine, and more. Find the best free app to monitor your saltwater tank on iOS and Android — now with AI-powered analysis.",
+    "We compared every reef tank app worth using in 2026 on price, charting, dosing maths, reminders and controller support. Free and paid, iOS and Android, with an honest note on what each one does badly.",
   alternates: {
     canonical: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
   },
@@ -31,8 +31,47 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
   },
   datePublished: "2026-04-04",
-  dateModified: "2026-05-09",
+  dateModified: "2026-09-21",
   mainEntityOfPage: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the best reef tank app?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "It depends on what you need. NextUpReef covers parameter logging, trend charts, dosing maths, reminders, equipment tracking and AI advice in one app, and connects to Apex, HYDROS, Jebao, Red Sea and Shelly hardware. Aquarimate and ReefBay are simpler log-only apps. Most reefers want charting and reminders rather than a spreadsheet, which is what separates the options.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there a free reef tank tracking app?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. NextUpReef is free to use for parameter logging, trend charts, water change tracking and reminders, with a Pro tier for AI advice, multiple tanks and controller integrations. Several other reef apps offer a free tier with limits on how many tanks or logs you can keep.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What should a reef tank tracking app record?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "At minimum alkalinity, calcium, magnesium, nitrate, phosphate, salinity, pH and temperature, with the date of each test so you can see a trend rather than a single number. Water changes, dosing amounts and equipment maintenance are worth logging too, because most parameter swings trace back to one of those.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can a reef app connect to an Apex or other controller?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Some can. NextUpReef reads from a Neptune Apex and CoralVue HYDROS over your home network, and controls Jebao wave pumps, Red Sea ReefRun pumps and Shelly smart outlets. Most log-only reef apps have no hardware integration at all, so readings have to be typed in by hand.",
+      },
+    },
+  ],
 };
 
 export default function BestReefAppPost() {
@@ -41,6 +80,10 @@ export default function BestReefAppPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <article style={{ maxWidth: "760px", margin: "0 auto", padding: "80px 20px" }}>
         {/* Breadcrumb */}
@@ -72,7 +115,7 @@ export default function BestReefAppPost() {
           Best Reef Tank Tracking App in 2026 (Free &amp; Paid Compared)
         </h1>
         <p style={{ color: "var(--text-muted)", fontSize: "14px", fontWeight: "700", marginBottom: "48px" }}>
-          Updated May 9, 2026 · 7 min read · By NextUpReef
+          Updated September 21, 2026 · 8 min read · By NextUpReef
         </p>
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: "1.8" }}>
@@ -129,7 +172,17 @@ export default function BestReefAppPost() {
               <strong style={{ color: "var(--text-light)" }}>AI features (Pro):</strong> The Reef AI Advisor analyzes your full tank data — parameters, equipment, livestock, dosing, and journey phase — and gives you a prioritized list of action items based on what your tank actually needs. Ask Reef AI Chat answers reef questions with full tank context (no more generic Google answers). AI Photo Parameter Logging lets you snap a photo of any test kit and the app extracts the values automatically. No other reef app does this.
             </p>
             <p style={{ margin: "0 0 12px 0" }}>
-              On top of that: NO3:PO4 ratio tracker, peer comparison against tanks of the same type, 60+ achievement badges, Neptune Apex integration, an in-app New Tank Journey for beginners, and a community feed where you can see how your tank stacks up. Water change and maintenance reminders use push notifications with day-before, day-of, and overdue alerts.
+              On top of that: NO3:PO4 ratio tracker, peer comparison against tanks of the same type, 60+ achievement badges, an in-app New Tank Journey for beginners, and a community feed where you can see how your tank stacks up. Water change and maintenance reminders use push notifications with day-before, day-of, and overdue alerts.
+            </p>
+            <p style={{ margin: "0 0 12px 0" }}>
+              <strong style={{ color: "var(--text-light)" }}>Equipment control:</strong> This is the part no other
+              reef app does. NextUpReef reads from a Neptune Apex and CoralVue HYDROS, and directly controls{" "}
+              <Link href="/blog/connect-jebao-pump" style={{ color: "var(--reef)", fontWeight: 700 }}>Jebao wave pumps</Link>,
+              Red Sea ReefRun return pumps and skimmers, and{" "}
+              <Link href="/blog/how-to-add-shelly-plug" style={{ color: "var(--reef)", fontWeight: 700 }}>Shelly smart outlets</Link>{" "}
+              for heaters, lights and skimmers. A Shelly temperature probe gives you tank temp with alerts and no
+              controller at all. One Feed Mode button pauses every connected device at once, each on its own timer,
+              so closing the app can never strand a return pump in the off position.
             </p>
             <p style={{ margin: 0 }}>
               <strong style={{ color: "var(--text-light)" }}>Best for:</strong> Reefers who want a complete, intelligent, free reef tracking experience — with the option to unlock AI features if they want them.
@@ -224,17 +277,17 @@ export default function BestReefAppPost() {
             }}>
               <thead>
                 <tr style={{ background: "rgba(44,196,214,0.08)" }}>
-                  {["App", "Price", "iOS", "Android", "AI Analysis", "Reef Score", "Community"].map(h => (
+                  {["App", "Price", "iOS", "Android", "AI Analysis", "Equipment Control", "Reef Score", "Community"].map(h => (
                     <th key={h} style={{ padding: "12px 16px", textAlign: "left", fontWeight: "900", color: "var(--text-light)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ["NextUpReef", "Free + Pro", "✅", "✅", "✅", "✅", "✅"],
-                  ["ReefBay", "Free", "✅", "✅", "❌", "❌", "✅"],
-                  ["Aquarimate", "~$10", "✅", "✅", "❌", "❌", "❌"],
-                  ["Pocket Marine", "Paid", "✅", "❌", "❌", "❌", "❌"],
+                  ["NextUpReef", "Free + Pro", "✅", "✅", "✅", "✅", "✅", "✅"],
+                  ["ReefBay", "Free", "✅", "✅", "❌", "❌", "❌", "✅"],
+                  ["Aquarimate", "~$10", "✅", "✅", "❌", "❌", "❌", "❌"],
+                  ["Pocket Marine", "Paid", "✅", "❌", "❌", "❌", "❌", "❌"],
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                     {row.map((cell, j) => (

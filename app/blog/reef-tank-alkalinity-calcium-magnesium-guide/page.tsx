@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Reef Tank Alkalinity, Calcium & Magnesium: The Complete Tracking Guide",
+  title: "Reef Tank Alkalinity: Ideal Range, Plus Calcium & Magnesium Targets",
   description:
-    "Why alk, cal, and mag are the most critical reef parameters, what target ranges look like for SPS, LPS, and Mixed reefs, how they interact, and the best way to track them consistently with a reef app.",
+    "Ideal alkalinity for a reef tank is 8.0-9.5 dKH for a mixed reef, tighter for SPS. Full target ranges for alk, calcium and magnesium by tank type, how much they can safely swing, and why they move together.",
   alternates: {
     canonical: "https://nextupreef.com/blog/reef-tank-alkalinity-calcium-magnesium-guide",
   },
   openGraph: {
-    title: "Reef Tank Alkalinity, Calcium & Magnesium: The Complete Tracking Guide",
+    title: "Reef Tank Alkalinity: Ideal Range, Plus Calcium & Magnesium Targets",
     description:
       "Why alk, cal, and mag are the most critical parameters, target ranges by tank type, and how to track them consistently.",
     url: "https://nextupreef.com/blog/reef-tank-alkalinity-calcium-magnesium-guide",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Reef Tank Alkalinity, Calcium & Magnesium: The Complete Tracking Guide",
+  headline: "Reef Tank Alkalinity: Ideal Range, Plus Calcium & Magnesium Targets",
   description:
     "Why alk, cal, and mag are the most critical reef parameters, what target ranges look like, how they interact, and the best way to track them.",
   image: "https://nextupreef.com/brand/og-image.png",
@@ -31,8 +31,55 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
   },
   datePublished: "2026-04-04",
-  dateModified: "2026-04-04",
+  dateModified: "2026-09-21",
   mainEntityOfPage: "https://nextupreef.com/blog/reef-tank-alkalinity-calcium-magnesium-guide",
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the ideal alkalinity for a reef tank?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "For a mixed reef, 8.0 to 9.5 dKH is a good target. SPS-dominant and ultra-low-nutrient tanks often run tighter and lower, around 7.5 to 8.5 dKH, because low nutrients make corals less tolerant of high alkalinity. LPS and soft coral tanks are comfortable anywhere from 8 to 11 dKH. Stability matters far more than the exact number.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is a normal alkalinity range in a reef tank?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Natural seawater is about 7 dKH. Most reef tanks are run slightly above that, between 8 and 9.5 dKH, because corals consume alkalinity as they grow. Anything under 7 dKH risks tissue loss in stony corals, and sustained levels over 12 dKH commonly cause burnt tips in SPS.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much can alkalinity safely swing in a day?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Keep daily movement under about 0.5 dKH. A swing of 1 dKH or more in 24 hours is the most common cause of stony coral tissue loss in an otherwise healthy tank. When correcting a low or high reading, spread the change over several days rather than fixing it in one dose.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why does alkalinity drop in a reef tank?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Growing corals and coralline algae pull alkalinity and calcium out of the water to build skeleton, so consumption rises as a tank matures. A sudden drop usually means a dosing pump has stopped, a container has run dry, or a large water change was done with salt mixed to a different alkalinity than the tank.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should I dose alkalinity and calcium separately?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "They must be dosed separately in time, not mixed together. Two-part systems keep the alkalinity and calcium parts in different containers because combining them at full strength precipitates calcium carbonate. Dosing them at opposite ends of the day, or at least an hour apart, avoids cloudy water and wasted product.",
+      },
+    },
+  ],
 };
 
 export default function AlkCalMagPost() {
@@ -41,6 +88,10 @@ export default function AlkCalMagPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <article style={{ maxWidth: "760px", margin: "0 auto", padding: "80px 20px" }}>

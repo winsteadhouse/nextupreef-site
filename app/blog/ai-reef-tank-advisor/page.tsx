@@ -150,6 +150,9 @@ export default function AIReefAdvisorPost() {
         </p>
 
         {/* Section: Reef AI Advisor */}
+        <p>
+          AI advice is only as good as the data behind it, which means it depends on how consistently you log. For how the tracking apps compare on that, see <Link href="/blog/best-reef-tank-tracking-app" style={{ color: "var(--reef)", fontWeight: 700 }}>the best reef tank tracking apps</Link>.
+        </p>
         <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
           Reef AI Advisor: A Full Tank Analysis, Once a Day
         </h2>
