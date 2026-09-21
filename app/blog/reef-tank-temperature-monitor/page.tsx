@@ -144,13 +144,6 @@ export default function ReefTemperatureMonitorPage() {
             Both come from <a href="https://us.shelly.com" target="_blank" rel="noopener noreferrer" style={link}>Shelly&apos;s US store</a> — they are not on Amazon. Shipping is free over $50, so it is worth adding a spare probe or a second Pill rather than paying $6.99 to ship a $16 order.
           </p>
 
-          <div style={callout}>
-            <p style={{ margin: "0 0 8px" }}><strong style={strong}>Why this and not an Inkbird?</strong></p>
-            <p style={{ margin: 0 }}>
-              An Inkbird ITC-308 WIFI is the usual budget suggestion, and it is a fine thermostat. But it runs on Tuya&apos;s platform, which means pairing in a different app than the one in the box, extracting a device key from a developer console, and depending on a middleman. The Shelly needs none of that, costs a third as much, and speaks the same local protocol NextUpReef already uses for smart plugs.
-            </p>
-          </div>
-
           <h2 style={h2}>Setting it up</h2>
           <ul style={list}>
             <li><strong style={strong}>Power the Pill.</strong> Any USB-C phone charger. It has no battery, so it wants a permanent socket — the same power strip your heater and return pump use is ideal.</li>
