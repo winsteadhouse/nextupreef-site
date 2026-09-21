@@ -21,6 +21,7 @@ function Ico({ name, color, size }: { name: string; color?: string; size?: numbe
   switch (name) {
     case 'cloud': return <svg {...c}><path d='M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z'/></svg>;
     case 'apex': return <svg {...c}><circle cx='12' cy='12' r='9'/><path d='M12 8v4l3 3'/></svg>;
+    case 'temp': return <svg {...c}><path d='M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4 4 0 1 0 5 0z'/></svg>;
     case 'wave': return <svg {...c}><path d='M2 8c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3 2.5-3 5-3'/><path d='M2 15c2.5 0 2.5 3 5 3s2.5-3 5-3 2.5 3 5 3 2.5-3 5-3'/></svg>;
     case 'flash': return <svg {...c}><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>;
     case 'check': return <svg {...c} stroke='#22C55E'><polyline points='20 6 9 17 4 12'/></svg>;
@@ -79,6 +80,18 @@ const integrations = [
     mfgName: 'shelly.com', mfgUrl: 'https://www.shelly.com/en-us/products/shelly-plug-us-gen4',
     guide: '/blog/how-to-setup-dosing-shelly', guideLabel: 'Dosing setup guide', image: '/devices/shelly-app-v3.png',
     alt: 'Shelly doser in NextUpReef showing 20 of 30 mL dosed today, confirmed by power, with the day\u2019s dose schedule',
+  },
+  {
+    id: 'temp', icon: 'temp', brand: 'Shelly', heading: 'Shelly Temp Probe',
+    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    tagline: 'Real water temperature, without a controller.',
+    sell: 'Temperature is the parameter that kills a reef fastest, and it is the one most people track worst - without a controller, the number in your log is whatever you last typed in. A Shelly Pill with a temperature probe reads your actual water and feeds it into NextUpReef on its own. Your charts fill in, your Stability Score starts measuring something real, and the AI Advisor can finally see what your temperature actually did overnight. Set a high and a low and the app watches for you.',
+    pros: ['Real measured temperature in your log, charts and scores', 'High and low alerts', 'Up to five probes - display, sump and room', 'No account, no cloud service, no monthly fee', 'Runs on any USB charger, no wiring'],
+    cons: ['Reads temperature, it does not switch the heater - pair it with a smart outlet for that', 'Home network only, like all Shelly devices'],
+    ctaLabel: 'Buy from Shelly', ctaUrl: 'https://us.shelly.com/products/the-pill-by-shelly',
+    mfgName: 'us.shelly.com', mfgUrl: 'https://us.shelly.com',
+    guide: '/blog/reef-tank-temperature-monitor', guideLabel: 'Setup guide', image: null,
+    alt: 'Shelly Pill temperature probe reading in NextUpReef',
   },
   {
     id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',

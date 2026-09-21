@@ -171,6 +171,7 @@ export default function HomePage() {
                 { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
                 { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
                 { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
+                { title: "Shelly Temp Probe", desc: "Real water temperature in your log, charts and scores, with high and low alerts. No controller needed." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />

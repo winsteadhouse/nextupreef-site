@@ -236,6 +236,14 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: "Jebao and Jecod WiFi pumps (the models that sign in to a Jebao Aqua account, not the controller-only ones), Neptune Apex, CoralVue HYDROS and Shelly Plug US Gen4 smart outlets. All device integrations are part of NextUpReef Pro. Jebao pumps and HYDROS work from anywhere; Apex and Shelly work over your home WiFi. More brands are being added.",
       },
       {
+        q: "Can NextUpReef read my tank temperature without a controller?",
+        a: "Yes. A Shelly Pill with a DS18B20 temperature probe reads your actual water and feeds it into your temperature log automatically, so your charts, Reef Score, Stability Score and the AI Advisor all use measured temperature instead of the last number you typed in. You can also set a high and a low and the app will warn you. It runs on any USB charger and needs no account or cloud service.",
+      },
+      {
+        q: "Does the temperature probe control my heater?",
+        a: "No, it reads. To switch the heater as well, put it on a Shelly smart plug: the probe sees the temperature and the plug can cut the power. Together those two do the job most people buy a controller for.",
+      },
+      {
         q: "How do I connect my Jebao or Jecod pump?",
         a: "Set the pump up in the free Jebao Aqua app first and make sure it is on your 2.4GHz WiFi, because pairing happens over Bluetooth between the pump and your phone. Then open Devices in NextUpReef, choose Jebao, and sign in with the same email or phone number and password you used in the Jebao app. Your pumps are listed and you pick which belong to this tank. You never have to find an IP address.",
       },
