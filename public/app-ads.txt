@@ -1,0 +1,12 @@
+# app-ads.txt for nextupreef.com
+# Spec: https://iabtechlab.com/app-ads-txt/
+#
+# NextUpReef does not sell programmatic advertising inventory in its iOS or
+# Android apps. There are no authorized third-party sellers, and this file
+# says so deliberately rather than by being absent - an absent file cannot be
+# told apart from an unclaimed domain, which is what ad spoofing relies on.
+#
+# Sponsor placements inside the app are sold directly and served from our own
+# backend, so they do not belong here.
+#
+# If an ad network is ever added, its authorized-seller line goes below.
