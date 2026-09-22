@@ -182,16 +182,16 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <div>
+              <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
+                padding: "13px 26px", borderRadius: "10px",
+                background: "var(--reef)", border: "1px solid var(--reef)",
+                color: "#04222B", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+                Explore integrations →
+              </Link>
+            </div>
           </div>
 
-        </div>
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
-          <Link href="/devices" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
-            padding: "12px 28px", borderRadius: "10px",
-            background: "rgba(44,196,214,0.10)", border: "1px solid rgba(44,196,214,0.25)",
-            color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
-            Explore integrations →
-          </Link>
         </div>
       </section>
 
