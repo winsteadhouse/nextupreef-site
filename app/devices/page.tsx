@@ -94,6 +94,30 @@ const integrations = [
     alt: 'Shelly Pill temperature probe reading in NextUpReef',
   },
   {
+    id: 'ghl', icon: 'apex', brand: 'GHL', heading: 'GHL ProfiLux',
+    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    tagline: 'Alkalinity, calcium and magnesium, measured and logged for you.',
+    sell: 'A ProfiLux 4 with a KH Director and an ION Director already measures the three numbers reefers care most about. NextUpReef reads them over the official GHL API and files them straight into your log, alongside temperature, pH and salinity from your probes. No account, no cloud, no extra hardware - the controller answers directly on your home network. Your dosing containers show up too, with how much is left and a warning before one runs dry. Start a feed pause from the app and the ProfiLux times it and restarts your pumps itself.',
+    pros: ['Alkalinity from a KH Director, calcium and magnesium from an ION Director', 'Temperature, pH and salinity from your probes', 'Dosing container levels with a running-low warning', 'Feed pause, timed by the ProfiLux itself', 'No account and no cloud service - it answers on your own network', 'Read-only mode if you only want readings'],
+    cons: ['The GHL API is off by default, and off again after every firmware update', 'Needs ProfiLux 4 firmware 7.52 or newer', 'Home network only', 'Reports dosing levels but cannot start a dose - the ProfiLux keeps dosing to itself'],
+    ctaLabel: 'Visit GHL', ctaUrl: 'https://www.aquariumcomputer.com/products/',
+    mfgName: 'aquariumcomputer.com', mfgUrl: 'https://www.aquariumcomputer.com/',
+    guide: '/blog/connect-ghl-profilux', guideLabel: 'Connect guide', image: null,
+    alt: 'GHL ProfiLux readings in NextUpReef showing alkalinity, calcium and magnesium with dosing container levels',
+  },
+  {
+    id: 'redsea', icon: 'wave', brand: 'Red Sea', heading: 'Red Sea ReefRun',
+    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#EF4444',
+    tagline: 'Your return pump and skimmer, from the same app as everything else.',
+    sell: 'One ReefRun controller drives both your return pump and your DC skimmer, and NextUpReef talks to it directly on your home network - no ReefBeat account needed. Set the speed of either pump, see when the controller reports a fault, and drop them to feed speed as part of Feed Mode. Whatever schedule you set in ReefBeat keeps running either way.',
+    pros: ['Controls the return pump and the DC skimmer from one place', 'Speed control without opening another app', 'Shows faults the controller reports', 'Part of Feed Mode alongside your other gear', 'No account or cloud service'],
+    cons: ['Home network only', 'The controller will not run a pump below 40 percent, so feed speed means off', 'Schedules are still set in ReefBeat'],
+    ctaLabel: 'Visit Red Sea', ctaUrl: 'https://www.redseafish.com/',
+    mfgName: 'redseafish.com', mfgUrl: 'https://www.redseafish.com/',
+    guide: '/blog/connect-red-sea-reefrun', guideLabel: 'Connect guide', image: null,
+    alt: 'Red Sea ReefRun return pump and skimmer speed control in NextUpReef',
+  },
+  {
     id: 'hydros', icon: 'cloud', brand: 'CoralVue', heading: 'CoralVue HYDROS',
     badge: 'EARLY ACCESS', badgeColor: '#7C3AED', accent: '#7C3AED',
     tagline: 'Monitor and control your whole HYDROS from anywhere.',
@@ -108,20 +132,23 @@ const integrations = [
 ];
 
 const compareRows = [
-  ['What it is', 'Local controller', 'Smart outlets', 'Cloud controller'],
-  ['Status in NextUpReef', 'live', 'live', 'Early access'],
-  ['Water readings (pH, temp, salinity)', 'yes', 'no', 'yes'],
-  ['Outlet control', 'yes', 'yes', 'yes'],
-  ['Feed / water change modes', 'Feed Mode', 'no', 'yes'],
-  ['Automated dosing', 'Outlet + pump', 'yes', 'Manual dose'],
-  ['Each dose confirmed + missed-dose alerts', 'no', 'yes', 'no'],
-  ['Schedules run on the device (phone off)', 'yes', 'yes', 'Set in HYDROS app'],
-  ['Works away from home', 'wifi', 'wifi', 'yes'],
-  ['Hardware needed', 'Apex you own', 'Low-cost plugs', 'HYDROS controller'],
-  ['Best for', 'All-in-one you own', 'Budget dosing + lighting', 'Full control from anywhere'],
+  ['What it is', 'Local controller', 'Local controller', 'Smart outlets', 'Cloud controller'],
+  ['Status in NextUpReef', 'live', 'New', 'live', 'Early access'],
+  ['Water readings (pH, temp, salinity)', 'yes', 'yes', 'no', 'yes'],
+  ['Alkalinity, calcium and magnesium', 'Trident', 'KH + ION Director', 'no', 'Alk tests'],
+  ['Outlet control', 'yes', 'no', 'yes', 'yes'],
+  ['Feed / water change modes', 'Feed Mode', 'Feed pause', 'no', 'yes'],
+  ['Automated dosing', 'Outlet + pump', 'Levels only', 'yes', 'Manual dose'],
+  ['Each dose confirmed + missed-dose alerts', 'no', 'no', 'yes', 'no'],
+  ['Schedules run on the device (phone off)', 'yes', 'yes', 'yes', 'Set in HYDROS app'],
+  ['Works away from home', 'wifi', 'wifi', 'wifi', 'yes'],
+  ['Hardware needed', 'Apex you own', 'ProfiLux 4', 'Low-cost plugs', 'HYDROS controller'],
+  ['Best for', 'All-in-one you own', 'Automatic alk, cal and mag', 'Budget dosing + lighting', 'Full control from anywhere'],
 ];
 
 const blogPosts = [
+  { title: 'Connect a GHL ProfiLux', href: '/blog/connect-ghl-profilux' },
+  { title: 'Connect a Red Sea ReefRun', href: '/blog/connect-red-sea-reefrun' },
   { title: 'Connect a Jebao or Jecod pump', href: '/blog/connect-jebao-pump' },
   { title: 'Monitor temperature without a controller', href: '/blog/reef-tank-temperature-monitor' },
   { title: 'Build your setup at any budget', href: '/blog/reef-tank-automation-without-a-controller' },
@@ -178,8 +205,25 @@ export default function DevicesPage() {
 
       <section style={{ padding: '0 20px 60px', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <nav aria-label='Jump to a device' style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '4px', marginBottom: '4px', WebkitOverflowScrolling: 'touch' }}>
+            {integrations.map((d) => (
+              <a
+                key={d.id}
+                href={'#' + d.id}
+                style={{
+                  flex: '0 0 auto', textDecoration: 'none',
+                  fontSize: '13px', fontWeight: 800, color: 'var(--text-light)',
+                  background: 'var(--bg-card)', border: '1px solid var(--border)',
+                  borderRadius: '999px', padding: '8px 14px', whiteSpace: 'nowrap',
+                }}
+              >
+                {d.heading.replace('CoralVue ', '').replace('Jebao & Jecod ', 'Jebao ')}
+              </a>
+            ))}
+          </nav>
+
           {integrations.map((d) => (
-            <div key={d.id} style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', overflow: 'hidden' }}>
+            <div key={d.id} id={d.id} style={{ scrollMarginTop: '90px', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', overflow: 'hidden' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '340px 1fr', gap: '0' }} className='device-card-grid'>
                 <div style={{ background: 'rgba(44,196,214,0.04)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px', minHeight: '250px', gap: '12px' }}>
                   {d.image ? (
@@ -304,14 +348,15 @@ export default function DevicesPage() {
       <section style={{ padding: '10px 20px 60px', maxWidth: '1000px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '24px' }}>
           <div className='section-label'>SIDE BY SIDE</div>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 34px)', fontWeight: 900, margin: '10px 0 0' }}>Compare the three.</h2>
+          <h2 style={{ fontSize: 'clamp(24px, 4vw, 34px)', fontWeight: 900, margin: '10px 0 0' }}>Compare the controllers.</h2>
         </div>
         <div style={{ overflowX: 'auto', border: '1px solid var(--border)', borderRadius: '16px' }}>
-          <table style={{ width: '100%', minWidth: '620px', borderCollapse: 'collapse' }}>
+          <table style={{ width: '100%', minWidth: '760px', borderCollapse: 'collapse' }}>
             <thead>
               <tr style={{ background: 'rgba(44,196,214,0.05)' }}>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '12px', fontWeight: 900, color: 'var(--text-muted)' }}></th>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#0EA5E9' }}>Apex</th>
+                <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#0EA5E9' }}>ProfiLux</th>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#B45309' }}>Shelly</th>
                 <th style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', fontWeight: 900, color: '#7C3AED' }}>HYDROS</th>
               </tr>
@@ -323,6 +368,7 @@ export default function DevicesPage() {
                   <td style={{ padding: '12px 16px' }}><Cell v={r[1]} /></td>
                   <td style={{ padding: '12px 16px' }}><Cell v={r[2]} /></td>
                   <td style={{ padding: '12px 16px' }}><Cell v={r[3]} /></td>
+                  <td style={{ padding: '12px 16px' }}><Cell v={r[4]} /></td>
                 </tr>
               ))}
             </tbody>
