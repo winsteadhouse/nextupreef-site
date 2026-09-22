@@ -164,23 +164,21 @@ export default function HomePage() {
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One app.<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Every device.</span>
             </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect your Jebao pumps, Neptune Apex, GHL ProfiLux, Red Sea ReefRun, CoralVue HYDROS or Shelly outlets and run the whole tank from one app - flow, probes, dosing, lighting and equipment. More brands are being added.</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>Connect the gear you already own and run the whole tank from one app - flow, probes, dosing, lighting and equipment, next to your parameters and scores.</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))", gap: "10px 18px" }}>
               {[
-                { title: "Jebao & Jecod Pumps", desc: "Set wave mode and flow from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry." },
-                { title: "CoralVue HYDROS", desc: "Cloud-connected monitoring and control from anywhere - pH, temp, salinity and alkalinity tests logged around the clock." },
-                { title: "Neptune Apex", desc: "Connect the Apex you already own - sync probes, control outlets, run Feed Mode, set heater temps, and dose. No extra hardware." },
-                { title: "Shelly Smart Outlets", desc: "Affordable on/off control and schedules that run on the plug itself - ideal for dosing and lighting on a budget." },
-                { title: "GHL ProfiLux", desc: "Alkalinity, calcium and magnesium read straight off a KH and ION Director, plus your probes and dosing container levels." },
-                { title: "Red Sea ReefRun", desc: "Set your return pump and DC skimmer speed, see controller faults, and drop both to feed speed." },
-                { title: "Shelly Temp Probe", desc: "Real water temperature in your log, charts and scores, with high and low alerts. No controller needed." },
-              ].map((f) => (
-                <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
-                  <div>
-                    <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "4px" }}>{f.title}</div>
-                    <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>{f.desc}</div>
-                  </div>
+                "Neptune Apex",
+                "GHL ProfiLux",
+                "CoralVue HYDROS",
+                "Red Sea ReefRun",
+                "Jebao & Jecod Pumps",
+                "Shelly Smart Outlets",
+                "Shelly Temp Probe",
+                "More being added",
+              ].map((name, i, arr) => (
+                <div key={name} style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: i === arr.length - 1 ? "var(--text-muted)" : "var(--reef)", flexShrink: 0 }} />
+                  <div style={{ fontSize: "15px", fontWeight: i === arr.length - 1 ? 700 : 900, color: i === arr.length - 1 ? "var(--text-muted)" : "var(--text-light)" }}>{name}</div>
                 </div>
               ))}
             </div>
