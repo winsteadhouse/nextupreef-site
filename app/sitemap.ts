@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/features`,                                           lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/blog/reef-tank-tablet-dashboard`, lastModified: new Date("2026-09-25"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-jebao-pump`, lastModified: new Date("2026-09-20"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-automation-without-a-controller`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-temperature-monitor`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },

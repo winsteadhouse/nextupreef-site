@@ -141,12 +141,13 @@ const compareRows = [
   ['Automated dosing', 'Outlet + pump', 'Levels only', 'yes', 'Manual dose'],
   ['Each dose confirmed + missed-dose alerts', 'no', 'no', 'yes', 'no'],
   ['Schedules run on the device (phone off)', 'yes', 'yes', 'yes', 'Set in HYDROS app'],
-  ['Works away from home', 'wifi', 'wifi', 'wifi', 'yes'],
+  ['Works away from home', 'hub', 'hub', 'hub', 'yes'],
   ['Hardware needed', 'Apex you own', 'ProfiLux 4', 'Low-cost plugs', 'HYDROS controller'],
   ['Best for', 'All-in-one you own', 'Automatic alk, cal and mag', 'Budget dosing + lighting', 'Full control from anywhere'],
 ];
 
 const blogPosts = [
+  { title: 'Turn a tablet into a dashboard and hub', href: '/blog/reef-tank-tablet-dashboard' },
   { title: 'Connect a GHL ProfiLux', href: '/blog/connect-ghl-profilux' },
   { title: 'Connect a Red Sea ReefRun', href: '/blog/connect-red-sea-reefrun' },
   { title: 'Connect a Jebao or Jecod pump', href: '/blog/connect-jebao-pump' },
@@ -162,6 +163,9 @@ function Cell({ v }: { v: string }) {
   if (v === 'yes') return <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', color: '#22C55E', fontWeight: 700, fontSize: '13px' }}><Ico name='check' size={15} color='#22C55E' /> Yes</span>;
   if (v === 'no') return <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>No</span>;
   if (v === 'wifi') return <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>Home WiFi</span>;
+  // Local controllers answer only on the LAN, so away-from-home access depends on a
+  // Tank Hub relaying for them. Saying just "Home WiFi" now understates what they do.
+  if (v === 'hub') return <span style={{ color: 'var(--reef)', fontWeight: 700, fontSize: '13px' }}>With a Tank Hub</span>;
   if (v === 'live') return <span style={{ color: '#22C55E', fontWeight: 700, fontSize: '13px' }}>Live</span>;
   if (v === 'soon') return <span style={{ color: '#8B5CF6', fontWeight: 700, fontSize: '13px' }}>Coming soon</span>;
   return <span style={{ color: 'var(--text-light)', fontSize: '13px', fontWeight: 600 }}>{v}</span>;

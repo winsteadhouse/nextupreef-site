@@ -464,6 +464,14 @@ export default function FeaturesPage() {
             <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS <span style={{ fontSize: '11px', fontWeight: 800, color: '#A78BFA', marginLeft: '6px' }}>EARLY ACCESS</span></div>
             <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode.</div>
           </div>
+          <div style={{ background: "rgba(44,196,214,0.06)", border: "1px solid rgba(44,196,214,0.3)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Display <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--reef)", marginLeft: "6px" }}>NEW</span></div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Stand a tablet by the tank and NextUpReef fills the screen: live temperature and pH, every parameter and its trend, your equipment, today&apos;s doses and what&apos;s due next. One tap for Feed Mode. No scrolling, no tapping.</div>
+          </div>
+          <div style={{ background: "rgba(44,196,214,0.06)", border: "1px solid rgba(44,196,214,0.3)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Hub <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--reef)", marginLeft: "6px" }}>NEW</span></div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>An Apex, ReefRun, ProfiLux or Shelly plug only answers on your home WiFi. Leave that same tablet on the network and it reads them for you and relays it to your phone, so the app keeps working from anywhere. Monitoring and convenience, not life support &mdash; your controller stays in charge.</div>
+          </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Control Center</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>A unified dashboard of every outlet: status, live power draw, and quick on/off controls, all in one place.</div>
@@ -555,6 +563,13 @@ export default function FeaturesPage() {
         <div className="section-label">What’s new</div>
         <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>New in NextUpReef.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Tablet display and Tank Hub</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Put your whole tank full screen on a spare tablet, and leave it on your WiFi so it relays your Apex, ReefRun, ProfiLux and Shelly plugs to your phone from anywhere. No extra hardware. (Pro)</div>
+            </div>
+          </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
             <div>

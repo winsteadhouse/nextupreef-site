@@ -288,6 +288,26 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         a: "Plug equipment into a Shelly Plug US Gen4, add it in NextUpReef (no Shelly app or hub needed) and control it from the app. Schedules are saved to the plug, so they run with your phone off or the internet down. For dosers, power draw confirms each dose and you get a missed-dose alert if doses stop. The plug needs 2.4 GHz WiFi, your phone must be on the same WiFi to change settings, and it has no water probes.",
       },
       {
+        q: "Can I put NextUpReef full screen on a tablet?",
+        a: "Yes. Open the menu on a tablet and choose Tank Display. The app fills the screen in landscape with your live temperature and pH gauges, every parameter and its trend, your Reef and Stability scores, your equipment, what your dosers have run today, and what maintenance is due. It keeps the screen awake so the tablet will not sleep while it is mounted, and it scales to the tablet you have rather than cutting anything off. Tank Display is part of Pro.",
+      },
+      {
+        q: "What is a Tank Hub?",
+        a: "A Tank Hub is a device you leave on your home WiFi, normally the same tablet running your tank display, that reads your equipment and relays it to your phone. An Apex, Red Sea ReefRun, GHL ProfiLux or Shelly plug only answers on the local network, so without a hub the app can only reach them while you are at home. With one, your readings and controls keep working from anywhere. You choose which device is the hub; the app never decides for you, and it shows you which device it is, when it last reported and what it can see.",
+      },
+      {
+        q: "Can I use my phone as the hub?",
+        a: "You can, but a phone leaves the house with you, which is exactly when the hub needs to be home on the WiFi. The app warns you if you try. A spare tablet left on a charger is the right device for it.",
+      },
+      {
+        q: "What happens if my hub tablet sleeps, loses WiFi or gets updated?",
+        a: "You lose remote readings and away-from-home control until it comes back, and nothing else changes. Your equipment keeps running on its own schedules, your controller keeps doing its job and your dosers keep dosing. A hub is for monitoring and convenience, not life support, which is why your controller should stay in charge of anything critical.",
+      },
+      {
+        q: "Will NextUpReef control my heater?",
+        a: "No, deliberately. You can see your heater's temperature and its on and off setpoints and get alerted when something is wrong, but the app will not switch a heater. An app on a phone with a dropped connection has no business holding a tank's temperature. Your controller does that.",
+      },
+      {
         q: "Can NextUpReef automate my dosing pump?",
         a: "Yes. Plug your pump into a Shelly outlet, calibrate it once, set a daily mL target, and the app saves the schedule to the plug. On an Apex, tag the outlet your pump is plugged into as a doser, then calibrate and schedule it. Automated doses show on the Dosing screen with everything else.",
       },

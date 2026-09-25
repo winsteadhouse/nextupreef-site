@@ -195,6 +195,121 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TABLET DISPLAY + TANK HUB */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(200deg, rgba(44,196,214,0.07) 0%, transparent 55%)" }}>
+        <div className="tablet-showcase">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <div className="section-label">Tablet mode</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Your whole tank,<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>on the wall.</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "22px 0 0", maxWidth: "620px" }}>
+              Stand any tablet next to the tank and NextUpReef fills the screen - live temperature and pH,
+              every parameter with its trend, what your dosers have run today, and what is due next.
+              No scrolling, no tapping. Just look up.
+            </p>
+          </div>
+
+          <div className="tablet-showcase-screen">
+            <Image src="/screenshots/site-v3/tablet-display.png" alt="NextUpReef tank display filling a tablet screen: live temperature and pH gauges, Reef and Stability scores, Apex outlets, six water parameters with trend charts, dosing progress and upcoming maintenance" width={1548} height={970} style={{ height: "auto" }} priority={false} />
+          </div>
+
+          <div className="tablet-points">
+            {[
+              { t: "Readable across the room", d: "Big gauges, and anything off target turns amber so you catch it walking past." },
+              { t: "Feed mode in one tap", d: "Pauses your return pump, skimmer and powerheads, then turns them back on by itself." },
+              { t: "A tablet you already own", d: "No extra hardware to buy. Any spare Android tablet or iPad works." },
+            ].map((p) => (
+              <div key={p.t}>
+                <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>{p.t}</div>
+                <div style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.65 }}>{p.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW THE TWO FIT TOGETHER */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "84px 24px", background: "linear-gradient(160deg, rgba(44,196,214,0.04) 0%, transparent 60%)" }}>
+        <div style={{ maxWidth: "1040px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "38px" }}>
+          <div style={{ textAlign: "center" }}>
+            <h2 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.15 }}>
+              One tablet does both jobs.
+            </h2>
+            <p style={{ fontSize: "16.5px", color: "var(--text-muted)", lineHeight: 1.7, margin: "16px auto 0", maxWidth: "640px" }}>
+              The same tablet sitting by your tank is a screen you read and a bridge your phone talks
+              through. Set it up once and you get both.
+            </p>
+          </div>
+
+          <div className="hub-flow">
+            <div className="hub-flow-step">
+              <span className="hub-flow-role">Your gear</span>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Apex, ReefRun, ProfiLux, Shelly</div>
+              <div style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                All of it answers on your home WiFi and nowhere else. That is the hardware&apos;s rule, not ours.
+              </div>
+            </div>
+
+            <div className="hub-flow-arrow" aria-hidden="true">→</div>
+
+            <div className="hub-flow-step is-hub">
+              <span className="hub-flow-role">The tablet by the tank</span>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Display on the front, hub in the background</div>
+              <div style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                It shows you the dashboard. Because it never leaves the house, it also reads your gear
+                over that WiFi and passes it on.
+              </div>
+            </div>
+
+            <div className="hub-flow-arrow" aria-hidden="true">→</div>
+
+            <div className="hub-flow-step">
+              <span className="hub-flow-role">Your phone</span>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Anywhere you happen to be</div>
+              <div style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6 }}>
+                Readings and controls arrive through the tablet, so the app keeps working from the
+                office or a week away.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TANK HUB */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.05) 0%, transparent 60%)" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight">
+          <div className="feature-spotlight-phone">
+            <Image src="/screenshots/site-v3/phone-tank-hub.png" alt="Tank Hub screen showing a Galaxy Tab reporting in as online, and the water chemistry, Apex alarm and smart outlets it is watching" width={777} height={1557} style={{ height: "auto" }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            <div className="section-label">Tank Hub</div>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One tablet.<br />
+              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Two jobs.</span>
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "440px" }}>
+              That tablet on your cabinet is doing two things at once. It shows the dashboard above -
+              and because it never leaves the house, it can also be your <strong style={{ color: "var(--text-light)" }}>Tank Hub</strong>.
+            </p>
+            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "440px" }}>
+              An Apex, ReefRun, ProfiLux or Shelly plug only answers on your home WiFi, so away from
+              the house the app normally cannot reach them. The hub reads them for you and relays it
+              to your phone, so the app keeps working from the office, the fish store, or a week away.
+              It is monitoring and convenience, not life support - your controller stays in charge of
+              anything that matters, and your gear keeps running on its own schedules regardless.
+            </p>
+            <div>
+              <Link href="/blog/reef-tank-tablet-dashboard" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
+                padding: "13px 26px", borderRadius: "10px",
+                background: "var(--reef)", border: "1px solid var(--reef)",
+                color: "#04222B", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+                How to set one up →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MY REEF SECTION */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", borderBottom: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(44,196,214,0.05) 0%, transparent 60%)", padding: "100px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="feature-spotlight">

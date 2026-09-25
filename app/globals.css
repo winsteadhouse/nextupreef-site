@@ -1178,3 +1178,85 @@ h1, h2, h3, h4 {
 .blog-card:hover { border-color: rgba(44,196,214,0.35) !important; transform: translateY(-2px); }
 .blog-card:focus-visible { outline: 2px solid var(--reef); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .blog-card { transition: none; } .blog-card:hover { transform: none; } }
+
+/* ================= TABLET SHOWCASE =================
+   The tank display is landscape, so it cannot ride in .feature-spotlight-phone
+   (capped at 340px - a dashboard that small is unreadable). This stacks instead:
+   copy centred, then the screen as wide as the column allows. */
+.tablet-showcase {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  text-align: center;
+}
+.tablet-showcase-screen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.tablet-showcase-screen img {
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+}
+.tablet-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  width: 100%;
+  max-width: 980px;
+  text-align: left;
+}
+@media (max-width: 820px) {
+  .tablet-showcase { padding: 64px 20px; gap: 32px; }
+  .tablet-points { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+}
+
+/* ================= HOW THE TABLET AND HUB FIT TOGETHER =================
+   Readers were not connecting "wall display" with "works away from home" -
+   they are one tablet doing two jobs, which is hard to say in a sentence and
+   easy to show as a flow. Centre step is deliberately emphasised. */
+.hub-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 14px;
+  max-width: 1040px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hub-flow-step {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(44,196,214,0.12);
+  border-radius: 16px;
+  padding: 24px 22px;
+  text-align: left;
+}
+.hub-flow-step.is-hub {
+  background: rgba(44,196,214,0.07);
+  border-color: rgba(44,196,214,0.34);
+}
+.hub-flow-arrow {
+  align-self: center;
+  color: var(--reef);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+.hub-flow-role {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--reef);
+  margin-bottom: 10px;
+}
+@media (max-width: 880px) {
+  .hub-flow { grid-template-columns: 1fr; gap: 10px; }
+  .hub-flow-arrow { justify-self: center; transform: rotate(90deg); }
+}
