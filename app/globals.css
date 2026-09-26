@@ -950,6 +950,16 @@ h1, h2, h3, h4 {
   max-width: 340px;
   height: auto;
 }
+/* Compact spotlight: a supporting section rather than a headline one. The Tank Hub
+   block sits right under the flow diagram that already explains it, so it gets a
+   smaller screenshot, a narrower image column and less vertical room. */
+.feature-spotlight.is-compact {
+  grid-template-columns: 0.8fr 1fr;
+  gap: 56px;
+  padding: 64px 24px;
+}
+/* Image sizing for .is-compact lives at the end of this file — it has to land
+   after the stack of !important overrides on .feature-spotlight-phone img. */
 
 /* TABLET */
 @media (max-width: 900px) {
@@ -981,12 +991,14 @@ h1, h2, h3, h4 {
   .home-hero-phones img { width: 88%; max-width: 480px; }
   .phone-trio { gap: 24px; }
   .feature-spotlight,
-  .feature-spotlight.reverse {
+  .feature-spotlight.reverse,
+  .feature-spotlight.is-compact {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
     padding: 60px 24px;
   }
+
   /* On mobile: text always first, phone always second */
   .feature-spotlight > .feature-spotlight-phone,
   .feature-spotlight.reverse > .feature-spotlight-phone { order: 2; }
@@ -1259,4 +1271,26 @@ h1, h2, h3, h4 {
 @media (max-width: 880px) {
   .hub-flow { grid-template-columns: 1fr; gap: 10px; }
   .hub-flow-arrow { justify-self: center; transform: rotate(90deg); }
+}
+
+/* Tank Hub spotlight — deliberately smaller than the others.
+   It sits directly under the flow diagram that already explains the hub, so it is a
+   supporting section, not a headline one: a smaller screenshot and less vertical room.
+   These need !important only because .feature-spotlight-phone img above is governed by
+   a stack of !important rules; this is scoped to the one section so it changes nothing
+   else. If that stack is ever cleaned up, drop the !important here too. */
+.feature-spotlight.is-compact {
+  padding: 56px 24px !important;
+}
+.feature-spotlight.is-compact .feature-spotlight-phone img {
+  max-width: 260px !important;
+  max-height: none !important;
+  width: 100% !important;
+}
+@media (max-width: 900px) {
+  .feature-spotlight.is-compact {
+    padding: 40px 20px !important;
+    gap: 24px !important;
+  }
+  .feature-spotlight.is-compact .feature-spotlight-phone img { max-width: 240px !important; }
 }

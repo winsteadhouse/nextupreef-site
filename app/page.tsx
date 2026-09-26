@@ -278,31 +278,27 @@ export default function HomePage() {
 
       {/* TANK HUB */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.05) 0%, transparent 60%)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight">
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight is-compact">
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phone-tank-hub.png" alt="Tank Hub screen showing a Galaxy Tab reporting in as online, and the water chemistry, Apex alarm and smart outlets it is watching" width={777} height={1557} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phone-tank-hub-crop.png" alt="Tank Hub screen showing a Galaxy Tab reporting in as online, and the water chemistry, Apex alarm and smart outlets it is watching" width={777} height={910} style={{ height: "auto" }} />
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
             <div className="section-label">Tank Hub</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One tablet.<br />
+            <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One tablet.<br />
               <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Two jobs.</span>
             </h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "440px" }}>
-              That tablet on your cabinet is doing two things at once. It shows the dashboard above -
-              and because it never leaves the house, it can also be your <strong style={{ color: "var(--text-light)" }}>Tank Hub</strong>.
+            <p style={{ fontSize: "16.5px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0, maxWidth: "420px" }}>
+              The tablet showing that dashboard also reads your Apex, ReefRun, ProfiLux or Shelly and
+              relays them to your phone - so the app keeps working from the office or a week away.
             </p>
-            <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "440px" }}>
-              An Apex, ReefRun, ProfiLux or Shelly plug only answers on your home WiFi, so away from
-              the house the app normally cannot reach them. The hub reads them for you and relays it
-              to your phone, so the app keeps working from the office, the fish store, or a week away.
-              It is monitoring and convenience, not life support - your controller stays in charge of
-              anything that matters, and your gear keeps running on its own schedules regardless.
+            <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6, margin: 0, maxWidth: "420px" }}>
+              Monitoring and convenience, not life support. Your controller stays in charge.
             </p>
             <div>
               <Link href="/blog/reef-tank-tablet-dashboard" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
-                padding: "13px 26px", borderRadius: "10px",
+                padding: "12px 24px", borderRadius: "10px",
                 background: "var(--reef)", border: "1px solid var(--reef)",
-                color: "#04222B", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+                color: "#04222B", fontWeight: 900, fontSize: "14.5px", textDecoration: "none" }}>
                 How to set one up →
               </Link>
             </div>
