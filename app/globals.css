@@ -1282,6 +1282,12 @@ h1, h2, h3, h4 {
 .feature-spotlight.is-compact {
   padding: 56px 24px !important;
 }
+/* .is-bare: the spotlight is nested inside a section that already owns the padding.
+   Needs !important purely to beat the rule above, which needs it to beat the stack. */
+.feature-spotlight.is-compact.is-bare {
+  padding: 0 !important;
+  max-width: none;
+}
 .feature-spotlight.is-compact .feature-spotlight-phone img {
   max-width: 260px !important;
   max-height: none !important;
@@ -1292,5 +1298,6 @@ h1, h2, h3, h4 {
     padding: 40px 20px !important;
     gap: 24px !important;
   }
+  .feature-spotlight.is-compact.is-bare { padding: 0 !important; }
   .feature-spotlight.is-compact .feature-spotlight-phone img { max-width: 240px !important; }
 }

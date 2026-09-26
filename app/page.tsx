@@ -229,17 +229,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW THE TWO FIT TOGETHER */}
-      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "84px 24px", background: "linear-gradient(160deg, rgba(44,196,214,0.04) 0%, transparent 60%)" }}>
-        <div style={{ maxWidth: "1040px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "38px" }}>
-          <div style={{ textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(24px, 4vw, 34px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.15 }}>
-              One tablet does both jobs.
-            </h2>
-            <p style={{ fontSize: "16.5px", color: "var(--text-muted)", lineHeight: 1.7, margin: "16px auto 0", maxWidth: "640px" }}>
-              The same tablet sitting by your tank is a screen you read and a bridge your phone talks
-              through. Set it up once and you get both.
-            </p>
+      {/* TANK HUB — the pitch, the proof and the chain, in one section. This used to be
+          two: a flow diagram headed "One tablet does both jobs." and a spotlight headed
+          "One tablet. Two jobs." that explained the same mechanism again in prose. */}
+      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.05) 0%, transparent 60%)", padding: "72px 24px" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
+
+          <div className="feature-spotlight is-compact is-bare">
+            <div className="feature-spotlight-phone">
+              <Image src="/screenshots/site-v3/phone-tank-hub-crop.png" alt="Tank Hub screen showing a Galaxy Tab reporting in as online, and the water chemistry, Apex alarm and smart outlets it is watching" width={777} height={910} style={{ height: "auto" }} />
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+              <div className="section-label">Tank Hub</div>
+              <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One tablet.<br />
+                <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Two jobs.</span>
+              </h2>
+              <p style={{ fontSize: "16.5px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0, maxWidth: "440px" }}>
+                The tablet showing your dashboard never leaves the house - so it can also read your
+                Apex, ReefRun, ProfiLux or Shelly and relay them to your phone. Set it up once and
+                you get both.
+              </p>
+              <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6, margin: 0, maxWidth: "440px" }}>
+                Monitoring and convenience, not life support. Your controller stays in charge.
+              </p>
+              <div>
+                <Link href="/blog/reef-tank-tablet-dashboard" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
+                  padding: "12px 24px", borderRadius: "10px",
+                  background: "var(--reef)", border: "1px solid var(--reef)",
+                  color: "#04222B", fontWeight: 900, fontSize: "14.5px", textDecoration: "none" }}>
+                  How to set one up →
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="hub-flow">
@@ -271,36 +292,6 @@ export default function HomePage() {
                 Readings and controls arrive through the tablet, so the app keeps working from the
                 office or a week away.
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TANK HUB */}
-      <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", background: "linear-gradient(160deg, rgba(88,28,196,0.05) 0%, transparent 60%)" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="feature-spotlight is-compact">
-          <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phone-tank-hub-crop.png" alt="Tank Hub screen showing a Galaxy Tab reporting in as online, and the water chemistry, Apex alarm and smart outlets it is watching" width={777} height={910} style={{ height: "auto" }} />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-            <div className="section-label">Tank Hub</div>
-            <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>One tablet.<br />
-              <span style={{ background: "linear-gradient(135deg, var(--reef) 0%, var(--reef-soft) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>Two jobs.</span>
-            </h2>
-            <p style={{ fontSize: "16.5px", color: "var(--text-muted)", lineHeight: 1.65, margin: 0, maxWidth: "420px" }}>
-              The tablet showing that dashboard also reads your Apex, ReefRun, ProfiLux or Shelly and
-              relays them to your phone - so the app keeps working from the office or a week away.
-            </p>
-            <p style={{ fontSize: "14.5px", color: "var(--text-muted)", lineHeight: 1.6, margin: 0, maxWidth: "420px" }}>
-              Monitoring and convenience, not life support. Your controller stays in charge.
-            </p>
-            <div>
-              <Link href="/blog/reef-tank-tablet-dashboard" style={{ display: "inline-flex", alignItems: "center", gap: "8px",
-                padding: "12px 24px", borderRadius: "10px",
-                background: "var(--reef)", border: "1px solid var(--reef)",
-                color: "#04222B", fontWeight: 900, fontSize: "14.5px", textDecoration: "none" }}>
-                How to set one up →
-              </Link>
             </div>
           </div>
         </div>
