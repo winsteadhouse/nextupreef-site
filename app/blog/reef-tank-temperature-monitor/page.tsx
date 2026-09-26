@@ -148,13 +148,22 @@ export default function ReefTemperatureMonitorPage() {
           <ul style={list}>
             <li><strong style={strong}>Power the Pill.</strong> Any USB-C phone charger. It has no battery, so it wants a permanent socket — the same power strip your heater and return pump use is ideal.</li>
             <li><strong style={strong}>Plug in the probe</strong> and put the tip in your sump, or in the display behind the rockwork. The cable is 1m, so the Pill needs to sit within a metre of the water.</li>
-            <li><strong style={strong}>Add it to WiFi</strong> using the free Shelly app. 2.4GHz. Note the IP address it gets.</li>
-            <li><strong style={strong}>In NextUpReef</strong>, open Devices &amp; Automation, choose Temperature Probe, and enter that IP. The app finds every probe on the device and you name them.</li>
+            <li><strong style={strong}>Hold the Pill&apos;s button for 5 seconds</strong>, until its light flashes blue. That is setup mode — until you do this the Pill stays invisible to WiFi.</li>
+            <li><strong style={strong}>Open NextUpReef</strong>, go to Devices &amp; Automation and choose Temperature Probe. The app walks you through the rest: tap through to your WiFi settings and join the Pill&apos;s own network (it is called ShellyPill- followed by some numbers), then come back.</li>
+            <li><strong style={strong}>Pick your home WiFi from the list</strong> the app shows and type the password. It has to be a 2.4GHz network — the Pill cannot join 5GHz.</li>
+            <li><strong style={strong}>Name your probe</strong> once the app finds the Pill again on your network. That is it.</li>
           </ul>
+
+          <p>
+            You do not need the Shelly app, and you never have to find an IP address. The Pill also
+            does not arrive set up for a temperature probe — there is a mode that has to be switched
+            before a DS18B20 reports anything at all. NextUpReef does that for you as part of the
+            same flow, which is the step that catches most people out when they set one up by hand.
+          </p>
 
           <div style={warn}>
             <p style={{ margin: 0 }}>
-              <strong style={strong}>Give the Pill a fixed address.</strong> Most routers will eventually hand it a different IP, and the app would lose it. Either set a DHCP reservation in your router, or give the Pill a static IP in the Shelly app. Two minutes now saves a confusing evening later.
+              <strong style={strong}>Give the Pill a fixed address.</strong> Most routers will eventually hand it a different IP, and the app would lose it. Set a DHCP reservation in your router — it is two minutes now against a confusing evening later. (Smart plugs recover from this on their own; probes do not, yet.)
             </p>
           </div>
 
