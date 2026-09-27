@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/reef-tank-tablet-dashboard`, lastModified: new Date("2026-09-25"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-jebao-pump`, lastModified: new Date("2026-09-20"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-automation-without-a-controller`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/blog/reef-tank-temperature-monitor`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/blog/reef-tank-temperature-monitor`, lastModified: new Date("2026-09-26"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-ghl-profilux`, lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/connect-red-sea-reefrun`, lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/reef-tank-parameters-chart`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
