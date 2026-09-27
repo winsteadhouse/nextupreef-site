@@ -145,25 +145,31 @@ export default function ReefTemperatureMonitorPage() {
           </p>
 
           <h2 style={h2}>Setting it up</h2>
+          <p>
+            Five steps in the app, start to finish. You will not need the Shelly app, and you will
+            never have to find an IP address.
+          </p>
           <ul style={list}>
-            <li><strong style={strong}>Power the Pill.</strong> Any USB-C phone charger. It has no battery, so it wants a permanent socket — the same power strip your heater and return pump use is ideal.</li>
-            <li><strong style={strong}>Plug in the probe</strong> and put the tip in your sump, or in the display behind the rockwork. The cable is 1m, so the Pill needs to sit within a metre of the water.</li>
-            <li><strong style={strong}>Hold the Pill&apos;s button for 5 seconds</strong>, until its light flashes blue. That is setup mode — until you do this the Pill stays invisible to WiFi.</li>
-            <li><strong style={strong}>Open NextUpReef</strong>, go to Devices &amp; Automation and choose Temperature Probe. The app walks you through the rest: tap through to your WiFi settings and join the Pill&apos;s own network (it is called ShellyPill- followed by some numbers), then come back.</li>
-            <li><strong style={strong}>Pick your home WiFi from the list</strong> the app shows and type the password. It has to be a 2.4GHz network — the Pill cannot join 5GHz.</li>
-            <li><strong style={strong}>Name your probe</strong> once the app finds the Pill again on your network. That is it.</li>
+            <li><strong style={strong}>Power the Pill and plug in the probe.</strong> Any USB-C phone charger. It has no battery, so it wants a permanent socket — the same power strip your heater and return pump use is ideal. Put the probe tip in your sump, or in the display behind the rockwork. The cable is 1m, so the Pill needs to sit within a metre of the water.</li>
+            <li><strong style={strong}>Hold the Pill&apos;s button for about 5 seconds</strong>, until its light starts flashing. That is setup mode. Until you do this the Pill only advertises over Bluetooth, so it will not show up in your WiFi list at all — which is the single most common place people get stuck. <strong style={strong}>Let go at 5 seconds:</strong> holding for 10 factory resets it instead.</li>
+            <li><strong style={strong}>Open NextUpReef</strong> &rarr; Devices &amp; Automation &rarr; Shelly Temp Probe &rarr; Add a probe. The app sends you to your WiFi settings; join the network called <strong style={strong}>ShellyPill-</strong> followed by a long string. Your phone will warn there is no internet — that is expected. Come straight back to the app and it picks up from there on its own.</li>
+            <li><strong style={strong}>Choose your home WiFi and type the password.</strong> The list comes from the Pill itself, so it is what the Pill can actually reach. It must be <strong style={strong}>2.4GHz</strong> — the Pill cannot join 5GHz. The password goes straight from your phone to the Pill over its own access point; it does not pass through us.</li>
+            <li><strong style={strong}>Name your probe.</strong> The Pill restarts, rejoins your network, and the app finds it again by its hardware address. Name it Display, Sump, Frag tank — whatever makes your log read sensibly — and you are done.</li>
           </ul>
 
+          <h3 style={h3}>Two things that will trip you up doing it by hand</h3>
           <p>
-            You do not need the Shelly app, and you never have to find an IP address. The Pill also
-            does not arrive set up for a temperature probe — there is a mode that has to be switched
-            before a DS18B20 reports anything at all. NextUpReef does that for you as part of the
-            same flow, which is the step that catches most people out when they set one up by hand.
+            Both of these are handled for you in the app, but they are worth knowing about, because
+            either one will leave you staring at a Pill that looks connected and reports nothing.
           </p>
+          <ul style={list}>
+            <li><strong style={strong}>A Pill does not arrive ready for a temperature probe.</strong> Its peripheral mode has to be set to <em>onewire</em> first. Until it is, a perfectly good DS18B20 reports absolutely nothing.</li>
+            <li><strong style={strong}>Pills ship on factory firmware.</strong> Ours arrived on a production-line build well behind the public release, and on that version the probe never appeared. Updating fixed it. If you set one up by hand and the probe is missing, update the firmware before you blame the sensor.</li>
+          </ul>
 
           <div style={warn}>
             <p style={{ margin: 0 }}>
-              <strong style={strong}>Give the Pill a fixed address.</strong> Most routers will eventually hand it a different IP, and the app would lose it. Set a DHCP reservation in your router — it is two minutes now against a confusing evening later. (Smart plugs recover from this on their own; probes do not, yet.)
+              <strong style={strong}>Give the Pill a fixed address.</strong> Most routers will eventually hand it a different IP, and the app would lose it. Set a DHCP reservation in your router — two minutes now against a confusing evening later. (Smart plugs recover from this on their own; probes do not, yet.)
             </p>
           </div>
 
