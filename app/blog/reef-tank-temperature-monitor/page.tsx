@@ -105,7 +105,7 @@ function Shot({ src, alt, caption, max = "260px" }: { src: string; alt: string; 
       <img
         src={src}
         alt={alt}
-        style={{ width: "100%", maxWidth: max, borderRadius: "20px", border: "1px solid var(--border)", boxShadow: "0 14px 34px rgba(0,0,0,0.35)" }}
+        style={{ width: "100%", maxWidth: max, display: "block" }}
       />
       {caption ? (
         <figcaption style={{ fontSize: "13.5px", lineHeight: 1.5, color: "var(--text-muted)", textAlign: "center", maxWidth: "440px" }}>
@@ -151,6 +151,13 @@ export default function ReefTemperatureMonitorPage() {
           <p>
             You do not need an $800 controller to fix that. <strong style={strong}>About $16 of parts puts real, measured water temperature into NextUpReef</strong>, updating on its own.
           </p>
+
+          <Shot
+            src="/screenshots/site-v3/phone-temp-probe.png"
+            alt="NextUpReef showing a Shelly temperature probe reading 75.1F, with alert limits, hourly logging and a 7-day trend"
+            caption="What you end up with: measured water temperature, alert limits, and a trend line built from real readings."
+            max="330px"
+          />
 
           <h2 style={h2}>The shopping list</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", margin: "24px 0" }}>
@@ -199,7 +206,7 @@ export default function ReefTemperatureMonitorPage() {
                 <img
                   src={sh.src}
                   alt={sh.cap}
-                  style={{ width: "100%", maxWidth: "220px", borderRadius: "16px", border: "1px solid var(--border)", boxShadow: "0 10px 26px rgba(0,0,0,0.3)" }}
+                  style={{ width: "100%", maxWidth: "230px", display: "block" }}
                 />
                 <figcaption style={{ fontSize: "13px", lineHeight: 1.5, color: "var(--text-muted)", textAlign: "center" }}>{sh.cap}</figcaption>
               </figure>
