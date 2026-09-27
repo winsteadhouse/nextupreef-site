@@ -35,7 +35,7 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
   },
   datePublished: "2026-09-21",
-  dateModified: "2026-09-21",
+  dateModified: "2026-09-26",
   mainEntityOfPage: URL,
 };
 
@@ -50,7 +50,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Does it work when I'm away from home?",
-    a: "No. The Pill answers on your home WiFi only, so readings update while you are on that network and catch up when you return. That is the same trade-off as Shelly smart plugs and a Neptune Apex.",
+    a: "Yes, if you turn on 'Send readings by itself'. The Pill then posts its own temperature to NextUpReef every 15 minutes over your home internet, whether or not the app is open, so you can check the tank from anywhere and still get an alert if it goes out of range. Leave that switch off and it behaves like a Shelly plug or a Neptune Apex: readings only update while your phone is on the home network.",
+  },
+  {
+    q: "Can I correct the probe if it reads a little off?",
+    a: "Yes. Open Settings on the probe, type what your reference thermometer says, and tap Match. The correction is stored on the Pill itself, so it applies to every reading the probe takes — including the ones it sends on its own while you are away — rather than only to what is on screen.",
   },
   {
     q: "Can it turn my heater off if the tank overheats?",
@@ -86,6 +90,32 @@ const PARTS = [
   { name: "1-to-5 splitter (optional)", price: "$4.99", why: "Run up to five probes from one Pill — display, sump, room.", url: SPLITTER_URL },
 ];
 
+const SETUP_SHOTS = [
+  { src: "/screenshots/shelly-pill/pill-02-power.png", cap: "Step 1 — power it up and hold the button for five seconds." },
+  { src: "/screenshots/shelly-pill/pill-03-join.png", cap: "Step 2 — the app sends you to your WiFi settings." },
+  { src: "/screenshots/shelly-pill/pill-04-phone-wifi.png", cap: "Join the ShellyPill- network. No internet is expected." },
+  { src: "/screenshots/shelly-pill/pill-05-scan.png", cap: "Step 3 — the Pill lists the 2.4GHz networks it can reach." },
+  { src: "/screenshots/shelly-pill/pill-06-connecting.png", cap: "Step 4 — it restarts and rejoins your network." },
+  { src: "/screenshots/shelly-pill/pill-07-found.png", cap: "Step 5 — found, already reading. Name it and you are done." },
+];
+
+function Shot({ src, alt, caption, max = "260px" }: { src: string; alt: string; caption?: string; max?: string }) {
+  return (
+    <figure style={{ margin: "32px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
+      <img
+        src={src}
+        alt={alt}
+        style={{ width: "100%", maxWidth: max, borderRadius: "20px", border: "1px solid var(--border)", boxShadow: "0 14px 34px rgba(0,0,0,0.35)" }}
+      />
+      {caption ? (
+        <figcaption style={{ fontSize: "13.5px", lineHeight: 1.5, color: "var(--text-muted)", textAlign: "center", maxWidth: "440px" }}>
+          {caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 export default function ReefTemperatureMonitorPage() {
   return (
     <>
@@ -108,7 +138,7 @@ export default function ReefTemperatureMonitorPage() {
 
         <h1 style={{ fontSize: "40px", fontWeight: 900, lineHeight: 1.2, marginBottom: "16px" }}>{TITLE}</h1>
         <p style={{ color: "var(--text-muted)", fontSize: "14px", fontWeight: 700, marginBottom: "48px" }}>
-          Updated September 21, 2026 · 7 min read · By NextUpReef
+          Updated September 26, 2026 · 9 min read · By NextUpReef
         </p>
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: 1.8 }}>
@@ -149,6 +179,12 @@ export default function ReefTemperatureMonitorPage() {
             Five steps in the app, start to finish. You will not need the Shelly app, and you will
             never have to find an IP address.
           </p>
+
+          <Shot
+            src="/screenshots/shelly-pill/pill-01-devices.png"
+            alt="NextUpReef Devices and Automation screen with Shelly Temp Probe and Add a probe"
+            caption="Devices &amp; Automation &rarr; Shelly Temp Probe &rarr; Add a probe."
+          />
           <ul style={list}>
             <li><strong style={strong}>Power the Pill and plug in the probe.</strong> Any USB-C phone charger. It has no battery, so it wants a permanent socket — the same power strip your heater and return pump use is ideal. Put the probe tip in your sump, or in the display behind the rockwork. The cable is 1m, so the Pill needs to sit within a metre of the water.</li>
             <li><strong style={strong}>Hold the Pill&apos;s button for about 5 seconds</strong>, until its light starts flashing. That is setup mode. Until you do this the Pill only advertises over Bluetooth, so it will not show up in your WiFi list at all — which is the single most common place people get stuck. <strong style={strong}>Let go at 5 seconds:</strong> holding for 10 factory resets it instead.</li>
@@ -156,6 +192,22 @@ export default function ReefTemperatureMonitorPage() {
             <li><strong style={strong}>Choose your home WiFi and type the password.</strong> The list comes from the Pill itself, so it is what the Pill can actually reach. It must be <strong style={strong}>2.4GHz</strong> — the Pill cannot join 5GHz. The password goes straight from your phone to the Pill over its own access point; it does not pass through us.</li>
             <li><strong style={strong}>Name your probe.</strong> The Pill restarts, rejoins your network, and the app finds it again by its hardware address. Name it Display, Sump, Frag tank — whatever makes your log read sensibly — and you are done.</li>
           </ul>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "24px", margin: "36px 0" }}>
+            {SETUP_SHOTS.map((sh) => (
+              <figure key={sh.src} style={{ margin: 0, display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                <img
+                  src={sh.src}
+                  alt={sh.cap}
+                  style={{ width: "100%", maxWidth: "220px", borderRadius: "16px", border: "1px solid var(--border)", boxShadow: "0 10px 26px rgba(0,0,0,0.3)" }}
+                />
+                <figcaption style={{ fontSize: "13px", lineHeight: 1.5, color: "var(--text-muted)", textAlign: "center" }}>{sh.cap}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <p style={{ fontSize: "14px" }}>
+            (Network names in that third shot are blurred — they are our own and our neighbours&apos;.)
+          </p>
 
           <h3 style={h3}>Two things that will trip you up doing it by hand</h3>
           <p>
@@ -186,10 +238,65 @@ export default function ReefTemperatureMonitorPage() {
           <p>
             Readings are saved once an hour, so your own test results are never buried under hundreds of rows.
           </p>
+          <p>
+            One more thing worth doing before you walk away: turn on <strong style={strong}>Send readings by itself</strong>, below the logging switch. That is what keeps the tank watched when nobody is looking at the app — see below.
+          </p>
 
           <h3 style={h3}>Two probes are better than one</h3>
           <p>
             With a splitter, run a second probe measuring <em>room</em> temperature. When the tank drifts, that second number tells you instantly whether it is the tank or the house — a failing heater versus a hot afternoon are very different problems, and the fix is different too.
+          </p>
+
+          <h2 style={h2}>Let it report on its own</h2>
+          <p>
+            Everything above still depends on something opening the app to read the probe. That is
+            the flaw in every LAN sensor: the tank is watched while you are looking at it, and
+            unwatched overnight, which is exactly when a heater fails.
+          </p>
+          <p>
+            So there is a switch on the probe screen called <strong style={strong}>Send readings by
+            itself</strong>. Turn it on and the app writes a webhook into the Pill pointing back at
+            NextUpReef, with a key belonging to that one probe. From then on the Pill posts its own
+            temperature every 15 minutes, through your router, whether or not the app is open and
+            whether or not you are home.
+          </p>
+          <ul style={list}>
+            <li><strong style={strong}>You can check the tank from anywhere.</strong> The reading in the app is one the Pill sent, not one your phone had to fetch.</li>
+            <li><strong style={strong}>Alerts work with the app closed.</strong> If a reading crosses the limit you set, you get a push notification — the phone does not have to be on your home WiFi, or awake, or running the app.</li>
+            <li><strong style={strong}>Your log keeps filling overnight.</strong> One reading an hour, continuously, instead of a gap between the last time you opened the app and the next.</li>
+          </ul>
+          <p>
+            Turning it on has to be done while you are on the same WiFi, because writing the
+            webhook means reaching the Pill. After that it works from anywhere. Readings outside a
+            sane range are discarded rather than stored, and you are told once when the temperature
+            goes out of range rather than every fifteen minutes while it stays there.
+          </p>
+          <div style={warn}>
+            <p style={{ margin: 0 }}>
+              <strong style={strong}>It still needs your internet.</strong> The Pill posts through
+              your router, so a router reboot or an outage means nothing arrives until it is back.
+              A sensor that reports for itself is a large improvement on one that does not; it is
+              not a cellular alarm.
+            </p>
+          </div>
+
+          <h2 style={h2}>Renaming and calibration</h2>
+          <p>
+            Each probe has a Settings screen — rename it, check its firmware, and correct it
+            against a thermometer you trust.
+          </p>
+          <p>
+            Every DS18B20 is a little off. Half a degree does not matter much in isolation, but it
+            does when you are comparing your tank against a target, or against the probe in your
+            sump. Type what your reference thermometer reads, tap <strong style={strong}>Match</strong>,
+            and the difference is stored as an offset.
+          </p>
+          <p>
+            That offset lives <em>on the Pill</em>, not in the app. It is the distinction that
+            matters: the probe corrects itself at the source, so the number you see, the number
+            written into your history, and the number the Pill sends by itself while you are away
+            are all the same corrected reading. An app-side offset would have fixed the display and
+            left the stored data wrong.
           </p>
 
           <h2 style={h2}>The honest limitations</h2>
@@ -197,7 +304,7 @@ export default function ReefTemperatureMonitorPage() {
             <strong style={strong}>It reads, it does not switch.</strong> The Pill cannot turn your heater off. If you want that, put the heater on a <Link href="/devices" style={link}>Shelly smart plug</Link> — then the probe watches the water and the plug can cut the power. Roughly $45 all in, and that combination genuinely does the job people buy controllers for.
           </p>
           <p>
-            <strong style={strong}>Home network only.</strong> Readings update while you are on your home WiFi. Away from home you will see the last known value, not a live one.
+            <strong style={strong}>Away from home, only if you turn it on.</strong> Out of the box the Pill answers on your home WiFi, so readings update while your phone is on that network. Switch on <em>Send readings by itself</em> and it pushes its own temperature out every 15 minutes instead — but that depends on your home internet being up.
           </p>
           <p>
             <strong style={strong}>Mains powered.</strong> No battery, so a power cut takes the sensor with it — although a power cut takes your heater too, which is the bigger problem.
