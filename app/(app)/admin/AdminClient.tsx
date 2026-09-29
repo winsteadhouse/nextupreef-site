@@ -101,10 +101,12 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
 }
 
 /* ───────────── main ───────────── */
-export default function AdminClient({ metrics, series, users, engagement }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null }) {
-  const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity'>('overview');
+type NotifRow = { day: string; notification_type: string; sent: number; users: number };
+
+export default function AdminClient({ metrics, series, users, engagement, notifications }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[] }) {
+  const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
-  useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity') setTab(t); } catch { /* ignore */ } }, []);
+  useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications') setTab(t); } catch { /* ignore */ } }, []);
   const pick = (t: typeof tab) => { setTab(t); try { localStorage.setItem('admin.tab', t); } catch { /* ignore */ } };
 
   return (
@@ -115,15 +117,87 @@ export default function AdminClient({ metrics, series, users, engagement }: { me
           <div className='dash-facts'><span>Usage, engagement and growth across all users. Visible only to you.</span></div>
         </div>
         <div className='seg' role='tablist'>
-          {(['overview', 'engagement', 'users', 'activity'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t}</button>)}
+          {(['overview', 'engagement', 'users', 'activity', 'notifications'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t}</button>)}
         </div>
       </div>
       {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} /> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
       {tab === 'activity' ? <ActivityFeed e={engagement} onOpen={setOpenUser} /> : null}
+      {tab === 'notifications' ? <Notifications rows={(notifications ?? []) as unknown as NotifRow[]} /> : null}
       {openUser ? <UserDrawer id={openUser} onClose={() => setOpenUser(null)} /> : null}
     </div>
+  );
+}
+
+/* ───────────── Notifications ─────────────
+   What we send, per type, per day. Added after a reminder loop sent 284 of 483
+   users a daily "time to test" push for tanks they had stopped using — one of them
+   187 times — with nothing anywhere showing outbound volume.
+
+   The column that matters is per-user: when sent is much larger than the number of
+   people it reached, the same few are being hit repeatedly, which is what a runaway
+   loop looks like before anyone complains. */
+function Notifications({ rows }: { rows: NotifRow[] }) {
+  const days = Array.from(new Set(rows.map((r) => r.day))).sort().reverse();
+  const types = Array.from(new Set(rows.map((r) => r.notification_type))).sort();
+  const today = days[0];
+  const byType = (d: string) => rows.filter((r) => r.day === d);
+  const todayRows = byType(today ?? '');
+  const totalToday = todayRows.reduce((a, r) => a + Number(r.sent), 0);
+  const last7 = days.slice(0, 7);
+  const avg7 = last7.length
+    ? Math.round(rows.filter((r) => last7.includes(r.day)).reduce((a, r) => a + Number(r.sent), 0) / last7.length)
+    : 0;
+
+  if (!rows.length) return <Panel title='Notifications'><p className='muted'>Nothing sent in the last 30 days.</p></Panel>;
+
+  return (
+    <>
+      <div className='kpis'>
+        <Kpi label='Sent today' value={fmt(totalToday)} sub={<span>{today}</span>} />
+        <Kpi label='Daily average' value={fmt(avg7)} sub={<span>last 7 days</span>} />
+        <Kpi label='Types in use' value={String(types.length)} />
+      </div>
+
+      <Panel title='Today by type' sub={today}>
+        <HBars data={todayRows
+          .sort((a, b) => Number(b.sent) - Number(a.sent))
+          .map((r) => ({
+            k: r.notification_type.replace(/_/g, ' '),
+            v: Number(r.sent),
+            sub: ` ${fmt(Number(r.users))} people · ${(Number(r.sent) / Math.max(1, Number(r.users))).toFixed(1)}× each`,
+          }))} />
+      </Panel>
+
+      <Panel title='Per day' sub='last 30 days · sent (people reached)'>
+        <div className='rtable' style={{ maxHeight: 460 }}>
+          <table>
+            <thead>
+              <tr><th>Day</th>{types.map((t) => <th key={t} className='r'>{t.replace(/_/g, ' ')}</th>)}<th className='r'>Total</th></tr>
+            </thead>
+            <tbody>
+              {days.map((d) => {
+                const r = byType(d);
+                const total = r.reduce((a, x) => a + Number(x.sent), 0);
+                return (
+                  <tr key={d}>
+                    <td>{d}</td>
+                    {types.map((t) => {
+                      const hit = r.find((x) => x.notification_type === t);
+                      return <td key={t} className='r'>
+                        {hit ? <>{fmt(Number(hit.sent))} <small className='dim'>({fmt(Number(hit.users))})</small></> : <span className='dim'>–</span>}
+                      </td>;
+                    })}
+                    <td className='r' style={{ fontWeight: 700 }}>{fmt(total)}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </Panel>
+    </>
   );
 }
 
