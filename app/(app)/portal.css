@@ -248,6 +248,8 @@ html[data-portal-full="1"] .portal main{padding:18px 26px 48px}
 .mini{background:var(--panel-2);border:1px solid var(--hair);border-radius:10px;padding:10px 12px}
 .mini b{display:block;font-size:19px;font-weight:700}
 .mini span{font-size:11px;color:var(--dim)}
+/* Caveat line under a panel, for explaining what a stat does and does not mean. */
+.dpanel-note{margin-top:10px;font-size:11px;line-height:1.5;color:var(--dim)}
 .hbars{display:flex;flex-direction:column;gap:7px}
 .hbar,.fstep{display:grid;grid-template-columns:minmax(110px,170px) 1fr 92px;gap:10px;align-items:center;font-size:12.5px}
 .fstep{grid-template-columns:minmax(120px,190px) 1fr 84px 88px}

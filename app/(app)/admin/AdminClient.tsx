@@ -103,7 +103,7 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
 /* ───────────── main ───────────── */
 type NotifRow = { day: string; notification_type: string; sent: number; users: number };
 
-export default function AdminClient({ metrics, series, users, engagement, notifications }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[] }) {
+export default function AdminClient({ metrics, series, users, engagement, notifications, extra }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null }) {
   const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
   useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications') setTab(t); } catch { /* ignore */ } }, []);
@@ -120,7 +120,7 @@ export default function AdminClient({ metrics, series, users, engagement, notifi
           {(['overview', 'engagement', 'users', 'activity', 'notifications'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t}</button>)}
         </div>
       </div>
-      {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} /> : null}
+      {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} /> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
       {tab === 'activity' ? <ActivityFeed e={engagement} onOpen={setOpenUser} /> : null}
@@ -202,13 +202,21 @@ function Notifications({ rows }: { rows: NotifRow[] }) {
 }
 
 /* ───────────── Overview (existing metrics) ───────────── */
-function Overview({ metrics, series, engagement }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; engagement: Eng | null }) {
+function Overview({ metrics, series, engagement, extra }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; engagement: Eng | null; extra?: Record<string, unknown> | null }) {
   const [days, setDays] = useState(90);
   const m = metrics || {};
   const u = (m.users || {}) as Record<string, number>;
   const t = (m.tanks || {}) as Record<string, unknown>;
   const ai = (m.ai || {}) as Record<string, number>;
   const ig = (m.integrations || {}) as Record<string, unknown>;
+  const ix = ((extra?.integrations_extra ?? {}) as Record<string, unknown>);
+  const jy = ((extra?.journey ?? {}) as Record<string, unknown>);
+  const phaseCounts = (jy.phase_counts ?? {}) as Record<string, number>;
+  const phaseTime = (jy.phase_time ?? {}) as Record<string, { completed?: number; median_days?: number; instant?: number }>;
+  const PHASE_NAMES: Record<string, string> = {
+    '1': 'Tank Setup', '2': 'The Cycle', '3': 'The Ugly Phase',
+    '4': 'First Livestock', '5': 'Coral Ready', '6': 'Established Reef',
+  };
   const ds = (m.dosing || {}) as Record<string, number>;
   const lg = (m.logging || {}) as Record<string, number>;
   const data = useMemo(() => (series || []).slice(-days), [series, days]);
@@ -312,6 +320,13 @@ function Overview({ metrics, series, engagement }: { metrics: Record<string, Rec
             <MiniStat label='Temp users' value={fmt(ig.temp_users)} />
             <MiniStat label='Temp read 24h' value={fmt(ig.temp_read_24h)} />
             <MiniStat label='Temp alerting' value={fmt(ig.temp_alerting)} color={RO} />
+            <MiniStat label='ProfiLux users' value={fmt(ix.profilux_users)} color={PU} />
+            <MiniStat label='ProfiLux synced 24h' value={fmt(ix.profilux_synced_24h)} />
+            <MiniStat label='Tank Hub devices' value={fmt(ix.hub_devices)} color={GD} />
+            <MiniStat label='Tank Hub users' value={fmt(ix.hub_users)} />
+            <MiniStat label='Apex outlets' value={fmt(ix.apex_outlets)} />
+            <MiniStat label='Apex orphan outlets' value={fmt(ix.apex_orphan_outlets)} color={RO} />
+            <MiniStat label='Any controller' value={fmt(ix.any_controller_users)} color={GD} />
             <MiniStat label='ReefRun pumps' value={fmt(ig.redsea_pumps)} color={PU} />
             <MiniStat label='ReefRun users' value={fmt(ig.redsea_users)} />
             <MiniStat label='Dosing users' value={fmt(ds.users)} color={AM} />
@@ -320,6 +335,34 @@ function Overview({ metrics, series, engagement }: { metrics: Record<string, Rec
             <MiniStat label='Dose events 7d' value={fmt(ds.dose_events_7d)} />
             <MiniStat label='Calculator users' value={fmt(ds.calc_users)} color={AM} />
             <MiniStat label='Calculator 30d' value={fmt(ds.calc_users_30d)} />
+          </div>
+        </Panel>
+
+        <Panel className='span-12' title='New Tank Journey' sub='Adoption and how long each phase really takes'>
+          <div className='minis'>
+            <MiniStat label='Tanks total' value={fmt(jy.tanks_total)} />
+            <MiniStat label='Journey active' value={fmt(jy.active)} color={GD} />
+            <MiniStat label='Skipped' value={fmt(jy.skipped)} color={AM} />
+            <MiniStat label='Reached Established' value={fmt(jy.completed)} color={GD} />
+            <MiniStat label='No logs 14d' value={fmt(jy.stalled_14d)} color={RO} />
+          </div>
+
+          {/* Where people are right now. The funnel shape is the point - a pile-up in
+              one phase means that phase is where the guide stops helping. */}
+          <HBars
+            data={['1','2','3','4','5','6'].map((k) => ({
+              k: `${k}. ${PHASE_NAMES[k]}`,
+              v: Number(phaseCounts[k] ?? 0),
+              sub: phaseTime[k]?.median_days != null
+                ? `median ${phaseTime[k].median_days}d in phase${phaseTime[k].instant ? ` · ${phaseTime[k].instant} skipped through` : ''}`
+                : undefined,
+            }))}
+            color={GD}
+          />
+          <div className='dpanel-note'>
+            Median, not average — a handful of tanks left open for months make the mean
+            meaningless. &quot;Skipped through&quot; counts tanks that advanced in under 30 minutes,
+            which usually means the phase did not apply to them.
           </div>
         </Panel>
       </div>
