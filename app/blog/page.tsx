@@ -27,7 +27,7 @@ type Post = {
 
 // The six-phase series, in order — the numbers are the real sequence.
 const journey: Post[] = [
-  { slug: "tank-setup", title: "Set up your first reef tank", description: "Equipment checklist, salinity targets, rock choice, and the mistake almost every new reefer makes on day one.", date: "April 2026", readTime: "8 min", tag: "Setup" },
+  { slug: "tank-setup", title: "Set up your first reef tank", description: "What it costs before you buy, then the equipment checklist, salinity targets, rock choice, and the mistake almost every new reefer makes on day one.", date: "April 2026", readTime: "9 min", tag: "Setup" },
   { slug: "cycling-your-tank", title: "Cycle the tank", description: "How the nitrogen cycle works, how long it really takes, what to test, and how to know you're done.", date: "April 2026", readTime: "9 min", tag: "The cycle" },
   { slug: "the-ugly-phase", title: "Survive the ugly phase", description: "Diatoms, hair algae and cyano are normal. What each one means and how to get through it.", date: "April 2026", readTime: "7 min", tag: "Algae" },
   { slug: "first-livestock", title: "Add your first fish", description: "Hardy beginner fish, the one-at-a-time rule, and what to watch in the first two weeks.", date: "April 2026", readTime: "8 min", tag: "Fish" },
@@ -190,7 +190,7 @@ export default function BlogPage() {
 
       {/* NEW TANK JOURNEY */}
       <section style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1100px", margin: "0 auto" }}>
-        <SectionHead id="journey" label="Complete series" title="New Tank Journey" sub="Six guides covering every phase of your first reef, in order, from an empty tank to an established reef. The same phases guide you inside the app." />
+        <SectionHead id="journey" label="Complete series" title="New Tank Journey" sub="Six guides covering every phase of your first reef, in order — from working out what it costs before you buy anything, through to an established reef. The same phases guide you inside the app." />
         <ol className="journey-grid" style={{ listStyle: "none", padding: 0, margin: 0 }}>
           {journey.map((post, i) => (
             <li key={post.slug}>

@@ -215,13 +215,13 @@ export default function AddingFirstCoralsPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/screenshots/phone-charts-v2.png"
-            alt="NextUpReef log screen showing Alkalinity, Calcium, and Magnesium tracked for coral health"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase5-intro.png"
+            alt="NextUpReef Phase 5 screen advising to start soft, go slow and dip everything before adding coral"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            During Phase 5, <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> highlights Alkalinity, Calcium, and Magnesium as guide parameters — auto-adding them to your log screen so you track the right things without having to think about it.
+Phase 5 in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> adds alkalinity, calcium and magnesium to your log screen and makes the point that matters more than any of them: a tank held at 7.8 dKH every day will grow more coral than one swinging between 7 and 10.
           </p>
         </div>
 
@@ -315,13 +315,13 @@ export default function AddingFirstCoralsPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/screenshots/phone-ai-v2.png"
-            alt="NextUpReef New Tank Guide Phase 5 checklist showing coral-ready requirements"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase5-checklist.png"
+            alt="NextUpReef Phase 5 checklist covering a stretched photoperiod, alkalinity, calcium and magnesium logged twice this phase, a dip process and the first coral added"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            The <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> New Tank Guide tracks your Phase 5 checklist — light schedule, alkalinity logs, and first coral added — so you know exactly when you've hit each milestone.
+The Phase 5 checklist in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> tracks the photoperiod stretch, your alk, calcium and magnesium logs, the dip process and the first coral added — and holds alkalinity steady within 0.5 dKH a day as its own step, because stability is the thing corals are actually judging you on.
           </p>
         </div>
 

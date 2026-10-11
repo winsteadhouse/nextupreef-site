@@ -219,13 +219,13 @@ export default function UglyPhasePost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_UGLY_01.png"
-            alt="NextUpReef reminders tab showing water change schedule set up with 20% every 2 weeks frequency"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase3-intro.png"
+            alt="NextUpReef Phase 3 screen telling the reefer that algae winning right now is supposed to happen"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            Set up a water change reminder in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> and the app will track your schedule, remind you when it's due, and log each change automatically so you never lose track of your maintenance history.
+Phase 3 in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> leads with the thing nobody tells beginners: this is where most new reefers quit, and the algae they are quitting over is the tank maturing. The one piece of advice on the screen is to feed the tank — a tank at zero nutrients is not a clean tank, it is a tank about to get dinos.
           </p>
         </div>
 
@@ -260,10 +260,10 @@ export default function UglyPhasePost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_UGLY_02.png"
-            alt="NextUpReef Phase 3 checklist showing light schedule, water change, cleanup crew, and parameter logs all completed with Advance to First Livestock button"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase3-checklist.png"
+            alt="NextUpReef Phase 3 checklist covering light schedule, water changes, cleanup crew and keeping nitrate and phosphate in band rather than at zero"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             The New Tank Guide keeps you on track through the ugly phase

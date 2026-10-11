@@ -430,16 +430,16 @@ export default function HomePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">New to Reefing?</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>
-              Built for day one.<br />Grows with your reef.
+              Buy the right tank.<br />Then keep it alive.
             </h2>
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>
-              The Tank Journey guides new reefers through every phase — from first fill to established reef. Step-by-step checklists, what to do next, and why it matters.
+              Most people who leave this hobby leave in the first year. They bought the wrong tank, or nobody told them the algae was normal. We start before you have spent a dollar and stay with you through every phase of the first year.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                { title: "6-Phase Tank Journey", desc: "Tank Setup, cycling, first fish, first coral, and beyond. Always know where you are and what’s next." },
-                { title: "Step-by-Step Checklists", desc: "Required and suggested tasks for each phase. Check them off as you go." },
-                { title: "Built for Experienced Reefers Too", desc: "Advanced parameter tracking, stability scoring, and AI analysis scale with your experience level." },
+                { title: "We help you buy it", desc: "Pick a size and what you want to keep, and see what it really costs — to buy and to run for a year — plus the gear and salt reefers with that tank actually use. Most first tanks get bought twice." },
+                { title: "Then we walk you through it", desc: "Six phases from first fill to established reef. Every one tells you what to do now, what to ignore, and when you are genuinely ready for the next." },
+                { title: "Especially the parts that make people quit", desc: "The cycle. The algae. The first fish. We tell you when the tank is ready for a living thing — and, more importantly, when it is not." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                   <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--reef)", flexShrink: 0, marginTop: "7px" }} />
@@ -450,9 +450,12 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <Link href="/blog#journey" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+              Read the six-phase series →
+            </Link>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phone-new-tank-guide.png" alt="New Tank Guide on the home screen showing the cycle phase and next checklist step" width={777} height={1557} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phones-planner.png" alt="Build Planner asking how big a tank you are thinking about, in front of the screen that asks what you want to keep and gives the estimated upfront and first-year running cost" width={1227} height={1434} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

@@ -194,13 +194,13 @@ export default function CyclingPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_CYCLING_01.png"
-            alt="NextUpReef log screen showing Nitrate at 6.0 ppm in range and Nitrite at 0.25 ppm high during tank cycle"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase2-intro.png"
+            alt="NextUpReef Phase 2 screen explaining that bacteria are colonizing and this is the patience phase"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> automatically adds ammonia, nitrite, and nitrate to your log screen during Phase 2 of the New Tank Guide — so you never forget what to test during the cycle.
+Phase 2 of the New Tank Guide in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> opens by saying the quiet part out loud: this is the patience phase, and a slow cycle is a normal cycle. Ammonia, nitrite and nitrate are added to your log screen for you, and the questions underneath are the ones almost everyone asks around week three.
           </p>
         </div>
 
@@ -283,10 +283,10 @@ export default function CyclingPost() {
           borderRadius: "16px", padding: "24px", margin: "48px 0", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_CYCLING_02.png"
-            alt="NextUpReef Phase 2 checklist showing all 5 cycle steps completed including ammonia spike, nitrite spike, both back to zero, and nitrate detected"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase2-checklist.png"
+            alt="NextUpReef Phase 2 checklist with the ammonia spike, nitrite spike, both back to zero and nitrate present steps marked AUTO, ticked from logged readings"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             Track your cycle progress automatically

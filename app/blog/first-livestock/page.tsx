@@ -119,13 +119,13 @@ export default function FirstLivestockPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/screenshots/phone-home-v2.png"
-            alt="NextUpReef log screen showing ammonia and nitrite at 0 ppm before adding first fish"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase4-intro.png"
+            alt="NextUpReef Phase 4 screen saying it is time for fish, one at a time, two weeks apart"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> automatically highlights ammonia and nitrite during Phase 4 of the New Tank Guide — so you always know which parameters matter most right now.
+Phase 4 of the New Tank Guide in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> will not let you tick the safety step by hand. Ammonia and nitrite have to actually read zero in your own logs before the guide agrees the tank is ready for an animal — because the one step that can kill something is the one step worth not taking your word for.
           </p>
         </div>
 
@@ -351,13 +351,13 @@ export default function FirstLivestockPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "32px",
         }}>
           <Image
-            src="/screenshots/phone-reef-hub-v2.png"
-            alt="NextUpReef tank tab showing first fish added with health tracking"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase4-checklist.png"
+            alt="NextUpReef Phase 4 checklist with a quarantine plan, the ammonia and nitrite safety gate, nitrate under 20 ppm and the first fish added"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            Add your fish in the Tank tab of <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> to track each addition by date, health status, and species. Your livestock history becomes part of your tank's permanent record.
+Add each fish in My Reef and <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> ticks the step for you, dated. Two weeks later the guide is still the thing telling you to wait — the gap between fish is not superstition, it is the time your bacteria need to grow into each new animal.
           </p>
         </div>
 

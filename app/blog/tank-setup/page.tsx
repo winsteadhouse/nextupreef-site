@@ -58,6 +58,33 @@ export default function TankSetupPost() {
           This guide walks you through Phase 1 of the reef keeping journey: getting your tank filled, your equipment running, and your rock placed — correctly — before a single living thing goes in the water.
         </p>
 
+        {/* Section: Before you buy */}
+        <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginBottom: "16px" }}>
+          Start Before You Buy Anything
+        </h2>
+        <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--text-muted)", marginBottom: "16px" }}>
+          Nearly every expensive mistake in this hobby is a tank or a light bought twice. Someone buys a 20 gallon because it is the affordable one, finds out six months later that small water volumes swing hard and that the fish they actually wanted needs four times the space, and buys the whole system again.
+        </p>
+        <p style={{ fontSize: "17px", lineHeight: "1.8", color: "var(--text-muted)", marginBottom: "32px" }}>
+          So the first decision is not which heater to buy. It is how big, what you want to keep in it, and whether you can live with what that costs to run — not just what it costs to buy. Settle those three and most of the equipment list below writes itself.
+        </p>
+
+        {/* App screenshot */}
+        <div style={{
+          background: "rgba(44, 196, 214, 0.06)", border: "1px solid rgba(44, 196, 214, 0.15)",
+          borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
+        }}>
+          <Image
+            src="/screenshots/site-v3/journey/plan-start.png"
+            alt="NextUpReef Add Tank screen with the I haven't bought this tank yet option ticked and a Start planning button"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
+          />
+          <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
+            Tick <em>I haven&apos;t bought this tank yet</em> when you add a tank in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> and it skips straight to the Build Planner — no size, no start date and no salt brand to invent before you own any of it.
+          </p>
+        </div>
+
         {/* Section: What you actually need */}
         <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginBottom: "16px" }}>
           What You Actually Need (And What You Don't)
@@ -106,13 +133,13 @@ export default function TankSetupPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_TANK_SETUP_01.png"
-            alt="NextUpReef app showing lighting schedule and equipment list including wave makers and return pump"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/planner-size.png"
+            alt="NextUpReef Build Planner asking how big you are thinking, with the mid-size option expanded into what that size means and a row of gallon choices"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> lets you log all your equipment and lighting schedules in one place — brand, model, schedule, and when you added it. Never forget what's running in your tank.
+Before the shopping list, the Build Planner asks how big you are thinking and spells out what each size actually means — whether a sump will fit underneath, how much of a mistake the water volume will absorb, and that a 75 gallon filled with rock is north of 850 lb and needs a floor that can take it.
           </p>
         </div>
 
@@ -205,13 +232,13 @@ export default function TankSetupPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_TANK_SETUP_02.png"
-            alt="NextUpReef log screen showing salinity reading of 1.025 with green in range indicator"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/planner-running-cost.png"
+            alt="NextUpReef Build Planner listing the salt mixes other reefers use and what you will keep re-buying: salt, RODI prefilters, RO membrane and test reagents, each with a price range and how often"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            Log your first salinity reading in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> and instantly see if you're in range. The app tracks your target of 1.024–1.026 and flags anything outside it.
+Water is the recurring cost almost nobody budgets for. The Build Planner lists what you keep re-buying and how often — salt, RODI prefilters, the RO membrane, test reagents — alongside the salt mixes reefers with tanks your size are actually running, taken from tanks logged in the app rather than from a sponsor.
           </p>
         </div>
 
@@ -265,16 +292,16 @@ export default function TankSetupPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center",
         }}>
           <Image
-            src="/images/blog/SCREENSHOT_TANK_SETUP_03.png"
-            alt="NextUpReef New Tank Guide showing Phase 1 Tank Setup with 6-phase journey timeline and What's happening section"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase1-checklist.png"
+            alt="NextUpReef Phase 1 Tank Setup checklist with steps for equipment installed, saltwater mixed, refractometer calibrated, salinity logged, rock and sand placed and ammonia dosed"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-light)", fontWeight: "900", fontSize: "18px", marginBottom: "8px" }}>
             Track every step with the New Tank Guide
           </p>
           <p style={{ color: "var(--text-muted)", fontSize: "15px", lineHeight: "1.6", marginBottom: "20px" }}>
-            NextUpReef's Year 1 Journey walks you through every phase of setting up a new reef tank — with checklists, warnings, and automatic detection when you've completed a step.
+The New Tank Guide walks you through all six phases of a first reef — and most steps close themselves off your own logs. Log a salinity of 1.025 and the salinity step ticks. Log ammonia back at zero after a spike and the cycle step ticks. The guide follows the tank, not your memory.
           </p>
           <a
             href="https://apps.apple.com/app/id6760728959"

@@ -300,8 +300,8 @@ export default function LiveRockVsDryRockPost() {
 
           <div style={{ display: "flex", justifyContent: "center", margin: "40px 0" }}>
             <img
-              src="/screenshots/site-v3/phone-new-tank-guide.png"
-              alt="NextUpReef New Tank Guide showing the cycle phase and next checklist step"
+              src="/screenshots/site-v3/journey/phase2-checklist.png"
+              alt="NextUpReef Phase 2 checklist ticking the ammonia spike, nitrite spike, both back to zero and nitrate present steps from logged readings"
               style={{ width: "100%", maxWidth: "300px", height: "auto" }}
             />
           </div>

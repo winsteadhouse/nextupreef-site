@@ -204,13 +204,13 @@ export default function EstablishedReefPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "32px",
         }}>
           <Image
-            src="/screenshots/phone-home-v2.png"
-            alt="NextUpReef dashboard showing established reef with high stability score"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase6-intro.png"
+            alt="NextUpReef Phase 6 screen saying the reef is established and now it gets interesting"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            In <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong>, your Stability Score reflects how consistent your parameters are over time. An established reef with regular logging typically sees Stability climb as the tank matures and chemistry holds steadier between tests.
+Phase 6 in <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> is the one that lasts a year, and it changes the advice rather than the checklist: change one thing at a time and wait, because in an established reef the cost of a mistake is measured in years of growth. Your Stability Score is the number that shows whether you are doing it.
           </p>
         </div>
 
@@ -331,13 +331,13 @@ export default function EstablishedReefPost() {
           borderRadius: "16px", padding: "24px", marginBottom: "48px", textAlign: "center", marginTop: "16px",
         }}>
           <Image
-            src="/screenshots/phone-ai-v2.png"
-            alt="NextUpReef community feed showing established reef with high scores"
-            width={320} height={580}
-            style={{ borderRadius: "12px", margin: "0 auto 16px", display: "block", maxWidth: "100%" }}
+            src="/screenshots/site-v3/journey/phase6-checklist.png"
+            alt="NextUpReef Phase 6 checklist of established-reef milestones: six months, one year, three coral species thriving, LPS added, dosing set up, refugium running and the tank shared"
+            width={777} height={1557}
+            style={{ margin: "0 auto 16px", display: "block", width: "100%", maxWidth: "340px", height: "auto" }}
           />
           <p style={{ color: "var(--text-muted)", fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-            Share your established reef in the <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> community — your parameters, coral collection, and journey from day one become part of your public tank profile. Other new reefers use tanks like yours as benchmarks for what's possible.
+Phase 6 is mostly milestones, and almost all of them tick themselves as the months pass — six months running, a year running, three coral species thriving, dosing set up, the tank shared. Sharing it in the <strong style={{ color: "var(--text-light)" }}>NextUpReef</strong> community is the last one: your parameters, coral list and journey from day one become a public profile that new reefers use as a benchmark for what is possible.
           </p>
         </div>
 
