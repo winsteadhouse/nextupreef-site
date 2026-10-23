@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         destination: "https://nextupreef.com/:path*",
         permanent: true,
       },
+      // The Hub product was dropped in 24c4a28 ("Remove Hub, add Apex integration to
+      // devices") and this post went with it, but Google still has the URL indexed
+      // (last crawled 2026-08-19) and it was hard-404ing. /devices is where that
+      // content moved, and it answers what the searcher actually wants: does this
+      // work with my Apex.
+      {
+        source: "/blog/nextupreef-hub-vs-neptune-apex",
+        destination: "/devices",
+        permanent: true,
+      },
     ];
   },
 };

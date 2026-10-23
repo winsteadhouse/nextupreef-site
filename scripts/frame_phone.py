@@ -90,7 +90,7 @@ if __name__ == "__main__":
     print(sys.argv[2], frame(sys.argv[1], sys.argv[2]))
 
 # Usage:
-#   python3 scripts/frame-phone.py <raw-screenshot.png> public/screenshots/site-v3/<name>.png
+#   python3 scripts/frame_phone.py <raw-screenshot.png> public/screenshots/site-v3/<name>.png
 #
 # Input is a raw 9:20 phone screenshot (a 1008x2244 Android grab works as-is).
 # Output is 777x1557 with transparency, the same geometry as the phones already

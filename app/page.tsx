@@ -430,15 +430,15 @@ export default function HomePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">New to Reefing?</div>
             <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>
-              Buy the right tank.<br />Then keep it alive.
+              Your dream reef,<br />without the guesswork.
             </h2>
             <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "420px" }}>
-              Most people who leave this hobby leave in the first year. They bought the wrong tank, or nobody told them the algae was normal. We start before you have spent a dollar and stay with you through every phase of the first year.
+              Most people who leave this hobby leave in the first year. They bought the wrong tank, or nobody told them the algae was normal. We help you plan the reef you actually want, then stay with you through every phase of the first year.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                { title: "We help you buy it", desc: "Pick a size and what you want to keep, and see what it really costs — to buy and to run for a year — plus the gear and salt reefers with that tank actually use. Most first tanks get bought twice." },
-                { title: "Then we walk you through it", desc: "Six phases from first fill to established reef. Every one tells you what to do now, what to ignore, and when you are genuinely ready for the next." },
+                { title: "We help you plan it", desc: "How big, what you want to keep, and what each choice really means — with the gear, salt and livestock that reefers with tanks like that actually run. Most first tanks get bought twice." },
+                { title: "Then we walk you through it", desc: "Six phases from first fill to established reef, step by step. Every one tells you what to do now, what to ignore, and when you are genuinely ready for the next." },
                 { title: "Especially the parts that make people quit", desc: "The cycle. The algae. The first fish. We tell you when the tank is ready for a living thing — and, more importantly, when it is not." },
               ].map((f) => (
                 <div key={f.title} style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
@@ -455,7 +455,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="feature-spotlight-phone">
-            <Image src="/screenshots/site-v3/phones-planner.png" alt="Build Planner asking how big a tank you are thinking about, in front of the screen that asks what you want to keep and gives the estimated upfront and first-year running cost" width={1227} height={1434} style={{ height: "auto" }} />
+            <Image src="/screenshots/site-v3/phones-planner.png" alt="The Ugly Phase screen explaining that the algae is supposed to happen, behind the Build Planner working out which tank size suits a first reef" width={1227} height={1434} style={{ height: "auto" }} />
           </div>
         </div>
       </section>

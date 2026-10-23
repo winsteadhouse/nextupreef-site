@@ -8,7 +8,7 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
-import frame as F
+import frame_phone as F
 
 W, H = 1227, 1434
 REEF = (44, 196, 214)
