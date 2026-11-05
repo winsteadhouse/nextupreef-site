@@ -89,11 +89,24 @@ export default function TermsPage() {
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>9. Acceptable Use</h2>
           <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc" }}>
             <li>Do not attempt to access other users&apos; accounts or private data</li>
-            <li>Do not upload photos containing unlawful, harmful, abusive, or offensive content</li>
+            <li>Do not post photos, build updates, questions, replies, tank names or any other content that is unlawful, harmful, abusive, harassing, hateful, sexually explicit, or otherwise objectionable</li>
             <li>Do not use a display name intended to impersonate others</li>
             <li>Do not abuse AI features (automated queries, prompt injection, etc.)</li>
             <li>Do not disrupt, reverse engineer, or misuse the Service</li>
             <li>Do not use the Service for unlawful purposes</li>
+          </ul>
+
+          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>9.5 Reporting, Blocking & Moderation</h2>
+          <p style={{ color: "var(--text-muted)", fontWeight: "700", lineHeight: "1.7" }}>
+            Parts of NextUpReef show content created by other users — Tank Builds, the community
+            feed, the leaderboard, and the comments and replies on them. There is no tolerance for
+            objectionable content or abusive behaviour in any of it.
+          </p>
+          <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc" }}>
+            <li>Any post, reply or photo can be reported from inside the app using the ··· control on it</li>
+            <li>Any user can be blocked, which hides their builds, posts and replies from you everywhere in the app</li>
+            <li>Reports are reviewed and acted on within 24 hours. Content found to breach these terms is removed, and the accounts responsible may be suspended or deleted without notice</li>
+            <li>You can also report content or behaviour by emailing {CONTACT_EMAIL}</li>
           </ul>
 
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>10. Data and Content</h2>
