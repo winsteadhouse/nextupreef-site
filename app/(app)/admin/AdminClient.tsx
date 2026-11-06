@@ -451,55 +451,76 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
    Built from the Oct-Nov 2026 chat audit. The point of this tab is that nobody has to
    read every conversation to find a bad answer: each number here is a query against a
    known failure signature, and zero is the target. */
-type FlagRow = { t: string; who: string; reasons: string[]; excerpt: string };
+type FlagRow = { id: string; t: string; fresh: boolean; who: string; reasons: string[]; excerpt: string };
 type BadRow = { logged: string; who: string; tank: string; source: string; bad: string[] };
 type UnloggedRow = { t: string; who: string; said: string; excerpt: string };
 
 const REASON_LABEL: Record<string, string> = {
   calendar_date: 'Stated a calendar date',
-  asserts_absence: 'Claimed the user has no X',
+  asserts_absence: 'Said they have no X after they told us they do',
   app_cannot_claim: 'Said the app cannot do something',
   names_equipment: 'Called gear theirs',
   quotes_range_as_current: 'Quoted a range as the current value',
 };
 
 function AIQuality({ q }: { q: Record<string, unknown> | null }) {
+  const [done, setDone] = useState<Set<string>>(new Set());
+
+  async function review(id: string) {
+    setDone((prev) => new Set(prev).add(id));
+    try { await createClient().rpc('admin_review_flag', { p_id: id }); } catch { /* optimistic; refresh re-shows it */ }
+  }
+
   if (!q) return <div className='muted-block'>AI quality data didn&rsquo;t load. Refresh the page.</div>;
   const byReason = (q.by_reason ?? []) as { reason: string; n: number }[];
   const byParam = (q.bad_by_param ?? []) as { param: string; n: number }[];
-  const flags = (q.recent_flags ?? []) as FlagRow[];
+  const flags = ((q.recent_flags ?? []) as FlagRow[]).filter((f) => !done.has(f.id));
   const bad = (q.recent_bad ?? []) as BadRow[];
   const unlogged = (q.recent_unlogged ?? []) as UnloggedRow[];
-  const week = Number(q.flags_7d ?? 0);
+  const since = Number(q.flags_since ?? 0);
 
   return (
     <div className='dash-lower'>
-      <Panel className='span-12' title='Chat replies worth a look' sub='Each one matched a rule the assistant is supposed to follow. Zero is the goal.'>
+      <Panel
+        className='span-12'
+        title='Chat replies worth a look'
+        sub={`Since prompt v${q.since_version ?? '?'} went out, ${q.since_at ?? ''}. Zero is the goal.`}
+      >
         <div className='minis'>
-          <MiniStat label='Flagged, 7 days' value={fmt(q.flags_7d)} color={week > 0 ? AM : GD} />
-          <MiniStat label='Flagged, 30 days' value={fmt(q.flags_30d)} />
-          <MiniStat label='Told to log it themselves' value={fmt(q.unlogged_30d)} color={Number(q.unlogged_30d) > 0 ? AM : GD} />
+          <MiniStat label={'Flagged since v' + (q.since_version ?? '?')} value={fmt(since)} color={since > 0 ? AM : GD} />
+          <MiniStat label='Last 30 days (context)' value={fmt(q.flags_30d)} />
+          <MiniStat label='Reviewed and cleared' value={fmt(q.reviewed)} />
           <MiniStat label='Saved from chat, 30 days' value={fmt(q.chat_logged_30d)} color={GD} />
         </div>
+        {since === 0 ? (
+          <div className='dpanel-note' style={{ color: GD }}>
+            Nothing has tripped a rule since the last prompt change. That is the number to watch &mdash;
+            the 30-day figure still counts replies from before the fix.
+          </div>
+        ) : null}
         {byReason.length
           ? <HBars data={byReason.map((r) => ({ k: REASON_LABEL[r.reason] ?? r.reason, v: r.n }))} color={AM} />
           : <div className='dpanel-note'>Nothing flagged in the last 30 days.</div>}
         <div className='dpanel-note'>
-          &ldquo;Told to log it themselves&rdquo; means the user reported a reading and the reply
-          pointed them at the Log tab instead of saving it. Since the assistant can write to the
-          log now, any of these is a missed chance to capture a real test.
+          Bars cover 30 days, so they include behaviour already fixed by a later prompt. Clear a row
+          below once you have looked at it and it stops coming back.
         </div>
       </Panel>
 
       {flags.length ? (
-        <Panel className='span-12' title='Most recent flags' sub='Newest first'>
-          <div className='hbars'>
-            {flags.map((f, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--line, #1b2533)' }}>
-                <div style={{ fontSize: 12, color: AM, fontWeight: 700 }}>
-                  {f.t} &middot; {f.who} &middot; {(f.reasons || []).map((r) => REASON_LABEL[r] ?? r).join(', ')}
+        <Panel className='span-12' title='Open flags' sub='Newest first. Clear one once you have read it.'>
+          <div>
+            {flags.map((f) => (
+              <div key={f.id} style={{ padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 12, color: f.fresh ? BD : AM, fontWeight: 700 }}>
+                    {f.fresh ? '● new · ' : ''}{f.t} &middot; {f.who} &middot; {(f.reasons || []).map((r) => REASON_LABEL[r] ?? r).join(', ')}
+                  </div>
+                  <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 3, whiteSpace: 'pre-wrap' }}>{f.excerpt}&hellip;</div>
                 </div>
-                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 3, whiteSpace: 'pre-wrap' }}>{f.excerpt}</div>
+                <button onClick={() => review(f.id)} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.14)', background: 'transparent', color: 'var(--mu, #8a99ad)', cursor: 'pointer', flexShrink: 0 }}>
+                  Clear
+                </button>
               </div>
             ))}
           </div>
@@ -515,8 +536,8 @@ function AIQuality({ q }: { q: Record<string, unknown> | null }) {
         {byParam.length ? <HBars data={byParam.map((b) => ({ k: b.param.toUpperCase(), v: b.n }))} color={BD} /> : null}
         <div className='dpanel-note'>
           Most of these are a unit, not a mistake: alkalinity in ppm CaCO&#8323; rather than dKH,
-          phosphate in ppb, salinity in ppt. They drag the Reef Score down and the AI reasons
-          from them. The Log screen now offers to convert instead of just warning.
+          phosphate in ppb, salinity in ppt. They drag the Reef Score down and the AI reasons from
+          them. The Log screen now offers to convert instead of only warning.
         </div>
         {bad.length ? (
           <div className='hbars' style={{ marginTop: 8 }}>
@@ -532,12 +553,12 @@ function AIQuality({ q }: { q: Record<string, unknown> | null }) {
 
       {unlogged.length ? (
         <Panel className='span-12' title='Readings the user gave and we did not save' sub='Each one is a lost test'>
-          <div className='hbars'>
+          <div>
             {unlogged.map((u, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--line, #1b2533)' }}>
+              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ fontSize: 12, fontWeight: 700 }}>{u.t} &middot; {u.who}</div>
                 <div style={{ fontSize: 12, color: GD, marginTop: 3 }}>They said: {u.said}</div>
-                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 2 }}>{u.excerpt}</div>
+                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 2 }}>{u.excerpt}&hellip;</div>
               </div>
             ))}
           </div>
