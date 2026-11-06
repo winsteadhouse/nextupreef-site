@@ -92,7 +92,7 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
       {data.map((d) => (
         <div key={d.k} className='hbar'>
           <span className='hbar-k'>{d.k}</span>
-          <span className='hbar-track'><span style={{ width: Math.max(1, pct(d.v, max)) + '%', background: color }} /></span>
+          <span className='hbar-track'><span style={{ width: (d.v === 0 ? 0 : Math.max(1, pct(d.v, max))) + '%', background: color }} /></span>
           <span className='hbar-v'>{fmt(d.v)}{suffix}{d.sub ? <small>{d.sub}</small> : null}</span>
         </div>
       ))}
@@ -377,23 +377,32 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
         <Panel className='span-12' title='Build Planner' sub='Who is planning a tank before they buy it'>
           <div className='minis'>
             <MiniStat label='Used the planner' value={fmt(pl.users)} color={GD} />
-            <MiniStat label='Finished both steps' value={fmt(pl.completed)} color={GD} />
-            <MiniStat label='Planning right now' value={fmt(pl.planning_now)} color={AM} />
-            <MiniStat label='Went on to log a test' value={fmt(pl.with_logs)} color={Number(pl.with_logs ?? 0) > 0 ? GD : RO} />
+            <MiniStat label='Still planning' value={fmt(pl.still_planning)} color={AM} />
+            <MiniStat label='Moved to a real tank' value={fmt(pl.built)} color={GD} />
+            <MiniStat
+              label='…and logged nothing yet'
+              value={fmt(pl.built_no_logs)}
+              color={Number(pl.built_no_logs ?? 0) > 0 ? RO : GD}
+            />
+            <MiniStat label='Planning, never opened it' value={fmt(pl.planning_never_used)} color={AM} />
           </div>
+
+          <div className='hbar-group'>Tank size</div>
           <HBars
             data={Object.keys(SIZE_NAMES).map((k) => ({ k: SIZE_NAMES[k], v: Number(plSize[k] ?? 0) }))}
             color={GD}
           />
+          <div className='hbar-group'>Goal</div>
           <HBars
             data={Object.keys(GOAL_NAMES).map((k) => ({ k: GOAL_NAMES[k], v: Number(plGoal[k] ?? 0) }))}
             color={AM}
           />
+
           <div className='dpanel-note'>
-            Counts tanks whose plan actually has answers in it. Every tank row carries an
+            Counts tanks whose plan actually has answers in it — every tank row carries an
             empty plan by default, so a raw &quot;has a plan&quot; count reads ~590 and means
-            nothing. &quot;Went on to log a test&quot; is the one that matters: planning that
-            never becomes a running tank is a page view, not a feature.
+            nothing. The drop-off number only counts people who have LEFT planning: someone
+            still planning has no water yet, so no logs is correct for them, not a failure.
           </div>
         </Panel>
 

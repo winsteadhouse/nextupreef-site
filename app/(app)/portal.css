@@ -307,3 +307,9 @@ html[data-portal-full="1"] .portal main{padding:18px 26px 48px}
 
 .portal .recharts-wrapper :focus,.portal .recharts-surface:focus{outline:none}
 .portal .recharts-surface:focus-visible{outline:1px solid rgba(46,230,207,.35)}
+
+/* Group heading inside a panel that stacks more than one HBars chart. Without it the
+   size bars and the goal bars read as one undifferentiated seven-row list. */
+.hbar-group{margin:14px 0 7px;font-size:10.5px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--dim)}
+.hbar-group:first-of-type{margin-top:10px}
