@@ -8,13 +8,14 @@ export default async function AdminPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user || user.id !== ADMIN_ID) redirect('/dashboard');
-  const [m, s, u, e, n, x] = await Promise.all([
+  const [m, s, u, e, n, x, q] = await Promise.all([
     supabase.rpc('admin_metrics'),
     supabase.rpc('admin_timeseries', { days: 90 }),
     supabase.rpc('admin_recent_users', { lim: 5000 }),
     supabase.rpc('admin_engagement'),
     supabase.rpc('admin_notifications', { p_days: 30 }),
     supabase.rpc('admin_extra'),
+    supabase.rpc('admin_ai_quality'),
   ]);
   return (
     <AdminClient
@@ -24,6 +25,7 @@ export default async function AdminPage() {
       engagement={(e.data ?? null) as Record<string, unknown> | null}
       notifications={(n.data ?? []) as Record<string, unknown>[]}
       extra={(x.data ?? null) as Record<string, unknown> | null}
+      aiQuality={(q.data ?? null) as Record<string, unknown> | null}
     />
   );
 }

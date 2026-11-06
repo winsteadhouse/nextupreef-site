@@ -103,10 +103,10 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
 /* ───────────── main ───────────── */
 type NotifRow = { day: string; notification_type: string; sent: number; users: number };
 
-export default function AdminClient({ metrics, series, users, engagement, notifications, extra }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null }) {
-  const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications'>('overview');
+export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
+  const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications' | 'ai'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
-  useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications') setTab(t); } catch { /* ignore */ } }, []);
+  useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications' || t === 'ai') setTab(t); } catch { /* ignore */ } }, []);
   const pick = (t: typeof tab) => { setTab(t); try { localStorage.setItem('admin.tab', t); } catch { /* ignore */ } };
 
   return (
@@ -117,10 +117,11 @@ export default function AdminClient({ metrics, series, users, engagement, notifi
           <div className='dash-facts'><span>Usage, engagement and growth across all users. Visible only to you.</span></div>
         </div>
         <div className='seg' role='tablist'>
-          {(['overview', 'engagement', 'users', 'activity', 'notifications'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t}</button>)}
+          {(['overview', 'engagement', 'users', 'activity', 'notifications', 'ai'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t === 'ai' ? 'AI' : t}</button>)}
         </div>
       </div>
       {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} /> : null}
+      {tab === 'ai' ? <AIQuality q={aiQuality ?? null} /> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
       {tab === 'activity' ? <ActivityFeed e={engagement} onOpen={setOpenUser} /> : null}
@@ -443,6 +444,106 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
         </Panel>
       </div>
     </>
+  );
+}
+
+/* ───────────── AI quality ─────────────
+   Built from the Oct-Nov 2026 chat audit. The point of this tab is that nobody has to
+   read every conversation to find a bad answer: each number here is a query against a
+   known failure signature, and zero is the target. */
+type FlagRow = { t: string; who: string; reasons: string[]; excerpt: string };
+type BadRow = { logged: string; who: string; tank: string; source: string; bad: string[] };
+type UnloggedRow = { t: string; who: string; said: string; excerpt: string };
+
+const REASON_LABEL: Record<string, string> = {
+  calendar_date: 'Stated a calendar date',
+  asserts_absence: 'Claimed the user has no X',
+  app_cannot_claim: 'Said the app cannot do something',
+  names_equipment: 'Called gear theirs',
+  quotes_range_as_current: 'Quoted a range as the current value',
+};
+
+function AIQuality({ q }: { q: Record<string, unknown> | null }) {
+  if (!q) return <div className='muted-block'>AI quality data didn&rsquo;t load. Refresh the page.</div>;
+  const byReason = (q.by_reason ?? []) as { reason: string; n: number }[];
+  const byParam = (q.bad_by_param ?? []) as { param: string; n: number }[];
+  const flags = (q.recent_flags ?? []) as FlagRow[];
+  const bad = (q.recent_bad ?? []) as BadRow[];
+  const unlogged = (q.recent_unlogged ?? []) as UnloggedRow[];
+  const week = Number(q.flags_7d ?? 0);
+
+  return (
+    <div className='dash-lower'>
+      <Panel className='span-12' title='Chat replies worth a look' sub='Each one matched a rule the assistant is supposed to follow. Zero is the goal.'>
+        <div className='minis'>
+          <MiniStat label='Flagged, 7 days' value={fmt(q.flags_7d)} color={week > 0 ? AM : GD} />
+          <MiniStat label='Flagged, 30 days' value={fmt(q.flags_30d)} />
+          <MiniStat label='Told to log it themselves' value={fmt(q.unlogged_30d)} color={Number(q.unlogged_30d) > 0 ? AM : GD} />
+          <MiniStat label='Saved from chat, 30 days' value={fmt(q.chat_logged_30d)} color={GD} />
+        </div>
+        {byReason.length
+          ? <HBars data={byReason.map((r) => ({ k: REASON_LABEL[r.reason] ?? r.reason, v: r.n }))} color={AM} />
+          : <div className='dpanel-note'>Nothing flagged in the last 30 days.</div>}
+        <div className='dpanel-note'>
+          &ldquo;Told to log it themselves&rdquo; means the user reported a reading and the reply
+          pointed them at the Log tab instead of saving it. Since the assistant can write to the
+          log now, any of these is a missed chance to capture a real test.
+        </div>
+      </Panel>
+
+      {flags.length ? (
+        <Panel className='span-12' title='Most recent flags' sub='Newest first'>
+          <div className='hbars'>
+            {flags.map((f, i) => (
+              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--line, #1b2533)' }}>
+                <div style={{ fontSize: 12, color: AM, fontWeight: 700 }}>
+                  {f.t} &middot; {f.who} &middot; {(f.reasons || []).map((r) => REASON_LABEL[r] ?? r).join(', ')}
+                </div>
+                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 3, whiteSpace: 'pre-wrap' }}>{f.excerpt}</div>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      ) : null}
+
+      <Panel className='span-12' title='Readings that cannot be real' sub='Typed into the Log screen and saved anyway'>
+        <div className='minis'>
+          <MiniStat label='Hand-typed' value={fmt(q.bad_manual)} color={Number(q.bad_manual) > 0 ? BD : GD} />
+          <MiniStat label='Tanks affected' value={fmt(q.bad_tanks)} />
+          <MiniStat label='All sources' value={fmt(q.bad_total)} />
+        </div>
+        {byParam.length ? <HBars data={byParam.map((b) => ({ k: b.param.toUpperCase(), v: b.n }))} color={BD} /> : null}
+        <div className='dpanel-note'>
+          Most of these are a unit, not a mistake: alkalinity in ppm CaCO&#8323; rather than dKH,
+          phosphate in ppb, salinity in ppt. They drag the Reef Score down and the AI reasons
+          from them. The Log screen now offers to convert instead of just warning.
+        </div>
+        {bad.length ? (
+          <div className='hbars' style={{ marginTop: 8 }}>
+            {bad.map((b, i) => (
+              <div key={i} className='hbar'>
+                <span className='hbar-k'>{b.logged} &middot; {b.who}</span>
+                <span className='hbar-v' style={{ color: BD }}>{(b.bad || []).join(', ')}<small>{b.tank} &middot; {b.source}</small></span>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </Panel>
+
+      {unlogged.length ? (
+        <Panel className='span-12' title='Readings the user gave and we did not save' sub='Each one is a lost test'>
+          <div className='hbars'>
+            {unlogged.map((u, i) => (
+              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid var(--line, #1b2533)' }}>
+                <div style={{ fontSize: 12, fontWeight: 700 }}>{u.t} &middot; {u.who}</div>
+                <div style={{ fontSize: 12, color: GD, marginTop: 3 }}>They said: {u.said}</div>
+                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 2 }}>{u.excerpt}</div>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      ) : null}
+    </div>
   );
 }
 
