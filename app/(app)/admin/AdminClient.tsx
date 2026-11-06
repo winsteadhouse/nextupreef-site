@@ -211,6 +211,14 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
   const ig = (m.integrations || {}) as Record<string, unknown>;
   const ix = ((extra?.integrations_extra ?? {}) as Record<string, unknown>);
   const jy = ((extra?.journey ?? {}) as Record<string, unknown>);
+  const ad = ((extra?.adoption ?? {}) as Record<string, unknown>);
+  const pl = ((ad.planner ?? {}) as Record<string, unknown>);
+  const bd = ((ad.builds ?? {}) as Record<string, unknown>);
+  const ss = ((ad.start_screen ?? {}) as Record<string, number>);
+  const plSize = (pl.by_size ?? {}) as Record<string, number>;
+  const plGoal = (pl.by_goal ?? {}) as Record<string, number>;
+  const SIZE_NAMES: Record<string, string> = { nano: 'Nano (10–30g)', mid: 'Mid-size (40–75g)', large: 'Large (90–220g)' };
+  const GOAL_NAMES: Record<string, string> = { fish_only: 'Fish only', softie: 'Softies & zoas', mixed: 'Mixed reef', sps: 'SPS reef' };
   const phaseCounts = (jy.phase_counts ?? {}) as Record<string, number>;
   const phaseTime = (jy.phase_time ?? {}) as Record<string, { completed?: number; median_days?: number; instant?: number }>;
   const PHASE_NAMES: Record<string, string> = {
@@ -363,6 +371,65 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
             Median, not average — a handful of tanks left open for months make the mean
             meaningless. &quot;Skipped through&quot; counts tanks that advanced in under 30 minutes,
             which usually means the phase did not apply to them.
+          </div>
+        </Panel>
+
+        <Panel className='span-12' title='Build Planner' sub='Who is planning a tank before they buy it'>
+          <div className='minis'>
+            <MiniStat label='Used the planner' value={fmt(pl.users)} color={GD} />
+            <MiniStat label='Finished both steps' value={fmt(pl.completed)} color={GD} />
+            <MiniStat label='Planning right now' value={fmt(pl.planning_now)} color={AM} />
+            <MiniStat label='Went on to log a test' value={fmt(pl.with_logs)} color={Number(pl.with_logs ?? 0) > 0 ? GD : RO} />
+          </div>
+          <HBars
+            data={Object.keys(SIZE_NAMES).map((k) => ({ k: SIZE_NAMES[k], v: Number(plSize[k] ?? 0) }))}
+            color={GD}
+          />
+          <HBars
+            data={Object.keys(GOAL_NAMES).map((k) => ({ k: GOAL_NAMES[k], v: Number(plGoal[k] ?? 0) }))}
+            color={AM}
+          />
+          <div className='dpanel-note'>
+            Counts tanks whose plan actually has answers in it. Every tank row carries an
+            empty plan by default, so a raw &quot;has a plan&quot; count reads ~590 and means
+            nothing. &quot;Went on to log a test&quot; is the one that matters: planning that
+            never becomes a running tank is a page view, not a feature.
+          </div>
+        </Panel>
+
+        <Panel className='span-12' title='Tank Builds' sub='Public build threads and whether anyone answers'>
+          <div className='minis'>
+            <MiniStat label='Builds enrolled' value={fmt(bd.enrolled)} color={GD} />
+            <MiniStat label='Public' value={fmt(bd.public)} />
+            <MiniStat label='New in 30d' value={fmt(bd.new_30d)} color={GD} />
+            <MiniStat label='Posts' value={fmt(bd.posts)} />
+            <MiniStat label='Posts 30d' value={fmt(bd.posts_30d)} />
+            <MiniStat label='Comments' value={fmt(bd.comments)} />
+            <MiniStat label='Questions' value={fmt(bd.questions)} color={AM} />
+            <MiniStat
+              label='Unanswered questions'
+              value={fmt(bd.unanswered_questions)}
+              color={Number(bd.unanswered_questions ?? 0) > 0 ? RO : GD}
+            />
+          </div>
+          <div className='dpanel-note'>
+            Unanswered questions is the health check. A build board where people ask and
+            nobody replies is worse than no build board — it is the one number worth
+            watching daily while this is new.
+          </div>
+        </Panel>
+
+        <Panel className='span-12' title='Opening screen' sub='Where people choose to land when they open the app'>
+          <div className='minis'>
+            <MiniStat label='Log' value={fmt(ss.log)} color={GD} />
+            <MiniStat label='My Reef' value={fmt(ss.my_reef)} color={GD} />
+            <MiniStat label='Home (chosen)' value={fmt(ss.home)} />
+            <MiniStat label='Home (never changed)' value={fmt(ss.default)} />
+          </div>
+          <div className='dpanel-note'>
+            Home is the default, so &quot;never changed&quot; is everyone who has not touched the
+            setting. Only the first three are deliberate choices. This stays at zero until
+            the release carrying the setting is live.
           </div>
         </Panel>
       </div>
