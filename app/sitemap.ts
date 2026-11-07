@@ -3,10 +3,11 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nextupreef.com";
   return [
-    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 1.0 },
-    { url: `${baseUrl}/features`,                                           lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-09-21"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}/features`,                                           lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/blog/reef-tank-build-planner`, lastModified: new Date("2026-11-07"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-tablet-dashboard`, lastModified: new Date("2026-09-25"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-jebao-pump`, lastModified: new Date("2026-09-20"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-automation-without-a-controller`, lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.95 },
@@ -42,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/first-livestock`,                              lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/adding-first-corals`,                          lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/established-reef`,                             lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/faq`,                                                lastModified: new Date("2026-09-21"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/faq`,                                                lastModified: new Date("2026-11-07"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`,                                            lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/privacy`,                                            lastModified: new Date("2026-04-01"), changeFrequency: "yearly",  priority: 0.3 },
     { url: `${baseUrl}/terms`,                                              lastModified: new Date("2026-04-01"), changeFrequency: "yearly",  priority: 0.3 },

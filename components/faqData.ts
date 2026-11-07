@@ -170,6 +170,22 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
         q: "Can the app remind me to dose?",
         a: "Yes, with Pro. In Reminders & Alerts, turn on the daily dosing reminder for a tank and pick the hour. You get one push a day listing the hand doses still due, and nothing is sent if you've already logged everything.",
       },
+      {
+        q: "Where can I see my dose history?",
+        a: "The Dosing screen shows your last few doses, and History opens the full record: 90 days grouped by day, with a per-product total for each one, and every individual dose underneath with its time. Doses you logged by hand and doses your equipment confirmed are both there, labelled so you can tell them apart.",
+      },
+      {
+        q: "Which dosing pumps can NextUpReef actually see?",
+        a: "A pump on a Shelly smart plug or an Apex outlet is run by the app: it writes the schedule and confirms each dose. A Jebao doser or a CoralVue HYDROS keeps its own schedule, and the app reads back what it actually ran. Other pumps, including Red Sea ReefDose, Kamoer, Neptune DOS and DDR, GHL, Chihiros and the rest, can be recorded so your dosing is tracked and your advice is right, but the app cannot read or drive them.",
+      },
+      {
+        q: "Why does the app ask which doser I have?",
+        a: "Because some dosers can report back what they ran, and we have no way of knowing whether yours is one of them unless you say. Pick it when you add a dosing product and set How is it dosed to Auto Doser. If yours is not on the list, choose Other and type it in.",
+      },
+      {
+        q: "My doser runs itself. Do I still need to log doses?",
+        a: "No. If your pump is on a Shelly plug or an Apex outlet, or it is a Jebao or HYDROS doser you have connected, the app records the doses for you. Logging by hand is only for dosing you actually do by hand.",
+      },
     ],
   },
   {
@@ -376,6 +392,41 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         q: "What are Community Insights?",
         a: "Community Insights compare your tank with other public tanks like yours. Pro unlocks the full picture of what those tanks run, including median parameters, popular salt mixes, fish and corals, top equipment and lights, water change habits and dosing products.",
+      },
+    ],
+  },
+  {
+    id: "tank-builds",
+    title: "Tank Builds & the Build Planner",
+    blurb: "Plan a tank before you buy it, and share the build as it comes together.",
+    faqs: [
+      {
+        q: "What is a Tank Build?",
+        a: "A Tank Build is a public thread for one of your tanks. You post updates and questions as the build comes together, and other reefers reply. The equipment, livestock and photos you already log fill it in for you, so there is nothing to enter twice. Open it from Community, then Tank Builds.",
+      },
+      {
+        q: "How do I start a tank build?",
+        a: "Community, then Tank Builds, then Start a tank build. You can document a tank you already have or set up a new one to build from scratch. You can also turn it on while creating a tank during setup.",
+      },
+      {
+        q: "Is Tank Builds free?",
+        a: "Starting and posting to a build is free for everyone until 5 January 2027, then it becomes part of NextUpReef Pro. Browsing other people's builds stays free for everyone, always. A build you started during the free period stays readable whatever happens to your subscription.",
+      },
+      {
+        q: "Who can see my build, and can I turn it off?",
+        a: "A build is public once you start it, and appears on the Tank Builds list with your display name, tank size and how many days in you are. You can turn it off at any time: open your build and tap Turn off this build, or use the Tank Build row in Edit Tank. It comes straight off the list and nobody can see it. Your posts and replies are kept, so turning it back on brings the thread back exactly as it was.",
+      },
+      {
+        q: "Does hiding my tanks from the Community hide my build too?",
+        a: "Yes. Settings, then Community and Profile, then Hide All takes your tanks off the Leaderboard, the Feed and Insights, and takes any tank build off Tank Builds as well. Showing them again does not re-publish the build; you turn that back on from the build itself.",
+      },
+      {
+        q: "What is the Build Planner?",
+        a: "The Build Planner is for people who have not bought a tank yet. You pick a size and it prices the build upfront and monthly, and shows what tanks like yours actually run, using real equipment data from other NextUpReef tanks. Choose I have not bought it yet during setup and you land there instead of being asked for a tank size and setup date you do not have.",
+      },
+      {
+        q: "Can I ask what to buy before I buy it?",
+        a: "Yes. A build can carry a deciding on list: equipment you are weighing up rather than something you own. Other reefers can weigh in on it, and the question stays on the build instead of scrolling away, so somebody arriving three weeks later can still answer it.",
       },
     ],
   },

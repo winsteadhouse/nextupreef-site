@@ -5,12 +5,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Features: The Complete Reef Tank Tracking & AI App",
   description:
-    "Every NextUpReef feature in one place: reef tank parameter logging, Reef AI Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, a Dosing screen with reminders and a dose calculator, Shelly automation, and Neptune Apex control.",
+    "Every NextUpReef feature in one place: reef tank parameter logging, Reef AI Advisor, Reef AI Chat, Stocking Advisor, livestock and equipment tracking, cost tracking, Reef Score, a Dosing screen with reminders and a dose calculator, Shelly automation, Neptune Apex control, Tank Builds and the Build Planner.",
   alternates: { canonical: "https://nextupreef.com/features" },
   openGraph: {
     title: "Features — NextUpReef: The Complete Reef Tank Tracking & AI App",
     description:
-      "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation — everything NextUpReef does, in one place.",
+      "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation, Tank Builds — everything NextUpReef does, in one place.",
     url: "https://nextupreef.com/features",
     images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
   },
@@ -46,6 +46,10 @@ const softwareSchema = {
     "Shelly temperature probe",
     "Web dashboard for Pro members",
     "Community leaderboard",
+    "Tank Builds public build threads",
+    "Build Planner pre-purchase cost estimate",
+    "Dosing brand and product catalog",
+    "90-day dose history",
     "6-phase Tank Journey guided setup",
     "Monthly tank photo timeline",
     "Multiple tank support",
@@ -66,6 +70,11 @@ const faqSchema = {
       "@type": "Question",
       name: "What do I get with NextUpReef Pro?",
       acceptedAnswer: { "@type": "Answer", text: "Pro unlocks all four AI features (Reef AI Advisor, Reef AI Chat, Stocking Advisor, and AI Photo Logging), the dose calculator and daily dosing reminder, Shelly automation and device control, automated dosing and lighting, Neptune Apex control, the web dashboard, unlimited tanks and reminders, the Tank Journal, and extended history. It is $4.99/month or $39.99/year." },
+    },
+    {
+      "@type": "Question",
+      name: "What is Tank Builds?",
+      acceptedAnswer: { "@type": "Answer", text: "Tank Builds is a build thread for your tank, inside the app. Share what you are running, what you are still deciding on, and photos as it comes together, and ask questions that other reefers answer. The equipment, livestock and photos you already log fill the timeline in for you, and an unanswered question is promoted to the top of your build rather than buried. Browsing and replying to other builds is free for everyone; starting your own is free until January 5, 2027 and part of Pro after that. You can turn a build off at any time and your posts are kept." },
     },
     {
       "@type": "Question",
@@ -106,6 +115,7 @@ export default function FeaturesPage() {
           <a href="#dosing" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Dosing</a>
           <a href="#automation" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Automation</a>
           <a href="#community" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Community</a>
+          <a href="#builds" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Builds</a>
           <a href="#journey" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tank Journey</a>
           <a href="/faq" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>FAQ</a>
         </div>
@@ -156,6 +166,21 @@ export default function FeaturesPage() {
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                 <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Community leaderboard</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Build Planner</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Builds: browse &amp; reply</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>Tank Builds: start your own</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--text-light)", fontWeight: 700, fontSize: "13px" }}>Free until Jan 5</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
@@ -416,8 +441,16 @@ export default function FeaturesPage() {
               <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>One push a day at the time you pick, listing what’s still due. If everything is logged, it stays quiet.</div>
             </div>
             <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
-              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>50+ products built in</div>
-              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Red Sea, Seachem, Brightwell, Tropic Marin, BRS, plain baking soda and more. Known label strengths fill in for you so the math is right.</div>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>A real product catalog</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>80+ products from 19 brands &mdash; Red Sea, Seachem, Brightwell, Tropic Marin, ESV, BRS, plain baking soda and more. Pick the brand, then the product, and the known label strength fills in so the math is right. Dosing something we don&rsquo;t list? Type it in.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Dose history</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Ninety days of doses, grouped by day and totalled per product, with where each one came from &mdash; logged by hand, run by a schedule, or read back off your doser.</div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+              <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Already have a doser?</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Connect a Jebao doser or a CoralVue HYDROS and the app reads what it actually dosed, in millilitres, instead of asking you to confirm a pump you already trust. Nothing to log.</div>
             </div>
             <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
               <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Knows your dosing</div>
@@ -438,7 +471,7 @@ export default function FeaturesPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Jebao &amp; Jecod pumps</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Set flow and wave mode from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry. Your real flow in GPH feeds your turnover automatically.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Set flow and wave mode from anywhere, run Feed Mode, and get told the moment a pump jams or runs dry. Your real flow in GPH feeds your turnover automatically. Jebao dosers are read too &mdash; their schedule and what each head put in.</div>
           </div>
           <div style={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: "16px", padding: "22px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Shelly temperature probe</div>
@@ -462,14 +495,14 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '14px', padding: '22px 24px' }}>
             <div style={{ fontSize: '16px', fontWeight: 900, color: 'var(--text-light)', marginBottom: '8px' }}>CoralVue HYDROS <span style={{ fontSize: '11px', fontWeight: 800, color: '#A78BFA', marginLeft: '6px' }}>EARLY ACCESS</span></div>
-            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode.</div>
+            <div style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65 }}>Cloud-connected, so it works from anywhere: pH, temperature, salinity and alkalinity tests sync into your logs around the clock. Switch outputs, set pump levels, and run Feeding or Water Change mode. Dose history reads back off the doser in millilitres, and the app tells you when a doser has been suspended.</div>
           </div>
           <div style={{ background: "rgba(44,196,214,0.06)", border: "1px solid rgba(44,196,214,0.3)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Display <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--reef)", marginLeft: "6px" }}>NEW</span></div>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Display</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Stand a tablet by the tank and NextUpReef fills the screen: live temperature and pH, every parameter and its trend, your equipment, today&apos;s doses and what&apos;s due next. One tap for Feed Mode. No scrolling, no tapping.</div>
           </div>
           <div style={{ background: "rgba(44,196,214,0.06)", border: "1px solid rgba(44,196,214,0.3)", borderRadius: "14px", padding: "22px 24px" }}>
-            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Hub <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--reef)", marginLeft: "6px" }}>NEW</span></div>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Hub</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>An Apex, ReefRun, ProfiLux or Shelly plug only answers on your home WiFi. Leave that same tablet on the network and it reads them for you and relays it to your phone, so the app keeps working from anywhere. Monitoring and convenience, not life support &mdash; your controller stays in charge.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
@@ -487,7 +520,7 @@ export default function FeaturesPage() {
       <section id="community" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Community</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Compare with<br />the best tanks.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The community leaderboard ranks public tanks by their combined Reef and Stability score. See where you stand, browse the setups at the top, and learn from real reefs instead of forum theory.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>The community leaderboard ranks public tanks by their combined Reef and Stability score. See where you stand, browse the setups at the top, and learn from real reefs instead of forum theory. <Link href="#builds" style={{ color: "var(--reef)", fontWeight: 700 }}>Tank Builds</Link> lives here too.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Leaderboard</div>
@@ -508,12 +541,50 @@ export default function FeaturesPage() {
         </div>
       </section>
 
+
+      {/* TANK BUILDS */}
+      <section id="builds" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
+        <div className="section-label">Tank Builds</div>
+        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Build it in the open.<br />Get answers before you buy.</h2>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Reefers have kept build threads on forums for twenty years, because a reef is slow and a thread is the only format that matches it. Tank Builds is that inside the app — except the equipment, livestock and photos you already log write most of it for you. Free for everyone until January 5, 2027, then part of Pro. Reading and replying stays free.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Build in the open</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Share a build as it comes together — what you’re running, what you’re still deciding on, and how it looks along the way. Browsing other people’s builds is free for everyone.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>It fills itself in</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Equipment install dates and the day each animal went in land on the build’s timeline automatically, so the thread stays true whether or not you felt like writing that week.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Questions that can’t get buried</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Post an update or ask a question. An unanswered question is promoted to the top of your build instead of sitting at post #47, and a Needs answers filter sends readers straight to people who are stuck.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Still deciding on</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Mark a piece of gear as undecided and it joins a standing list on your build. Someone arriving three weeks later can still tell you what they think of that light.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>What builds your size ran</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>What other builds in your gallon range actually run, drawn from real tanks in the app. What people ran — not a recommendation.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Off whenever you want</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>One tap takes a build off Tank Builds and nobody can see it. Your posts and replies are kept, so turning it back on brings the thread with it.</div>
+          </div>
+        </div>
+      </section>
+
       {/* TANK JOURNEY */}
       <section id="journey" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
         <div className="section-label">Tank Journey</div>
         <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Built for day one.<br />Grows with your reef.</h2>
-        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>New to reefing? The Tank Journey guides you through every phase — from first fill to established reef — with step-by-step checklists, what to do next, and why it matters. Experienced reefers can skip it and go straight to advanced tracking.</p>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>New to reefing? It starts before you own a tank, with a Build Planner that prices the whole thing, then guides you through every phase — from first fill to established reef — with step-by-step checklists, what to do next, and why it matters. Experienced reefers can skip it and go straight to advanced tracking.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Build Planner</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Phase 0, before you spend anything. Pick a size and what you want to keep, and get an upfront range and an honest first-year running cost, broken down line by line as essential, recommended or optional — plus what to buy in which order. You don’t need a tank yet to use it.</div>
+          </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>6-phase guided setup</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Tank setup, cycling, the ugly phase, first fish, first coral, and established reef. Always know where you are and what comes next.</div>
@@ -563,6 +634,34 @@ export default function FeaturesPage() {
         <div className="section-label">What’s new</div>
         <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>New in NextUpReef.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>November 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Dose history, and dosers that report back</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Ninety days of doses, grouped by day and totalled per product, with where each came from. Connect a Jebao doser or a CoralVue HYDROS and the app reads what it actually dosed in millilitres &mdash; no confirming a pump you already trust.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>November 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>A dosing catalog worth picking from</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>80+ products across 19 brands. Pick the brand, then the product, and the label strength fills in so the math is right. Dosing something we don&rsquo;t list? Type it in.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>October 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Tank Builds</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Share your build as it comes together, and ask what light to get before you buy it. Your equipment, livestock and photos fill the timeline in for you, and an unanswered question goes to the top of the page instead of the bottom. Free for everyone until January 5, 2027.</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>October 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>Build Planner</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Phase 0, before you spend anything: pick a size and what you want to keep, and get an upfront range, an honest first-year running cost, and what to buy in which order. You don&rsquo;t need a tank yet to use it.</div>
+            </div>
+          </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
             <div>

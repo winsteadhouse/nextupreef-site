@@ -47,10 +47,10 @@ const gmpModels = [
 const integrations = [
   {
     id: 'jebao', icon: 'wave', brand: 'Jebao / Jecod', heading: 'Jebao & Jecod Pumps',
-    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    badge: 'PUMPS & DOSERS', badgeColor: '#0EA5E9', accent: '#0EA5E9',
     tagline: 'Real wave control, at Jebao prices.',
     sell: 'Jebao and Jecod WiFi pumps move a lot of water for the money, which is why so many reef tanks run them. This works with the WiFi models signed in to a Jebao Aqua account, not the controller-only pumps. Connect yours with your Jebao Aqua login and set flow, wave mode and feed mode from the same app as the rest of your tank. It works from anywhere, not just at home, and the app tells you when a pump reports a jammed impeller or is running dry, the two failures that quietly kill a tank overnight. Your pump also lands in My Reef with its real flow in GPH, so your turnover figure is measured instead of guessed.',
-    pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Works with WiFi Jebao wavemakers, return pumps and dosers'],
+    pros: ['Works away from home, no local network needed', 'Alerts for a jammed impeller or a pump running dry', 'All nine wave modes, explained in plain English', 'Real flow in GPH feeds your turnover automatically', 'Works with WiFi Jebao wavemakers, return pumps and dosers', 'Reads a Jebao doser\u2019s schedule and what each head put in'],
     cons: ['Only WiFi models work - controller-only and Bluetooth-only pumps cannot be connected', 'The pump must be signed in to a Jebao Aqua account first', 'Confirmed on the GMP-40; other models use the same platform but are untested', 'Not an official Jebao integration, so a firmware change could interrupt it'],
     ctaLabel: 'View the GMP series', ctaUrl: 'https://link.amazon/B0j5QTs4t', ctaSponsored: true,
     mfgName: 'jebao.com', mfgUrl: 'https://www.jebao.com/',
@@ -83,7 +83,7 @@ const integrations = [
   },
   {
     id: 'temp', icon: 'temp', brand: 'Shelly', heading: 'Shelly Temp Probe',
-    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    badge: 'TEMPERATURE', badgeColor: '#0EA5E9', accent: '#0EA5E9',
     tagline: 'Real water temperature, without a controller.',
     sell: 'Temperature is the parameter that kills a reef fastest, and it is the one most people track worst - without a controller, the number in your log is whatever you last typed in. A Shelly Pill with a temperature probe reads your actual water and feeds it into NextUpReef on its own. Your charts fill in, your Stability Score starts measuring something real, and the AI Advisor can finally see what your temperature actually did overnight. Set a high and a low and the app watches for you.',
     pros: ['Real measured temperature in your log, charts and scores', 'High and low alerts', 'Up to five probes - display, sump and room', 'No account, no cloud service, no monthly fee', 'Runs on any USB charger, no wiring'],
@@ -95,7 +95,7 @@ const integrations = [
   },
   {
     id: 'ghl', icon: 'apex', brand: 'GHL', heading: 'GHL ProfiLux',
-    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#0EA5E9',
+    badge: 'ALK, CA & MG', badgeColor: '#0EA5E9', accent: '#0EA5E9',
     tagline: 'Alkalinity, calcium and magnesium, measured and logged for you.',
     sell: 'A ProfiLux 4 with a KH Director and an ION Director already measures the three numbers reefers care most about. NextUpReef reads them over the official GHL API and files them straight into your log, alongside temperature, pH and salinity from your probes. No account, no cloud, no extra hardware - the controller answers directly on your home network. Your dosing containers show up too, with how much is left and a warning before one runs dry. Start a feed pause from the app and the ProfiLux times it and restarts your pumps itself. Leave a tablet on that network as your Tank Hub and you can read it from anywhere, not just at home.',
     pros: ['Alkalinity from a KH Director, calcium and magnesium from an ION Director', 'Temperature, pH and salinity from your probes', 'Dosing container levels with a running-low warning', 'Feed pause, timed by the ProfiLux itself', 'No account and no cloud service - it answers on your own network', 'Read-only mode if you only want readings'],
@@ -107,7 +107,7 @@ const integrations = [
   },
   {
     id: 'redsea', icon: 'wave', brand: 'Red Sea', heading: 'Red Sea ReefRun',
-    badge: 'NEW', badgeColor: '#0EA5E9', accent: '#EF4444',
+    badge: 'PUMP CONTROL', badgeColor: '#0EA5E9', accent: '#EF4444',
     tagline: 'Your return pump and skimmer, from the same app as everything else.',
     sell: 'One ReefRun controller drives both your return pump and your DC skimmer, and NextUpReef talks to it directly on your home network - no ReefBeat account needed. Set the speed of either pump, see when the controller reports a fault, and drop them to feed speed as part of Feed Mode. Whatever schedule you set in ReefBeat keeps running either way. Set a tablet up as your Tank Hub and you can change speeds away from home too.',
     pros: ['Controls the return pump and the DC skimmer from one place', 'Speed control without opening another app', 'Shows faults the controller reports', 'Part of Feed Mode alongside your other gear', 'No account or cloud service'],
@@ -122,18 +122,21 @@ const integrations = [
     badge: 'EARLY ACCESS', badgeColor: '#7C3AED', accent: '#7C3AED',
     tagline: 'Monitor and control your whole HYDROS from anywhere.',
     sell: 'HYDROS talks to the cloud, so NextUpReef works with it from anywhere, not just on home WiFi. Connect with your HYDROS device key: pH, temperature, salinity and alkalinity tests flow into your logs around the clock. Switch outputs on, off or back to Auto, set pump levels, run Feeding or Water Change mode, and start tests. Your HYDROS confirms each change.',
-    pros: ['Works away from home (cloud)', 'Readings sync 24/7, including alkalinity tests', 'Outputs, pump levels, Feeding and Water Change modes', 'Read-only key option if you only want readings'],
-    cons: ['Early access: our newest integration', 'Programs and schedules stay in the HYDROS app'],
+    pros: ['Works away from home (cloud)', 'Readings sync 24/7, including alkalinity tests', 'Outputs, pump levels, Feeding and Water Change modes', 'Dose history read back off the doser, in millilitres', 'Tells you when a doser has been suspended', 'Read-only key option if you only want readings'],
+    cons: ['Early access: our newest integration', 'Programs and schedules stay in the HYDROS app - NextUpReef reads them, it does not write them'],
     ctaLabel: 'Shop HYDROS', ctaUrl: 'https://www.coralvuehydros.com/',
     mfgName: 'coralvuehydros.com', mfgUrl: 'https://www.coralvuehydros.com/',
     guide: '', guideLabel: '', image: '/devices/hydros-app-v3.png',
-    alt: 'Devices and Automation screen in NextUpReef listing CoralVue HYDROS, Neptune Apex and Shelly smart outlets',
+    // TODO: this is the old Devices list (three integrations, stale NEW badge), not the
+    // HYDROS screen. Replace with a HYDROS capture using representative output names -
+    // never a real customer's tank.
+    alt: 'CoralVue HYDROS in NextUpReef showing live pH and temperature, output status and dosing history',
   },
 ];
 
 const compareRows = [
   ['What it is', 'Local controller', 'Local controller', 'Smart outlets', 'Cloud controller'],
-  ['Status in NextUpReef', 'live', 'New', 'live', 'Early access'],
+  ['Status in NextUpReef', 'live', 'live', 'live', 'Early access'],
   ['Water readings (pH, temp, salinity)', 'yes', 'yes', 'no', 'yes'],
   ['Alkalinity, calcium and magnesium', 'Trident', 'KH + ION Director', 'no', 'Alk tests'],
   ['Outlet control', 'yes', 'no', 'yes', 'yes'],
@@ -326,7 +329,7 @@ export default function DevicesPage() {
             <div className='section-label'>NO CONTROLLER NEEDED</div>
             <h2 style={{ fontSize: 'clamp(22px, 3.4vw, 30px)', fontWeight: 900, margin: '10px 0 12px', color: 'var(--text-light)', lineHeight: 1.15 }}>Dose by hand? The Dosing screen is for you too.</h2>
             <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: 1.65, margin: 0 }}>
-              Every account gets the Dosing screen, with or without hardware. Pick your products from 50+ common supplements, see what&rsquo;s due today, and tap Dosed to log it. Doses on a Shelly plug or Apex show up in the same list.
+              Every account gets the Dosing screen, with or without hardware. Pick your products from a catalog of 80+ supplements across 19 brands, see what&rsquo;s due today, and tap Dosed to log it. Doses on a Shelly plug or Apex show up in the same list.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -335,6 +338,8 @@ export default function DevicesPage() {
               { t: 'Alk, Ca and Mg balance', d: 'See whether each one is holding steady, rising or falling across your last tests.', pro: false },
               { t: 'One daily reminder', d: 'One push a day at the time you pick, only if something is still due.', pro: true },
               { t: 'Dose calculator', d: 'Set your daily dose from your own test trend, or fix a low reading safely over a few days.', pro: true },
+              { t: 'Dose history', d: 'Ninety days of doses, grouped by day and totalled per product, with where each one came from.', pro: false },
+              { t: 'Already have a doser?', d: 'A Jebao doser or a HYDROS reports what it actually dosed in millilitres. Nothing to log.', pro: true },
             ].map((f) => (
               <div key={f.t} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                 <div style={{ flexShrink: 0, marginTop: '1px' }}><Ico name='check' size={16} /></div>
@@ -377,6 +382,29 @@ export default function DevicesPage() {
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section style={{ padding: '0 20px 60px', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '20px', padding: '32px 28px' }}>
+          <div className='section-label'>WHAT A TANK HUB IS</div>
+          <h2 style={{ fontSize: 'clamp(22px, 3.4vw, 30px)', fontWeight: 900, margin: '10px 0 12px', color: 'var(--text-light)', lineHeight: 1.15 }}>The table above says &ldquo;with a Tank Hub&rdquo; a lot. Here is what that means.</h2>
+          <p style={{ fontSize: '14.5px', color: 'var(--text-muted)', lineHeight: 1.7, margin: '0 0 18px', maxWidth: '680px' }}>
+            An Apex, a ProfiLux, a ReefRun or a Shelly plug only answers on your home network. That is a sensible way to build a controller and a nuisance when you are at work. A Tank Hub fixes it without any extra hardware: leave a spare tablet or phone on that same WiFi running NextUpReef, and it reads those devices for you and relays what it finds to whatever you are holding. Your controller stays in charge of your tank &mdash; the hub is monitoring and convenience, not life support.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '14px' }}>
+            {[
+              { t: 'No extra hardware', d: 'Any spare tablet or old phone on your WiFi, plugged in. Nothing to buy.' },
+              { t: 'Doubles as a display', d: 'The same tablet shows your whole tank full screen beside the glass.' },
+              { t: 'Cloud devices skip it', d: 'Jebao pumps and CoralVue HYDROS already work from anywhere on their own.' },
+            ].map((f) => (
+              <div key={f.t} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid var(--border)', borderRadius: '14px', padding: '16px 18px' }}>
+                <div style={{ fontSize: '14.5px', fontWeight: 800, color: 'var(--text-light)', marginBottom: '5px' }}>{f.t}</div>
+                <div style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.55 }}>{f.d}</div>
+              </div>
+            ))}
+          </div>
+          <Link href='/blog/reef-tank-tablet-dashboard' style={{ display: 'inline-block', marginTop: '18px', fontSize: '13px', fontWeight: 800, color: 'var(--reef)', textDecoration: 'none' }}>Set one up {'->'}</Link>
         </div>
       </section>
 
