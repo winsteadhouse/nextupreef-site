@@ -402,10 +402,11 @@ export default function HomePage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
             <div className="section-label">Community</div>
-            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Compare with<br />the best tanks.</h2>
-            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>The Community leaderboard ranks public tanks by combined Reef and Stability score. See where you stand, then learn from the reefs at the top.</p>
+            <h2 style={{ fontSize: "clamp(28px, 5vw, 46px)", fontWeight: 900, margin: 0, letterSpacing: "-0.03em", lineHeight: 1.1 }}>Build in the open.<br />Learn from real reefs.</h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: 0, maxWidth: "380px" }}>Share your build as it comes together and ask what to buy before you buy it. The leaderboard ranks public tanks by combined Reef and Stability score, so you can see where you stand and learn from the reefs at the top.</p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               { [
+                { title: "Tank Builds", desc: "A build thread for your tank, where your equipment, livestock and photos fill the timeline in for you — and an unanswered question goes to the top of the page, not the bottom." },
                 { title: "Community Leaderboard", desc: "See where your tank ranks. Browse top tanks — their params, salt mix, equipment, and lighting setups." },
                 { title: "Reef Score and Stability Score", desc: "Two 0-100 scores grade your parameter health and how stable you keep alk, calcium, magnesium, and salinity over time." },
                 { title: "Learn from real reefs", desc: "Every public tank is a real setup you can study — no theory, just what is actually working for other reefers." },
@@ -419,6 +420,9 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+            <Link href="/blog/reef-tank-build-planner" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--reef)", fontWeight: 900, fontSize: "15px", textDecoration: "none" }}>
+              Plan a build, then share it →
+            </Link>
           </div>
         </div>
       </section>

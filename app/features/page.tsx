@@ -346,7 +346,7 @@ export default function FeaturesPage() {
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Dosing products</div>
-            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Pick from 50+ common supplements or add your own, with the part (alk, Ca, Mg), label strength, daily amount, and how you dose it: by hand, your own dosing pump, a Shelly plug or Apex outlet, or through your ATO.</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Pick the brand then the product from a catalog of 80+ supplements, or add your own, with the part (alk, Ca, Mg), label strength, daily amount, and how you dose it: by hand, your own dosing pump, a Shelly plug or Apex outlet, or through your ATO.</div>
           </div>
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Lighting</div>
@@ -673,7 +673,7 @@ export default function FeaturesPage() {
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>September 2026</div>
             <div>
               <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>The Dosing screen</div>
-              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Every dose in one place, with or without a controller: a daily checklist with one-tap logging, alk, calcium and magnesium balance, and 50+ products with label strengths built in.</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Every dose in one place, with or without a controller: a daily checklist with one-tap logging, alk, calcium and magnesium balance, and a catalog of 80+ products with label strengths built in.</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>

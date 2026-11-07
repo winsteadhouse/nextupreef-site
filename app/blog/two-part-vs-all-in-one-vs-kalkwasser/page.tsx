@@ -334,7 +334,7 @@ export default function TwoPartVsAllInOneVsKalkwasserPost() {
           </div>
 
           <p>
-            The catalog covers <strong style={{ color: "var(--text-light)" }}>50+ common products</strong> with known strengths prefilled, including Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz and Aquaforest, plus plain baking soda, soda ash, calcium chloride, magnesium chloride and sulfate, and kalkwasser. For each product you pick how it&apos;s delivered: by hand, your own dosing pump, Shelly or Apex automation, <strong style={{ color: "var(--text-light)" }}>ATO (for kalk)</strong>, or drip.
+            The catalog covers <strong style={{ color: "var(--text-light)" }}>80+ products across 19 brands</strong> with known strengths prefilled, including Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz and Aquaforest, plus plain baking soda, soda ash, calcium chloride, magnesium chloride and sulfate, and kalkwasser. For each product you pick how it&apos;s delivered: by hand, your own dosing pump, Shelly or Apex automation, <strong style={{ color: "var(--text-light)" }}>ATO (for kalk)</strong>, or drip.
           </p>
           <p>
             With Pro, you also get:

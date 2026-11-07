@@ -355,7 +355,7 @@ export default function ReefTankDosingCalculatorPost() {
             The math above is simple, but doing it by hand every week, for three parameters and several products, is where errors creep in. NextUpReef builds it into the app.
           </p>
           <p>
-            The <strong style={{ color: "var(--text-light)" }}>Dosing screen is free on every account</strong>. It shows one list of everything due today, whether you dose by hand, with your own dosing pump, or automatically on a Shelly plug or Apex outlet. Tap <strong style={{ color: "var(--text-light)" }}>Dosed</strong> to log a dose. The <strong style={{ color: "var(--text-light)" }}>alk/Ca/Mg balance</strong> shows whether each is steady, rising or falling across your recent tests, with test noise filtered out. The catalog covers <strong style={{ color: "var(--text-light)" }}>50+ common products</strong>, including Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz, Aquaforest, plain baking soda, soda ash, calcium chloride, magnesium chloride and sulfate, and kalkwasser, with known strengths prefilled so you are not copying numbers off a label.
+            The <strong style={{ color: "var(--text-light)" }}>Dosing screen is free on every account</strong>. It shows one list of everything due today, whether you dose by hand, with your own dosing pump, or automatically on a Shelly plug or Apex outlet. Tap <strong style={{ color: "var(--text-light)" }}>Dosed</strong> to log a dose. The <strong style={{ color: "var(--text-light)" }}>alk/Ca/Mg balance</strong> shows whether each is steady, rising or falling across your recent tests, with test noise filtered out. The catalog covers <strong style={{ color: "var(--text-light)" }}>80+ products across 19 brands</strong>, including Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz, Aquaforest, plain baking soda, soda ash, calcium chloride, magnesium chloride and sulfate, and kalkwasser, with known strengths prefilled so you are not copying numbers off a label.
           </p>
           <p>
             The <strong style={{ color: "var(--text-light)" }}>dose calculator is part of Pro</strong> and has two modes that match the two jobs above:
@@ -399,7 +399,7 @@ export default function ReefTankDosingCalculatorPost() {
               Dose with confidence using NextUpReef.
             </p>
             <p style={{ color: "var(--text-muted)", marginBottom: "20px", fontSize: "15px" }}>
-              Free Dosing screen with alk/Ca/Mg balance and a 50+ product catalog, plus a Pro dose calculator that splits corrections safely. iOS and Android.
+              Free Dosing screen with alk/Ca/Mg balance and an 80+ product catalog, plus a Pro dose calculator that splits corrections safely. iOS and Android.
             </p>
             <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
               <a href="https://apps.apple.com/us/app/nextupreef/id6760728959" target="_blank" rel="noopener noreferrer" className="btn primary">

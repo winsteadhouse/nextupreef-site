@@ -152,7 +152,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How do I add a dosing product?",
-        a: "Tap + on the Dosing screen and search the catalog of 50+ common products from brands like Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz and Aquaforest, plus basics like baking soda and kalkwasser. Known strengths are filled in for you. Then pick which bottle it is, how it's dosed and how often (daily, every few days or as needed), and enter the amount.",
+        a: "Tap + on the Dosing screen, pick the brand, then the product. The catalog covers 80+ products across 19 brands \u2014 Red Sea, Seachem, Brightwell, Tropic Marin, BRS, ESV, Fritz, Aquaforest and more, plus basics like baking soda and kalkwasser \u2014 and the known label strength is filled in for you. Dosing something we don't list? Choose Other and type it in. Then pick which bottle it is, how it's dosed and how often (daily, every few days or as needed), and enter the amount.",
       },
       {
         q: "What does the alk, calcium and magnesium balance show?",
