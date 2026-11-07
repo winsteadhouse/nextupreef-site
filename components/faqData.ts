@@ -422,7 +422,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What is the Build Planner?",
-        a: "The Build Planner is for people who have not bought a tank yet. You pick a size and it prices the build upfront and monthly, and shows what tanks like yours actually run, using real equipment data from other NextUpReef tanks. Choose I have not bought it yet during setup and you land there instead of being asked for a tank size and setup date you do not have.",
+        a: "The Build Planner is for people who have not bought a tank yet. You pick a size and what you want to keep, and it gives you an upfront cost range and an honest first-year running cost, broken down line by line as essential, recommended or optional, plus what to buy in which order and what tanks like yours actually run \u2014 using real equipment data from other NextUpReef tanks. Choose \u201cI haven\u2019t bought my tank yet\u201d during setup and you land there instead of being asked for a tank size and setup date you do not have.",
       },
       {
         q: "Can I ask what to buy before I buy it?",
