@@ -20,7 +20,12 @@ export default function SiteNav() {
     <header className="site-header">
       <div className="nav-container">
         <Link href="/" className="logo" aria-label="NextUpReef home">
-          <Image src="/brand/logo-v2.png" alt="" width={36} height={36} priority />
+          {/* logo-mark-v2 is the transparent mark cropped to its hexagon. logo-v2 is
+              flattened onto dark navy and showed as a square tile against this
+              translucent header. Cropping also makes the box size the mark size --
+              the untrimmed transparent file is about a third glow margin, so a
+              straight swap would have rendered SMALLER at the same width. */}
+          <Image src="/brand/logo-mark-v2.png" alt="" width={44} height={44} priority />
           <span>NextUpReef</span>
         </Link>
 

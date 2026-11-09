@@ -50,7 +50,7 @@ export default function SiteFooter() {
         <div className="site-footer-grid">
           <div className="site-footer-brand">
             <Link href="/" className="site-footer-logo" aria-label="NextUpReef home">
-              <Image src="/brand/logo-v2.png" alt="" width={32} height={32} />
+              <Image src="/brand/logo-mark-v2.png" alt="" width={38} height={38} />
               <span>NextUpReef</span>
             </Link>
             <p>The reef tank app for tracking parameters, dosing, scores and AI advice. Free on iOS and Android.</p>
