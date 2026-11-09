@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "The 10–20% every 1–2 weeks baseline, the math that explains it, real app data from 646 water changes, and a safe step-by-step routine.",
     url: "https://nextupreef.com/blog/reef-tank-water-change-guide",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -24,12 +24,12 @@ const articleSchema = {
   headline: "Reef Tank Water Changes: How Much, How Often, and When You Can Skip Them",
   description:
     "A practical reef tank water change schedule: how much to change, how often, the dilution math, real NextUpReef app data, and when fewer changes are reasonable.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",

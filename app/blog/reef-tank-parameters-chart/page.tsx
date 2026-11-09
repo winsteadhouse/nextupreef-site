@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Ideal reef tank water parameters by tank type, side by side with the typical values from 4,017 real parameter logs.",
     url: "https://nextupreef.com/blog/reef-tank-parameters-chart",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -24,12 +24,12 @@ const articleSchema = {
   headline: "Reef Tank Parameters Chart: Ideal Ranges vs What Real Tanks Run",
   description:
     "Ideal reef tank parameter ranges by tank type, compared with what real hobby tanks run according to anonymized NextUpReef app data.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",

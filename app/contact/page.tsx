@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Contact NextUpReef",
     description: "App support, account help, bug reports, feature ideas and partnerships.",
     url: "https://nextupreef.com/contact",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 

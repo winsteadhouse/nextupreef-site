@@ -33,7 +33,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <div className='portal'>
       <div className='grid'>
         <aside className='rail'>
-          <Link href='/dashboard' className='brand'><Image src='/brand/logo_transparent.png' alt='NextUpReef' width={30} height={30} className='logo' />NextUpReef</Link>
+          <Link href='/dashboard' className='brand'><Image src='/brand/logo-transparent-v2.png' alt='NextUpReef' width={30} height={30} className='logo' />NextUpReef</Link>
           <TankSwitcher tanks={tanks} activeTankId={activeTankId} />
           <PortalNav isAdmin={user.id === '311089a8-5d8f-4e8d-a3d6-97d35bd89e60'} />
           <div className='acct'>

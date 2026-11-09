@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "NextUpReef uses AI to analyze your specific tank and give personalized reef advice — not generic tips. Here's how it works and what it can do for your reef.",
     url: "https://nextupreef.com/blog/ai-reef-tank-advisor",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,12 +23,12 @@ const articleSchema = {
   headline: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef",
   description:
     "How NextUpReef uses AI to analyze your reef tank parameters, equipment, and livestock — giving you personalized advice, answering reef questions, and reading test kits from photos.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-05-06",
   dateModified: "2026-06-12",

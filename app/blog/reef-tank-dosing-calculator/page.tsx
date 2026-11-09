@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "The one formula behind every reef dosing calculator, real product strengths, worked alk, calcium and magnesium examples, and the daily limits that keep corals safe.",
     url: "https://nextupreef.com/blog/reef-tank-dosing-calculator",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -24,12 +24,12 @@ const articleSchema = {
   headline: "Reef Tank Dosing Calculator: How Much Baking Soda, 2-Part or Kalk to Dose",
   description:
     "How to calculate reef tank doses for alkalinity, calcium and magnesium: real water volume, product strength, worked examples, safe daily limits and how to dial in a daily dose.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",

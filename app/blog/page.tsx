@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Reef Tank Guides & Tips | NextUpReef Blog",
     description: "Practical reef tank guides on cycling, water chemistry, dosing, equipment and pests.",
     url: "https://nextupreef.com/blog",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 

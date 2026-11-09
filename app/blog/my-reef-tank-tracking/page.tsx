@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Track every fish, coral, invert, piece of gear, dosing product, monthly photo, and dollar spent — with an AI Stocking Advisor built in.",
     url: "https://nextupreef.com/blog/my-reef-tank-tracking",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -22,12 +22,12 @@ const articleSchema = {
   headline: "My Reef: Track Livestock, Equipment, Corals, and Cost in One Reef Tank App",
   description:
     "How NextUpReef's My Reef page tracks every fish, coral, invert, piece of equipment, dosing product, monthly photo, and dollar spent, with an AI Stocking Advisor built in.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-06-12",
   dateModified: "2026-06-12",

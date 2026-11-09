@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Why pH matters less than reefers think, what targets to actually hit, and how to raise low pH without crashing your tank.",
     url: "https://nextupreef.com/blog/reef-tank-ph-guide",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,12 +23,12 @@ const articleSchema = {
   headline: "Reef Tank pH: How to Test, Track, and Raise It Safely",
   description:
     "Target pH ranges, the real causes of low pH, and how to raise it safely without crashing your tank.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",

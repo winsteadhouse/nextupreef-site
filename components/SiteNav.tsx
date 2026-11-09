@@ -20,7 +20,7 @@ export default function SiteNav() {
     <header className="site-header">
       <div className="nav-container">
         <Link href="/" className="logo" aria-label="NextUpReef home">
-          <Image src="/brand/logo.png" alt="" width={36} height={36} priority />
+          <Image src="/brand/logo-v2.png" alt="" width={36} height={36} priority />
           <span>NextUpReef</span>
         </Link>
 

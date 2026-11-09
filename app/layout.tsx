@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. The best free reef tank app for iOS and Android.",
     images: [
       {
-        url: "/brand/og-image.png",
+        url: "/brand/og-image-v2.png",
         width: 1200,
         height: 630,
         alt: "NextUpReef — Free Reef Tank Tracking App for iOS and Android",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "NextUpReef — Free Reef Tank Tracking App",
     description:
       "Track saltwater aquarium parameters, get a Reef Score, set water change reminders, and monitor trends. Free on iOS and Android.",
-    images: ["/brand/og-image.png"],
+    images: ["/brand/og-image-v2.png"],
   },
   robots: {
     index: true,

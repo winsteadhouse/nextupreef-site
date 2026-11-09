@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Honest comparison of reef aquarium tracking apps in 2026 — now with AI-powered analysis. Find the best app to monitor your saltwater tank.",
     url: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,12 +23,12 @@ const articleSchema = {
   headline: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
   description:
     "Honest comparison of reef aquarium tracking apps in 2026 — including AI-powered options, free apps, and paid alternatives.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-04-04",
   dateModified: "2026-09-21",

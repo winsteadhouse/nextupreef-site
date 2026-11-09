@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "NextUpReef FAQ",
     description: "Answers about logging, scores, dosing, reminders, AI, controllers, Pro and your account.",
     url: "https://nextupreef.com/faq",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: 'Works With Your Gear - NextUpReef',
     description: 'Connect Jebao pumps, a Neptune Apex, Shelly smart outlets or CoralVue HYDROS and run your reef from one app.',
     url: 'https://nextupreef.com/devices',
-    images: [{ url: '/brand/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/brand/og-image-v2.png', width: 1200, height: 630 }],
   },
 };
 

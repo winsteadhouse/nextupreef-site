@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Reef tank parameter tracking, built-in AI advisors, livestock and equipment tracking, cost tracking, automation, Tank Builds — everything NextUpReef does, in one place.",
     url: "https://nextupreef.com/features",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 

@@ -40,7 +40,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "NextUpReef",
   url: "https://nextupreef.com",
-  logo: "https://nextupreef.com/brand/logo.png",
+  logo: "https://nextupreef.com/brand/logo-v2.png",
   description: "NextUpReef builds mobile apps for the reef aquarium hobby.",
   sameAs: [
     "https://www.facebook.com/profile.php?id=61576553765840",

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Reef Score is how healthy your tank is right now. Stability Score is how consistently you keep it that way. Here’s what goes into each and how to raise both.",
     url: "https://nextupreef.com/blog/reef-score-stability-score-explained",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -24,12 +24,12 @@ const articleSchema = {
   headline: "Reef Score and Stability Score Explained: What They Measure and How to Raise Yours",
   description:
     "What NextUpReef’s Reef Score and Stability Score measure, how each is weighted, and practical ways to keep reef tank parameters stable and raise both scores.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",

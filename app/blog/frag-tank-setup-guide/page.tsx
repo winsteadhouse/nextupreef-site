@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "How to set up a dedicated frag tank for coral propagation — sizing, lighting, racks, and shared sump plumbing.",
     url: "https://nextupreef.com/blog/frag-tank-setup-guide",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,12 +23,12 @@ const articleSchema = {
   headline: "Frag Tank Setup Guide: Coral Propagation Made Simple",
   description:
     "How to set up a dedicated frag tank for coral propagation — sizing, lighting, racks, and shared sump plumbing.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",

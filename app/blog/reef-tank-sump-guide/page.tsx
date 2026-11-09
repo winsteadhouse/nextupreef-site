@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "What sumps do, how to size and plumb them, and when you actually need one. Plus the equipment that goes inside a great sump.",
     url: "https://nextupreef.com/blog/reef-tank-sump-guide",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -23,12 +23,12 @@ const articleSchema = {
   headline: "Reef Tank Sump Guide: Do You Need One, and How to Set It Up",
   description:
     "What sumps do, how to size and plumb one, and what equipment to put inside a reef tank sump.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",

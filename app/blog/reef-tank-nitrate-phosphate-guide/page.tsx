@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description:
       "Target nitrate and phosphate ranges, real data from hobby tanks, and gentle ways to bring nutrients down — or back up when they bottom out.",
     url: "https://nextupreef.com/blog/reef-tank-nitrate-phosphate-guide",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -25,12 +25,12 @@ const articleSchema = {
   headline: "Nitrate and Phosphate in a Reef Tank: Ideal Levels and How to Lower or Raise Them",
   description:
     "Reef tank nitrate and phosphate target ranges by tank type, real-tank data, accurate testing, and how to lower or raise nutrients safely.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",

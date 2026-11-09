@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "A practical comparison of reef dosing methods: 2-part, 3-part, all-in-one, kalkwasser and calcium reactors, with the chemistry that decides between them.",
     url: "https://nextupreef.com/blog/two-part-vs-all-in-one-vs-kalkwasser",
-    images: [{ url: "/brand/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
 };
 
@@ -24,12 +24,12 @@ const articleSchema = {
   headline: "2-Part vs All-in-One vs Kalkwasser: How to Choose Your Reef Dosing Method",
   description:
     "How 2-part, 3-part, all-in-one, kalkwasser and calcium reactor dosing compare on control, effort, pH and capacity, and how to pick the right one for your reef tank.",
-  image: "https://nextupreef.com/brand/og-image.png",
+  image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
     "@type": "Organization",
     name: "NextUpReef",
-    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo.png" },
+    logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-09-14",
   dateModified: "2026-09-14",
