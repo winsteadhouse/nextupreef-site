@@ -58,7 +58,9 @@ const KIND: Record<string, { label: string; color: string; feature: string }> = 
   pro_purchased: { label: 'Bought Pro', color: GD, feature: 'Pro' },
   pro_resumed: { label: 'Came back to Pro', color: GD, feature: 'Pro' },
   pro_renewed: { label: 'Renewed Pro', color: BL, feature: 'Pro' },
-  pro_ended: { label: 'Cancelled or lapsed', color: BD, feature: 'Pro' },
+  pro_cancelled: { label: 'Turned off auto-renew', color: AM, feature: 'Pro' },
+  pro_uncancelled: { label: 'Turned auto-renew back on', color: GD, feature: 'Pro' },
+  pro_ended: { label: 'Pro ended', color: BD, feature: 'Pro' },
 };
 const kindLabel = (k: string) => KIND[k]?.label || k.replace(/_/g, ' ');
 
@@ -888,9 +890,13 @@ const PRO_KIND: Record<string, { text: string; color: string }> = {
   purchased: { text: 'bought Pro', color: GD },
   resumed: { text: 'came back to Pro', color: GD },
   renewed: { text: 'renewed Pro', color: BL },
-  ended: { text: 'cancelled or lapsed', color: BD },
+  // cancelled = turned off auto-renew, still Pro until the paid time runs out; ended = it ran out (or was refunded)
+  cancelled: { text: 'turned off auto-renew', color: AM },
+  uncancelled: { text: 'turned auto-renew back on', color: GD },
+  ended: { text: 'is no longer Pro', color: BD },
 };
-/* Rows come from private.pro_events, written by a trigger whenever profiles.paid_until changes. */
+/* Rows come from private.pro_events: a trigger writes one whenever profiles.paid_until changes, and the
+   revenuecat-webhook function writes the cancelled / uncancelled ones (those do not change paid_until). */
 function ProPurchases({ rows, onOpen }: { rows: ProRow[]; onOpen: (id: string) => void }) {
   const [kind, setKind] = useState('all');
   const kinds = Array.from(new Set(rows.map((r) => r.kind)));
