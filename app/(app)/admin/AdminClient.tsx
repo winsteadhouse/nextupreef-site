@@ -55,6 +55,10 @@ const KIND: Record<string, { label: string; color: string; feature: string }> = 
   dose_log: { label: 'Logged a dose', color: AM, feature: 'Dose logging' },
   portal: { label: 'Opened the web portal', color: RO, feature: 'Web portal' },
   open: { label: 'Opened the app', color: '#566679', feature: 'App opens' },
+  pro_purchased: { label: 'Bought Pro', color: GD, feature: 'Pro' },
+  pro_resumed: { label: 'Came back to Pro', color: GD, feature: 'Pro' },
+  pro_renewed: { label: 'Renewed Pro', color: BL, feature: 'Pro' },
+  pro_ended: { label: 'Cancelled or lapsed', color: BD, feature: 'Pro' },
 };
 const kindLabel = (k: string) => KIND[k]?.label || k.replace(/_/g, ' ');
 
@@ -879,12 +883,52 @@ function Users({ users, onOpen }: { users: UserRow[]; onOpen: (id: string) => vo
 }
 
 /* ───────────── Activity feed ───────────── */
+type ProRow = { at: string; kind: string; plan: string | null; user_id: string; name: string; signed_up: string | null; app_build: number | null };
+const PRO_KIND: Record<string, { text: string; color: string }> = {
+  purchased: { text: 'bought Pro', color: GD },
+  resumed: { text: 'came back to Pro', color: GD },
+  renewed: { text: 'renewed Pro', color: BL },
+  ended: { text: 'cancelled or lapsed', color: BD },
+};
+/* Rows come from private.pro_events, written by a trigger whenever profiles.paid_until changes. */
+function ProPurchases({ rows, onOpen }: { rows: ProRow[]; onOpen: (id: string) => void }) {
+  const [kind, setKind] = useState('all');
+  const kinds = Array.from(new Set(rows.map((r) => r.kind)));
+  const shown = kind === 'all' ? rows : rows.filter((r) => r.kind === kind);
+  const bought = rows.filter((r) => r.kind === 'purchased' || r.kind === 'resumed').length;
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+  return (
+    <section className='dpanel'>
+      <div className='dpanel-head'>
+        <h3>Pro purchases<small>last 30 days · {bought} bought · newest first</small></h3>
+        <select className='sel' value={kind} onChange={(ev) => setKind(ev.target.value)} aria-label='Filter purchases'>
+          <option value='all'>Everything ({rows.length})</option>
+          {kinds.map((k) => <option key={k} value={k}>{cap(PRO_KIND[k]?.text ?? k)} ({rows.filter((r) => r.kind === k).length})</option>)}
+        </select>
+      </div>
+      {shown.length ? (
+        <div className='feed'>
+          {shown.map((r, i) => (
+            <button key={i} className='feed-row' onClick={() => onOpen(r.user_id)}>
+              <i style={{ background: PRO_KIND[r.kind]?.color ?? '#8FA1B6' }} />
+              <span className='feed-t'>{agoTime(r.at)}</span>
+              <span className='feed-x'><b>{r.name}</b> {PRO_KIND[r.kind]?.text ?? r.kind}<em>{r.plan ? ' · ' + r.plan : ''}{r.signed_up ? ' · joined ' + d2(r.signed_up) : ''}{r.app_build != null ? ' · build ' + r.app_build : ''}</em></span>
+            </button>
+          ))}
+        </div>
+      ) : <div className='muted-block'>No purchases in the last 30 days.</div>}
+    </section>
+  );
+}
+
 function ActivityFeed({ e, onOpen }: { e: Eng | null; onOpen: (id: string) => void }) {
   const [kind, setKind] = useState('all');
-  const feed = (e?.feed ?? []) as { at: string; kind: string; user_id: string; name: string; tank: string | null }[];
+  const feed = (e?.feed ?? []) as { at: string; kind: string; user_id: string; name: string; tank: string | null; detail?: string | null }[];
   const kinds = Array.from(new Set(feed.map((f) => f.kind)));
   const shown = kind === 'all' ? feed : feed.filter((f) => f.kind === kind);
   return (
+    <>
+    <ProPurchases rows={(e?.purchases ?? []) as ProRow[]} onOpen={onOpen} />
     <section className='dpanel'>
       <div className='dpanel-head'>
         <h3>Recent activity<small>last 7 days · newest first · you are excluded</small></h3>
@@ -899,12 +943,13 @@ function ActivityFeed({ e, onOpen }: { e: Eng | null; onOpen: (id: string) => vo
             <button key={i} className='feed-row' onClick={() => onOpen(f.user_id)}>
               <i style={{ background: KIND[f.kind]?.color ?? '#8FA1B6' }} />
               <span className='feed-t'>{agoTime(f.at)}</span>
-              <span className='feed-x'><b>{f.name}</b> {kindLabel(f.kind).toLowerCase()}{f.tank ? <em> · {f.tank}</em> : null}</span>
+              <span className='feed-x'><b>{f.name}</b> {kindLabel(f.kind).toLowerCase()}{f.tank || f.detail ? <em> · {f.tank || f.detail}</em> : null}</span>
             </button>
           ))}
         </div>
       ) : <div className='muted-block'>No activity in the last 7 days.</div>}
     </section>
+    </>
   );
 }
 
