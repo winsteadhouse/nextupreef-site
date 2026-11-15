@@ -1301,3 +1301,44 @@ h1, h2, h3, h4 {
   .feature-spotlight.is-compact.is-bare { padding: 0 !important; }
   .feature-spotlight.is-compact .feature-spotlight-phone img { max-width: 240px !important; }
 }
+
+
+/* Sale card on the home page hero (components/SalePromo.tsx). Same look as the banner
+   inside the app: dark card, amber badge. Only rendered while a sale is running. */
+.sale-promo {
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  background: linear-gradient(135deg, #0b1020 0%, #1e1b4b 55%, #5b21b6 100%);
+  box-shadow: 0 18px 50px rgba(91, 33, 182, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+.sale-promo-eyebrow {
+  display: flex; align-items: center; gap: 6px;
+  color: #fbbf24; font-size: 11px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.sale-promo-body { display: flex; align-items: center; gap: 16px; }
+.sale-promo-badge {
+  flex: 0 0 auto; width: 72px; height: 72px; border-radius: 16px;
+  background: #fbbf24; color: #1f1300;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transform: rotate(-6deg);
+  box-shadow: 0 0 24px rgba(251, 191, 36, 0.45);
+}
+.sale-promo-badge-top { font-size: 24px; font-weight: 900; line-height: 1.05; }
+.sale-promo-badge-bottom { font-size: 11px; font-weight: 900; letter-spacing: 0.12em; }
+.sale-promo-text { min-width: 0; }
+.sale-promo-headline { margin: 0; color: #ffffff; font-size: 20px; font-weight: 900; line-height: 1.2; letter-spacing: -0.01em; }
+.sale-promo-subtext { margin: 5px 0 0; color: rgba(255, 255, 255, 0.8); font-size: 13.5px; line-height: 1.45; }
+.sale-promo-fine { margin: 0; color: rgba(255, 255, 255, 0.62); font-size: 12px; line-height: 1.4; }
+@media (max-width: 420px) {
+  .sale-promo-badge { width: 60px; height: 60px; border-radius: 14px; }
+  .sale-promo-badge-top { font-size: 20px; }
+  .sale-promo-headline { font-size: 18px; }
+}

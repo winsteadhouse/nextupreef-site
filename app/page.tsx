@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import SalePromo from "@/components/SalePromo";
 
 const softwareAppSchema = {
   "@context": "https://schema.org",
@@ -87,6 +88,8 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="home-hero-inner">
         <div className="home-hero-text">
+          {/* Shows only while a sale is running; see components/SalePromo.tsx */}
+          <SalePromo />
           <div style={{
             display: "inline-flex", alignItems: "center", gap: "8px",
             background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)",
