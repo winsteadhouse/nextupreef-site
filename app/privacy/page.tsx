@@ -47,7 +47,14 @@ export default function PrivacyPage() {
           </p>
           <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.4 AI Feature Data</h3>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            When you use Reef AI Advisor, Ask Reef AI Chat, or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos you submit for AI scanning are sent to Anthropic for processing and are not stored beyond the duration of the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
+            When you use Goby, our reef assistant (its chat, Tank Review and Stocking Check; earlier versions of the app call these Reef AI Chat, Reef AI Advisor and Stocking Advisor), or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos you submit for AI scanning are sent to Anthropic for processing and are not stored beyond the duration of the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
+          </p>
+          <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.4.1 Talking to Goby (Voice)</h3>
+          <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
+            Voice is optional. The first time you talk to Goby, your phone asks for permission to use the microphone and speech recognition. What you say is turned into text by the speech service built into your phone (Apple&apos;s on iPhone, Google&apos;s on Android). Depending on your device and settings, that service may process the audio on its own servers under Apple&apos;s or Google&apos;s privacy terms. NextUpReef never receives, records or stores the audio. We receive only the text.
+          </p>
+          <p style={{ color: "var(--text-muted)", fontWeight: "700", marginTop: "12px" }}>
+            Things Goby saves from your voice (a test result, a completed reminder, a water change, a dose) are stored in your account exactly as if you had entered them by hand, and the text of what you said is kept in your Goby chat history, which you can clear in the app. A spoken question is sent to Anthropic in the same way as a typed one. We also record that a voice action happened and what kind it was (for example &quot;logged a test&quot;), but not what you said, so we can see how the feature is used. You can turn microphone access off at any time in your phone&apos;s settings, and everything can still be done by typing.
           </p>
           <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.5 Diagnostics (Optional)</h3>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
@@ -60,7 +67,7 @@ export default function PrivacyPage() {
           </p>
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>2.3 AI Feature Data</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            When you use Reef AI Advisor, Ask Reef AI Chat, or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos submitted for AI scanning are sent to Anthropic for processing and are not stored beyond the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
+            When you use Goby, our reef assistant (its chat, Tank Review and Stocking Check; earlier versions of the app call these Reef AI Chat, Reef AI Advisor and Stocking Advisor), or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos submitted for AI scanning are sent to Anthropic for processing and are not stored beyond the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
           </p>
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>3. Community Feed — Public Data</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
@@ -114,7 +121,8 @@ export default function PrivacyPage() {
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>We use the following third-party services to operate NextUpReef:</p>
           <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc", marginTop: "12px" }}>
             <li><strong style={{ color: "var(--text-light)" }}>Supabase</strong> — database, authentication, and file storage</li>
-            <li><strong style={{ color: "var(--text-light)" }}>Anthropic (Claude API)</strong> — AI features (Reef AI Advisor, Chat, Photo Logging)</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Anthropic (Claude API)</strong> — AI features (Goby, Tank Review, Stocking Check, Photo Logging)</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Apple / Google speech recognition</strong> — turns your speech into text on your phone when you choose to talk to Goby; we never receive the audio</li>
             <li><strong style={{ color: "var(--text-light)" }}>RevenueCat</strong> — subscription management</li>
             <li><strong style={{ color: "var(--text-light)" }}>Apple App Store / Google Play</strong> — payment processing</li>
             <li><strong style={{ color: "var(--text-light)" }}>SendGrid</strong> — transactional email delivery</li>

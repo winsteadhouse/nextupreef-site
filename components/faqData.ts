@@ -24,7 +24,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "Where are Reminders, Dosing and Settings?",
-        a: "Tap the menu icon at the top left for Dosing, Reminders & Alerts, devices, the Reef AI tools, Achievements and Settings. The bell icon in the top bar also opens Reminders and shows a count of anything overdue, and the gear icon opens Settings.",
+        a: "Tap the menu icon at the top left for Dosing, Reminders & Alerts, devices, Goby, Achievements and Settings. The bell icon in the top bar also opens Reminders and shows a count of anything overdue, and the gear icon opens Settings.",
       },
       {
         q: "What tank types are supported?",
@@ -47,7 +47,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What does Pro add?",
-        a: "Pro adds the Reef AI Advisor, Reef AI Chat, Stocking Advisor and AI photo logging, the Tank Journal, multiple tanks, chart history beyond 90 days, unlimited reminders, the dose calculator and daily dosing reminder, Neptune Apex, CoralVue HYDROS and Shelly smart outlet integrations, deeper Community Insights and the web dashboard.",
+        a: "Pro adds Goby (voice and chat), Goby's Tank Review, Goby's Stocking Check and AI photo logging, the Tank Journal, multiple tanks, chart history beyond 90 days, unlimited reminders, the dose calculator and daily dosing reminder, Neptune Apex, CoralVue HYDROS and Shelly smart outlet integrations, deeper Community Insights and the web dashboard.",
       },
       {
         q: "How much does Pro cost?",
@@ -218,18 +218,42 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   {
     id: "ai-features",
     title: "AI features",
-    blurb: "The Reef AI Advisor, Reef AI Chat, Stocking Advisor and AI photo logging.",
+    blurb: "Goby, your reef assistant: voice, chat, the Tank Review, the Stocking Check and AI photo logging.",
     faqs: [
       {
-        q: "What AI features does NextUpReef have?",
-        a: "Four, all part of Pro: the Reef AI Advisor (a full analysis of your tank), Reef AI Chat (questions about your tank), the Stocking Advisor (livestock compatibility) and AI photo logging, which reads your test results from a photo.",
+        q: "Who is Goby?",
+        a: "Goby is the reef assistant built into NextUpReef, part of Pro. You can talk to it or type to it. It logs things for you (test results, reminders, water changes, doses), answers questions using your own tank's history, and writes a full Tank Review. In older versions of the app, Goby's chat was called Reef AI Chat and the Tank Review was called the Reef AI Advisor.",
       },
       {
-        q: "What does the Reef AI Advisor do?",
+        q: "How do I log a test by voice?",
+        a: "Tap Goby at the top of Home, the microphone in the Goby chat, or Log with Goby on the Log tab, then say your results, for example \"alk 8.5, calcium 430 and nitrate 5\". Goby shows what it heard on a card and saves it after a few seconds unless you tap Cancel. You can undo it afterwards. If a number cannot be right, such as calcium 45, it will not save it.",
+      },
+      {
+        q: "What else can I say to Goby?",
+        a: "You can tick off a reminder (\"I fed the corals\", \"mark filter sock done\"), log a water change (\"I did a 10 percent water change\"), log a dose (\"I dosed my alk\", \"dosed 10 mL of calcium\"), or ask a question about your tank. Everything Goby saves is shown to you first and can be undone.",
+      },
+      {
+        q: "Does talking to Goby use up my daily messages?",
+        a: "No, not for logging. Test results, reminders, water changes and doses that you log by voice are handled on your phone and do not count. Questions, typed or spoken, count toward the 10 a day.",
+      },
+      {
+        q: "Can Goby control my equipment by voice?",
+        a: "No. Voice only records things. It cannot start feed mode or switch pumps, outlets, lights or dosers. Those stay on their own screens, where you tap to confirm.",
+      },
+      {
+        q: "Does Goby record me?",
+        a: "No. Your speech is turned into text by the speech service built into your phone (Apple's or Google's). NextUpReef never receives or stores the audio, only the text. Voice is optional, it asks for microphone permission the first time, and you can turn that off in your phone's settings and type to Goby.",
+      },
+      {
+        q: "What AI features does NextUpReef have?",
+        a: "Four, all part of Pro: Goby's Tank Review (a full analysis of your tank), Goby itself (ask or tell it anything about your tank, by voice or by typing), Goby's Stocking Check (livestock compatibility) and AI photo logging, which reads your test results from a photo.",
+      },
+      {
+        q: "What does Goby's Tank Review do?",
         a: "It reviews your tank's own data, including recent parameters and trends, water changes, livestock, equipment, dosing, lighting and maintenance, and gives you what's going well, what to watch this week, and ranked action items you can tap to mark done. It refreshes once every 24 hours. Open it from Reef Pulse, the Next Up card on Home, or the menu.",
       },
       {
-        q: "What can I ask Reef AI Chat?",
+        q: "What can I ask Goby?",
         a: "Anything about your reef, such as why your alkalinity is dropping, whether your nitrate is too high for your corals, or what to add next. The chat knows your tank's water chemistry and livestock, so answers are specific to your setup. You get 10 messages a day, and the count resets at midnight.",
       },
       {
@@ -445,7 +469,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What's on the web dashboard?",
-        a: "A dashboard with your scores, community rank, full-screen trend charts (average, standard deviation, time in range and a second-parameter overlay), your Reef AI Advisor report and a readings table with CSV export. There are also Log, My Reef, Analytics and Control (device status) pages, and Settings lets you download your full parameter history as a CSV.",
+        a: "A dashboard with your scores, community rank, full-screen trend charts (average, standard deviation, time in range and a second-parameter overlay), your Tank Review from Goby and a readings table with CSV export. There are also Log, My Reef, Analytics and Control (device status) pages, and Settings lets you download your full parameter history as a CSV.",
       },
     ],
   },
