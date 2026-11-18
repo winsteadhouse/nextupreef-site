@@ -408,7 +408,7 @@ function Focus({ data, initial, range, setRange, onClose }: { data: DashData; in
                         <td>{fmtDateY(l.t)}</td><td className='dim'>{fmtTime(l.t)}</td>
                         <td className='r' style={{ color: out ? '#FF8585' : undefined, fontWeight: out ? 700 : 500 }}>{fv(v, p.dec)}</td>
                         <td className='r dim'>{ch == null || Math.abs(ch) < 1e-9 ? '–' : (ch > 0 ? '+' : '−') + fv(Math.abs(ch), p.dec)}</td>
-                        <td className='dim'>{l.source === 'apex_auto' ? 'Apex' : l.source === 'apex_manual' ? 'Apex (manual)' : l.source === 'web' ? 'Web' : 'App'}</td>
+                        <td className='dim'>{l.source === 'apex_auto' ? 'Apex' : l.source === 'apex_manual' ? 'Apex (manual)' : l.source === 'web' ? 'Web' : l.source === 'voice' ? 'Goby (voice)' : l.source === 'chat' ? 'Goby (chat)' : 'App'}</td>
                         <td className='dim note'>{l.notes ?? ''}</td>
                       </tr>
                     );

@@ -109,7 +109,67 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
 /* ───────────── main ───────────── */
 type NotifRow = { day: string; notification_type: string; sent: number; users: number };
 
-export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
+/* Goby by voice: who talks to it and what for. The app writes one event per finished voice
+   action; nothing about what was said is stored, only the kind of action. */
+const VOICE_KIND: Record<string, string> = { readings: 'Logged a test', reminder: 'Ticked a reminder', water_change: 'Logged a water change', dose: 'Logged a dose', question: 'Asked a question' };
+function GobyVoice({ v }: { v: Record<string, unknown> | null }) {
+  if (!v) return null;
+  const kinds = (v.by_kind ?? []) as { kind: string; n: number; users: number }[];
+  const people = (v.by_user ?? []) as { who: string; n: number; last: string; kinds: string }[];
+  const recent = (v.recent ?? []) as { when: string; who: string; tank: string; kind: string; via: string; mode: string }[];
+  const uses = Number(v.uses_30d ?? 0);
+  return (
+    <div className='dash-lower'>
+      <Panel className='span-12' title='Goby by voice' sub='Who talks to Goby and what for. Last 30 days unless it says otherwise.'>
+        <div className='minis'>
+          <MiniStat label='People using voice (30 days)' value={fmt(v.users_30d)} color={Number(v.users_30d) > 0 ? GD : undefined} />
+          <MiniStat label='People who ever tried it' value={fmt(v.users_total)} />
+          <MiniStat label='Voice actions (30 days)' value={fmt(uses)} />
+          <MiniStat label='Last 7 days' value={fmt(v.uses_7d)} />
+          <MiniStat label='Tests saved by voice' value={fmt(v.voice_readings_30d)} color={CY} />
+          <MiniStat label='Went to the AI (counts as a message)' value={fmt(v.ai_30d)} />
+        </div>
+        {kinds.length ? (
+          <div className='hbars' style={{ marginTop: 8 }}>
+            {kinds.map((k) => (
+              <div key={k.kind} className='hbar'>
+                <span className='hbar-k'>{VOICE_KIND[k.kind] ?? k.kind}</span>
+                <span className='hbar-track'><span style={{ width: Math.max(1, pct(k.n, uses)) + '%', background: PU }} /></span>
+                <span className='hbar-v'>{fmt(k.n)}<small>{fmt(k.users)} {Number(k.users) === 1 ? 'person' : 'people'}</small></span>
+              </div>
+            ))}
+          </div>
+        ) : <p className='muted'>Nobody has used voice yet. It arrives with the Goby release of the app.</p>}
+      </Panel>
+      {people.length ? (
+        <Panel className='span-6' title='Who uses voice' sub='most active first'>
+          <div className='hbars'>
+            {people.map((p, i) => (
+              <div key={i} className='hbar'>
+                <span className='hbar-k'>{p.who}</span>
+                <span className='hbar-v'>{fmt(p.n)}<small>last {p.last} &middot; {p.kinds}</small></span>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      ) : null}
+      {recent.length ? (
+        <Panel className='span-6' title='Latest voice actions' sub='newest first'>
+          <div className='hbars'>
+            {recent.map((r, i) => (
+              <div key={i} className='hbar'>
+                <span className='hbar-k'>{r.when} &middot; {r.who}</span>
+                <span className='hbar-v'>{VOICE_KIND[r.kind] ?? r.kind}<small>{r.tank}{r.mode === 'log' ? ' · from the Log tab' : ''}{r.via === 'ai' ? ' · via AI' : ''}</small></span>
+              </div>
+            ))}
+          </div>
+        </Panel>
+      ) : null}
+    </div>
+  );
+}
+
+export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality, gobyVoice }: { gobyVoice?: Record<string, unknown> | null; metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
   const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications' | 'ai'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
   useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications' || t === 'ai') setTab(t); } catch { /* ignore */ } }, []);
@@ -127,7 +187,7 @@ export default function AdminClient({ metrics, series, users, engagement, notifi
         </div>
       </div>
       {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} /> : null}
-      {tab === 'ai' ? <AIQuality q={aiQuality ?? null} /> : null}
+      {tab === 'ai' ? <><GobyVoice v={gobyVoice ?? null} /><AIQuality q={aiQuality ?? null} /></> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
       {tab === 'activity' ? <ActivityFeed e={engagement} onOpen={setOpenUser} /> : null}
