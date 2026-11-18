@@ -61,14 +61,6 @@ export default function PrivacyPage() {
             The app uses PostHog to record which screens are opened, when certain actions are completed (for example that a test was logged, not its values), and crash reports. These are linked to your account ID and email address so we can find and fix problems and see which features are used. We do not send your tank readings, photos, journal entries or Goby conversations to PostHog.
           </p>
 
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>2.2 Subscription & Billing</h2>
-          <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            Subscriptions are processed through Apple App Store or Google Play. We do not store credit card numbers. We receive confirmation of subscription status from RevenueCat and store your subscription tier (free or pro) and trial dates.
-          </p>
-          <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>2.3 AI Feature Data</h2>
-          <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            When you use Goby, our reef assistant (its chat, Tank Review and Stocking Check; earlier versions of the app call these Reef AI Chat, Reef AI Advisor and Stocking Advisor), or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos submitted for AI scanning are sent to Anthropic for processing and are not stored beyond the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
-          </p>
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>3. Community Feed — Public Data</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
             NextUpReef includes a Community feed (Reef Hub) where reefers can compare tanks and learn from each other. <strong style={{ color: "var(--text-light)" }}>Tanks are public by default.</strong> When your tank is public, the following information is visible to all users:
