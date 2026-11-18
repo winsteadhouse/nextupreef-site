@@ -56,9 +56,9 @@ export default function PrivacyPage() {
           <p style={{ color: "var(--text-muted)", fontWeight: "700", marginTop: "12px" }}>
             Things Goby saves from your voice (a test result, a completed reminder, a water change, a dose) are stored in your account exactly as if you had entered them by hand, and the text of what you said is kept in your Goby chat history, which you can clear in the app. A spoken question is sent to Anthropic in the same way as a typed one. We also record that a voice action happened and what kind it was (for example &quot;logged a test&quot;), but not what you said, so we can see how the feature is used. You can turn microphone access off at any time in your phone&apos;s settings, and everything can still be done by typing.
           </p>
-          <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.5 Diagnostics (Optional)</h3>
+          <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.5 App Usage & Crash Reports</h3>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            If enabled, we may collect limited diagnostics (crash logs, performance data) to improve reliability.
+            The app uses PostHog to record which screens are opened, when certain actions are completed (for example that a test was logged, not its values), and crash reports. These are linked to your account ID and email address so we can find and fix problems and see which features are used. We do not send your tank readings, photos, journal entries or Goby conversations to PostHog.
           </p>
 
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>2.2 Subscription & Billing</h2>
@@ -124,6 +124,7 @@ export default function PrivacyPage() {
             <li><strong style={{ color: "var(--text-light)" }}>Anthropic (Claude API)</strong> — AI features (Goby, Tank Review, Stocking Check, Photo Logging)</li>
             <li><strong style={{ color: "var(--text-light)" }}>Apple / Google speech recognition</strong> — turns your speech into text on your phone when you choose to talk to Goby; we never receive the audio</li>
             <li><strong style={{ color: "var(--text-light)" }}>RevenueCat</strong> — subscription management</li>
+            <li><strong style={{ color: "var(--text-light)" }}>PostHog</strong> — app usage analytics and crash reports (hosted in the United States)</li>
             <li><strong style={{ color: "var(--text-light)" }}>Apple App Store / Google Play</strong> — payment processing</li>
             <li><strong style={{ color: "var(--text-light)" }}>SendGrid</strong> — transactional email delivery</li>
             <li><strong style={{ color: "var(--text-light)" }}>Expo / Firebase</strong> — push notifications</li>
