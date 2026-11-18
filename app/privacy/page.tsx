@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://nextupreef.com/privacy" },
 };
 
-const EFFECTIVE_DATE = "May 6, 2026";
+const EFFECTIVE_DATE = "November 18, 2026";
 const CONTACT_EMAIL = "info@nextupreef.com";
 
 export default function PrivacyPage() {
