@@ -38,7 +38,7 @@ export default function TermsPage() {
           </p>
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>2.6 AI Features</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            Pro subscribers have access to Goby, our reef assistant (chat and voice), Goby&apos;s Tank Review, Goby&apos;s Stocking Check and AI Photo Parameter Logging, powered by Anthropic&apos;s Claude API. Earlier versions of the app call these Reef AI Chat, Reef AI Advisor and Stocking Advisor. AI responses are informational only. AI Photo Logging results should be reviewed before saving. Questions to Goby are limited to 10 per day. The Tank Review can be refreshed once every 24 hours. We do not use your tank data to train AI models.
+            Pro subscribers have access to Goby, our reef assistant (chat and voice; called Reef AI Chat in earlier versions of the app), the Reef AI Advisor, the Stocking Advisor and AI Photo Parameter Logging, powered by Anthropic&apos;s Claude API. AI responses are informational only. AI Photo Logging results should be reviewed before saving. Questions to Goby are limited to 10 per day. The Reef AI Advisor can be refreshed once every 24 hours. We do not use your tank data to train AI models.
           </p>
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>3. Accounts & Display Name</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
@@ -61,13 +61,13 @@ export default function TermsPage() {
 
           <h2 style={{ fontSize: "24px", fontWeight: "900", marginTop: "32px", marginBottom: "16px" }}>5. AI Features</h2>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            Pro subscribers have access to Goby, our reef assistant (chat and voice), Goby&apos;s Tank Review, Goby&apos;s Stocking Check and AI Photo Parameter Logging. These features use Anthropic&apos;s Claude API to generate responses based on your tank data.
+            Pro subscribers have access to Goby, our reef assistant (chat and voice), the Reef AI Advisor, the Stocking Advisor and AI Photo Parameter Logging. These features use Anthropic&apos;s Claude API to generate responses based on your tank data.
           </p>
           <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc", marginTop: "12px" }}>
             <li>AI responses are informational only and should not replace professional advice for valuable livestock.</li>
             <li>AI Photo Logging results should be reviewed before saving — AI readings may occasionally be inaccurate.</li>
             <li>Questions to Goby, typed or spoken, are limited to 10 per day per account. Logging by voice does not count toward that limit.</li>
-            <li>Goby&apos;s Tank Review can be refreshed once every 24 hours.</li>
+            <li>The Reef AI Advisor can be refreshed once every 24 hours.</li>
             <li>Goby can save what you tell it: test results, completed reminders, water changes and doses. It shows what it is about to save and gives you a moment to cancel, and you can undo it afterwards. You are responsible for checking that what it saved is what you meant; speech recognition can mishear.</li>
             <li>Goby records doses you report. It does not decide how much you should dose, and voice commands never switch equipment such as pumps, outlets, lights, dosers or feed mode.</li>
             <li>Speech is turned into text by the speech service on your phone, provided by Apple or Google under their terms. Voice needs microphone permission and is optional.</li>

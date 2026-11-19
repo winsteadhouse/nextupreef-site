@@ -47,7 +47,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What does Pro add?",
-        a: "Pro adds Goby (voice and chat), Goby's Tank Review, Goby's Stocking Check and AI photo logging, the Tank Journal, multiple tanks, chart history beyond 90 days, unlimited reminders, the dose calculator and daily dosing reminder, Neptune Apex, CoralVue HYDROS and Shelly smart outlet integrations, deeper Community Insights and the web dashboard.",
+        a: "Pro adds Goby (voice and chat), the Reef AI Advisor, the Stocking Advisor and AI photo logging, the Tank Journal, multiple tanks, chart history beyond 90 days, unlimited reminders, the dose calculator and daily dosing reminder, Neptune Apex, CoralVue HYDROS and Shelly smart outlet integrations, deeper Community Insights and the web dashboard.",
       },
       {
         q: "How much does Pro cost?",
@@ -218,11 +218,11 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
   {
     id: "ai-features",
     title: "AI features",
-    blurb: "Goby, your reef assistant: voice, chat, the Tank Review, the Stocking Check and AI photo logging.",
+    blurb: "Goby, your reef assistant (voice and chat), plus the Reef AI Advisor, the Stocking Advisor and AI photo logging.",
     faqs: [
       {
         q: "Who is Goby?",
-        a: "Goby is the reef assistant built into NextUpReef, part of Pro. You can talk to it or type to it. It logs things for you (test results, reminders, water changes, doses), answers questions using your own tank's history, and writes a full Tank Review. In older versions of the app, Goby's chat was called Reef AI Chat and the Tank Review was called the Reef AI Advisor.",
+        a: "Goby is the reef assistant built into NextUpReef, part of Pro. You can talk to it or type to it. It logs things for you (test results, reminders, water changes, doses), and answers questions using your own tank's history. In older versions of the app, Goby's chat was called Reef AI Chat.",
       },
       {
         q: "How do I log a test by voice?",
@@ -246,10 +246,10 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What AI features does NextUpReef have?",
-        a: "Four, all part of Pro: Goby's Tank Review (a full analysis of your tank), Goby itself (ask or tell it anything about your tank, by voice or by typing), Goby's Stocking Check (livestock compatibility) and AI photo logging, which reads your test results from a photo.",
+        a: "Four, all part of Pro: the Reef AI Advisor (a full analysis of your tank), Goby (ask or tell it anything about your tank, by voice or by typing), the Stocking Advisor (livestock compatibility) and AI photo logging, which reads your test results from a photo.",
       },
       {
-        q: "What does Goby's Tank Review do?",
+        q: "What does the Reef AI Advisor do?",
         a: "It reviews your tank's own data, including recent parameters and trends, water changes, livestock, equipment, dosing, lighting and maintenance, and gives you what's going well, what to watch this week, and ranked action items you can tap to mark done. It refreshes once every 24 hours. Open it from Reef Pulse, the Next Up card on Home, or the menu.",
       },
       {
@@ -469,7 +469,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What's on the web dashboard?",
-        a: "A dashboard with your scores, community rank, full-screen trend charts (average, standard deviation, time in range and a second-parameter overlay), your Tank Review from Goby and a readings table with CSV export. There are also Log, My Reef, Analytics and Control (device status) pages, and Settings lets you download your full parameter history as a CSV.",
+        a: "A dashboard with your scores, community rank, full-screen trend charts (average, standard deviation, time in range and a second-parameter overlay), your Reef AI Advisor report and a readings table with CSV export. There are also Log, My Reef, Analytics and Control (device status) pages, and Settings lets you download your full parameter history as a CSV.",
       },
     ],
   },

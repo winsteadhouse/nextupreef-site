@@ -47,7 +47,7 @@ export default function PrivacyPage() {
           </p>
           <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.4 AI Feature Data</h3>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
-            When you use Goby, our reef assistant (its chat, Tank Review and Stocking Check; earlier versions of the app call these Reef AI Chat, Reef AI Advisor and Stocking Advisor), or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos you submit for AI scanning are sent to Anthropic for processing and are not stored beyond the duration of the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
+            When you use Goby, our reef assistant (called Reef AI Chat in earlier versions of the app), the Reef AI Advisor, the Stocking Advisor or AI Photo Parameter Logging, your tank data (parameters, equipment, livestock, dosing) is sent to Anthropic&apos;s Claude API to generate responses. Photos you submit for AI scanning are sent to Anthropic for processing and are not stored beyond the duration of the request. AI chat history is stored in your account. We do not use your tank data to train AI models.
           </p>
           <h3 style={{ fontSize: "18px", fontWeight: "900", marginTop: "20px", marginBottom: "12px" }}>2.4.1 Talking to Goby (Voice)</h3>
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           <p style={{ color: "var(--text-muted)", fontWeight: "700" }}>We use the following third-party services to operate NextUpReef:</p>
           <ul style={{ color: "var(--text-muted)", fontWeight: "700", marginLeft: "24px", listStyle: "disc", marginTop: "12px" }}>
             <li><strong style={{ color: "var(--text-light)" }}>Supabase</strong> — database, authentication, and file storage</li>
-            <li><strong style={{ color: "var(--text-light)" }}>Anthropic (Claude API)</strong> — AI features (Goby, Tank Review, Stocking Check, Photo Logging)</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Anthropic (Claude API)</strong> — AI features (Goby, Reef AI Advisor, Stocking Advisor, Photo Logging)</li>
             <li><strong style={{ color: "var(--text-light)" }}>Apple / Google speech recognition</strong> — turns your speech into text on your phone when you choose to talk to Goby; we never receive the audio</li>
             <li><strong style={{ color: "var(--text-light)" }}>RevenueCat</strong> — subscription management</li>
             <li><strong style={{ color: "var(--text-light)" }}>PostHog</strong> — app usage analytics and crash reports (hosted in the United States)</li>
