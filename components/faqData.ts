@@ -20,7 +20,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What do the five tabs do?",
-        a: "Home is your at-a-glance view: greeting, live vitals if you have a controller, today's doses, your Next Up action, scores and upcoming reminders. My Reef holds your tank profile, monthly photo, livestock, equipment, dosing and lights. Log is where you enter test results. Reef Pulse shows your scores, parameters and trend charts, and Community is the public leaderboard of reef tanks.",
+        a: "Home is your at-a-glance view: a greeting, Goby, a Today card with what's due (reminders, doses and your monthly photo, each with a Done button), live vitals if you have a controller, your scores and your Next Up action. My Reef holds your tank profile, monthly photo, livestock, equipment, dosing and lights. Log is where you enter test results. Reef Pulse shows your scores, parameters and trend charts, and Community is the public leaderboard of reef tanks.",
       },
       {
         q: "Where are Reminders, Dosing and Settings?",
@@ -98,7 +98,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "What is the Tank Journal?",
-        a: "The Tank Journal is a Pro feature for dated notes with photos about your reef. Open it from the Journal button on the Log tab or the Journal card on Home. Journal entries are private and never shown on your community profile.",
+        a: "The Tank Journal is a Pro feature for dated notes with photos about your reef. Open it from My Reef, from Journal in the menu, or from the Journal card on Home. Journal entries are private and never shown on your community profile.",
       },
     ],
   },
@@ -199,7 +199,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       },
       {
         q: "How do I mark a reminder as done?",
-        a: "Tap Done on the reminder card and the next due date is calculated from its frequency. Marking a water change done logs it, and it shows as a marker on your Reef Pulse charts. Tap +1 Day to push a reminder back a day.",
+        a: "Tap Done on the Today card at the top of Home, or on the reminder in Reminders & Alerts, and the next due date is calculated from its frequency. Marking a water change done logs it, and it shows as a marker on your Reef Pulse charts. Tap +1 Day to push a reminder back a day.",
       },
       {
         q: "What are maintenance reminders?",
