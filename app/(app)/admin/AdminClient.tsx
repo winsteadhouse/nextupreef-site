@@ -169,7 +169,7 @@ function GobyVoice({ v }: { v: Record<string, unknown> | null }) {
   );
 }
 
-export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality, gobyVoice }: { gobyVoice?: Record<string, unknown> | null; metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
+export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality, gobyVoice, integrations }: { integrations?: Record<string, unknown> | null; gobyVoice?: Record<string, unknown> | null; metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
   const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications' | 'ai'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
   useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications' || t === 'ai') setTab(t); } catch { /* ignore */ } }, []);
@@ -186,7 +186,7 @@ export default function AdminClient({ metrics, series, users, engagement, notifi
           {(['overview', 'engagement', 'users', 'activity', 'notifications', 'ai'] as const).map((t) => <button key={t} role='tab' aria-selected={tab === t} className={tab === t ? 'on' : ''} onClick={() => pick(t)} style={{ textTransform: 'capitalize' }}>{t === 'ai' ? 'AI' : t}</button>)}
         </div>
       </div>
-      {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} /> : null}
+      {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} integrations={integrations} /> : null}
       {tab === 'ai' ? <><GobyVoice v={gobyVoice ?? null} /><AIQuality q={aiQuality ?? null} /></> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
@@ -269,14 +269,12 @@ function Notifications({ rows }: { rows: NotifRow[] }) {
 }
 
 /* ───────────── Overview (existing metrics) ───────────── */
-function Overview({ metrics, series, engagement, extra }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; engagement: Eng | null; extra?: Record<string, unknown> | null }) {
+function Overview({ metrics, series, engagement, extra, integrations }: { metrics: Record<string, Record<string, unknown>> | null; series: Series[]; engagement: Eng | null; extra?: Record<string, unknown> | null; integrations?: Record<string, unknown> | null }) {
   const [days, setDays] = useState(90);
   const m = metrics || {};
   const u = (m.users || {}) as Record<string, number>;
   const t = (m.tanks || {}) as Record<string, unknown>;
   const ai = (m.ai || {}) as Record<string, number>;
-  const ig = (m.integrations || {}) as Record<string, unknown>;
-  const ix = ((extra?.integrations_extra ?? {}) as Record<string, unknown>);
   const jy = ((extra?.journey ?? {}) as Record<string, unknown>);
   const ad = ((extra?.adoption ?? {}) as Record<string, unknown>);
   const pl = ((ad.planner ?? {}) as Record<string, unknown>);
@@ -380,36 +378,28 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
           <div className='dim small' style={{ marginTop: 8 }}>Totals: Advisor {fmt(ai.advisor_total)} · Stocking {fmt(ai.stocking_total)} · Chat {fmt(ai.chat_total)} ({fmt((ai.advisor_7d || 0) + (ai.stocking_7d || 0) + (ai.chat_7d || 0))} in 7d)</div>
         </Panel>
 
-        <Panel className='span-12' title='Integrations and hardware'>
+        <Hardware h={integrations ?? null} />
+
+        <Panel className='span-6' title='Dosing' sub='Products people track, and the dose calculator'>
           <div className='minis'>
-            <MiniStat label='Apex users' value={fmt(ig.apex_active_users)} color={RO} />
-            <MiniStat label='Apex synced 24h' value={fmt(ig.apex_synced_24h)} />
-            <MiniStat label='Smart outlets' value={fmt(ig.shelly_outlets)} color={GD} />
-            <MiniStat label='Outlet users' value={fmt(ig.shelly_users)} />
-            <MiniStat label='HYDROS users' value={fmt(ig.hydros_users)} color={PU} />
-            <MiniStat label='Jebao users' value={fmt(ig.jebao_users)} color={PU} />
-            <MiniStat label='Jebao pumps' value={fmt(ig.jebao_pumps)} />
-            <MiniStat label='Jebao online 24h' value={fmt(ig.jebao_online_24h)} />
-            <MiniStat label='Jebao faults' value={fmt(ig.jebao_faults)} color={RO} />
-            <MiniStat label='Temp probes' value={fmt(ig.temp_probes)} color={GD} />
-            <MiniStat label='Temp users' value={fmt(ig.temp_users)} />
-            <MiniStat label='Temp read 24h' value={fmt(ig.temp_read_24h)} />
-            <MiniStat label='Temp alerting' value={fmt(ig.temp_alerting)} color={RO} />
-            <MiniStat label='ProfiLux users' value={fmt(ix.profilux_users)} color={PU} />
-            <MiniStat label='ProfiLux synced 24h' value={fmt(ix.profilux_synced_24h)} />
-            <MiniStat label='Tank Hub devices' value={fmt(ix.hub_devices)} color={GD} />
-            <MiniStat label='Tank Hub users' value={fmt(ix.hub_users)} />
-            <MiniStat label='Apex outlets' value={fmt(ix.apex_outlets)} />
-            <MiniStat label='Apex orphan outlets' value={fmt(ix.apex_orphan_outlets)} color={RO} />
-            <MiniStat label='Any controller' value={fmt(ix.any_controller_users)} color={GD} />
-            <MiniStat label='ReefRun pumps' value={fmt(ig.redsea_pumps)} color={PU} />
-            <MiniStat label='ReefRun users' value={fmt(ig.redsea_users)} />
             <MiniStat label='Dosing users' value={fmt(ds.users)} color={AM} />
-            <MiniStat label='Dosing products' value={fmt(ds.products)} />
-            <MiniStat label='Scheduled dosers' value={fmt(ds.scheduled)} />
-            <MiniStat label='Dose events 7d' value={fmt(ds.dose_events_7d)} />
+            <MiniStat label='Products' value={fmt(ds.products)} />
+            <MiniStat label='On a schedule' value={fmt(ds.scheduled)} />
+            <MiniStat label='Doses logged 7d' value={fmt(ds.dose_events_7d)} />
             <MiniStat label='Calculator users' value={fmt(ds.calc_users)} color={AM} />
             <MiniStat label='Calculator 30d' value={fmt(ds.calc_users_30d)} />
+          </div>
+        </Panel>
+
+        <Panel className='span-6' title='Opening screen' sub='Where people choose to land when they open the app'>
+          <div className='minis'>
+            <MiniStat label='Log' value={fmt(ss.log)} color={GD} />
+            <MiniStat label='My Reef' value={fmt(ss.my_reef)} color={GD} />
+            <MiniStat label='Home (chosen)' value={fmt(ss.home)} />
+            <MiniStat label='Home (never changed)' value={fmt(ss.default)} />
+          </div>
+          <div className='dpanel-note'>
+            Home is the default, so &quot;never changed&quot; is everyone who has not touched the setting.
           </div>
         </Panel>
 
@@ -495,21 +485,58 @@ function Overview({ metrics, series, engagement, extra }: { metrics: Record<stri
           </div>
         </Panel>
 
-        <Panel className='span-12' title='Opening screen' sub='Where people choose to land when they open the app'>
-          <div className='minis'>
-            <MiniStat label='Log' value={fmt(ss.log)} color={GD} />
-            <MiniStat label='My Reef' value={fmt(ss.my_reef)} color={GD} />
-            <MiniStat label='Home (chosen)' value={fmt(ss.home)} />
-            <MiniStat label='Home (never changed)' value={fmt(ss.default)} />
-          </div>
-          <div className='dpanel-note'>
-            Home is the default, so &quot;never changed&quot; is everyone who has not touched the
-            setting. Only the first three are deliberate choices. This stays at zero until
-            the release carrying the setting is live.
-          </div>
-        </Panel>
       </div>
     </>
+  );
+}
+
+/* ───────────── hardware ─────────────
+   One row per integration, the same four questions for each: how many people, how many
+   devices, how many we heard from today, how many have something wrong. Rows come from
+   admin_integrations(), so a new integration is a new row in that function. */
+type HwRow = { group: string; name: string; users: number; devices: number; live_24h: number; issues: number; unit: string; issue_label: string; note: string | null };
+function Hardware({ h }: { h: Record<string, unknown> | null }) {
+  const rows = ((h?.rows ?? []) as HwRow[]);
+  const groups = Array.from(new Set(rows.map((r) => r.group)));
+  const issues = Number(h?.issues ?? 0);
+  return (
+    <Panel className='span-12' title='Integrations and hardware' sub='who has what connected, and whether it is still talking'>
+      <div className='minis'>
+        <MiniStat label='People with any hardware' value={fmt(h?.any_users)} color={GD} />
+        <MiniStat label='Devices connected' value={fmt(h?.devices)} />
+        <MiniStat label='Heard from in 24h' value={fmt(h?.live_24h)} color={CY} />
+        <MiniStat label='Need a look' value={fmt(issues)} color={issues > 0 ? BD : GD} />
+        <MiniStat label='Red Sea users' value={fmt(h?.redsea_users)} color={PU} />
+      </div>
+      <div className='rtable' style={{ maxHeight: 'none', marginTop: 12 }}>
+        <table>
+          <thead><tr><th>Integration</th><th className='r'>People</th><th className='r'>Devices</th><th className='r'>Heard from 24h</th><th className='r'>Need a look</th><th>Notes</th></tr></thead>
+          <tbody>
+            {groups.map((g) => [
+              <tr key={g}><td colSpan={6} style={{ paddingTop: 14, fontSize: 10.5, fontWeight: 700, letterSpacing: '.6px', textTransform: 'uppercase', color: 'var(--dim)' }}>{g}</td></tr>,
+              ...rows.filter((r) => r.group === g).map((r) => {
+                const none = !r.devices;
+                return (
+                  <tr key={r.name} style={none ? { opacity: 0.45 } : undefined}>
+                    <td style={{ fontWeight: 600 }}>{r.name}</td>
+                    <td className='r'>{none ? '–' : fmt(r.users)}</td>
+                    <td className='r'>{none ? '–' : fmt(r.devices)}</td>
+                    <td className='r'>{none ? '–' : <>{fmt(r.live_24h)} <small className='dim'>of {fmt(r.devices)}</small></>}</td>
+                    <td className={'r' + (r.issues > 0 ? ' out' : '')} title={r.issue_label}>{none ? '–' : fmt(r.issues)}</td>
+                    <td className='dim'>{none ? 'nobody yet' : r.issues > 0 ? r.issue_label : r.note ?? ''}</td>
+                  </tr>
+                );
+              }),
+            ])}
+          </tbody>
+        </table>
+      </div>
+      <div className='dpanel-note'>
+        &quot;Heard from&quot; means the app read the device or synced it in the last 24 hours. Most of this
+        gear is read by the phone on home WiFi, so a low number means people did not open the app
+        at home today, not that the gear is broken. Your own devices are counted.
+      </div>
+    </Panel>
   );
 }
 
