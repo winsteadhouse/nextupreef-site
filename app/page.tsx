@@ -114,7 +114,7 @@ export default function HomePage() {
           </h1>
 
           <p style={{ fontSize: "19px", lineHeight: 1.6, color: "var(--text-muted)", margin: 0, maxWidth: "440px" }}>
-            Parameter logging, built-in Reef AI, and your pumps and controllers in one app.
+            The reef tank app for parameter logging, built-in Reef AI, and your pumps and controllers.
           </p>
 
           <DownloadButtons />

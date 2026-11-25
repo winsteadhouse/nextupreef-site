@@ -106,7 +106,7 @@ export default function UglyPhasePost() {
             border: "rgba(146, 64, 14, 0.2)",
             appearance: "Dusty brown or rust-colored film coating rock, sand, and glass. Looks like someone sprinkled cocoa powder in your tank.",
             cause: "Silicates from new sand, rock, and sometimes tap water or low-quality RODI. Diatoms consume silicate and are almost universal in new tanks.",
-            solution: "Nassarius snails and cerith snails will eat diatoms off the sand bed. Trochus and turbo snails handle glass and rock. Your cleanup crew is your best friend here.",
+            solution: "Cerith snails and a fighting conch will eat diatoms off the sand bed. Trochus and turbo snails handle glass and rock. Your cleanup crew is your best friend here.",
             duration: "Usually clears within 4–6 weeks as silicate is depleted.",
             panic: false,
           },
@@ -177,7 +177,7 @@ export default function UglyPhasePost() {
           {[
             { species: "Turbo Snails", role: "Powerhouse algae grazer", note: "Best for GHA and film algae on glass and rock. Very effective but can knock over small frags. Great starting CUC for most tanks.", tank: "Any size" },
             { species: "Nassarius Snails", role: "Sand bed cleaner", note: "Bury themselves in sand and emerge to eat detritus and uneaten food. Excellent for sand bed health and diatom control.", tank: "Any size" },
-            { species: "Trochus / Astrea Snails", role: "Coralline groomers", note: "Unlike turbos, these can right themselves if knocked over. Good film algae grazers, slightly less aggressive than turbos.", tank: "Any size" },
+            { species: "Trochus / Astrea Snails", role: "Coralline groomers", note: "Good film algae grazers, slightly less aggressive than turbos. Trochus can right themselves if knocked over; astrea often cannot, so flip one back if you see it upside down.", tank: "Any size" },
             { species: "Hermit Crabs", role: "General scavengers", note: "Eat detritus, uneaten food, and some algae. Provide extra shells — hermit crabs will kill snails to steal shells if they don't have alternatives.", tank: "Any size" },
             { species: "Sea Urchin", role: "Aggressive GHA control", note: "Urchins are exceptional at clearing heavy GHA outbreaks. Be careful with small or branching corals — they'll bulldoze them.", tank: "40g+" },
           ].map((row, idx) => (

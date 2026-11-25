@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | NextUpReef",
   },
   description:
-    "The best free app to track and monitor your saltwater reef aquarium. Log alkalinity, calcium, magnesium, nitrate & more. Get a Reef Score, trend charts, water change reminders, and community features. Free on iOS and Android.",
+    "Free reef tank tracking app for iOS and Android. Log saltwater aquarium parameters, see trends and a Reef Score, and connect Apex, HYDROS and more.",
   keywords: [
     "reef tank tracking app",
     "best reef aquarium app",

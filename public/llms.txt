@@ -1,0 +1,44 @@
+# NextUpReef
+
+> NextUpReef is a free reef tank tracking app for iOS and Android. Saltwater aquarium keepers use it to log water parameters, see trends, get maintenance reminders, and monitor or control their equipment from one place. An optional Pro subscription adds the AI features and equipment integrations.
+
+## What it does
+
+- Parameter logging: alkalinity, calcium, magnesium, nitrate, phosphate, salinity, pH, temperature, ammonia and nitrite, with trend charts and target ranges by tank type (mixed reef, SPS, LPS, soft coral, fish only, nano).
+- Reef Score and Stability Score: two 0-100 scores that summarize how close a tank is to its targets and how steady it has been.
+- Reminders: water changes, filter socks, dosing and any custom maintenance task, with push notifications.
+- Livestock, equipment, dosing and lighting records for each tank, plus a journal and a build timeline.
+- Reef Advisor (Pro): an AI report on a tank's logged data with prioritized actions.
+- Goby (Pro): an AI assistant for chat and voice, including logging test results by voice.
+- Equipment integrations (Pro): Neptune Apex (including Trident readings), CoralVue HYDROS, GHL ProfiLux, Jebao and Jecod WiFi pumps, Red Sea ReefRun, Shelly smart plugs and WiFi temperature probes.
+- Feed Mode: one tap pauses chosen pumps and equipment while fish eat.
+- Tank Display: a full-screen dashboard for a tablet mounted by the tank, which can also relay local equipment to the phone when away from home.
+- Community: a leaderboard of public tanks, tank builds and a feed.
+- Build planner: plan a new tank and its costs before buying.
+
+## Who it is for
+
+Reef and saltwater aquarium hobbyists, from a first nano tank through to SPS systems with a controller. It works with no equipment connected at all; logging by hand is the core of the app.
+
+## Platforms and price
+
+- iPhone and iPad: https://apps.apple.com/us/app/nextupreef/id6760728959
+- Android: https://play.google.com/store/apps/details?id=com.nextupreef.app
+- Free to download and use. Pro is an optional subscription bought inside the app.
+
+## Key pages
+
+- [Home](https://nextupreef.com/)
+- [Features](https://nextupreef.com/features)
+- [Supported devices](https://nextupreef.com/devices)
+- [FAQ](https://nextupreef.com/faq)
+- [Best reef tank tracking apps compared](https://nextupreef.com/blog/best-reef-tank-tracking-app)
+- [Reef tank parameters chart](https://nextupreef.com/blog/reef-tank-parameters-chart)
+- [How to connect a Neptune Apex](https://nextupreef.com/blog/how-to-connect-apex)
+- [CoralVue HYDROS vs Neptune Apex](https://nextupreef.com/blog/coralvue-hydros-vs-neptune-apex)
+- [Tablet dashboard for a reef tank](https://nextupreef.com/blog/reef-tank-tablet-dashboard)
+- [All guides](https://nextupreef.com/blog)
+
+## Contact
+
+- https://nextupreef.com/contact

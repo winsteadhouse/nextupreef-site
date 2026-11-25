@@ -241,7 +241,7 @@ export default function NanoReefPost() {
             <strong style={{ color: "var(--text-light)" }}>Stocking math:</strong> A 20 gallon nano can hold 2 to 3 small fish total. A 13 gallon pico should have at most 1 fish. Always think about adult size, not the inch-long juvenile in the bag.
           </p>
           <p>
-            Cleanup crew is just as important: 1 hermit crab and 1 snail per 2 gallons is a reasonable starting density. Add them gradually after the cycle completes and the tank moves through the &quot;ugly phase.&quot;{" "}
+            Cleanup crew is just as important, but start light: 2 to 4 grazing snails and 1 or 2 sand cleaners is plenty for a 10 to 20 gallon tank, and more than that can starve. Add them gradually after the cycle completes and the tank moves through the &quot;ugly phase.&quot;{" "}
             <Link href="/blog/the-ugly-phase" style={{ color: "var(--reef)", fontWeight: 700 }}>
               Learn what to expect during the ugly phase →
             </Link>

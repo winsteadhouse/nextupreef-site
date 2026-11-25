@@ -33,9 +33,11 @@ const journey: Post[] = [
   { slug: "first-livestock", title: "Add your first fish", description: "Hardy beginner fish, the one-at-a-time rule, and what to watch in the first two weeks.", date: "April 2026", readTime: "8 min", tag: "Fish" },
   { slug: "adding-first-corals", title: "Add your first corals", description: "Why softies and zoas come first, how alkalinity works, and what to avoid in year one.", date: "April 2026", readTime: "9 min", tag: "Corals" },
   { slug: "established-reef", title: "Run an established reef", description: "What maturity looks like, when to start dosing, and the habits that keep a reef thriving.", date: "April 2026", readTime: "10 min", tag: "Dosing" },
+  { slug: "reef-tank-clean-up-crew", title: "Reef Tank Clean Up Crew: What to Add, How Many, and When", description: "Which snails, crabs and shrimp do which job, sensible starting numbers by tank size, and why one snail per gallon overstocks.", date: "November 24, 2026", readTime: "7 min", tag: "Clean up crew" },
 ];
 
 const chemistry: Post[] = [
+  { slug: "rodi-water-for-reef-tank", title: "RODI Water for a Reef Tank: Do You Really Need It?", description: "What tap water adds to a reef, what RO and DI each remove, what TDS should read, and how to keep a unit working.", date: "November 24, 2026", readTime: "7 min", tag: "Water quality" },
   { slug: "reef-tank-parameters-chart", title: "Reef Tank Parameters Chart: Ideal Ranges vs What Real Tanks Run", description: "Target ranges for every tank type, next to what 100+ real reef tanks actually run, from NextUpReef app data.", date: "September 14, 2026", readTime: "9 min", tag: "Original data" },
   { slug: "reef-tank-nitrate-phosphate-guide", title: "Nitrate and Phosphate: Ideal Levels and How to Lower or Raise Them", description: "Why zero isn't the goal, sensible ranges by tank type, testing accurately, and fixing nutrients without crashing them.", date: "September 14, 2026", readTime: "9 min", tag: "Nutrients" },
   { slug: "reef-tank-alkalinity-calcium-magnesium-guide", title: "Alkalinity, Calcium & Magnesium: The Complete Tracking Guide", description: "Why alk, calcium and magnesium are the big three, what healthy ranges look like, and how to keep them steady.", date: "April 4, 2026", readTime: "7 min", tag: "Alk · Ca · Mg" },
@@ -52,6 +54,7 @@ const dosing: Post[] = [
 ];
 
 const equipment: Post[] = [
+  { slug: "uv-sterilizer-reef-tank", title: "UV Sterilizer for a Reef Tank: Do You Need One, and What Size?", description: "What UV fixes and what it does not, rough sizing by tank size, flow rate, plumbing and bulb maintenance.", date: "November 24, 2026", readTime: "7 min", tag: "Equipment" },
   { slug: "coralvue-hydros-vs-neptune-apex", title: "CoralVue HYDROS vs Neptune Apex: Which Reef Controller Is Right for You?", description: "Local vs cloud, what each does, honest limits, and when a couple of smart plugs are all you need.", date: "September 14, 2026", readTime: "9 min", tag: "Controllers" },
   { slug: "nano-reef-tank-guide", title: "Nano Reef Tank Guide: 10, 20 and 40 Gallon Setups That Work", description: "Equipment, livestock and parameters for small tanks, and the mistakes that sink most nanos.", date: "May 9, 2026", readTime: "9 min", tag: "Nano reef" },
   { slug: "reef-tank-sump-guide", title: "Reef Tank Sump Guide: Do You Need One?", description: "What a sump does, what size you need, how to plumb one, and when your tank is fine without it.", date: "May 9, 2026", readTime: "9 min", tag: "Sump" },

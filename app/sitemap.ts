@@ -3,10 +3,10 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nextupreef.com";
   return [
-    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${baseUrl}`,                                                    lastModified: new Date("2026-11-24"), changeFrequency: "weekly",  priority: 1.0 },
     { url: `${baseUrl}/features`,                                           lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/devices`,                                            lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-11-07"), changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${baseUrl}/blog`,                                               lastModified: new Date("2026-11-24"), changeFrequency: "weekly",  priority: 0.9 },
     { url: `${baseUrl}/blog/reef-tank-build-planner`, lastModified: new Date("2026-11-07"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-tablet-dashboard`, lastModified: new Date("2026-09-25"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-jebao-pump`, lastModified: new Date("2026-09-20"), changeFrequency: "monthly", priority: 0.95 },
@@ -14,6 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/reef-tank-temperature-monitor`, lastModified: new Date("2026-09-26"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/connect-ghl-profilux`, lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/connect-red-sea-reefrun`, lastModified: new Date("2026-09-22"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/blog/reef-tank-clean-up-crew`, lastModified: new Date("2026-11-24"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog/rodi-water-for-reef-tank`, lastModified: new Date("2026-11-24"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog/uv-sterilizer-reef-tank`, lastModified: new Date("2026-11-24"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/reef-tank-parameters-chart`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-dosing-calculator`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/reef-tank-nitrate-phosphate-guide`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.9 },
