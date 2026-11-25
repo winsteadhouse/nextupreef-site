@@ -1,4 +1,6 @@
 // A YouTube video embed with VideoObject markup, so Google can show the video in search results.
+import YouTubePlayer from "./YouTubePlayer";
+
 type Props = {
   id: string;
   title: string;
@@ -15,7 +17,7 @@ export default function YouTubeVideo({ id, title, description, uploadDate, durat
     "@type": "VideoObject",
     name: title,
     description,
-    thumbnailUrl: [`https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
+    thumbnailUrl: [`https://nextupreef.com/videos/${id}.jpg`, `https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
     uploadDate,
     duration,
     contentUrl: `https://www.youtube.com/watch?v=${id}`,
@@ -25,14 +27,7 @@ export default function YouTubeVideo({ id, title, description, uploadDate, durat
     <figure style={{ margin: "40px auto", maxWidth: vertical ? 340 : 720 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <div style={{ position: "relative", width: "100%", aspectRatio: vertical ? "9 / 16" : "16 / 9", borderRadius: 16, overflow: "hidden", background: "#070b14" }}>
-        <iframe
-          src={`https://www.youtube.com/embed/${id}`}
-          title={title}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
-        />
+        <YouTubePlayer id={id} title={title} poster={`/videos/${id}.jpg`} />
       </div>
       {caption ? (
         <figcaption style={{ fontSize: "13px", color: "var(--text-muted)", textAlign: "center", marginTop: "12px" }}>{caption}</figcaption>
