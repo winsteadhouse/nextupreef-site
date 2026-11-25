@@ -62,7 +62,8 @@ export default function FaqPage() {
         </h1>
         <p style={{ fontSize: "18px", color: "var(--text-muted)", lineHeight: 1.7, maxWidth: "620px", margin: 0 }}>
           {total} answers about logging, scores, dosing, reminders, AI, controllers and your account. Can&apos;t find yours?{" "}
-          <Link href="/contact" style={{ color: "var(--reef)", fontWeight: 700 }}>Contact us</Link>.
+          <Link href="/contact" style={{ color: "var(--reef)", fontWeight: 700 }}>Contact us</Link>. Prefer to watch?{" "}
+          <Link href="/videos" style={{ color: "var(--reef)", fontWeight: 700 }}>See the how-to videos</Link>.
         </p>
       </section>
 

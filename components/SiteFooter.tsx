@@ -30,6 +30,7 @@ const COLUMNS: { title: string; links: FooterLink[] }[] = [
     title: "Support",
     links: [
       { href: "/faq", label: "FAQ" },
+      { href: "/videos", label: "How-to videos" },
       { href: "/contact", label: "Contact us" },
       { href: "https://portal.nextupreef.com", label: "Sign in", external: true },
     ],

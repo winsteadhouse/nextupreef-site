@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/adding-first-corals`,                          lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/established-reef`,                             lastModified: new Date("2026-03-01"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/faq`,                                                lastModified: new Date("2026-11-07"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/videos`,                                             lastModified: new Date("2026-11-25"), changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/contact`,                                            lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/privacy`,                                            lastModified: new Date("2026-04-01"), changeFrequency: "yearly",  priority: 0.3 },
     { url: `${baseUrl}/terms`,                                              lastModified: new Date("2026-04-01"), changeFrequency: "yearly",  priority: 0.3 },
