@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 const TITLE = "How to Connect and Manage a Neptune Apex in NextUpReef";
 const DESCRIPTION =
@@ -291,6 +292,16 @@ export default function HowToConnectApexPage() {
             <li><strong style={strong}>System</strong> — firmware and available updates, WiFi signal, last power outage and module errors, as your Apex reports them.</li>
             <li><strong style={strong}>Safety alerts</strong> — the alarms already configured on your Apex, such as temperature and leak alarms.</li>
           </ul>
+
+          <YouTubeVideo
+            id="m1JLKGuJaXM"
+            title="Neptune Apex and Reef Tank Dosing in One App"
+            description="How the NextUpReef reef tank app shows Neptune Apex outlets and probe readings, and keeps daily dosing in one checklist."
+            uploadDate="2026-11-25"
+            duration="PT48S"
+            vertical
+            caption="Video: the Apex screen and the daily dosing checklist in NextUpReef."
+          />
 
           <h2 style={h2}>Changing or removing things safely</h2>
           <ul style={list}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Reef Tank Dosing Calculator: How Much Baking Soda, 2-Part or Kalk to Dose",
@@ -368,6 +369,16 @@ export default function ReefTankDosingCalculatorPost() {
             Pro also adds a daily dosing reminder at the hour you choose, listing what is still due and staying silent once everything is logged. If you want doses to run on their own, see{" "}
             <Link href="/blog/how-to-setup-dosing-shelly" style={linkStyle}>how to set up dosing on a Shelly plug</Link>. Pro is $4.99/month or $39.99/year, and every new account gets a 30-day Pro trial with no credit card.
           </p>
+
+          <YouTubeVideo
+            id="m1JLKGuJaXM"
+            title="Neptune Apex and Reef Tank Dosing in One App"
+            description="How the NextUpReef reef tank app shows Neptune Apex outlets and probe readings, and keeps daily dosing in one checklist."
+            uploadDate="2026-11-25"
+            duration="PT48S"
+            vertical
+            caption="Video: the Apex screen and the daily dosing checklist in NextUpReef."
+          />
 
           <h2 style={h2Style}>Frequently Asked Questions</h2>
           <p>
