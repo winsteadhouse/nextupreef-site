@@ -87,7 +87,7 @@ const appGuides: Post[] = [
   { slug: "ai-reef-tank-advisor", title: "The AI Reef Advisor, Explained", description: "How the Reef AI Advisor, Reef AI Chat and photo logging use your real tank data to give specific advice.", date: "May 2026", readTime: "7 min", tag: "AI", image: "/screenshots/site-v3/phones-ai.png" },
   { slug: "my-reef-tank-tracking", title: "My Reef: Livestock, Equipment and Cost in One Place", description: "Track every fish, coral, invert, piece of gear and dollar, with a Stocking Advisor that checks compatibility.", date: "June 12, 2026", readTime: "7 min", tag: "My Reef", image: "/screenshots/site-v3/phone-my-reef.png" },
   { slug: "how-to-add-shelly-plug", title: "Add a Shelly Smart Outlet in 5 Steps", description: "Set up a Shelly Plug US Gen4 entirely inside NextUpReef, no Shelly app needed.", date: "May 23, 2026", readTime: "5 min", tag: "Shelly", image: "/screenshots/site-v3/phone-doser.png" },
-  { slug: "best-reef-tank-tracking-app", title: "Best Reef Tank Tracking App in 2026", description: "An honest comparison of free and paid reef aquarium apps for iPhone and Android.", date: "April 4, 2026", readTime: "6 min", tag: "Comparison", image: "/screenshots/site-v3/phone-log.png" },
+  { slug: "best-reef-tank-tracking-app", title: "Best Reef Tank Apps for 2027", description: "An honest comparison of free and paid reef aquarium apps for iPhone and Android.", date: "April 4, 2026", readTime: "6 min", tag: "Comparison", image: "/screenshots/site-v3/phone-log.png" },
 ];
 
 const featured: Post = { ...chemistry[0], image: "/screenshots/site-v3/phone-log.png" };

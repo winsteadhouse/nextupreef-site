@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/how-to-connect-apex`,                          lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/blog/ai-reef-tank-advisor`,                         lastModified: new Date("2026-06-12"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/my-reef-tank-tracking`,                          lastModified: new Date("2026-06-12"), changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/blog/best-reef-tank-tracking-app`,                  lastModified: new Date("2026-05-10"), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog/best-reef-tank-tracking-app`,                  lastModified: new Date("2026-11-25"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/blog/how-to-track-saltwater-aquarium-parameters`,   lastModified: new Date("2026-04-01"), changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/blog/reef-tank-alkalinity-calcium-magnesium-guide`, lastModified: new Date("2026-04-01"), changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/blog/nano-reef-tank-guide`,                         lastModified: new Date("2026-04-15"), changeFrequency: "monthly", priority: 0.85 },

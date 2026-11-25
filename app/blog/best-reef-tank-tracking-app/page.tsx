@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
+  title: "Best Reef Tank Apps for 2027 (Free & Paid Compared)",
   description:
-    "We compared every reef tank app worth using in 2026 on price, charting, dosing maths, reminders and controller support. Free and paid, iOS and Android, with an honest note on what each one does badly.",
+    "Looking for a reef tank app or saltwater aquarium app for 2027? We compare price, charting, reminders, AI and controller support. Free and paid, iOS and Android.",
   alternates: {
     canonical: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
   },
   openGraph: {
-    title: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
+    title: "Best Reef Tank Apps for 2027 (Free & Paid Compared)",
     description:
-      "Honest comparison of reef aquarium tracking apps in 2026 — now with AI-powered analysis. Find the best app to monitor your saltwater tank.",
+      "An honest comparison of reef tank and saltwater aquarium apps for 2027, including AI advice and controller support.",
     url: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
     images: [{ url: "/brand/og-image-v2.png", width: 1200, height: 630 }],
   },
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Best Reef Tank Tracking App in 2026 (Free & Paid Compared)",
+  headline: "Best Reef Tank Apps for 2027 (Free & Paid Compared)",
   description:
-    "Honest comparison of reef aquarium tracking apps in 2026 — including AI-powered options, free apps, and paid alternatives.",
+    "A comparison of reef tank and saltwater aquarium apps for 2027, including AI-powered options, free apps, and paid alternatives.",
   image: "https://nextupreef.com/brand/og-image-v2.png",
   author: { "@type": "Organization", name: "NextUpReef" },
   publisher: {
@@ -31,7 +31,7 @@ const articleSchema = {
     logo: { "@type": "ImageObject", url: "https://nextupreef.com/brand/logo-v2.png" },
   },
   datePublished: "2026-04-04",
-  dateModified: "2026-09-21",
+  dateModified: "2026-11-25",
   mainEntityOfPage: "https://nextupreef.com/blog/best-reef-tank-tracking-app",
 };
 
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "What is the best reef tank app?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "It depends on what you need. NextUpReef covers parameter logging, trend charts, dosing maths, reminders, equipment tracking and AI advice in one app, and connects to Apex, HYDROS, Jebao, Red Sea and Shelly hardware. Aquarimate and ReefBay are simpler log-only apps. Most reefers want charting and reminders rather than a spreadsheet, which is what separates the options.",
+        text: "It depends on what you need. NextUpReef covers parameter logging, trend charts, dosing maths, reminders, equipment tracking and AI advice in one app, and connects to Apex, HYDROS, Jebao, Red Sea and Shelly hardware. Aquarimate covers freshwater and saltwater for a one-time price, and ReefBay adds a marketplace and community. Most reefers want charting and reminders rather than a spreadsheet, which is what separates the options.",
       },
     },
     {
@@ -112,25 +112,25 @@ export default function BestReefAppPost() {
         </div>
 
         <h1 style={{ fontSize: "40px", fontWeight: "900", lineHeight: "1.2", marginBottom: "16px" }}>
-          Best Reef Tank Tracking App in 2026 (Free &amp; Paid Compared)
+          Best Reef Tank Apps for 2027 (Free &amp; Paid Compared)
         </h1>
         <p style={{ color: "var(--text-muted)", fontSize: "14px", fontWeight: "700", marginBottom: "48px" }}>
-          Updated September 21, 2026 · 8 min read · By NextUpReef
+          Updated November 25, 2026 · 8 min read · By NextUpReef
         </p>
 
         <div style={{ color: "var(--text-muted)", fontSize: "17px", lineHeight: "1.8" }}>
           <p>
-            If you keep a saltwater reef tank, you already know: the difference between a thriving reef and a tank crash is almost always consistency. Consistent water changes. Consistent testing. Consistent logging. The right reef tank tracking app makes all of that easier — and in 2026, AI has changed what these apps can do for you.
+            If you keep a saltwater reef tank, you already know: the difference between a thriving reef and a tank crash is almost always consistency. Consistent water changes. Consistent testing. Consistent logging. The right reef tank tracking app makes all of that easier — and going into 2027, AI has changed what these apps can do for you.
           </p>
           <p>
             We&apos;ve tested and compared the most popular reef aquarium apps available today, including the new generation that uses AI to analyze your tank data and give you personalized advice. Here&apos;s what actually matters — and which app comes out on top.
           </p>
 
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
-            What Makes a Great Reef Tracking App in 2026?
+            What Makes a Great Reef Tank App for 2027?
           </h2>
           <p>
-            Before comparing apps, it helps to know what to look for. After talking with hundreds of reefers, these are the features that actually matter:
+            Before comparing apps, it helps to know what to look for. These are the features that actually matter:
           </p>
           <ul style={{ paddingLeft: "24px", display: "flex", flexDirection: "column", gap: "10px" }}>
             <li><strong style={{ color: "var(--text-light)" }}>Fast parameter logging.</strong> If it takes more than 30 seconds to log alkalinity, you won&apos;t do it consistently. Speed matters.</li>
@@ -150,7 +150,7 @@ export default function BestReefAppPost() {
           </div>
 
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
-            The Best Reef Tank Tracking Apps in 2026
+            The Best Reef Tank Apps for 2027
           </h2>
 
           {/* App 1 - NextUpReef */}
@@ -169,14 +169,14 @@ export default function BestReefAppPost() {
               NextUpReef is purpose-built for reef keepers, not general aquarium hobbyists. The free version tracks 10 parameters with real-time color feedback as you type, calculates a Reef Score and Stability Score that tell you how your tank is actually doing, and organizes everything by tank type — SPS, LPS, Mixed Reef, Softies, Nano, ULNS, and Fish Only all have tailored default ranges.
             </p>
             <p style={{ margin: "0 0 12px 0" }}>
-              <strong style={{ color: "var(--text-light)" }}>AI features (Pro):</strong> The Reef AI Advisor analyzes your full tank data — parameters, equipment, livestock, dosing, and journey phase — and gives you a prioritized list of action items based on what your tank actually needs. Ask Reef AI Chat answers reef questions with full tank context (no more generic Google answers). AI Photo Parameter Logging lets you snap a photo of any test kit and the app extracts the values automatically. No other reef app does this.
+              <strong style={{ color: "var(--text-light)" }}>AI features (Pro):</strong> The Reef AI Advisor analyzes your full tank data — parameters, equipment, livestock, dosing, and journey phase — and gives you a prioritized list of action items based on what your tank actually needs. Ask Reef AI Chat answers reef questions with full tank context (no more generic Google answers). AI Photo Parameter Logging lets you snap a photo of a test kit and the app reads the values for you. Goby, the built-in assistant, also takes questions and logs results by voice.
             </p>
             <p style={{ margin: "0 0 12px 0" }}>
               On top of that: NO3:PO4 ratio tracker, peer comparison against tanks of the same type, 60+ achievement badges, an in-app New Tank Journey for beginners, and a community feed where you can see how your tank stacks up. Water change and maintenance reminders use push notifications with day-before, day-of, and overdue alerts.
             </p>
             <p style={{ margin: "0 0 12px 0" }}>
-              <strong style={{ color: "var(--text-light)" }}>Equipment control:</strong> This is the part no other
-              reef app does. NextUpReef reads from a Neptune Apex and CoralVue HYDROS, and directly controls{" "}
+              <strong style={{ color: "var(--text-light)" }}>Equipment control:</strong> This is where NextUpReef goes
+              furthest. It reads from a Neptune Apex (including Trident), CoralVue HYDROS and GHL ProfiLux, and directly controls{" "}
               <Link href="/blog/connect-jebao-pump" style={{ color: "var(--reef)", fontWeight: 700 }}>Jebao wave pumps</Link>,
               Red Sea ReefRun return pumps and skimmers, and{" "}
               <Link href="/blog/how-to-add-shelly-plug" style={{ color: "var(--reef)", fontWeight: 700 }}>Shelly smart outlets</Link>{" "}
@@ -244,16 +244,16 @@ export default function BestReefAppPost() {
             The AI Difference
           </h2>
           <p>
-            The biggest shift in reef tank apps in 2026 is AI. Until recently, all of these apps did the same fundamental thing — log data, plot charts, send reminders. The reefer was still on their own to interpret what the numbers meant.
+            The biggest shift in reef tank apps going into 2027 is AI. Until recently, all of these apps did the same fundamental thing — log data, plot charts, send reminders. The reefer was still on their own to interpret what the numbers meant.
           </p>
           <p>
-            NextUpReef Pro changed that. Its Reef AI Advisor reads your full tank context — every parameter you&apos;ve logged, your equipment list, your livestock, your dosing routine, your journey phase if you&apos;re a new reefer — and tells you exactly what to do next. Not generic advice copied from forums. Specific advice citing your actual numbers: &quot;Your alkalinity dropped from 9.2 to 7.8 dKH over 14 days. Increase your alk dose by 15% and retest in 48 hours.&quot;
+            NextUpReef Pro changed that. Its Reef AI Advisor reads your full tank context — every parameter you&apos;ve logged, your equipment list, your livestock, your dosing routine, your journey phase if you&apos;re a new reefer — and tells you exactly what to do next. Not generic advice copied from forums. Specific advice citing your actual numbers, such as an alkalinity that has dropped from 9.2 to 7.8 dKH over 14 days, with what to check first and when to retest.
           </p>
           <p>
             For a quick photo of a Salifert test, the app reads the color and logs the value for you. Ask Reef AI Chat is like having a reefkeeping consultant in your pocket — it knows your tank because it can see your data, so &quot;why is my zoanthid melting&quot; gets an answer based on your actual parameters, not a generic article.
           </p>
           <p>
-            No other reef app in 2026 has this. It&apos;s genuinely a new category.{" "}
+            Several reef apps now list AI features. What sets this one apart is that it reads your whole tank record, not a single reading.{" "}
             <Link href="/blog/ai-reef-tank-advisor" style={{ color: "var(--reef)", fontWeight: 700 }}>
               Read more about how the AI Advisor works →
             </Link>
@@ -302,6 +302,12 @@ export default function BestReefAppPost() {
               </tbody>
             </table>
           </div>
+          <p style={{ fontSize: "13px", color: "var(--text-muted)", marginTop: "-28px", marginBottom: "40px" }}>
+            Based on each app&apos;s own store listing, checked in November 2026. Features change, so check the current listing before you choose. New to apps for a saltwater tank? Start with{" "}
+            <Link href="/blog/saltwater-aquarium-app" style={{ color: "var(--reef)", fontWeight: 700 }}>what a saltwater aquarium app should do</Link>{" "}
+            and{" "}
+            <Link href="/blog/reef-tank-log" style={{ color: "var(--reef)", fontWeight: 700 }}>how to keep a reef tank log</Link>.
+          </p>
 
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             What About Just Using Notes or a Spreadsheet?
@@ -317,10 +323,10 @@ export default function BestReefAppPost() {
             Bottom Line
           </h2>
           <p>
-            If you want the best reef tank tracking app in 2026, NextUpReef wins. The free version does more than any other free reef app — parameter tracking with color feedback, Reef Score, Stability Score, push notification reminders, tank type awareness, peer comparisons, and a community feed.
+            If you want the best reef tank app for 2027, NextUpReef is our pick, and it is also a strong saltwater aquarium app if you are just starting out. The free version covers a lot: parameter tracking with color feedback, Reef Score, Stability Score, push notification reminders, tank type awareness, peer comparisons, and a community feed.
           </p>
           <p>
-            The Pro upgrade ($4.99/mo or $39.99/yr) adds AI features that no competitor offers — personalized analysis, AI chat with full tank context, photo-based test kit logging, journal photos, and Neptune Apex integration. New users get a 30-day Pro trial automatically.
+            The Pro upgrade ($4.99/mo or $39.99/yr) adds the AI features: personalized analysis, AI chat with full tank context, photo-based test kit logging, journal photos, and connections to Apex, HYDROS, GHL ProfiLux, Jebao, Red Sea and Shelly gear. New users get a 30-day Pro trial automatically.
           </p>
           <p>
             If you want a marketplace to buy and sell coral alongside tracking, ReefBay is worth trying. If you&apos;re willing to pay upfront for a feature-complete option without AI, Aquarimate is excellent.
