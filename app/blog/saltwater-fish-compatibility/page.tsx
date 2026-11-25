@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Saltwater Fish Compatibility: What Can Live Together",
@@ -370,6 +371,16 @@ export default function SaltwaterFishCompatibilityPost() {
           <p>
             Do not wait long. A fish that is harassed and not eating weakens quickly.
           </p>
+
+          <YouTubeVideo
+            id="1SL9Qwi7Xg8"
+            title="Track Your Reef Tank Fish, Corals and Equipment"
+            description="How to track fish, corals, equipment and costs in the NextUpReef reef tank app, and run the Reef AI stocking check for compatibility."
+            uploadDate="2026-11-25"
+            duration="PT1M30S"
+            vertical
+            caption="Video: adding gear and a fish in NextUpReef, then running the stocking check."
+          />
 
           <h2 style={h2Style}>Frequently Asked Questions</h2>
 

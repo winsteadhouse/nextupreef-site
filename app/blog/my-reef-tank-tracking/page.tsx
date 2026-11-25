@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "My Reef: Track Livestock, Equipment, Corals, and Cost in One Reef Tank App",
@@ -141,6 +142,16 @@ export default function MyReefTrackingPost() {
           <li>Health status, acquisition date, and cost per animal</li>
           <li>Frag and lineage tracking when you split a colony</li>
         </ul>
+          <YouTubeVideo
+            id="1SL9Qwi7Xg8"
+            title="Track Your Reef Tank Fish, Corals and Equipment"
+            description="How to track fish, corals, equipment and costs in the NextUpReef reef tank app, and run the Reef AI stocking check for compatibility."
+            uploadDate="2026-11-25"
+            duration="PT1M30S"
+            vertical
+            caption="Video: adding gear and a fish in NextUpReef, then running the stocking check."
+          />
+
         <h2 style={{ fontSize: "26px", fontWeight: "900", marginBottom: "16px", color: "var(--text-light)" }}>
           Equipment and dosing: your whole setup, documented
         </h2>
