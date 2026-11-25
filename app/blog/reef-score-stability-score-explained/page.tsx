@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Reef Score and Stability Score Explained: What They Measure and How to Raise Yours",
@@ -372,6 +373,16 @@ export default function ReefScoreStabilityScorePost() {
           <p>
             Only public tanks are ranked, and you choose whether your tank is public or private.
           </p>
+
+          <YouTubeVideo
+            id="nTpiMuno-44"
+            title="A Real Reef Tank, Live in the App"
+            description="A real 75 gallon mixed reef in the NextUpReef app: connected gear on the Home screen, the Reef Score and Stability Score, and the readings behind them."
+            uploadDate="2026-11-25"
+            duration="PT28S"
+            vertical
+            caption="Video: a real tank's Reef Pulse scores and the data behind them."
+          />
 
           <h2 style={h2Style}>Frequently Asked Questions</h2>
 

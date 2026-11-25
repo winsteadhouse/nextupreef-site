@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Reef Tank Maintenance Schedule: Daily to Yearly",
@@ -412,6 +413,16 @@ export default function ReefTankMaintenanceSchedulePost() {
               Maintenance reminders in NextUpReef: a 20% water change every two weeks, filter socks and more.
             </p>
           </div>
+
+          <YouTubeVideo
+            id="tHusxwBrmEQ"
+            title="Never Miss a Reef Tank Water Change"
+            description="How to set water change and maintenance reminders in the NextUpReef reef tank app and mark them done."
+            uploadDate="2026-11-25"
+            duration="PT37S"
+            vertical
+            caption="Video: setting and completing reminders in NextUpReef."
+          />
 
           <h2 style={h2Style}>Frequently Asked Questions</h2>
 

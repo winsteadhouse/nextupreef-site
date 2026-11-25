@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Reef Tank Water Changes: How Much, How Often, and When You Can Skip Them",
@@ -352,6 +353,16 @@ export default function ReefTankWaterChangeGuidePost() {
           <p>
             Free accounts get up to 3 maintenance reminders, which covers a water change plus a couple of other recurring jobs. Pro removes the limit, and every new account starts with a 30-day Pro trial, no credit card.
           </p>
+
+          <YouTubeVideo
+            id="tHusxwBrmEQ"
+            title="Never Miss a Reef Tank Water Change"
+            description="How to set water change and maintenance reminders in the NextUpReef reef tank app and mark them done."
+            uploadDate="2026-11-25"
+            duration="PT37S"
+            vertical
+            caption="Video: setting and completing reminders in NextUpReef."
+          />
 
           <h2 style={h2Style}>FAQ</h2>
           <p><strong style={strongStyle}>How often should I do water changes on a reef tank?</strong></p>

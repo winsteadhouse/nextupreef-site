@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "AI Reef Tank Advisor: How NextUpReef Uses AI to Help You Keep a Better Reef",
@@ -296,6 +297,16 @@ export default function AIReefAdvisorPost() {
         <p style={{ fontSize: "16px", lineHeight: 1.75, color: "var(--text-muted)", marginBottom: "40px" }}>
           The AI gets more useful over time as your log history grows. A tank with 3 months of consistent logging gives the AI much more to work with than one with two data points.
         </p>
+
+          <YouTubeVideo
+            id="NO0kj2CSI4U"
+            title="Low Magnesium in a Reef Tank? This App Catches It"
+            description="The NextUpReef Reef AI Advisor spots a slow magnesium drop, suggests the next step, and the chart shows the recovery after dosing."
+            uploadDate="2026-11-25"
+            duration="PT1M11S"
+            vertical
+            caption="Video: the Reef AI Advisor flagging a magnesium drop."
+          />
 
         {/* FAQ section */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "40px", marginBottom: "40px" }}>
