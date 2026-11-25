@@ -33,7 +33,6 @@ const journey: Post[] = [
   { slug: "first-livestock", title: "Add your first fish", description: "Hardy beginner fish, the one-at-a-time rule, and what to watch in the first two weeks.", date: "April 2026", readTime: "8 min", tag: "Fish" },
   { slug: "adding-first-corals", title: "Add your first corals", description: "Why softies and zoas come first, how alkalinity works, and what to avoid in year one.", date: "April 2026", readTime: "9 min", tag: "Corals" },
   { slug: "established-reef", title: "Run an established reef", description: "What maturity looks like, when to start dosing, and the habits that keep a reef thriving.", date: "April 2026", readTime: "10 min", tag: "Dosing" },
-  { slug: "reef-tank-clean-up-crew", title: "Reef Tank Clean Up Crew: What to Add, How Many, and When", description: "Which snails, crabs and shrimp do which job, sensible starting numbers by tank size, and why one snail per gallon overstocks.", date: "November 24, 2026", readTime: "7 min", tag: "Clean up crew" },
 ];
 
 const chemistry: Post[] = [
@@ -54,6 +53,7 @@ const dosing: Post[] = [
 ];
 
 const equipment: Post[] = [
+  { slug: "reef-tank-clean-up-crew", title: "Reef Tank Clean Up Crew: What to Add, How Many, and When", description: "Which snails, crabs and shrimp do which job, sensible starting numbers by tank size, and why one snail per gallon overstocks.", date: "November 24, 2026", readTime: "7 min", tag: "Livestock" },
   { slug: "uv-sterilizer-reef-tank", title: "UV Sterilizer for a Reef Tank: Do You Need One, and What Size?", description: "What UV fixes and what it does not, rough sizing by tank size, flow rate, plumbing and bulb maintenance.", date: "November 24, 2026", readTime: "7 min", tag: "Equipment" },
   { slug: "coralvue-hydros-vs-neptune-apex", title: "CoralVue HYDROS vs Neptune Apex: Which Reef Controller Is Right for You?", description: "Local vs cloud, what each does, honest limits, and when a couple of smart plugs are all you need.", date: "September 14, 2026", readTime: "9 min", tag: "Controllers" },
   { slug: "nano-reef-tank-guide", title: "Nano Reef Tank Guide: 10, 20 and 40 Gallon Setups That Work", description: "Equipment, livestock and parameters for small tanks, and the mistakes that sink most nanos.", date: "May 9, 2026", readTime: "9 min", tag: "Nano reef" },
