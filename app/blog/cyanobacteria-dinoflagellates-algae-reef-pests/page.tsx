@@ -127,7 +127,7 @@ export default function ReefPestsPost() {
           }}>
             <ul style={{ margin: 0, paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "12px" }}>
               <li><strong style={{ color: "var(--text-light)" }}>Cyanobacteria:</strong> Smooth slime sheet. Red, purple, dark green, or black. Peels off as a single film. Smells earthy or musty. Usually on sand and low-flow rock.</li>
-              <li><strong style={{ color: "var(--text-light)" }}>Dinoflagellates:</strong> Brown stringy snot with air bubbles trapped inside. Disappears at night, returns by mid-morning. Often coats corals and chokes them.</li>
+              <li><strong style={{ color: "var(--text-light)" }}>Dinoflagellates:</strong> Brown stringy snot with air bubbles trapped inside. Often recedes at night and returns by mid-morning. Can coat corals and chokes them.</li>
               <li><strong style={{ color: "var(--text-light)" }}>Green hair algae:</strong> Bright green, hair-like or grass-like strands attached firmly to rock. Doesn&apos;t peel off — has to be pulled or scrubbed.</li>
               <li><strong style={{ color: "var(--text-light)" }}>Diatoms (for context):</strong> Light brown dust coating everything. Common in new tanks. Harmless, clears up in weeks. Not in this guide.</li>
             </ul>
@@ -187,8 +187,8 @@ export default function ReefPestsPost() {
             <strong style={{ color: "var(--text-light)" }}>Telltale signs of dinos:</strong>
           </p>
           <ul style={{ paddingLeft: "24px", display: "flex", flexDirection: "column", gap: "6px" }}>
-            <li>Brown stringy growth that&apos;s always full of air bubbles (oxygen byproduct)</li>
-            <li>Disappears overnight, comes back by mid-morning</li>
+            <li>Brown stringy growth that&apos;s usually full of air bubbles (oxygen byproduct)</li>
+            <li>Often shrinks or disappears overnight and comes back by mid-morning (some types stay in the sand)</li>
             <li>Nitrate reads near zero and phosphate reads near zero</li>
             <li>Coral polyps don&apos;t extend, even at night</li>
             <li>Snails are dying or staying buried in the sand</li>
@@ -203,7 +203,7 @@ export default function ReefPestsPost() {
             <li>Dose live bacteria — Microbacter 7, MB7, or DR Tim&apos;s Eco-Balance — to outcompete dinos for whatever scraps remain.</li>
             <li>Lights off for 3 days (blackout). Cover the tank with a sheet. Many dino strains die without light. Skim heavily during the blackout to remove dead toxins.</li>
             <li>Stop chasing zero nutrients. Aggressive GFO, biopellets, and large skimmers create the conditions dinos love. Back off for 2 to 3 months.</li>
-            <li>In severe cases: dose hydrogen peroxide (1 ml per 10 gallons daily for a week). Risky — research thoroughly before trying.</li>
+            <li>In severe cases some reefers dose hydrogen peroxide. It is risky and easy to overdo, so research the method thoroughly and follow a trusted protocol before trying it.</li>
           </ol>
           <p>
             Dinos can take 3 to 6 months to fully resolve. They&apos;re the worst-case scenario. Identifying them correctly is half the battle — treating dinos like cyano (cutting nutrients further) accelerates the problem.
@@ -272,7 +272,7 @@ export default function ReefPestsPost() {
           </h2>
           <ul style={{ paddingLeft: "24px", display: "flex", flexDirection: "column", gap: "10px" }}>
             <li><strong style={{ color: "var(--text-light)" }}>Don&apos;t chase zero nutrients.</strong> Aim for 1 to 10 ppm nitrate and 0.02 to 0.1 ppm phosphate. Both at zero invites dinos.</li>
-            <li><strong style={{ color: "var(--text-light)" }}>Cleanup crew from day one.</strong> Snails, hermit crabs, and conchs work full-time. A understocked tank in livestock terms is an overstocked tank in algae terms.</li>
+            <li><strong style={{ color: "var(--text-light)" }}>Cleanup crew once the tank has cycled.</strong> Snails, hermit crabs, and conchs work full-time. A understocked tank in livestock terms is an overstocked tank in algae terms.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Replace bulbs every 12 months</strong> if you run T5 or metal halide. LED units are fine for 3 to 5 years.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Filter sock changes weekly.</strong> Letting socks sit a month is a nutrient release event.</li>
             <li><strong style={{ color: "var(--text-light)" }}>Refugium with chaeto.</strong> A working refugium prevents most nuisance algae outbreaks from ever starting.</li>

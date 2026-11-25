@@ -50,11 +50,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What happens to my ReefBeat schedule?",
-    a: "It keeps running. Changing the speed from NextUpReef changes what the pump is doing now; it does not delete or replace the schedule you set in ReefBeat. Schedules stay in ReefBeat.",
+    a: "A speed you set in NextUpReef is saved to that pump's ReefBeat schedule and stays until you change it. If the pump's schedule is switched off in ReefBeat, a speed set from NextUpReef may not take effect. Build and edit the schedule itself in ReefBeat.",
   },
   {
     q: "Can I control it when I am away from home?",
-    a: "No. The ReefRun is reached over your home network, so speed changes need you to be on that WiFi. Whatever schedule you have set carries on either way, and NextUpReef shows you it is away rather than appearing broken.",
+    a: "Not on its own. The ReefRun is reached over your home network, so speed changes normally need you to be on that WiFi. If you leave a tablet at home running Tank Display as your hub, NextUpReef can pass a speed change through it while you are away. Whatever schedule you have set carries on either way.",
   },
   {
     q: "Is this included in the free plan?",
@@ -148,7 +148,7 @@ export default function ConnectRedSeaReefRunPage() {
 
           <h2 style={h2}>Connect it</h2>
           <p>
-            In NextUpReef open the menu, choose Devices &amp; Automation, then Red Sea ReefRun, and
+            In NextUpReef open the menu, choose Devices &amp; Automation, then Red Sea, and
             enter the address. The app asks the controller what it has and shows you both pumps with
             their names, types and current speeds before saving anything.
           </p>
@@ -200,8 +200,8 @@ export default function ConnectRedSeaReefRunPage() {
 
           <h2 style={h2}>The honest limitations</h2>
           <ul style={list}>
-            <li><strong style={strong}>Home network only.</strong> The controller does not go through a cloud service, so speed changes need you on that WiFi. Your schedule runs either way.</li>
-            <li><strong style={strong}>Schedules stay in ReefBeat.</strong> NextUpReef changes what the pump is doing now; it does not write schedules to the controller.</li>
+            <li><strong style={strong}>Home network first.</strong> The controller does not go through a cloud service, so speed changes need you on that WiFi, or a tablet left at home as your hub to pass them on. Your schedule runs either way.</li>
+            <li><strong style={strong}>Schedules are built in ReefBeat.</strong> A speed set in NextUpReef is saved to the pump&apos;s ReefBeat schedule and stays until you change it. Create and edit the schedule itself in ReefBeat.</li>
             <li><strong style={strong}>Feed speed means off.</strong> Because of the 40 percent floor, the only feed setting below normal running speed is zero.</li>
             <li><strong style={strong}>NextUpReef restores the speed after feeding.</strong> Unlike your Apex or a Jebao pump, the ReefRun will not do it for you.</li>
             <li><strong style={strong}>Not an official Red Sea integration.</strong> A firmware change on their side could interrupt it.</li>
