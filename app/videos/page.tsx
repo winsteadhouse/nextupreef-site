@@ -17,12 +17,19 @@ export const metadata: Metadata = {
 
 type Video = { id: string; title: string; blurb: string; duration: string; guide?: { href: string; label: string } };
 
-const groups: { title: string; videos: Video[] }[] = [
+const groups: { title: string; wide?: boolean; videos: Video[] }[] = [
   {
     title: "Start here",
     videos: [
       { id: "rehzeMV4e80", title: "NextUpReef App Tour", blurb: "Every tab and the menu in 99 seconds: Home, My Reef, Log, Reef Pulse, Community, AI and devices.", duration: "PT1M39S", guide: { href: "/features", label: "All features" } },
       { id: "nTpiMuno-44", title: "A Real Reef Tank, Live in the App", blurb: "A real 75 gallon mixed reef with its connected gear, its scores and the readings behind them.", duration: "PT28S", guide: { href: "/blog/reef-score-stability-score-explained", label: "How the scores work" } },
+    ],
+  },
+  {
+    title: "Tablet display",
+    wide: true,
+    videos: [
+      { id: "EbbR6vdRTU8", title: "Turn an Old Tablet Into a Reef Tank Display", blurb: "A spare tablet by the tank shows live readings, dosing and gear, and works as a 24/7 hub for your phone.", duration: "PT48S", guide: { href: "/blog/reef-tank-tablet-dashboard", label: "Tablet setup guide" } },
     ],
   },
   {
@@ -61,6 +68,7 @@ export default function VideosPage() {
       <style>{`
         .vid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
         .vid-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 18px; }
+        .vid-wide { max-width: 760px; }
         .vid-card figure { margin: 0 auto 16px !important; }
       `}</style>
 
@@ -79,10 +87,10 @@ export default function VideosPage() {
         {groups.map((g) => (
           <div key={g.title} style={{ marginBottom: "56px" }}>
             <h2 style={{ fontSize: "26px", fontWeight: 900, color: "var(--text-light)", margin: "0 0 20px" }}>{g.title}</h2>
-            <div className="vid-grid">
+            <div className={g.wide ? "vid-wide" : "vid-grid"}>
               {g.videos.map((v) => (
                 <div key={v.id} className="vid-card">
-                  <YouTubeVideo id={v.id} title={v.title} description={v.blurb} uploadDate="2026-11-25" duration={v.duration} vertical />
+                  <YouTubeVideo id={v.id} title={v.title} description={v.blurb} uploadDate="2026-11-25" duration={v.duration} vertical={!g.wide} />
                   <h3 style={{ fontSize: "18px", fontWeight: 800, color: "var(--text-light)", margin: "0 0 8px", lineHeight: 1.3 }}>{v.title}</h3>
                   <p style={{ fontSize: "15px", color: "var(--text-muted)", lineHeight: 1.6, margin: "0 0 10px" }}>{v.blurb}</p>
                   {v.guide ? (

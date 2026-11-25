@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 import Image from "next/image";
 
 const TITLE = "Turn a Tablet Into a Reef Tank Dashboard";
@@ -174,6 +175,15 @@ export default function ReefTankTabletDashboardPage() {
               <li>NextUpReef Pro, or the free 30-day trial every new account gets</li>
             </ul>
           </div>
+
+          <YouTubeVideo
+            id="EbbR6vdRTU8"
+            title="Turn an Old Tablet Into a Reef Tank Display"
+            description="A spare tablet beside a 75 gallon reef running the NextUpReef Tank Display, with live readings, dosing, gear and the tablet acting as a 24/7 hub."
+            uploadDate="2026-11-25"
+            duration="PT48S"
+            caption="Video: a tablet running Tank Display beside a reef tank."
+          />
 
           <h2 style={h2}>Step 1: pick a tablet</h2>
           <p>
