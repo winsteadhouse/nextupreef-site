@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "How to Track Saltwater Aquarium Parameters (Complete Guide)",
@@ -182,6 +183,16 @@ export default function HowToTrackPost() {
               </tbody>
             </table>
           </div>
+
+          <YouTubeVideo
+            id="p5EO0JAyGFI"
+            title="How to Log a Reef Tank Water Test in Seconds"
+            description="How to log a saltwater aquarium water test in the NextUpReef reef tank app, by voice, typing or by hand, then see your scores and a trend chart for every parameter."
+            uploadDate="2026-11-25"
+            duration="PT1M11S"
+            vertical
+            caption="Video: logging a water test in NextUpReef and reading the trend charts."
+          />
 
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             How Often Should You Test?

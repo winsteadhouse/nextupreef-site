@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -339,6 +340,16 @@ export default function SaltwaterAquariumAppPost() {
             <Link href="/features" style={link}>features page</Link> and the{" "}
             <Link href="/devices" style={link}>devices page</Link> have the details.
           </p>
+
+          <YouTubeVideo
+            id="p5EO0JAyGFI"
+            title="How to Log a Reef Tank Water Test in Seconds"
+            description="How to log a saltwater aquarium water test in the NextUpReef reef tank app, by voice, typing or by hand, then see your scores and a trend chart for every parameter."
+            uploadDate="2026-11-25"
+            duration="PT1M11S"
+            vertical
+            caption="Video: logging a water test in NextUpReef and reading the trend charts."
+          />
 
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "24px", margin: "40px 0" }}>
             <div style={{ flex: "1 1 240px", maxWidth: 300 }}>

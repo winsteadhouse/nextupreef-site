@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Reef Tank Log: What to Record and How Often",
@@ -359,6 +360,16 @@ export default function ReefTankLogPost() {
             <li><strong style={strong}>Not noting the test kit or the time of day.</strong> pH rises through the light period and falls overnight, and alkalinity can dip between doses. Test at about the same time each time and write down which kit you used.</li>
             <li><strong style={strong}>Rounding.</strong> Writing 8 for a reading of 8.3 throws away exactly the detail a trend is made of. Record what the kit shows, at the precision it shows it.</li>
           </ul>
+
+          <YouTubeVideo
+            id="p5EO0JAyGFI"
+            title="How to Log a Reef Tank Water Test in Seconds"
+            description="How to log a saltwater aquarium water test in the NextUpReef reef tank app, by voice, typing or by hand, then see your scores and a trend chart for every parameter."
+            uploadDate="2026-11-25"
+            duration="PT1M11S"
+            vertical
+            caption="Video: logging a water test in NextUpReef and reading the trend charts."
+          />
 
           <h2 style={h2Style}>A Simple Weekly Routine</h2>
           <p>
