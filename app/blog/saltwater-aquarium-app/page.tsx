@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Saltwater Aquarium App: What It Should Do, How to Choose",
@@ -238,6 +239,21 @@ export default function SaltwaterAquariumAppPost() {
             <li><strong style={strong}>Community.</strong> The least essential job. You should be able to keep your tank private.</li>
           </ul>
 
+          <div style={{ display: "flex", justifyContent: "center", margin: "40px 0" }}>
+            <div style={{ flex: "1 1 240px", maxWidth: 300 }}>
+              <Image
+                src="/screenshots/site-v3/phone-log.png"
+                alt="NextUpReef Log Parameters screen with alkalinity at 8.0 dKH and calcium at 425 ppm, both marked in range against the tank's target ranges"
+                width={777}
+                height={1557}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p style={{ fontSize: "13px", color: "var(--text-muted)", textAlign: "center", marginTop: "12px" }}>
+                Logging a water test in NextUpReef. Each value is checked against the target range as you type.
+              </p>
+            </div>
+          </div>
+
           <h2 style={h2Style}>The Three Kinds of Aquarium App</h2>
           <p>
             Almost every aquarium tracker app falls into one of three groups. None is the right answer for everyone.
@@ -323,6 +339,33 @@ export default function SaltwaterAquariumAppPost() {
             <Link href="/features" style={link}>features page</Link> and the{" "}
             <Link href="/devices" style={link}>devices page</Link> have the details.
           </p>
+
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "24px", margin: "40px 0" }}>
+            <div style={{ flex: "1 1 240px", maxWidth: 300 }}>
+              <Image
+                src="/screenshots/site-v3/phone-home.png"
+                alt="NextUpReef Home screen for a 75 gallon mixed reef showing live temperature and pH from an Apex, Feed Mode and Dosing buttons, and a Next Up card from the Reef AI Advisor"
+                width={777}
+                height={1557}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p style={{ fontSize: "13px", color: "var(--text-muted)", textAlign: "center", marginTop: "12px" }}>
+                The Home screen: live temperature and pH, Feed Mode, today's dosing and what to look at next.
+              </p>
+            </div>
+            <div style={{ flex: "1 1 240px", maxWidth: 300 }}>
+              <Image
+                src="/screenshots/site-v3/phone-reef-pulse.png"
+                alt="NextUpReef Reef Pulse screen showing a Reef Score of 75, a Stability Score of 51, 71% of parameters in range and the latest alkalinity and calcium readings"
+                width={777}
+                height={1557}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p style={{ fontSize: "13px", color: "var(--text-muted)", textAlign: "center", marginTop: "12px" }}>
+                Reef Pulse: the two scores, how many parameters are in range, and the latest reading for each.
+              </p>
+            </div>
+          </div>
 
           <h2 style={h2Style}>How to Get Started in the First Week</h2>
           <ol style={{ paddingLeft: "24px", display: "flex", flexDirection: "column", gap: "12px" }}>
