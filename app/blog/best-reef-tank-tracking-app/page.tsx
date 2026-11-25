@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 export const metadata: Metadata = {
   title: "Best Reef Tank Apps for 2027 (Free & Paid Compared)",
@@ -239,6 +240,16 @@ export default function BestReefAppPost() {
               Pocket Marine is made by a reefer and designed specifically for reef tanks. It supports trace element tracking beyond the core parameters. No AI features. iOS only, so Android users are out of luck.
             </p>
           </div>
+
+          <YouTubeVideo
+            id="rehzeMV4e80"
+            title="NextUpReef App Tour: The Reef Tank App That Does It All"
+            description="A full tour of the NextUpReef reef tank app: Home, My Reef, lighting, logging, Reef Pulse, Community, the Reef AI Advisor, device connections and dosing."
+            uploadDate="2026-11-25"
+            duration="PT1M39S"
+            vertical
+            caption="Video: a 99-second tour of NextUpReef."
+          />
 
           <h2 style={{ fontSize: "28px", fontWeight: "900", color: "var(--text-light)", marginTop: "48px", marginBottom: "16px" }}>
             The AI Difference
