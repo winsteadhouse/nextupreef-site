@@ -19,6 +19,13 @@ type Video = { id: string; title: string; blurb: string; duration: string; guide
 
 const groups: { title: string; wide?: boolean; videos: Video[] }[] = [
   {
+    title: "Watch this first",
+    wide: true,
+    videos: [
+      { id: "QKHk2Zfc0eQ", title: "One App for Your Whole Reef Tank", blurb: "NextUpReef on a real 75 gallon reef: Home, Reef Pulse, trends, devices and logging in under a minute.", duration: "PT53S", guide: { href: "/features", label: "All features" } },
+    ],
+  },
+  {
     title: "Start here",
     videos: [
       { id: "rehzeMV4e80", title: "NextUpReef App Tour", blurb: "Every tab and the menu in 99 seconds: Home, My Reef, Log, Reef Pulse, Community, AI and devices.", duration: "PT1M39S", guide: { href: "/features", label: "All features" } },
