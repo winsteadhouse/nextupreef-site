@@ -16,7 +16,7 @@ export default async function AdminPage() {
     supabase.rpc('admin_notifications', { p_days: 30 }),
     supabase.rpc('admin_extra'),
     supabase.rpc('admin_ai_quality'),
-    supabase.rpc('admin_goby_voice'),
+    supabase.rpc('admin_ai_overview'),
     supabase.rpc('admin_integrations'),
   ]);
   return (
@@ -28,7 +28,7 @@ export default async function AdminPage() {
       notifications={(n.data ?? []) as Record<string, unknown>[]}
       extra={(x.data ?? null) as Record<string, unknown> | null}
       aiQuality={(q.data ?? null) as Record<string, unknown> | null}
-      gobyVoice={(g.data ?? null) as Record<string, unknown> | null}
+      aiOverview={(g.data ?? null) as Record<string, unknown> | null}
       integrations={(h.data ?? null) as Record<string, unknown> | null}
     />
   );

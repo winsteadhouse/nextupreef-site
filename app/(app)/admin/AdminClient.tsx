@@ -109,67 +109,86 @@ function HBars({ data, color = RO, max: forcedMax, suffix }: { data: { k: string
 /* ───────────── main ───────────── */
 type NotifRow = { day: string; notification_type: string; sent: number; users: number };
 
-/* Goby by voice: who talks to it and what for. The app writes one event per finished voice
-   action; nothing about what was said is stored, only the kind of action. */
-const VOICE_KIND: Record<string, string> = { readings: 'Logged a test', reminder: 'Ticked a reminder', water_change: 'Logged a water change', dose: 'Logged a dose', question: 'Asked a question' };
-function GobyVoice({ v }: { v: Record<string, unknown> | null }) {
-  if (!v) return null;
-  const kinds = (v.by_kind ?? []) as { kind: string; n: number; users: number }[];
-  const people = (v.by_user ?? []) as { who: string; n: number; last: string; kinds: string }[];
-  const recent = (v.recent ?? []) as { when: string; who: string; tank: string; kind: string; via: string; mode: string }[];
-  const uses = Number(v.uses_30d ?? 0);
+/* ───────────── AI ─────────────
+   Three questions, in order: is the AI worth having, what do people ask it, and where did
+   the app let someone down. The last one always shows the question next to the answer. */
+type Gap = { id: string; when: string; who: string; kind: string; question: string; answer: string };
+function AIPage({ a, q }: { a: Record<string, unknown> | null; q: Record<string, unknown> | null }) {
+  const [done, setDone] = useState<Set<string>>(new Set());
+  async function clear(id: string) {
+    setDone((prev) => new Set(prev).add(id));
+    try { await createClient().rpc('admin_review_flag', { p_id: id }); } catch { /* optimistic; refresh re-shows it */ }
+  }
+  if (!a) return <div className='muted-block'>AI data didn&rsquo;t load. Refresh the page.</div>;
+  const n = (k: string) => Number(a[k] ?? 0);
+  const topics = (a.topics ?? []) as { topic: string; n: number; people: number }[];
+  const top = (a.top_questions ?? []) as { q: string; n: number; people: number }[];
+  const gaps = ((a.gaps ?? []) as Gap[]).filter((g) => !done.has(g.id));
+  const byParam = ((q?.bad_by_param ?? []) as { param: string; n: number }[]);
+  const cell = { fontSize: 13, lineHeight: 1.45, whiteSpace: 'pre-wrap' as const };
+  const label = { fontSize: 11, fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase' as const, color: 'var(--mu, #8a99ad)', marginBottom: 3 };
   return (
     <div className='dash-lower'>
-      <Panel className='span-12' title='Goby by voice' sub='Who talks to Goby and what for. Last 30 days unless it says otherwise.'>
+      <Panel className='span-12' title='Is the AI worth having?' sub='Last 30 days. Your own account and the test account are left out.'>
         <div className='minis'>
-          <MiniStat label='People using voice (30 days)' value={fmt(v.users_30d)} color={Number(v.users_30d) > 0 ? GD : undefined} />
-          <MiniStat label='People who ever tried it' value={fmt(v.users_total)} />
-          <MiniStat label='Voice actions (30 days)' value={fmt(uses)} />
-          <MiniStat label='Last 7 days' value={fmt(v.uses_7d)} />
-          <MiniStat label='Tests saved by voice' value={fmt(v.voice_readings_30d)} color={CY} />
-          <MiniStat label='Went to the AI (counts as a message)' value={fmt(v.ai_30d)} />
+          <MiniStat label='Paying customers who have used AI' value={n('paying_use_ai') + ' of ' + n('paying')} color={GD} />
+          <MiniStat label='Paying customers who used it this month' value={n('paying_use_ai_30d') + ' of ' + n('paying')} />
+          <MiniStat label='People who used AI' value={fmt(n('people_30d'))} />
+          <MiniStat label='Came back on another day' value={n('came_back_30d') + ' of ' + n('people_30d')} color={CY} />
+          <MiniStat label='Chat questions' value={fmt(n('questions_30d'))} />
+          <MiniStat label='Advisor reports' value={fmt(n('advisor_30d'))} />
         </div>
-        {kinds.length ? (
-          <div className='hbars' style={{ marginTop: 8 }}>
-            {kinds.map((k) => (
-              <div key={k.kind} className='hbar'>
-                <span className='hbar-k'>{VOICE_KIND[k.kind] ?? k.kind}</span>
-                <span className='hbar-track'><span style={{ width: Math.max(1, pct(k.n, uses)) + '%', background: PU }} /></span>
-                <span className='hbar-v'>{fmt(k.n)}<small>{fmt(k.users)} {Number(k.users) === 1 ? 'person' : 'people'}</small></span>
-              </div>
-            ))}
-          </div>
-        ) : <p className='muted'>Nobody has used voice yet. It arrives with the Goby release of the app.</p>}
+        <div className='dpanel-note'>
+          Voice: {n('voice_people_30d')} {n('voice_people_30d') === 1 ? 'person' : 'people'}, {n('voice_uses_30d')} uses.
+          {' '}Tests saved from chat: {n('saved_from_chat_30d')}. Readings a user gave that did not get saved: {n('lost_readings_30d')}.
+          {' '}Replies where the dose check stepped in: {n('dose_caught_30d')}.
+        </div>
       </Panel>
-      {people.length ? (
-        <Panel className='span-6' title='Who uses voice' sub='most active first'>
-          <div className='hbars'>
-            {people.map((p, i) => (
-              <div key={i} className='hbar'>
-                <span className='hbar-k'>{p.who}</span>
-                <span className='hbar-v'>{fmt(p.n)}<small>last {p.last} &middot; {p.kinds}</small></span>
+
+      <Panel className='span-6' title='What people ask about' sub='Chat questions, last 30 days'>
+        {topics.length
+          ? <HBars data={topics.map((t) => ({ k: t.topic, v: t.n, sub: t.people + (t.people === 1 ? ' person' : ' people') }))} color={PU} />
+          : <div className='dpanel-note'>No questions in the last 30 days.</div>}
+      </Panel>
+      <Panel className='span-6' title='Asked word for word by more than one person' sub='Mostly the suggested questions under the chat box'>
+        {top.length
+          ? <HBars data={top.map((t) => ({ k: t.q, v: t.n, sub: t.people + ' people' }))} color={CY} />
+          : <div className='dpanel-note'>Nothing repeated yet.</div>}
+      </Panel>
+
+      <Panel className='span-12' title='Where the app let someone down' sub='They asked how to do something in the app, or the AI told them the app cannot do it. Last 90 days, newest first. Each one is a feature to add, a screen to make clearer, or nothing: press Done and it goes away.'>
+        {gaps.length ? gaps.map((g) => (
+          <div key={g.id} style={{ padding: '14px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 12, color: g.kind === 'cant' ? AM : 'var(--mu, #8a99ad)', fontWeight: 700, marginBottom: 6 }}>
+                {g.when} &middot; {g.who} &middot; {g.kind === 'cant' ? 'AI said the app cannot do this' : 'Asked how to do it in the app'}
               </div>
-            ))}
+              <div style={label}>They asked</div>
+              <div style={{ ...cell, fontWeight: 600 }}>{g.question || '(question not found)'}</div>
+              <div style={{ ...label, marginTop: 8 }}>The AI said</div>
+              <div style={{ ...cell, color: 'var(--mu, #8a99ad)' }}>{g.answer}&hellip;</div>
+            </div>
+            <button onClick={() => clear(g.id)} style={{ fontSize: 12, padding: '5px 12px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.14)', background: 'transparent', color: 'var(--mu, #8a99ad)', cursor: 'pointer', flexShrink: 0 }}>
+              Done
+            </button>
           </div>
-        </Panel>
-      ) : null}
-      {recent.length ? (
-        <Panel className='span-6' title='Latest voice actions' sub='newest first'>
-          <div className='hbars'>
-            {recent.map((r, i) => (
-              <div key={i} className='hbar'>
-                <span className='hbar-k'>{r.when} &middot; {r.who}</span>
-                <span className='hbar-v'>{VOICE_KIND[r.kind] ?? r.kind}<small>{r.tank}{r.mode === 'log' ? ' · from the Log tab' : ''}{r.via === 'ai' ? ' · via AI' : ''}</small></span>
-              </div>
-            ))}
+        )) : <div className='dpanel-note' style={{ color: GD }}>Nothing open.</div>}
+      </Panel>
+
+      {q ? (
+        <Panel className='span-12' title='Test results typed in the wrong unit' sub='Saved from the Log screen with a value that cannot be real, like alkalinity in ppm or phosphate in ppb. The AI reasons from these.'>
+          <div className='minis'>
+            <MiniStat label='Readings' value={fmt(q.bad_manual)} color={Number(q.bad_manual) > 0 ? BD : GD} />
+            <MiniStat label='Tanks affected' value={fmt(q.bad_tanks)} />
           </div>
+          {byParam.length ? <HBars data={byParam.map((b) => ({ k: b.param.toUpperCase(), v: b.n }))} color={BD} /> : null}
         </Panel>
       ) : null}
     </div>
   );
 }
 
-export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality, gobyVoice, integrations }: { integrations?: Record<string, unknown> | null; gobyVoice?: Record<string, unknown> | null; metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
+export default function AdminClient({ metrics, series, users, engagement, notifications, extra, aiQuality, aiOverview, integrations }: { integrations?: Record<string, unknown> | null; aiOverview?: Record<string, unknown> | null; metrics: Record<string, Record<string, unknown>> | null; series: Series[]; users: UserRow[]; engagement: Eng | null; notifications?: Record<string, unknown>[]; extra?: Record<string, unknown> | null; aiQuality?: Record<string, unknown> | null }) {
   const [tab, setTab] = useState<'overview' | 'engagement' | 'users' | 'activity' | 'notifications' | 'ai'>('overview');
   const [openUser, setOpenUser] = useState<string | null>(null);
   useEffect(() => { try { const t = localStorage.getItem('admin.tab'); if (t === 'overview' || t === 'engagement' || t === 'users' || t === 'activity' || t === 'notifications' || t === 'ai') setTab(t); } catch { /* ignore */ } }, []);
@@ -187,7 +206,7 @@ export default function AdminClient({ metrics, series, users, engagement, notifi
         </div>
       </div>
       {tab === 'overview' ? <Overview metrics={metrics} series={series} engagement={engagement} extra={extra} integrations={integrations} /> : null}
-      {tab === 'ai' ? <><GobyVoice v={gobyVoice ?? null} /><AIQuality q={aiQuality ?? null} /></> : null}
+      {tab === 'ai' ? <AIPage a={aiOverview ?? null} q={aiQuality ?? null} /> : null}
       {tab === 'engagement' ? <Engagement e={engagement} users={users} onOpen={setOpenUser} /> : null}
       {tab === 'users' ? <Users users={users} onOpen={setOpenUser} /> : null}
       {tab === 'activity' ? <ActivityFeed e={engagement} onOpen={setOpenUser} /> : null}
@@ -537,127 +556,6 @@ function Hardware({ h }: { h: Record<string, unknown> | null }) {
         at home today, not that the gear is broken. Your own devices are counted.
       </div>
     </Panel>
-  );
-}
-
-/* ───────────── AI quality ─────────────
-   Built from the Oct-Nov 2026 chat audit. The point of this tab is that nobody has to
-   read every conversation to find a bad answer: each number here is a query against a
-   known failure signature, and zero is the target. */
-type FlagRow = { id: string; t: string; fresh: boolean; who: string; reasons: string[]; excerpt: string };
-type BadRow = { logged: string; who: string; tank: string; source: string; bad: string[] };
-type UnloggedRow = { t: string; who: string; said: string; excerpt: string };
-
-const REASON_LABEL: Record<string, string> = {
-  calendar_date: 'Stated a calendar date',
-  asserts_absence: 'Said they have no X after they told us they do',
-  app_cannot_claim: 'Said the app cannot do something',
-  names_equipment: 'Called gear theirs',
-  quotes_range_as_current: 'Quoted a range as the current value',
-};
-
-function AIQuality({ q }: { q: Record<string, unknown> | null }) {
-  const [done, setDone] = useState<Set<string>>(new Set());
-
-  async function review(id: string) {
-    setDone((prev) => new Set(prev).add(id));
-    try { await createClient().rpc('admin_review_flag', { p_id: id }); } catch { /* optimistic; refresh re-shows it */ }
-  }
-
-  if (!q) return <div className='muted-block'>AI quality data didn&rsquo;t load. Refresh the page.</div>;
-  const byReason = (q.by_reason ?? []) as { reason: string; n: number }[];
-  const byParam = (q.bad_by_param ?? []) as { param: string; n: number }[];
-  const flags = ((q.recent_flags ?? []) as FlagRow[]).filter((f) => !done.has(f.id));
-  const bad = (q.recent_bad ?? []) as BadRow[];
-  const unlogged = (q.recent_unlogged ?? []) as UnloggedRow[];
-  const since = Number(q.flags_since ?? 0);
-
-  return (
-    <div className='dash-lower'>
-      <Panel
-        className='span-12'
-        title='Chat replies worth a look'
-        sub={`Since prompt v${q.since_version ?? '?'} went out, ${q.since_at ?? ''}. Zero is the goal.`}
-      >
-        <div className='minis'>
-          <MiniStat label={'Flagged since v' + (q.since_version ?? '?')} value={fmt(since)} color={since > 0 ? AM : GD} />
-          <MiniStat label='Last 30 days (context)' value={fmt(q.flags_30d)} />
-          <MiniStat label='Reviewed and cleared' value={fmt(q.reviewed)} />
-          <MiniStat label='Saved from chat, 30 days' value={fmt(q.chat_logged_30d)} color={GD} />
-        </div>
-        {since === 0 ? (
-          <div className='dpanel-note' style={{ color: GD }}>
-            Nothing has tripped a rule since the last prompt change. That is the number to watch &mdash;
-            the 30-day figure still counts replies from before the fix.
-          </div>
-        ) : null}
-        {byReason.length
-          ? <HBars data={byReason.map((r) => ({ k: REASON_LABEL[r.reason] ?? r.reason, v: r.n }))} color={AM} />
-          : <div className='dpanel-note'>Nothing flagged in the last 30 days.</div>}
-        <div className='dpanel-note'>
-          Bars cover 30 days, so they include behaviour already fixed by a later prompt. Clear a row
-          below once you have looked at it and it stops coming back.
-        </div>
-      </Panel>
-
-      {flags.length ? (
-        <Panel className='span-12' title='Open flags' sub='Newest first. Clear one once you have read it.'>
-          <div>
-            {flags.map((f) => (
-              <div key={f.id} style={{ padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 12, color: f.fresh ? BD : AM, fontWeight: 700 }}>
-                    {f.fresh ? '● new · ' : ''}{f.t} &middot; {f.who} &middot; {(f.reasons || []).map((r) => REASON_LABEL[r] ?? r).join(', ')}
-                  </div>
-                  <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 3, whiteSpace: 'pre-wrap' }}>{f.excerpt}&hellip;</div>
-                </div>
-                <button onClick={() => review(f.id)} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.14)', background: 'transparent', color: 'var(--mu, #8a99ad)', cursor: 'pointer', flexShrink: 0 }}>
-                  Clear
-                </button>
-              </div>
-            ))}
-          </div>
-        </Panel>
-      ) : null}
-
-      <Panel className='span-12' title='Readings that cannot be real' sub='Typed into the Log screen and saved anyway'>
-        <div className='minis'>
-          <MiniStat label='Hand-typed' value={fmt(q.bad_manual)} color={Number(q.bad_manual) > 0 ? BD : GD} />
-          <MiniStat label='Tanks affected' value={fmt(q.bad_tanks)} />
-          <MiniStat label='All sources' value={fmt(q.bad_total)} />
-        </div>
-        {byParam.length ? <HBars data={byParam.map((b) => ({ k: b.param.toUpperCase(), v: b.n }))} color={BD} /> : null}
-        <div className='dpanel-note'>
-          Most of these are a unit, not a mistake: alkalinity in ppm CaCO&#8323; rather than dKH,
-          phosphate in ppb, salinity in ppt. They drag the Reef Score down and the AI reasons from
-          them. The Log screen now offers to convert instead of only warning.
-        </div>
-        {bad.length ? (
-          <div className='hbars' style={{ marginTop: 8 }}>
-            {bad.map((b, i) => (
-              <div key={i} className='hbar'>
-                <span className='hbar-k'>{b.logged} &middot; {b.who}</span>
-                <span className='hbar-v' style={{ color: BD }}>{(b.bad || []).join(', ')}<small>{b.tank} &middot; {b.source}</small></span>
-              </div>
-            ))}
-          </div>
-        ) : null}
-      </Panel>
-
-      {unlogged.length ? (
-        <Panel className='span-12' title='Readings the user gave and we did not save' sub='Each one is a lost test'>
-          <div>
-            {unlogged.map((u, i) => (
-              <div key={i} style={{ padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                <div style={{ fontSize: 12, fontWeight: 700 }}>{u.t} &middot; {u.who}</div>
-                <div style={{ fontSize: 12, color: GD, marginTop: 3 }}>They said: {u.said}</div>
-                <div style={{ fontSize: 12, color: 'var(--mu, #8a99ad)', marginTop: 2 }}>{u.excerpt}&hellip;</div>
-              </div>
-            ))}
-          </div>
-        </Panel>
-      ) : null}
-    </div>
   );
 }
 
