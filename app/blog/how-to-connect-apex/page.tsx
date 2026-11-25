@@ -294,12 +294,11 @@ export default function HowToConnectApexPage() {
           </ul>
 
           <YouTubeVideo
-            id="m1JLKGuJaXM"
+            id="pZhcMChvXPQ"
             title="Neptune Apex and Reef Tank Dosing in One App"
             description="How the NextUpReef reef tank app shows Neptune Apex outlets and probe readings, and keeps daily dosing in one checklist."
             uploadDate="2026-11-25"
-            duration="PT48S"
-            vertical
+            duration="PT50S"
             caption="Video: the Apex screen and the daily dosing checklist in NextUpReef."
           />
 

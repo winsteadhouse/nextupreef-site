@@ -375,12 +375,11 @@ export default function ReefScoreStabilityScorePost() {
           </p>
 
           <YouTubeVideo
-            id="nTpiMuno-44"
+            id="fwfMqe0dxj8"
             title="A Real Reef Tank, Live in the App"
             description="A real 75 gallon mixed reef in the NextUpReef app: connected gear on the Home screen, the Reef Score and Stability Score, and the readings behind them."
             uploadDate="2026-11-25"
-            duration="PT28S"
-            vertical
+            duration="PT30S"
             caption="Video: a real tank's Reef Pulse scores and the data behind them."
           />
 

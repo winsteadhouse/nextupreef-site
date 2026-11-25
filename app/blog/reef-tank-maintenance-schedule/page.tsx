@@ -415,12 +415,11 @@ export default function ReefTankMaintenanceSchedulePost() {
           </div>
 
           <YouTubeVideo
-            id="tHusxwBrmEQ"
+            id="KfoJ6QRFDMM"
             title="Never Miss a Reef Tank Water Change"
             description="How to set water change and maintenance reminders in the NextUpReef reef tank app and mark them done."
             uploadDate="2026-11-25"
-            duration="PT37S"
-            vertical
+            duration="PT40S"
             caption="Video: setting and completing reminders in NextUpReef."
           />
 

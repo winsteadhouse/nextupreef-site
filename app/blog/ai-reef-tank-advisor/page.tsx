@@ -299,12 +299,11 @@ export default function AIReefAdvisorPost() {
         </p>
 
           <YouTubeVideo
-            id="NO0kj2CSI4U"
+            id="oQjTpIz8SGU"
             title="Low Magnesium in a Reef Tank? This App Catches It"
             description="The NextUpReef Reef AI Advisor spots a slow magnesium drop, suggests the next step, and the chart shows the recovery after dosing."
             uploadDate="2026-11-25"
-            duration="PT1M11S"
-            vertical
+            duration="PT1M14S"
             caption="Video: the Reef AI Advisor flagging a magnesium drop."
           />
 

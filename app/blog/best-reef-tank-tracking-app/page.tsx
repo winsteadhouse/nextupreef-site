@@ -242,12 +242,11 @@ export default function BestReefAppPost() {
           </div>
 
           <YouTubeVideo
-            id="rehzeMV4e80"
+            id="F7B17A2MYhA"
             title="NextUpReef App Tour: The Reef Tank App That Does It All"
             description="A full tour of the NextUpReef reef tank app: Home, My Reef, lighting, logging, Reef Pulse, Community, the Reef AI Advisor, device connections and dosing."
             uploadDate="2026-11-25"
-            duration="PT1M39S"
-            vertical
+            duration="PT1M37S"
             caption="Video: a 99-second tour of NextUpReef."
           />
 

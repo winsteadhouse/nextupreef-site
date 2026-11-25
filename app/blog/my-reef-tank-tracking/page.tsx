@@ -143,12 +143,11 @@ export default function MyReefTrackingPost() {
           <li>Frag and lineage tracking when you split a colony</li>
         </ul>
           <YouTubeVideo
-            id="1SL9Qwi7Xg8"
+            id="S7qYb-okfJ4"
             title="Track Your Reef Tank Fish, Corals and Equipment"
             description="How to track fish, corals, equipment and costs in the NextUpReef reef tank app, and run the Reef AI stocking check for compatibility."
             uploadDate="2026-11-25"
-            duration="PT1M30S"
-            vertical
+            duration="PT1M31S"
             caption="Video: adding gear and a fish in NextUpReef, then running the stocking check."
           />
 
