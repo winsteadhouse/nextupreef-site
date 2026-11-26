@@ -18,7 +18,9 @@ export default function YouTubeVideo({ id, title, description, uploadDate, durat
     name: title,
     description,
     thumbnailUrl: [`https://nextupreef.com/videos/${id}.jpg`, `https://i.ytimg.com/vi/${id}/hqdefault.jpg`],
-    uploadDate,
+    // Google wants a full date-time with a time zone here. A bare date ("2026-11-25") is
+    // reported as "invalid datetime" and "missing a timezone" in Search Console.
+    uploadDate: /^\d{4}-\d{2}-\d{2}$/.test(uploadDate) ? `${uploadDate}T12:00:00-06:00` : uploadDate,
     duration,
     contentUrl: `https://www.youtube.com/watch?v=${id}`,
     embedUrl: `https://www.youtube.com/embed/${id}`,
