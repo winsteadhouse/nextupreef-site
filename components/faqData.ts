@@ -189,6 +189,53 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
     ],
   },
   {
+    id: "lighting-par",
+    title: "Lighting & PAR map",
+    blurb: "Mapping your tank's light with a PAR meter and placing corals from the readings.",
+    faqs: [
+      {
+        q: "What is the PAR map?",
+        a: "A picture of your tank with a PAR meter reading at each spot you measured. You tap where you held the meter on a front view of the tank, type the reading, and the app shades the map from dim to intense. It shows the lowest, average and highest reading and lists where each of your corals fits.",
+      },
+      {
+        q: "Where is the PAR map?",
+        a: "Open My Reef, tap the Lights tab, then tap PAR map. Pro users can also reach it from Lighting in the menu. Once a tank has a map, a PAR map row appears on the tank card in My Reef.",
+      },
+      {
+        q: "Do I need a PAR meter?",
+        a: "Yes. The map only shows readings you measured. NextUpReef does not estimate PAR from a fixture, a wattage or a percentage in a light's app, because those do not tell you what reaches the rock. Many local fish stores and reef clubs rent or lend PAR meters.",
+      },
+      {
+        q: "Is the PAR map free?",
+        a: "Yes. Entering readings, the shaded map and the coral fit list are free on every account. With NextUpReef Pro, Goby and the Reef AI Advisor also read your PAR map and answer placement questions from your own readings.",
+      },
+      {
+        q: "What do Front, Middle and Back mean?",
+        a: "How far back the meter was when you took the reading. The map is a front view, so it cannot show depth by itself, and the back of a tank often gets less light than the front. Tag each reading, then tap Front, Middle or Back above the map to see one depth on its own. Each chip shows the average for that depth.",
+      },
+      {
+        q: "How many readings do I need?",
+        a: "The map shades in after three readings, and more is better. A dozen or so covers a typical tank: the sand, the middle of the rockwork and the top, on the left, centre and right. The colour between readings is an estimate from the nearest ones, so add readings wherever you plan to put a coral.",
+      },
+      {
+        q: "How does the app know where my corals fit?",
+        a: "Each coral in the catalog has a general PAR range. The map shows how much of your tank falls inside that range, and tapping a coral lights up those areas. The ranges are approximate guidance, they vary by species and by tank, and a coral that is growing and coloured well where it sits does not need to move.",
+      },
+      {
+        q: "Why does the map list my light settings?",
+        a: "Each map saves the display lights it was measured under, with their channel levels and mounting height, so you can compare maps after a change. If a light in the list was not lighting the display, such as a sump light, remove it with the X beside it. Start a new map after you change your lights.",
+      },
+      {
+        q: "Does my tank photo show behind the map?",
+        a: "Yes, if the tank has a photo in My Reef. The readings and shading are drawn over your latest tank photo, which makes it easier to tap the right spot. Tap Photo on above the map to hide it.",
+      },
+      {
+        q: "Can other people see my PAR map?",
+        a: "Not the readings. If your tank is public, the Community feed shows that you mapped your tank's PAR, with the number of readings and the average. Private tanks never appear.",
+      },
+    ],
+  },
+  {
     id: "reminders-notifications",
     title: "Reminders & notifications",
     blurb: "Water change schedules, maintenance tasks and when push notifications arrive.",

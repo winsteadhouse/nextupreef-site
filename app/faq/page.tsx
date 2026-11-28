@@ -5,7 +5,7 @@ import { FAQ_CATEGORIES } from "@/components/faqData";
 export const metadata: Metadata = {
   title: "FAQ: Reef Tank App Questions Answered",
   description:
-    "Answers about NextUpReef: logging parameters, Reef and Stability scores, dosing, reminders, AI features, Neptune Apex, CoralVue HYDROS and Shelly, NextUpReef Pro, and your account.",
+    "Answers about NextUpReef: logging parameters, Reef and Stability scores, dosing, the PAR map, reminders, AI features, Neptune Apex, CoralVue HYDROS and Shelly, NextUpReef Pro, and your account.",
   alternates: { canonical: "https://nextupreef.com/faq" },
   openGraph: {
     title: "NextUpReef FAQ",

@@ -110,6 +110,7 @@ export default function FeaturesPage() {
           <a href="#tracking" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Tracking</a>
           <a href="#ai" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>AI</a>
           <a href="#my-reef" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>My Reef</a>
+          <a href="#par-map" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>PAR Map</a>
           <a href="#scores" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Scores</a>
           <a href="#maintenance" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Reminders</a>
           <a href="#dosing" style={{ fontSize: "13px", fontWeight: 700, color: "var(--reef)", textDecoration: "none", padding: "6px 14px", borderRadius: "999px", background: "rgba(44,196,214,0.08)", border: "1px solid rgba(44,196,214,0.18)" }}>Dosing</a>
@@ -150,6 +151,11 @@ export default function FeaturesPage() {
               </tr>
               <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
                 <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>My Reef: livestock, equipment, dosing, cost</td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+                <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
+              </tr>
+              <tr style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                <td style={{ padding: "13px 16px", fontSize: "14px", color: "var(--text-light)", fontWeight: 600 }}>PAR map: your meter readings on your tank, and where corals fit</td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
                 <td style={{ padding: "13px 12px", textAlign: "center" }}><span style={{ color: "var(--reef)", fontWeight: 900 }}>✓</span></td>
               </tr>
@@ -363,6 +369,40 @@ export default function FeaturesPage() {
           <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
             <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Tank Journal</div>
             <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Keep dated, private journal entries with photos to record what you did and what changed. (Pro)</div>
+          </div>
+        </div>
+      </section>
+
+      {/* PAR MAP */}
+      <section id="par-map" style={{ borderTop: "1px solid rgba(44,196,214,0.1)", padding: "72px 24px", maxWidth: "1080px", margin: "0 auto", scrollMarginTop: "80px" }}>
+        <div className="section-label">PAR Map</div>
+        <h2 style={{ fontSize: "clamp(26px, 4vw, 38px)", fontWeight: 900, margin: "12px 0 16px", letterSpacing: "-0.03em", lineHeight: 1.12, color: "var(--text-light)" }}>Map your light.<br />Place corals from real numbers.</h2>
+        <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 32px", maxWidth: "680px" }}>Have a PAR meter, or borrowed one for the afternoon? Put every reading on a front view of your own tank and keep it. Free for every account. <Link href="/blog/reef-tank-par-map" style={{ color: "var(--reef)", fontWeight: 700 }}>See how it works</Link>.</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "32px", alignItems: "center" }}>
+          <div style={{ maxWidth: "320px", margin: "0 auto", borderRadius: "22px", overflow: "hidden", border: "1px solid rgba(44,196,214,0.25)", boxShadow: "0 20px 60px rgba(0,0,0,0.45)" }}>
+            <Image src="/screenshots/par/par-map-overview.png" alt="NextUpReef PAR map with PAR meter readings placed over a photo of a reef tank and the lowest, average and highest reading below" width={1080} height={1470} style={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+          <div style={{ display: "grid", gap: "16px" }}>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Readings on your own tank</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Tap where you held the meter and type the number. The map is drawn over your tank photo, top of the tank to the sand, and shades in after three readings.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Front, middle and back</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Tag each reading by how far back it was. The back of a tank often gets less light than the front, and the map shows that as a number.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Where each coral fits</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Your corals are listed with the PAR range they generally do well in. Tap one and the map lights up the parts of the tank that suit it.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Light settings saved with every map</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>Fixtures, channel levels and mounting height are stored with each dated map, so you can compare before and after a change.</div>
+          </div>
+          <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px", padding: "22px 24px" }}>
+            <div style={{ fontSize: "16px", fontWeight: 900, color: "var(--text-light)", marginBottom: "8px" }}>Measured, never guessed</div>
+            <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.65 }}>The app only maps readings you took. It does not estimate PAR from a fixture or a setting.</div>
+          </div>
           </div>
         </div>
       </section>
@@ -634,6 +674,13 @@ export default function FeaturesPage() {
         <div className="section-label">What’s new</div>
         <h2 style={{ fontSize: "clamp(24px, 3.5vw, 32px)", fontWeight: 900, margin: "12px 0 28px", letterSpacing: "-0.03em", color: "var(--text-light)" }}>New in NextUpReef.</h2>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+            <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>November 2026</div>
+            <div>
+              <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--text-light)", marginBottom: "3px" }}>PAR map</div>
+              <div style={{ fontSize: "14px", color: "var(--text-muted)", lineHeight: 1.6 }}>Put your PAR meter readings on a front view of your own tank, tagged front, middle or back. See where each coral fits, and keep your light settings with every map.</div>
+            </div>
+          </div>
           <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
             <div style={{ fontSize: "12px", fontWeight: 900, color: "var(--reef)", textTransform: "uppercase", letterSpacing: "0.04em", minWidth: "84px", paddingTop: "2px" }}>November 2026</div>
             <div>

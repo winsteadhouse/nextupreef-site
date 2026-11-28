@@ -349,6 +349,11 @@ export default function ReefTankLightSchedulePost() {
           <p>
             A PAR meter settles it, and you rarely need to own one. Many local fish stores and reef clubs rent or lend them, and some online retailers run rental programs. Measure at the sand, the middle of the rockwork and the top, in the center and at the ends. Write the numbers down next to the settings that produced them. Meter types differ in how well they read blue heavy LEDs, so treat readings as approximate.
           </p>
+          <p>
+            There is more on the numbers in{" "}
+            <Link href="/blog/reef-tank-par-guide" style={link}>reef tank PAR explained</Link>. To keep your readings where you will find them again, NextUpReef has a free PAR map: tap each reading onto a front view of your own tank and see where each coral fits. The steps are in{" "}
+            <Link href="/blog/reef-tank-par-map" style={link}>how to make a PAR map</Link>.
+          </p>
 
           <h2 style={h2Style}>Common Mistakes</h2>
           <ul style={{ paddingLeft: "24px", display: "flex", flexDirection: "column", gap: "12px" }}>
